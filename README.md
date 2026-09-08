@@ -4,8 +4,9 @@ A private Codex skill for checking whether an HOFAS Markdown file or manuscript 
 
 ## Main uses
 
-- Check symbols, dimensions, terminology, and model-family consistency.
-- Check definitions, assumptions, the six-part theorem structure, and proof organization.
+- Check whether the mathematical formulas in the original manuscript follow Duan's notation habits.
+- Check whether a theorem follows Duan's writing habits.
+- Check whether definitions and assumptions are consistent with Duan's corresponding definitions and assumptions.
 - Check the organization of Remarks, Examples, and simulations.
 - Create a Duan-style LaTeX paper template quickly.
 - Search locally indexed source material only when a concrete point needs verification.
@@ -64,10 +65,10 @@ Invoke the skill explicitly with `$duan-hofas`. Give it the manuscript path when
 使用 $duan-hofas：在 SUB-FAS 中，Duan 如何表示奇异集、可行集和指数吸引域？不要使用我提出的扩展符号。
 ```
 
-### 2. Check symbols in an existing Markdown file
+### 2. Check whether the original mathematical formulas follow Duan's habits
 
 ```text
-使用 $duan-hofas 检查 '/absolute/path/paper.md' 中的符号。重点检查状态堆叠、参数矩阵、伴随矩阵、可行集和 ROEA。只列出需要修改或无法确认的地方，暂时不要改文件。
+使用 $duan-hofas 检查 '/absolute/path/paper.md' 原文中的数学公式是否符合 Duan 的习惯。重点检查状态堆叠、参数矩阵、伴随矩阵、可行集、ROEA、维数和上下标。只列出不一致或无法确认的地方，暂时不要改文件。
 ```
 
 Expected review format:
@@ -76,7 +77,7 @@ Expected review format:
 位置 → 当前写法 → 推荐的 Duan 写法 → 原因 → [E]/[D]/[U]
 ```
 
-### 3. Ask how Duan would state a theorem
+### 3. Check whether a theorem follows Duan's writing habits
 
 ```text
 使用 $duan-hofas，把下面的结果改写成 Duan 常用的定理结构：针对什么系统、满足什么假设、给定什么参数、参数满足什么条件、采用什么控制律、最终保证什么性能。不要增加原结果中不存在的假设。
@@ -85,13 +86,13 @@ Expected review format:
 ```
 
 ```text
-使用 $duan-hofas 检查 '/absolute/path/paper.md' 中 Theorem 2 是否符合 Duan 的六段式写法。先指出缺少的环节，再给出修改稿；保持原符号和数学结论不变。
+使用 $duan-hofas 检查 '/absolute/path/paper.md' 中 Theorem 2 是否符合 Duan 的书写习惯。检查系统、假设、参数、条件、控制律和性能结论的组织方式，先指出不一致之处，再给出修改稿；保持原符号和数学结论不变。
 ```
 
-### 4. Check definitions and assumptions
+### 4. Check whether definitions and assumptions are consistent with Duan
 
 ```text
-使用 $duan-hofas 检查下面的 Definition 和 Assumptions：哪些是 Duan 原文中的条件，哪些是我新增的条件？检查定义域、维数、量词以及每个假设在证明中的作用。
+使用 $duan-hofas 检查下面的 Definition 和 Assumptions 是否与 Duan 对应模型中的定义和假设一致。指出哪些内容直接来自 Duan、哪些是等价改写、哪些是我新增的条件，并检查定义域、维数和量词；不要把必要的新假设误写成 Duan 的原始假设。
 
 [粘贴定义和假设]
 ```
