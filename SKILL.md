@@ -40,6 +40,15 @@ Copy and adapt [duan-hofas-paper-template.tex](assets/duan-hofas-paper-template.
 
 Use the source catalog and monograph search backend only for the disputed item. Quote or transcribe only the minimum source passage needed, record its locator, and keep source-supported statements separate from new derivations.
 
+## Inspection depth and stopping rule
+
+For routine notation or writing-style checks, when the target Markdown/LaTeX source and the relevant skill references already provide the needed rule, perform a direct static comparison and stop once the requested audit is answered.
+
+- Do not reopen, browse, or render Duan source PDFs merely to reconfirm notation, typography, or definitions already settled by this skill.
+- Escalate to the original source only when the skill references do not settle the point, authoritative sources conflict, an exact quotation, equation locator, or typographic distinction materially affects the answer, or the user explicitly asks for primary-source verification.
+- When escalation is necessary, search or extract source text first. Render PDF page images only when visual layout or glyph form is itself disputed, or reliable text extraction is unavailable.
+- Do not expand a notation check into a source-history, mathematical-rigor, or full-manuscript audit unless the user requests that broader scope.
+
 ## Source-verification workflow
 
 When the quick guide cannot settle a concrete issue:
@@ -71,6 +80,8 @@ When the quick guide cannot settle a concrete issue:
 ## Non-negotiable source discipline
 
 - Do not coin Chinese technical terms. Use Duan's established terminology; if no verified Chinese term exists, retain the English original in parentheses and mark `[U]`.
+- Keep source provenance separate from notation consistency. A paper may introduce symbols for a new extension without pretending that they are Duan's original symbols or definitions. Mark such paper-local constructions as `[D]`; retain them when they are explicitly defined, dimensionally valid, and internally consistent, but never describe them as "following," "inheriting," or "using" Duan's definition unless the cited source actually contains that definition.
+- For the current switched SUB-FAS extension, $\mathcal F_{\rm ext}$, $\beta_i$, $h$, $q_i$, $\pi$, $\kappa$, $\mathscr K$, $\mathcal R_s(\kappa)$, and $\mathcal R_s^{\max}$ are paper-introduced notation `[D]`. They may remain in the manuscript, but a Duan-style audit must not replace them merely because they are absent from Duan's notation, and must not attribute them to Duan.
 - Distinguish the physical state, elementary state vector, $x^{(0\sim n)}$, external vector, and dummy variables used in set definitions.
 - “Controller makes the closed loop linear” does not by itself prove global stabilization for a sub-FAS. The trajectory must remain in the feasible set.
 - Do not state that an ROEA has a closed-form expression unless the source proves one. A trajectory-defined characterization is valid.
