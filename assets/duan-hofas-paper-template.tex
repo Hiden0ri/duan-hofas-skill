@@ -1,0 +1,109 @@
+% Duan/HOFAS logical-style template.
+% Replace every placeholder and verify all mathematics against the selected source.
+\IfFileExists{IEEEtran.cls}
+  {\documentclass[journal]{IEEEtran}}
+  {\documentclass[11pt]{article}}
+
+\usepackage{amsmath,amssymb,amsthm,bm}
+
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\xstack}{x^{(0\sim n-1)}}
+\newcommand{\Arow}{A_{0\sim n-1}}
+\newcommand{\Phic}{\Phi(\Arow)}
+
+\begin{document}
+
+\title{Replace with a Precise HOFAS Title}
+\author{Author Names}
+\maketitle
+
+\begin{abstract}
+State the system class, obstruction, method, principal theorem, and verified outcome.
+\end{abstract}
+
+\section{Introduction}
+State one precise control problem. Identify the closest FAS/HOFAS result and the
+new obstruction. End with a short contribution chain.
+
+\section{Notation and Problem Formulation}
+Define every compact stack before use. For example,
+\begin{equation}
+  x^{(i\sim j)}
+  =\begin{bmatrix}
+     (x^{(i)})^{\top}&(x^{(i+1)})^{\top}&\cdots&(x^{(j)})^{\top}
+   \end{bmatrix}^{\top}.
+\end{equation}
+
+Select exactly one model family. For a single-order affine FAS:
+\begin{equation}\label{eq:model}
+  x^{(n)}
+  =f\!\left(\xstack,t\right)
+  +B\!\left(\xstack,t\right)u.
+\end{equation}
+State $x,u\in\R^r$, the dimensions of every function, and the time/domain.
+
+\begin{definition}\label{def:model-class}
+Give the source-faithful class definition and its quantifiers.
+\end{definition}
+
+\begin{assumption}\label{ass:input-map}
+State the exact full-actuation or feasible-set condition used by the controller.
+\end{assumption}
+
+\section{Main Result}
+
+\begin{theorem}\label{thm:main}
+Suppose that system~\eqref{eq:model} satisfies
+Assumption~\ref{ass:input-map}. Let the design parameters be given with their
+dimensions, and suppose that they satisfy the stated matrix or stability
+conditions. Then, the following control law
+\begin{equation}\label{eq:controller}
+  u=-B^{-1}(\xstack,t)\bigl(\Arow\xstack+u^{*}\bigr),
+\end{equation}
+where $u^{*}$ is defined explicitly, guarantees the exact stability, tracking,
+robustness, or attraction-region property stated here with all quantifiers.
+\end{theorem}
+
+\begin{proof}
+Substituting control law~\eqref{eq:controller} into system~\eqref{eq:model}
+gives the closed-loop equation
+\begin{equation}\label{eq:closed-loop}
+  x^{(n)}+\Arow\xstack=v.
+\end{equation}
+Write~\eqref{eq:closed-loop} in state-space form if needed. Invoke each
+assumption at its exact use-site, derive the required inequality or
+eigenstructure relation, and conclude the stated performance. For a sub-FAS,
+separately prove that the complete trajectory remains in the feasible set.
+\end{proof}
+
+\begin{remark}
+Explain one special case, design freedom, feasibility limitation, or practical
+interpretation. Do not introduce a missing theorem assumption here.
+\end{remark}
+
+\section{Illustrative Example}
+
+\begin{example}
+Give the original equations, transformation or variable elimination, resulting
+FAS model, controller, closed-loop equation, and parameter choice in this order.
+\end{example}
+
+\section{Simulation}
+Report model parameters, initial condition, reference/disturbance, controller
+parameters, numerical solver and tolerances, state/output response, control
+input, and branch-specific diagnostic quantities. State only what the figures
+actually demonstrate.
+
+\section{Conclusion}
+Restate the solved problem, main mathematical result, and important limitation.
+
+\end{document}
