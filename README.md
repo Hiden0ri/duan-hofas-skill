@@ -11,6 +11,8 @@ A private Codex skill for checking whether an HOFAS Markdown file or manuscript 
 - Create a Duan-style LaTeX paper template quickly.
 - Search locally indexed source material only when a concrete point needs verification.
 
+The repository also contains source-indexed guides to recurring assumptions, lemma families, and references frequently cited across the title-deduplicated local Duan corpus. These are research aids, not text to cite in place of the original papers.
+
 ## Install on Ubuntu
 
 Install GitHub CLI, authenticate, and clone the private repository:
