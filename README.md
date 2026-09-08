@@ -1,6 +1,6 @@
 # Duan HOFAS Skill
 
-A private Codex skill for checking whether an HOFAS Markdown file or manuscript follows Guang-Ren Duan's recurring notation, terminology, article organization, and theorem-writing habits. It can also create a Duan-style IEEEtran-compatible LaTeX manuscript skeleton.
+A Codex skill for checking whether an HOFAS Markdown file or manuscript follows Guang-Ren Duan's recurring notation, terminology, article organization, and theorem-writing habits. It can also create a Duan-style IEEEtran-compatible LaTeX manuscript skeleton.
 
 ## Main uses
 
@@ -15,33 +15,43 @@ The repository also contains source-indexed guides to recurring assumptions, lem
 
 ## Install on Ubuntu
 
-Install GitHub CLI, authenticate, and clone the private repository:
+Install Git and clone the public repository:
 
 ```bash
 sudo apt update
-sudo apt install git gh
-gh auth login
+sudo apt install git
 mkdir -p "$HOME/.codex/skills"
-gh repo clone Hiden0ri/duan-hofas-skill "$HOME/.codex/skills/duan-hofas"
+git clone https://github.com/Hiden0ri/duan-hofas-skill.git "$HOME/.codex/skills/duan-hofas"
 ```
 
 Restart Codex after installation.
 
 ## Install on Windows 11
 
-Install Git and GitHub CLI, then run PowerShell:
+Install Git, then run PowerShell:
 
 ```powershell
-gh auth login
 New-Item -ItemType Directory -Force "$env:USERPROFILE\.codex\skills" | Out-Null
-gh repo clone Hiden0ri/duan-hofas-skill "$env:USERPROFILE\.codex\skills\duan-hofas"
+git clone https://github.com/Hiden0ri/duan-hofas-skill.git "$env:USERPROFILE\.codex\skills\duan-hofas"
 ```
 
 Restart Codex after installation.
 
+## Install on macOS
+
+Install Git with Homebrew and clone the public repository:
+
+```bash
+brew install git
+mkdir -p "$HOME/.codex/skills"
+git clone https://github.com/Hiden0ri/duan-hofas-skill.git "$HOME/.codex/skills/duan-hofas"
+```
+
+If Homebrew is unavailable, run `xcode-select --install` to install Apple's command-line tools, then run the last two commands above. Restart Codex after installation.
+
 ## Update
 
-Ubuntu:
+Ubuntu and macOS:
 
 ```bash
 git -C "$HOME/.codex/skills/duan-hofas" pull
