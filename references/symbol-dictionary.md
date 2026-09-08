@@ -38,7 +38,7 @@ Do not replace $i\sim j$ with an interval of real numbers. In Duan's notation it
 | $\lambda_i(A)$ | $i$th eigenvalue | robust/adaptive branches |
 | $\operatorname{Re}(s)$ | real part of $s\in\mathbb C$ | robust/adaptive branches |
 | $\lambda_{\max}(P)$, $\lambda_{\min}(P)$ | largest/smallest eigenvalue of a symmetric matrix | optimal-control branch |
-| $\operatorname{blockdiag}(A_i,i=1,\ldots,n)$ | block diagonal matrix with diagonal blocks $A_i$ | multi-order branches |
+| $\operatorname{blockdiag}(A_1,\ldots,A_n)$ | block diagonal matrix with diagonal blocks $A_1,\ldots,A_n$ | multi-order branches |
 | $\nu(P)=\lVert P\rVert\lVert P^{-1}\rVert$ | condition number used in Part VIII/IX | not the universal notation of every paper |
 
 If the paper says “adjoint matrix,” check whether its formula requires the classical adjugate rather than the conjugate transpose. Preserve the source formula.
@@ -556,7 +556,7 @@ I_n^\circ
 =
 \begin{bmatrix}
 0&0&I\\
-0&\iddots&0\\
+0&\mathinner{\text{⋰}}&0\\
 I&0&0
 \end{bmatrix}
 \in\mathbb R^{n\times n}.
