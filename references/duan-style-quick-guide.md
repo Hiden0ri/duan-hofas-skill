@@ -8,11 +8,13 @@ Default review order:
 
 1. identify the model family;
 2. check symbols and dimensions;
-3. check terminology;
-4. check definitions and assumptions;
-5. check the theorem's six-part structure;
-6. check the substitution-first proof sequence;
-7. check Remark, Example, simulation, and Markdown rendering.
+3. check the boundary between the `Notations:` paragraph and model-specific definitions;
+4. check that each paper-local shorthand follows the mathematical object on which it depends;
+5. check terminology;
+6. check definitions and assumptions;
+7. check the theorem's six-part structure;
+8. check the substitution-first proof sequence;
+9. check Introduction scale, three-line tables, Remark, Example, simulation, and rendering.
 
 ## 1. Symbol quick reference
 
@@ -27,7 +29,7 @@ Default review order:
 | companion matrix | $\Phi(A_{0\sim n-1})$ | first-order realization of a high-order linear equation |
 | input injection | $B_c$ | normally $[0\ \cdots\ 0\ I_r]^\top$ |
 
-Always define the stack before its first use. Do not alternate between an expanded stack and a newly invented state symbol without a reason.
+Define the general convention $x^{(i\sim j)}$ in `Notations` before relying on it. This does not mean that a model-specific shorthand such as $X$ should also be defined there: introduce $X$ in the body after the relevant model has supplied its meaning, normally near first use. Do not alternate between an expanded stack and a newly invented state symbol without a reason.
 
 ### 1.2 Matrix notation
 
@@ -240,8 +242,78 @@ Never change a source parameter merely to reproduce a desired curve without firs
 
 Preserve Duan's terminology, notation, and logical chain. Do not copy promotional rhetoric or grammatical idiosyncrasies mechanically.
 
-## 10. Final drafting check
+## 10. IEEE Transactions opening, Notations, and tables
 
+### 10.1 Introduction scale
+
+For an approximately eight-page IEEE Transactions manuscript, use about one and a half pages for the Introduction as the default editing target. This is a proportional drafting rule rather than a source theorem or an inflexible venue limit. The Introduction should normally contain the motivation, focused literature gap, contributions, organization, and the compact `Notations:` paragraph without crowding out the technical sections.
+
+### 10.2 What belongs in `Notations`
+
+Place an italic `Notations:` paragraph at the end of the Introduction for conventions used throughout the article, for example:
+
+```latex
+\emph{Notations:} The arguments $(t)$ of variables are omitted when no
+confusion arises. For any $x\in\mathbb R^r$,
+\begin{equation*}
+x^{(0\sim n-1)}=
+\begin{bmatrix}
+x^\top & \dot x^\top & \cdots & (x^{(n-1)})^\top
+\end{bmatrix}^{\top}.
+\end{equation*}
+```
+
+Use `=` for these notation conventions. Do not use `:=`, `\operatorname{col}`, or `\col`; display the row or column stack explicitly in the form used by Duan. The same rule applies to notation-only displays for parameter rows and companion matrices.
+
+Keep model-specific constructions out of this paragraph. In particular, a convenience state $X$, a feasible set, a singularity margin, a switching map, or an ROEA belongs in the body where its mathematical role first appears. New switching-extension symbols are legitimate paper-local notation, but they must not be presented as Duan's original notation.
+
+### 10.3 Model before dependent notation
+
+State the mathematical object being studied before introducing any paper-local abbreviation derived from it. For example, when a single-order affine HOFAS is the selected model family, one may write
+
+```latex
+\begin{equation}
+x^{(n)}=f_i\!\left(x^{(0\sim n-1)}\right)
++B_i\!\left(x^{(0\sim n-1)}\right)u_i,
+\end{equation}
+For convenience, define
+\begin{equation}
+X:=x^{(0\sim n-1)}.
+\end{equation}
+```
+
+Retain time arguments when the selected Duan model family is time varying, and replace this example with the correct single-order, multi-order, affine, nonaffine, global-FAS, or SUB-FAS form. The reusable rule is only the dependency order: the model must precede a shorthand defined from that model. It does not prescribe a fixed order for feasible sets, assumptions, controllers, switching quantities, or later results; arrange those items according to the mathematical argument of the manuscript.
+
+The use of `:=` in the body is intentional: it introduces a paper-local object. It does not conflict with the `Notations` rule that general symbol conventions use `=`.
+
+### 10.4 Tables
+
+Use the IEEE three-line table form by default. Load `booktabs`, use `\toprule`, `\midrule`, and `\bottomrule`, and omit vertical rules and fully boxed grids:
+
+```latex
+\begin{table}[t]
+\caption{...}
+\label{tab:...}
+\centering
+\begin{tabular}{lll}
+\toprule
+Item & Condition & Meaning \\
+\midrule
+... & ... & ... \\
+\bottomrule
+\end{tabular}
+\end{table}
+```
+
+Use `table*` only when the content genuinely requires both columns; do not replace the three-line structure with dense cell borders.
+
+## 11. Final drafting check
+
+- Introduction is proportionate to the manuscript; for an eight-page Transactions draft, about one and a half pages is the default target;
+- article-wide conventions are in the end-of-Introduction `Notations:` paragraph;
+- notation displays use `=` and explicit matrix stacks, not `:=`, `\operatorname{col}`, or `\col`;
+- each paper-local shorthand follows the model or object on which it depends, while the remaining definitions follow the manuscript's own logic;
+- tables use `\toprule`, `\midrule`, and `\bottomrule` without vertical rules;
 - model family identified;
 - symbols selected from the correct branch;
 - dimensions stated;

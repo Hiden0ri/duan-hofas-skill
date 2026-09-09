@@ -34,7 +34,7 @@ Use Duan-first-authored papers and Duan's sole-authored book as the canonical co
 
 ### Create a Duan-style article template
 
-Copy and adapt [duan-hofas-paper-template.tex](assets/duan-hofas-paper-template.tex). Select the model family before filling symbols. Preserve the six-part theorem order and substitution-first proof order. Leave explicit placeholders rather than inventing assumptions, conditions, or results.
+Copy and adapt [duan-hofas-paper-template.tex](assets/duan-hofas-paper-template.tex). Select the model family before filling symbols. Preserve the six-part theorem order and substitution-first proof order. Leave explicit placeholders rather than inventing assumptions, conditions, or results. For an approximately eight-page IEEE Transactions manuscript, use about one and a half pages for the Introduction as the default editing target, place article-wide conventional notation in an italic `Notations:` paragraph at the end of the Introduction, and format tables as three-line tables without vertical rules. Follow the model-before-dependent-notation principle and notation boundary in the quick guide.
 
 ### Resolve a disputed mathematical detail
 
@@ -48,6 +48,16 @@ For routine notation or writing-style checks, when the target Markdown/LaTeX sou
 - Escalate to the original source only when the skill references do not settle the point, authoritative sources conflict, an exact quotation, equation locator, or typographic distinction materially affects the answer, or the user explicitly asks for primary-source verification.
 - When escalation is necessary, search or extract source text first. Render PDF page images only when visual layout or glyph form is itself disputed, or reliable text extraction is unavailable.
 - Do not expand a notation check into a source-history, mathematical-rigor, or full-manuscript audit unless the user requests that broader scope.
+
+### Source-first manuscript editing
+
+For edits to an existing LaTeX or Markdown manuscript, use the editable source as the primary artifact.
+
+- Keep the inspection proportional to the request: read the target passage and its direct definition--theorem--proof dependencies, using fixed-string source search for known LaTeX labels or commands. Broaden the audit only when the user asks or a concrete contradiction requires it.
+- Before editing a theorem, map each changed claim to its supporting proof step. Apply the resulting changes as small, coherent source patches; after a patch mismatch, reread only the local block and narrow the patch.
+- Compile after the coherent source edit is complete. Use incremental compilation by default and inspect build success, warnings, labels, and cross-references from text outputs; reserve a forced rebuild for stale artifacts or unresolved build state.
+- Inspect rendered pages only when the change has a plausible visual effect. Identify and inspect only the affected page or pages once at the end, and keep temporary renderings outside the manuscript directory.
+- Stop when the requested change is present, the manuscript compiles, and its references are resolved. Do not add unrelated source review, PDF inspection, cleanup retries, or source-PDF verification after these conditions are met.
 
 ## Source-verification workflow
 
@@ -89,6 +99,10 @@ When the quick guide cannot settle a concrete issue:
 - Do not treat later community extensions as Duan's original result merely because they use the FAS approach.
 - Volume I is authoritative for global FASs, but it does not replace the dedicated SUB-FAS, substability, ROEA, delay, or later-volume sources.
 - Distinguish **core notation** repeated across the corpus from **branch-local notation** introduced for uncertainty, delay, constraints, output feedback, or a single example. Never promote a branch-local symbol to a universal HOFAS convention.
+- Keep article-wide notation conventions and model-specific definitions separate. Put reusable conventions such as $x^{(i\sim j)}$, matrix spaces, identity/zero matrices, eigenvalues, singular values, and norms in `Notations`; introduce paper-local objects such as $X$, feasible sets, margins, switching maps, and ROEAs in the body after the system that gives them meaning.
+- In `Notations`, use equality notation such as $x^{(0\sim n-1)}=[x^\top\ \dot x^\top\ \cdots\ (x^{(n-1)})^\top]^\top$; do not use `:=`, `\operatorname{col}`, or `\col`. A body definition may use `:=` when it introduces a paper-local shorthand after the model.
+- State the mathematical object being studied before introducing paper-local shorthand or definitions whose meaning depends on that object. For example, define $X:=x^{(0\sim n-1)}$ only after the relevant system has been stated. Beyond such logical dependencies, do not impose a universal order on sets, assumptions, controllers, or switching laws; arrange them according to the argument of the particular paper.
+- Use IEEE three-line tables by default: `\toprule`, `\midrule`, and `\bottomrule`, with no vertical rules or fully boxed grids.
 
 ## Output rules
 
@@ -104,6 +118,11 @@ code 'filename'
 
 ## Final audit
 
+- For an approximately eight-page Transactions paper, is the Introduction close to the one-and-a-half-page default rather than disproportionately short or long?
+- Is general notation collected in the end-of-Introduction `Notations:` paragraph while model-specific variables remain at first use in the body?
+- Is every paper-local shorthand introduced only after the mathematical object on which it depends, without imposing an unnecessary fixed order on the remaining development?
+- Do notation displays use `=` and explicit matrix stacks rather than `:=` or `\operatorname{col}`?
+- Are all tables three-line tables without vertical rules?
 - Is the exact model class stated?
 - Are dimensions of $x$, $u$, $B(\cdot)$, and each parameter matrix consistent?
 - Is invertibility asserted only on the proper domain or feasible set?
