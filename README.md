@@ -157,4 +157,6 @@ The skill itself does not include copyrighted PDFs or a generated search databas
 
 ## Important boundary
 
+For source-faithful definitions of original-system variables, dimensions, and the conditions on $f$ and $B$ that vary with the control objective, read `references/model-definition-registry.md`. Select the model family and objective first; do not promote one paper's smoothness or nonsingularity condition to a universal HOFAS assumption.
+
 The quick guide captures recurring habits but does not replace checking the cited source. A paper-local notation choice is not automatically an error. When a mathematical claim or attribution is disputed, verify the exact equation, theorem, and page in the original source.

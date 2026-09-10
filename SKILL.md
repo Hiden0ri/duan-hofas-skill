@@ -68,6 +68,7 @@ When the quick guide cannot settle a concrete issue:
    - fast default for notation and writing: [duan-style-quick-guide.md](references/duan-style-quick-guide.md)
    - terminology and symbols: [concepts-and-notation.md](references/concepts-and-notation.md)
    - full symbol dictionary and scope rules: [symbol-dictionary.md](references/symbol-dictionary.md)
+   - source-faithful model variables, dimensions, domains, and control-objective-specific conditions on $f$ and $B$: [model-definition-registry.md](references/model-definition-registry.md)
    - modeling and proof chain: [derivation-patterns.md](references/derivation-patterns.md)
    - theorem statements and hypotheses: [canonical-theorems.md](references/canonical-theorems.md)
    - recurring source-indexed assumptions: [common-assumptions.md](references/common-assumptions.md)
