@@ -133,7 +133,26 @@ $C$、可观测性与 Riccati 方程等是控制目标附加结构，不属于�
 
 ## 5. SUB-FAS
 
-在 *Substability and Substabilization: Control of Subfully Actuated Systems* 中，$f_k$ 是分段连续非线性向量函数，$B(\cdot)\in\mathbb R^{r\times r}$ 是关于相应状态和时间的分段连续矩阵函数 `[E]`。该文允许 $B$ 有奇异点，并定义 `[E]`
+在 *Substability and Substabilization: Control of Subfully Actuated Systems* 的单阶模型 (18) 与多阶模型 (25) 中，原文在模型定义处明确写的是 `[E]`
+
+$$
+f(\cdot,t)\in\mathbb R^r,
+\qquad
+B(\cdot,t)\in\mathbb R^{r\times r},
+$$
+
+或在多阶情形写成
+
+$$
+f_k(\cdot,t)\in\mathbb R^{r_k},
+\qquad k=1,2,\ldots,\eta,
+$$
+
+并称 $f$、$f_k$ 与 $B$ 为 nonlinear functions 或 matrix function；该模型段没有进一步明确写成连续、局部 Lipschitz 或充分光滑。不能仅根据这篇论文的该段文字，把这些更强的正则性归于其原始定义。
+
+在 Duan 的 *Fully Actuated System Approach for Control: An Overview* 式 (2)、*Stabilisation of Four Types of Underactuated Systems: A FAS Approach* 的相应模型，以及 *Characterization of Region of Exponential Attraction for Substabilization of FASs* 第 3.1 节中，$f_k$ 或 $f$ 与 $B$ 则被明确规定为 piece-wise continuous `[E]`。因此，“分段连续”是后续代表性 SUB-FAS/ROEA 表述中的明确条件，但不应伪装成 2023 年模型段逐字给出的条件。
+
+这些文献均允许 $B$ 有奇异点，并定义 `[E]`
 
 $$
 \mathcal S=\mathcal S_0\cup\mathcal S_\infty,
@@ -154,6 +173,8 @@ $$
 $X$ 不一定等于完整状态堆叠。原文利用结构分布矩阵提取真正影响 $B$ 的变量，故 $m$ 可小于完整堆叠的维数。必须先定义本论文的 $X$，再定义 $\mathcal S$ 和 $\mathcal F$。
 
 SUB-FAS 应满足：$\mathcal F\ne\varnothing$；$B^{-1}(X,t)$ 只在 $X\in\mathcal F$ 时有定义；镇定结论还须证明相应闭环轨迹全过程留在 $\mathcal F$。若把 $\det B\ne0$ 重新假设为在整个 $\mathbb R^m$ 成立，研究对象就变回全局 FAS。
+
+需要另外区分 `[D]`：分段连续本身一般不能保证闭环常微分方程具有唯一经典解。若新论文的定理需要对每个初值得到唯一轨迹，并据此定义切换时刻或 ROEA，应根据闭环右端的具体形式补充局部 Lipschitz、Carathéodory 解条件或其他适用的解适定性条件，并在证明中说明用途。该增强不能标成 Duan 的 SUB-FAS 原始定义。
 
 ## 6. 状态时滞模型
 
@@ -187,7 +208,8 @@ $$
 | 扰动衰减或解耦 | 已知 $f$ 充分光滑；未知项、外部变量和动态扰动分别建模 | $B$ 充分光滑、全局非奇异；再附加输出或增广系统条件 | Part VI，第 2 节式 (1)、A1 |
 | 最优控制或输出反馈 | 先定义基础 $f_k$；再按目标加入输出、性能指标、可观测性或 Riccati 条件 | $B$ 充分光滑且全局非奇异 | Part VIII，第 2–3 节 |
 | 广义 PID 或模型参考跟踪 | $f_k$ 为非线性向量函数；另定义参考信号及其所需导数 | $B$ 为方阵并满足全驱性条件 | Part IX，第 2.1–2.2 节 |
-| SUB-FAS 亚镇定与 ROEA | 相应模型中 $f_k$、$B$ 分段连续；允许奇异集存在 | 仅在可行集内可逆；同时验证轨迹可行性与收敛性 | *Substability and Substabilization*；ROEA 论文 |
+| SUB-FAS 原始模型（2023） | 模型段称 $f$、$f_k$ 为非线性函数，未明确给连续性阶次 | $B$ 为矩阵函数并允许奇异集存在；只在可行集内可逆 | *Substability and Substabilization*，模型 (18)、(25) |
+| SUB-FAS 亚镇定与 ROEA（后续表述） | $f$ 或 $f_k$ 明确为分段连续 | $B$ 明确为分段连续；只在可行集内可逆；同时验证轨迹可行性与收敛性 | *Overview*；2024 欠驱动系统论文；ROEA 论文 |
 | 状态时滞控制 | $f$ 依赖由 $\tau_j$ 确定的时滞状态 | $B$ 可依赖由 $\sigma_j$ 确定的另一组时滞状态 | Delay systems Part 1，第 3.1.1 节 |
 
 ## 8. 论文检查清单
@@ -208,6 +230,8 @@ $$
 - Duan, *Part VI. Disturbance attenuation and decoupling*, Section 2, equation (1), Assumption A1.
 - Duan, *Part VIII. Optimal control with application in spacecraft attitude stabilisation*, Section 2, equations (1)–(6), Assumption A1.
 - Duan, *Part IX. Generalised PID control and model reference tracking*, Sections 2.1–2.2, equations (1)–(4), Assumption A1.
-- Duan, *Substability and Substabilization: Control of Subfully Actuated Systems*, Section II, equations (2)–(3), Definitions 2–6.
+- Duan, *Substability and Substabilization: Control of Subfully Actuated Systems*, equations (18)–(25), Definitions 2–6.
+- Duan, *Fully Actuated System Approach for Control: An Overview*, equation (2), Definition 2.
+- Duan, *Stabilisation of Four Types of Underactuated Systems: A FAS Approach*, single- and multi-order SUB-FAS models.
 - Duan, *Fully actuated system approaches for continuous-time delay systems: Part 1. Systems with state delays*, Section 3.1.1, equations (26)–(31), Assumption A1.
 - Duan and Wang, *Characterization of Region of Exponential Attraction for Substabilization of FASs*, Section 3, equations (14)–(16).
