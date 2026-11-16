@@ -110,15 +110,13 @@ Failure condition: a numerical $Z$ with singular $V(Z,F)$ is inadmissible even i
 7. verify causality: the controller uses only available history and computed prediction;
 8. carry feasibility conditions over the required delayed stack.
 
-## Template G: output-feedback/OD-FAS branch
+## Template G: output-feedback / OD-FAS branch (`OD-FAS Part 1 & Part 4` `[E]`)
 
-1. State exactly which outputs and derivatives are measured.
-2. define the OD-FAS representation without introducing unavailable states into the controller;
-3. derive any dynamic extension/observer equation;
-4. prove its solution exists and its estimation/reconstruction error has the claimed property;
-5. insert the available-information control law;
-6. derive the joint plant–controller closed loop;
-7. state whether the result is local/global and uniform/nonuniform.
+1. Decompose drift into state-dependent $f_x$ and output-dependent $f_y$, with output-dependent input matrix $B(y(t-\sigma_j(t))\vert_{j=1\sim q}, t)$, and apply $u(t)=-B^{-1}(\cdot, t)(f_y(\cdot, t)-u_0)$ (`Proposition 2.1`).
+2. For unmeasured derivatives ($q_2=\dot x$ in position feedback or $q_1=x$ in velocity feedback, optionally augmented with disturbance $d$), start from the formal full-order observer containing $\dot y$, introduce $z=\hat q_2+L(\varphi^{(0\sim 1)})y$ to cancel $\dot y$, and prove $\dot e=A_{o1}e$ (or $\dot e=R_E(\varphi)A_L R_E^{-1}(\varphi)e$).
+3. Write the ideal full-state controller $u_0$ first, replace unmeasured variables by $\hat q_2$ (`"Now, since q_2 = \dot x in (...) is unknown, let us substitute \dot x with \hat q_2..."`), and rearrange into the standard 4-block compensator $u_0=K_{11}y+K_{12}z,\ \dot z=K_{21}y+K_{22}z$.
+4. Prove closed-loop stability either via block-upper-triangular similarity $T A_E T^{-1}$ (`eig(A_E) = eig(\Phi(F_{0\sim 1})) \cup eig(L)`) or via cascade ISS stability (`Theorem 3.2 / Corollary 3.2`) under bounded / sublinear coupling growth.
+5. For sub-OD-FAS dynamical output feedback, characterize the RoEA in the **augmented initial-value space** $[X_0^\top\ z_0^\top]^\top \in \mathbb R^{nr+\nu}$ (`OD-FAS Part 1, Theorem 4.2`), and recover original coordinates via the diffeomorphism.
 
 ## Template H: switched SUB-FAS relative-margin theorem `[D]`
 
@@ -159,3 +157,18 @@ This template is the user's switched extension and must remain labeled `[D]`.
 
 See [duan-writing-corpus.md](duan-writing-corpus.md) §7 for verbatim Duan proof passages.
 
+
+## Template L: constrained UC-FAS cascade substabilization (`UC-FAS Part II` §3 `[E]`)
+
+1. Open the derivation with `"The procedure is divided into three natural steps."` (or $k$ steps).
+2. **Subsystem 1**: Define internal feasibility set $\mathbb F_x^{\mathrm{in}}$, design $u_x=u_{x0}^{\mathrm{d}}(x^{(0\sim n_x-1)},t)$ on $\mathbb F_x^{\mathrm{in}}$, write $X_\dagger(X_{\dagger 0},t)=\exp(\Phi(A_{0\sim n_x-1}^x)t)X_{\dagger 0}$ and control derivatives $u_{xi}^{\mathrm{d}}$, define external feasibility set $\mathbb F_x^{\mathrm{ex}}$ from joint state–input-derivative constraints, set $\mathbb F_x=\mathbb F_x^{\mathrm{in}}\cap\mathbb F_x^{\mathrm{ex}}$, and characterize $\mathcal R_x$.
+3. **Downstream subsystems**: Substitute $X_\dagger(X_{\dagger 0},t)$ and explicit upstream input derivatives $u_x^{(i)}=\xi_i^x(X_{\dagger 0},t)$ into the next subsystem to form a time-varying sub-FAS parameterized by $X_{\dagger 0}\in\mathcal R_x$; define $\mathbb F_y=\mathbb F_y^{\mathrm{in}}\cap\mathbb F_y^{\mathrm{ex}}$ and $\mathcal R_y$ (and similarly $\mathbb F_z, \mathcal R_z$).
+4. Take direct sums $\mathbb F_{xyz}=\mathbb F_x\oplus\mathbb F_y\oplus\mathbb F_z$ and $\mathcal R_{xyz}=\mathcal R_x\oplus\mathcal R_y\oplus\mathcal R_z$, and state the main substabilization theorem at the end of the cascade construction (`"Then we have the following conclusion. Theorem 3.1: ..."`).
+
+## Template M: generalized chained-form scaling & perturbation proofs (`SCIS 2024 Parts 1–2` `[E]`)
+
+1. Prove nonexistence of smooth / time-invariant continuous stabilizing laws first via Brockett's necessary condition (`Proposition 1`).
+2. **Discontinuous branch (`Part 1`)**: Set $u_0=-\beta x_0$ ($x_0(0)\ne 0$, `Assumption X`: $x_0(t)=x_0(0)e^{-\beta t}$), apply scaling $z_i=x_{n-i+1}/x_0^{n-i}$ to obtain an SFS (`Problem 1` $\Longleftrightarrow$ `Problem 2`), convert the SFS to a single-order FAS/sub-FAS, and prove both forward and inverse (`one-to-one`) convergence recovery.
+3. **Continuous dynamic branch (`Part 2`)**: Extend $\dot x_0=u_0$ to $\ddot x_0+a_1\dot x_0+a_0 x_0=0$ ($\alpha>\beta>0$) under $\dot x_0(0)\ne -\alpha x_0(0)$ (`Assumption B`), decompose $x_0(t)=\sigma_0(t)[1-\omega(t)]$ with nonvanishing $\sigma_0(t)=c_2 e^{-\beta t}\ne 0$, scale by $\sigma_0^{n-i}$ into a perturbed SFS/FAS, and prove UGE stability via integrable decaying perturbation bounds $\int_0^\infty \rho_\Delta(s)\mathrm d s<\infty$.
+
+See [duan-series-templates.md](duan-series-templates.md) for verbatim passages across OD-FAS, UC-FAS, IJSS Parts VI & X, SCIS series, and Chinese *Acta Automatica Sinica* papers.

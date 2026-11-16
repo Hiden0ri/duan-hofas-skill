@@ -52,7 +52,7 @@ Use [source-catalog.md](references/source-catalog.md) and `scripts/search_volume
 - For routine notation or writing-style checks already settled by [duan-style-quick-guide.md](references/duan-style-quick-guide.md) and [duan-writing-corpus.md](references/duan-writing-corpus.md), perform a direct static check and stop once answered; escalate to PDFs only for disputed equations, exact quotations, or unresolved source conflicts.
 - Keep edits proportional to the user's request; do not bundle unrelated cleanups or touch protected files (in particular, never modify `/home/yzk/paper-phi/latex/ieee_subfas_active_switching/main_v2.tex` unless explicitly instructed).
 - Task-specific reference index:
-  - **verbatim Duan writing corpus & environment/proof templates**: [duan-writing-corpus.md](references/duan-writing-corpus.md)
+  - **verbatim Duan writing corpus & environment/proof templates**: [duan-writing-corpus.md](references/duan-writing-corpus.md) and **series-specific templates (OD-FAS, UC-FAS, IJSS Parts VI & X, SCIS Delay/Chained, Chinese *Acta Automatica Sinica*)**: [duan-series-templates.md](references/duan-series-templates.md)
   - fast notation & drafting checklist: [duan-style-quick-guide.md](references/duan-style-quick-guide.md)
   - terminology and symbols: [concepts-and-notation.md](references/concepts-and-notation.md) and [symbol-dictionary.md](references/symbol-dictionary.md)
   - model variables, dimensions, and objective-specific regularity of $f$ and $B$: [model-definition-registry.md](references/model-definition-registry.md)

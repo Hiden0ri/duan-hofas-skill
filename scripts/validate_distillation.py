@@ -19,6 +19,7 @@ REQUIRED = {
     "references/concepts-and-notation.md",
     "references/derivation-patterns.md",
     "references/duan-first-author-habits.md",
+    "references/duan-series-templates.md",
     "references/duan-style-quick-guide.md",
     "references/duan-writing-corpus.md",
     "references/example-library.md",

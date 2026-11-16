@@ -346,3 +346,15 @@ This yields a contradiction. Thus [原结论]. The proof is finished.
 | 命题只写 `$X_0 \notin \mathcal{R}_i$`，把严格包含留给后面的 `Remark` | 在命题陈述内直接写出 `$X_0 \in \mathcal{R}_{\kappa^*} \setminus \bigcup_i \mathcal{R}_i$`（严格扩大） | 正式结论必须在陈述本身写明目标 |
 | 证明首句写 `"We first show that switching ceases..."`（单结论证明） | 首句直接进入对象与依据：`"Let X_0 \in \mathcal{R}_{\kappa^*}. By Definition 3, ..."` | Duan 65 个证明首句几乎不写空洞预告 |
 | 引图写 `"To illustrate strict enlargement, Fig. 2 presents..."` + 8 行长图题 | 正文写 `"... are shown in Fig. 2. It can be observed that ..."` + 3–6 词短图题 | 对齐 Duan 仿真叙述习惯，避免正文与图题重复 |
+
+
+---
+
+## 9. 五大专题系列专属结构标准范本索引 `[E]`
+
+针对具体分支或中文稿件/开题报告撰写，请直接查阅 **[duan-series-templates.md](duan-series-templates.md)** 中的分系列结构范本与逐字原句库：
+1. **最新 OD-FAS 输出依赖全驱系列（2026 `Part 1` 单阶 & `Part 4` 二阶动力学系统）**：$f_x + f_y$ 可测分离与控制变换降维、消去 $\dot y$ 的降阶观测器（$z = \hat q_2 + L y$）、理想全状态律替换化为 $(K_{11},K_{12},K_{21},K_{22})$ 动态补偿器、$T A_E T^{-1}$ 分块三角化与级联 ISS 证明、纯位置 vs 纯速度对偶 `Remark`、增广初值 $[X_0^\top\ z_0^\top]^\top$ 输出反馈 RoEA；
+2. **UC-FAS 受约束单向连接全驱系列（2025 `Part I–III`）**：强/弱单向连接定义、内部/外部可行集 $\mathbb{F}^{\mathrm{in}}\cap\mathbb{F}^{\mathrm{ex}}$ 与内外 RoEA、三级自然递推亚镇定构造及直和吸引域 $\mathcal{R}_{xyz} = \mathcal{R}_x\oplus\mathcal{R}_y\oplus\mathcal{R}_z$、单侧不穿零约束实根半平面扇区引理；
+3. **IJSS 抗扰解耦（`Part VI`）与离散时间系统（`Part X`）**：HOFAS 天然抗扰 `Remark`、GSE 参数化 $H_2$ 衰减与非齐次 GSE/RCF 渐近解耦；离散后退步 $x^{\lfloor 0\sim n\rfloor}(k)$ 与前进步 $x^{\lceil 0\sim n\rceil}(k)$ 反向堆叠记号、Schur 伴随矩阵 $\Psi(A_{0\sim n-1})$；
+4. **SCIS 三大双篇系列（离散时滞 `Part 1–2`、连续时滞 `Part 1–2`、广义链式系统 `Part 1–2`）与 TCYB Type I 时滞鲁棒系列**：逐时刻可行点集 $\mathbb{F}_k$ 与亚能控性、状态时滞包络球内估计、输入时滞区间预测器 $Z(s)$ 两步证明、链式非完整指数缩放与二阶主导模态分离；
+5. **《自动化学报》中文奠基系列（`I–III`）与《航空学报》（2024 亚严反馈）中文写作规范**：中文正式环境名（`定义/假设/问题/引理/命题/定理/推论/说明`）、中文权威术语与亚镇定证明原句模板。

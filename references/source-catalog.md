@@ -67,15 +67,19 @@ Local Chinese PDFs:
 
 ## Tier A: later Duan-first-author series selected by the user
 
-- Continuous-time delay systems, Part 1: state delays only. Local: `/home/yzk/Zotero/storage/M9ZXXY5Z/Duan - 2023 - Fully actuated system approaches for continuous-time delay systems part 1. Systems with state delay.pdf`
-- Continuous-time delay systems, Part 2: input delays. Local: `/home/yzk/Zotero/storage/YLYCAVMD/Duan - 2023 - Fully actuated system approaches for continuous-time delay systems part 2. Systems with input delay.pdf`
-- Generalized chained forms, Part 1: discontinuous control laws. Local: `/home/yzk/Zotero/storage/BU6HCI62/Duan - 2024 - A FAS approach for stabilization of generalized chained forms part 1. Discontinuous control laws.pdf`
-- Generalized chained forms, Part 2: continuous control laws. Local: `/home/yzk/Zotero/storage/4YCHUTBI/Duan - 2024 - A FAS approach for stabilization of generalized chained forms part 2. Continuous control laws.pdf`
-- Constrained unidirectionally connected FASs, Part I: models. Local: `/home/yzk/Zotero/storage/WRZJEN64/Duan - 2025 - Constrained unidirectionally connected FASs part I. Models.pdf`
-- Constrained unidirectionally connected FASs, Part II: sub-stabilisation. Local: `/home/yzk/Zotero/storage/7GDZPDA2/Duan - 2025 - Constrained unidirectionally connected FASs Part II. Sub-stabilisation.pdf`
-- Constrained unidirectionally connected FASs, Part III: applications. Local: `/home/yzk/Zotero/storage/E2JQ66GB/Duan - 2025 - Constrained unidirectionally connected FASs Part III. Applications.pdf`
-- Output-Dependent FASs and Output Feedback Control, Part 1: single-order FASs. Local: `/home/yzk/Zotero/storage/DFWNZ4EW/Duan - Output-Dependent FASs and Output Feedback Control, Part 1 Case of Single-order FASs.pdf`
-- Output-Dependent FASs and Output Feedback Control, Part 4: second-order dynamical systems. Local: `/home/yzk/Zotero/storage/Q3K6XVEF/Duan - Output Dependent FASs and Output Feedback Control, Part 4 Second-Order Dynamical Systems.pdf`
+- Discrete-time delay systems, Part 1: global fully actuated case (`SCIS`, 2022). Local: `/home/yzk/Zotero/storage/82ML8UK4/Duan_Discrete-time delay systems.pdf`
+- Discrete-time delay systems, Part 2: sub-fully actuated case (`SCIS`, 2022). Local: `/home/yzk/Zotero/storage/YHJBTQ4W/Duan - 2022 - Discrete-time delay systems part 2. Sub-fully actuated case.pdf`
+- Continuous-time delay systems, Part 1: state delays only (`SCIS`, 2023). Local: `/home/yzk/Zotero/storage/M9ZXXY5Z/Duan - 2023 - Fully actuated system approaches for continuous-time delay systems part 1. Systems with state delay.pdf`
+- Continuous-time delay systems, Part 2: input delays (`SCIS`, 2023). Local: `/home/yzk/Zotero/storage/YLYCAVMD/Duan - 2023 - Fully actuated system approaches for continuous-time delay systems part 2. Systems with input delay.pdf`
+- Robust stabilization of time-varying nonlinear systems with time-varying delays (Type I systems, `IEEE TCYB`, 2023). Local: `/home/yzk/Zotero/storage/FWHDATKP/Duan - 2023 - Robust Stabilization of Time-Varying Nonlinear Sys.pdf`
+- Stabilization via fully actuated system approach: a case study (`JSSC`, 2022) & frequency-domain linear solution (`Duan & Zhou`, `JSSC`, 2022). Local: `/home/yzk/Zotero/storage/7JN4ERB3/Duan_2022_Journal of Systems Science and Complexity_Stabilization via Fully Actuated System Approach.pdf`, `/home/yzk/Zotero/storage/P928LSUN/Duan和Zhou - 2022 - Fully Actuated System Approach for Linear Systems Control A Frequency-Domain Solution.pdf`
+- Generalized chained forms, Part 1: discontinuous control laws (`SCIS`, 2024). Local: `/home/yzk/Zotero/storage/BU6HCI62/Duan - 2024 - A FAS approach for stabilization of generalized chained forms part 1. Discontinuous control laws.pdf`
+- Generalized chained forms, Part 2: continuous control laws (`SCIS`, 2024). Local: `/home/yzk/Zotero/storage/4YCHUTBI/Duan - 2024 - A FAS approach for stabilization of generalized chained forms part 2. Continuous control laws.pdf`
+- Constrained unidirectionally connected FASs, Part I: models (`IJSS`, 2025). Local: `/home/yzk/Zotero/storage/WRZJEN64/Duan - 2025 - Constrained unidirectionally connected FASs part I. Models.pdf`
+- Constrained unidirectionally connected FASs, Part II: sub-stabilisation (`IJSS`, 2025). Local: `/home/yzk/Zotero/storage/7GDZPDA2/Duan - 2025 - Constrained unidirectionally connected FASs Part II. Sub-stabilisation.pdf`
+- Constrained unidirectionally connected FASs, Part III: applications (`IJSS`, 2025). Local: `/home/yzk/Zotero/storage/E2JQ66GB/Duan - 2025 - Constrained unidirectionally connected FASs Part III. Applications.pdf`
+- Output-Dependent FASs and Output Feedback Control, Part 1: single-order FASs (`IJSS`, 2026). Local: `/home/yzk/Zotero/storage/DFWNZ4EW/Duan - Output-Dependent FASs and Output Feedback Control, Part 1 Case of Single-order FASs.pdf`
+- Output-Dependent FASs and Output Feedback Control, Part 4: second-order dynamical systems (2026 manuscript). Local: `/home/yzk/Zotero/storage/Q3K6XVEF/Duan - Output Dependent FASs and Output Feedback Control, Part 4 Second-Order Dynamical Systems.pdf` (Note: `OD-FAS Part 2: Case of multi-order FASs` and `Part 3` are cited in `Part 4` but do not currently have local PDFs in Zotero.)
 
 Use branch-local notation only inside that branch. Part 4 is a manuscript/prepublication file unless its final bibliographic metadata are verified; cite its current status accurately.
 

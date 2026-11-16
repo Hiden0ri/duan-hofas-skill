@@ -26,6 +26,7 @@ A unified skill (for **Antigravity**, **Claude Code**, and **Codex**) for checki
 |---|---|
 | [SKILL.md](SKILL.md) | Skill entry point, operating modes, non-negotiable alignment rules, and LaTeX edit/compile protocol |
 | [references/duan-writing-corpus.md](references/duan-writing-corpus.md) | **Flagship verbatim Duan writing corpus**: section templates, 7 formal environments, 8 proof structures, connector phrasebook, and Anti-AI Do-vs-Don't table |
+| [references/duan-series-templates.md](references/duan-series-templates.md) | **Series-specific structural templates & verbatim corpus**: OD-FAS (`Part 1 & 4`), UC-FAS (`Part I–III`), IJSS (`Part VI & X`), SCIS Delay/Chained series, and Chinese *Acta Automatica Sinica* (`I–III`) / *Acta Aeronautica* norms |
 | [references/duan-style-quick-guide.md](references/duan-style-quick-guide.md) | Fast checklist for notation, article organization, switched sub-FAS extensions, and plotting |
 | [references/theorem-writing-template.md](references/theorem-writing-template.md) | Six-part Theorem structure plus `Lemma`, `Proposition`, `Corollary`, and `Problem` templates |
 | [references/proof-templates.md](references/proof-templates.md) | Executable fill-in skeletons for Duan's canonical proof types |
