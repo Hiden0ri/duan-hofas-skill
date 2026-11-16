@@ -27,6 +27,7 @@ A unified skill (for **Antigravity**, **Claude Code**, and **Codex**) for checki
 | [SKILL.md](SKILL.md) | Skill entry point, operating modes, non-negotiable alignment rules, and LaTeX edit/compile protocol |
 | [references/duan-writing-corpus.md](references/duan-writing-corpus.md) | **Flagship verbatim Duan writing corpus**: section templates, 7 formal environments, 8 proof structures, connector phrasebook, and Anti-AI Do-vs-Don't table |
 | [references/duan-series-templates.md](references/duan-series-templates.md) | **Series-specific structural templates & verbatim corpus**: OD-FAS (`Part 1 & 4`), UC-FAS (`Part I–III`), IJSS (`Part VI & X`), SCIS Delay/Chained series, and Chinese *Acta Automatica Sinica* (`I–III`) / *Acta Aeronautica* norms |
+| [references/corpus-guide.md](references/corpus-guide.md) | **Full-text Markdown corpus & FTS5 search guide**: how to build (`scripts/build_papers_corpus.py`), read (`corpus/papers/*.md` local symlink), and search (`scripts/search_corpus.py`) all 32 Duan first-author papers + *Volume I* |
 | [references/duan-style-quick-guide.md](references/duan-style-quick-guide.md) | Fast checklist for notation, article organization, switched sub-FAS extensions, and plotting |
 | [references/theorem-writing-template.md](references/theorem-writing-template.md) | Six-part Theorem structure plus `Lemma`, `Proposition`, `Corollary`, and `Problem` templates |
 | [references/proof-templates.md](references/proof-templates.md) | Executable fill-in skeletons for Duan's canonical proof types |
@@ -150,9 +151,17 @@ Expected review format:
 核对这句话或这个正则性条件出自 Duan 的哪篇原文，给出准确出处标注 [E]/[D]/[U]。
 ```
 
-## Optional local source search
+## Optional local full-text corpus & FTS5 search (Plan A)
 
-The repository does not distribute copyrighted PDFs or prebuilt SQLite databases. Paths in [references/source-catalog.md](references/source-catalog.md) and defaults in `scripts/search_volume1.py` / `scripts/build_volume1_index.py` reflect the author's local research environment. On another machine, pass your local PDF/database paths via CLI flags if you need full-text monograph search; routine checking, drafting, and template generation work out of the box without any local PDF database.
+To respect publisher copyright on public GitHub, the repository does not distribute copyrighted PDFs, converted full-text `.md` papers, or prebuilt SQLite databases. Instead, on a machine with local Zotero PDFs, run:
+
+```bash
+python3 scripts/build_papers_corpus.py
+ln -sfn "$HOME/.cache/duan-hofas/corpus" corpus
+python3 scripts/search_corpus.py --list-docs
+```
+
+This generates column-ordered, font-decoded structured Markdown full texts (`~/.cache/duan-hofas/corpus/papers/*.md`, gitignored via `corpus` symlink) and a unified SQLite FTS5 index (`~/.cache/duan-hofas/duan_corpus.sqlite`) across all 32 Duan first-author papers plus the 513-page *Volume I* monograph; see [references/corpus-guide.md](references/corpus-guide.md). Routine checking, drafting, and template generation work out of the box without building the local full-text cache.
 
 ## Important boundary
 

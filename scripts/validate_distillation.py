@@ -17,6 +17,7 @@ REQUIRED = {
     "references/common-lemmas.md",
     "references/concept-lineage.md",
     "references/concepts-and-notation.md",
+    "references/corpus-guide.md",
     "references/derivation-patterns.md",
     "references/duan-first-author-habits.md",
     "references/duan-series-templates.md",
@@ -54,6 +55,9 @@ def main() -> int:
             errors.append(f"missing required file: {relative}")
 
     for markdown in root.rglob("*.md"):
+        rel_parts = markdown.relative_to(root).parts
+        if rel_parts and rel_parts[0] in ("corpus", "reports"):
+            continue
         text = markdown.read_text(encoding="utf-8")
         if "TODO" in text:
             errors.append(f"unfinished TODO in {markdown.relative_to(root)}")

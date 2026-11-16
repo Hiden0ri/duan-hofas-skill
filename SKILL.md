@@ -45,7 +45,7 @@ Copy and adapt [duan-hofas-paper-template.tex](assets/duan-hofas-paper-template.
 
 ### 4. Resolve a disputed mathematical detail
 
-Use [source-catalog.md](references/source-catalog.md) and `scripts/search_volume1.py` only for the disputed item. Quote the exact source passage verbatim, record its locator, and keep `[E]` source-supported statements strictly separate from `[D]` derivations and `[U]` unverified items.
+Use [corpus-guide.md](references/corpus-guide.md), `scripts/search_corpus.py` (which searches all 32 local Duan first-author papers plus the 513-page *Volume I* monograph), and `corpus/papers/<doc_id>.md` (symlinked from `/home/yzk/.cache/duan-hofas/corpus`), escalating to the primary PDF page via `<!-- PDF p.X/N -->` when verifying multi-line matrix subscripts or symbols. Quote the exact source passage verbatim, record its locator, and keep `[E]` source-supported statements strictly separate from `[D]` derivations and `[U]` unverified items.
 
 ## Inspection depth, source-verification workflow, and editing protocol
 
@@ -60,7 +60,7 @@ Use [source-catalog.md](references/source-catalog.md) and `scripts/search_volume
   - derivation chains and executable proof templates: [derivation-patterns.md](references/derivation-patterns.md) and [proof-templates.md](references/proof-templates.md)
   - recurring assumptions, lemmas, and cited literature: [common-assumptions.md](references/common-assumptions.md), [common-lemmas.md](references/common-lemmas.md), and [frequently-cited-references.md](references/frequently-cited-references.md)
   - Duan first-author habits & style guidance: [duan-first-author-habits.md](references/duan-first-author-habits.md) and [writing-style.md](references/writing-style.md)
-  - source catalog & Volume I search rules: [source-catalog.md](references/source-catalog.md), [volume1-authority.md](references/volume1-authority.md), [concept-lineage.md](references/concept-lineage.md), and [coauthored-comparison.md](references/coauthored-comparison.md)
+  - source catalog, full-text Markdown corpus (`corpus/papers/*.md`), & unified FTS5 search (`scripts/search_corpus.py`): [corpus-guide.md](references/corpus-guide.md), [source-catalog.md](references/source-catalog.md), [volume1-authority.md](references/volume1-authority.md), [concept-lineage.md](references/concept-lineage.md), and [coauthored-comparison.md](references/coauthored-comparison.md)
   - rigor audit, examples, simulations, and regression tests: [rigor-audit.md](references/rigor-audit.md), [example-library.md](references/example-library.md), [simulation-patterns.md](references/simulation-patterns.md), and [adversarial-tests.md](references/adversarial-tests.md)
   - copyable LaTeX template: [duan-hofas-paper-template.tex](assets/duan-hofas-paper-template.tex)
 

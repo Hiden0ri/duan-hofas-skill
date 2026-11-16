@@ -1,0 +1,47 @@
+# Duan 原文全集文本库与统一检索指南（Plan A）
+
+为方便 Agent 在核查记号、核对原句、复核定理/证明细节时毫秒级调阅原文，同时避免将受出版社版权保护的期刊全文上传至公开 GitHub 仓库，`duan-hofas` 采用 **“本地缓存双层原文库 + 技能目录软链”** 架构：
+
+1. **第 1 层：双栏重排结构化 Markdown 全文库**（共 32 篇段广仁一作中英文论文）
+   - 物理路径：`/home/yzk/.cache/duan-hofas/corpus/papers/<doc_id>.md`
+   - 技能内软链路径：`corpus/papers/<doc_id>.md`（总目录见 `corpus/INDEX.md` 与 `corpus/manifest.json`，已在 `.gitignore` 中忽略 `/corpus`）
+   - 特性：基于 PyMuPDF 按真实双栏/单栏坐标重排阅读顺序，内置 Computer Modern（`CMMI`/`CMSY`/`CMEX`/`CMR`/`MSBM`）私用区数学字符解码与 NFKC 连字归一；每篇顶部自动生成 **Formal Landmarks Index**（列出全部 `Definition / Assumption / Condition / Problem / Lemma / Proposition / Theorem / Corollary / Remark / 定义 / 定理 / 说明` 所在 PDF 页码与 `.md` 行号），正文中每页带有 `<!-- PDF p.X/N -->` 锚点。
+2. **第 2 层：统一 SQLite FTS5 全文与定理检索库**（合并 32 篇论文 + 513 页 2026 专著 *Volume I*）
+   - 数据库路径：`/home/yzk/.cache/duan-hofas/duan_corpus.sqlite`
+   - 构建脚本：`python3 scripts/build_papers_corpus.py`
+   - 检索脚本：`python3 scripts/search_corpus.py`
+
+---
+
+## Agent 推荐查阅工作流
+
+1. **常规记号、句式与证明结构撰写/润色**：先读精选语料库 [duan-writing-corpus.md](duan-writing-corpus.md) 与分系列范本 [duan-series-templates.md](duan-series-templates.md)。
+2. **跨全集查找特定概念、定理或原句出处**：运行 `scripts/search_corpus.py` 定位 `doc_id`、PDF 页码与 `.md` 行号：
+   ```bash
+   # 列出全部 33 个已索引文献（32 篇一作论文 + Volume I 专著）
+   python3 scripts/search_corpus.py --list-docs
+
+   # 按系列 + 正式环境标签精确查找（如查 OD-FAS 系列中的 Proposition 4.1）
+   python3 scripts/search_corpus.py --label "Proposition 4.1" --series odfas
+
+   # 按正式环境类别 + 关键词检索（如查全部 Theorem 中与 RoEA 相关的陈述）
+   python3 scripts/search_corpus.py --query "RoEA feasibility" --kind Theorem
+
+   # 中英文精确子串检索（适合核对固定搭配或中文原句）
+   python3 scripts/search_corpus.py --literal "the feasible set clearly has the following expression"
+   python3 scripts/search_corpus.py --literal "破坏了许多系统原有的全驱特性" --series aas
+   ```
+3. **通读某篇论文的完整章节或证明**：直接用 `read_file` 读取 `corpus/papers/<doc_id>.md` 的对应行段（先读文件前 60 行的 `Formal Landmarks Index` 即可拿到每个定理/引理的精确行号）。
+4. **复杂跨行分块矩阵或上下标的最终核验**：若某处多行分块矩阵、积分上下限或特殊重音符号在纯文本重排中存在视觉歧义，根据 `.md` 中的 `<!-- PDF p.X/N -->` 与顶部的 `source_pdf` 路径，直接读取原 PDF 的该单页做最终核定。
+
+---
+
+## 32 篇本地一作论文 `doc_id` 速查表
+
+- **《自动化学报》/《航空学报》中文系列（`--series aas`）**：`aas_2020_part1`、`aas_2020_part2`、`aas_2020_part3`、`aaas_2024_subsfs`
+- **IJSS 基础系列（`--series ijss`）**：`ijss_2021_part1` 至 `ijss_2022_part10`、`ijss_2024_underactuated4`
+- **SCIS 三大双篇系列（`--series scis`）**：`scis_2022_discdelay1`、`scis_2022_discdelay2`、`scis_2023_delay1`、`scis_2023_delay2`、`scis_2024_chained1`、`scis_2024_chained2`
+- **TCYB / JSSC / FASTA 核心单篇（`--series core`）**：`jssc_2022_casestudy`、`jssc_2022_freq`、`tcyb_2023_subfas`、`tcyb_2023_robustdelay`、`tcyb_2024_overview`、`fasta_2026_roea`
+- **UC-FAS 受约束单向连接系列（`--series ucfas`）**：`ucfas_2025_part1`、`ucfas_2025_part2`、`ucfas_2025_part3`
+- **最新 OD-FAS 输出依赖输出反馈系列（`--series odfas`）**：`odfas_2026_part1`、`odfas_2026_part4`
+- **2026 专著第一卷（`--series volume1`）**：`book_2026_volume1`
