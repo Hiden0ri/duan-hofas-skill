@@ -1,14 +1,16 @@
-% Duan/HOFAS logical-style template.
+% Duan HOFAS / sub-FAS IEEEtran LaTeX template.
 % Replace every placeholder and verify all mathematics against the selected source.
 \IfFileExists{IEEEtran.cls}
   {\documentclass[journal]{IEEEtran}}
   {\documentclass[11pt]{article}}
 
-\usepackage{amsmath,amssymb,amsthm,bm}
+\usepackage{amsmath,amssymb,amsfonts,amsthm,bm,booktabs,cite,graphicx}
 
 \newtheorem{definition}{Definition}
 \newtheorem{assumption}{Assumption}
+\newtheorem{problem}{Problem}
 \newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
 \newtheorem{theorem}{Theorem}
 \newtheorem{corollary}{Corollary}
 \theoremstyle{remark}
@@ -22,88 +24,146 @@
 
 \begin{document}
 
-\title{Replace with a Precise HOFAS Title}
+\title{Replace With a Precise HOFAS or Sub-FAS Title}
 \author{Author Names}
 \maketitle
 
 \begin{abstract}
-State the system class, obstruction, method, principal theorem, and verified outcome.
+% 5-part Duan abstract: background/limitation -> system class & core concept ->
+% controller/switching construction -> closed-loop & ROEA property -> examples.
+State the problem limitation, system class, proposed HOFAS/sub-FAS method,
+principal closed-loop/ROEA results, and illustrative examples.
 \end{abstract}
 
 \section{Introduction}
-State one precise control problem. Identify the closest FAS/HOFAS result and the
-new obstruction. End with a short contribution chain.
+% Target ~1.5 pages for an ~8-page IEEE Transactions manuscript.
+% Flow: background & state-space bottleneck -> HOFAS/sub-FAS literature & gap ->
+% core idea -> contribution list -> organization -> italic Notations paragraph.
 
-\section{Notation and Problem Formulation}
-Define every compact stack before use. For example,
-\begin{equation}
-  x^{(i\sim j)}
+The main results of this paper are summarized as follows.
+\begin{enumerate}
+  \item State the first structural/modeling contribution.
+  \item State the second controller/switching contribution.
+  \item State the third closed-loop/ROEA characterization contribution.
+\end{enumerate}
+
+The remainder of this paper is organized as follows. Section~II introduces the
+system model and preliminaries. Section~III presents the controller design and
+main results. Section~IV gives numerical examples, and Section~V concludes the
+paper.
+
+\emph{Notations:} For simplicity, the argument \(t\) of a time-dependent
+variable is omitted when no confusion arises. For positive integers \(p\) and
+\(q\), \(\R^p\) and \(\R^{p\times q}\) denote the \(p\)-dimensional real vector
+space and the set of all \(p\times q\) real matrices, respectively. The symbols
+\(I_p\) and \(0_{p\times q}\) denote the identity and zero matrices of the
+indicated dimensions. For \(x\in\R^r\), \(x^{(j)}\) denotes its \(j\)th
+derivative, and
+\begin{equation*}
+  \xstack
   =\begin{bmatrix}
-     (x^{(i)})^{\top}&(x^{(i+1)})^{\top}&\cdots&(x^{(j)})^{\top}
-   \end{bmatrix}^{\top}.
-\end{equation}
+     x^{\mathrm{T}} & \dot x^{\mathrm{T}} & \cdots & \bigl(x^{(n-1)}\bigr)^{\mathrm{T}}
+   \end{bmatrix}^{\mathrm{T}}\in\R^{nr}.
+\end{equation*}
+For matrices \(A_j\in\R^{r\times r}\), \(j=0,1,\ldots,n-1\), define
+\begin{equation*}
+  \Arow=[\,A_0\ A_1\ \cdots\ A_{n-1}\,]
+\end{equation*}
+and
+\begin{equation*}
+  \Phic
+  =\begin{bmatrix}
+     0_{r\times r}&I_r&\cdots&0_{r\times r}\\
+     0_{r\times r}&0_{r\times r}&\ddots&\vdots\\
+     \vdots&\vdots&\ddots&I_r\\
+     -A_0&-A_1&\cdots&-A_{n-1}
+   \end{bmatrix}.
+\end{equation*}
 
-Select exactly one model family. For a single-order affine FAS:
+\section{Model Description and Preliminaries}
+
+Consider a single-order affine system in the following form:
 \begin{equation}\label{eq:model}
-  x^{(n)}
-  =f\!\left(\xstack,t\right)
-  +B\!\left(\xstack,t\right)u.
+  x^{(n)}=f\bigl(\xstack,t\bigr)+B\bigl(\xstack,t\bigr)u,
 \end{equation}
-State $x,u\in\R^r$, the dimensions of every function, and the time/domain.
+where \(n\geq 1\) is an integer, \(x\in\R^r\) and \(u\in\R^r\) are the state
+vector and the control input vector, respectively, and \(f(\cdot,t)\in\R^r\)
+and \(B(\cdot,t)\in\R^{r\times r}\) are piecewise continuous vector and matrix
+functions, respectively.
 
-\begin{definition}\label{def:model-class}
-Give the source-faithful class definition and its quantifiers.
+\begin{definition}\label{def:feasible-set}
+State the source-faithful singular set \(\mathcal{S}\), feasible set
+\(\mathcal{F}\), or class definition here.
 \end{definition}
 
-\begin{assumption}\label{ass:input-map}
-State the exact full-actuation or feasible-set condition used by the controller.
+\begin{assumption}\label{ass:main}
+State only the exact additional assumption needed by the analysis, with a clear
+use-site in the proof.
 \end{assumption}
 
-\section{Main Result}
+\section{Controller Design and Main Results}
 
-\begin{theorem}\label{thm:main}
-Suppose that system~\eqref{eq:model} satisfies
-Assumption~\ref{ass:input-map}. Let the design parameters be given with their
-dimensions, and suppose that they satisfy the stated matrix or stability
-conditions. Then, the following control law
+When \(\mathcal{F}\neq\emptyset\), \(B^{-1}\) exists on \(\mathcal{F}\). Hence,
+we construct the following controller on \(\mathcal{F}\):
 \begin{equation}\label{eq:controller}
-  u=-B^{-1}(\xstack,t)\bigl(\Arow\xstack+u^{*}\bigr),
+  u=-B^{-1}\bigl(\xstack,t\bigr)\bigl[\Arow\xstack+f\bigl(\xstack,t\bigr)-v\bigr],
 \end{equation}
-where $u^{*}$ is defined explicitly, guarantees the exact stability, tracking,
-robustness, or attraction-region property stated here with all quantifiers.
+where \(A_j\in\R^{r\times r}\), \(j=0,1,\ldots,n-1\), are design matrices.
+
+% Every Lemma, Proposition, Theorem, and Corollary MUST state its purpose
+% explicitly inside its own statement.
+\begin{theorem}\label{thm:main}
+Suppose that system~\eqref{eq:model} satisfies Assumption~\ref{ass:main}. Let
+the free parameters be arbitrarily given, and let \(A_j\in\R^{r\times r}\),
+\(j=0,1,\ldots,n-1\), be a set of matrices such that \(\Phic\) is Hurwitz.
+Consider the control law~\eqref{eq:controller} with \(v=0\). Then state the
+explicit closed-loop stability, convergence, and ROEA characterization here.
 \end{theorem}
 
 \begin{proof}
 Substituting control law~\eqref{eq:controller} into system~\eqref{eq:model}
-gives the closed-loop equation
+gives the closed-loop system
 \begin{equation}\label{eq:closed-loop}
-  x^{(n)}+\Arow\xstack=v.
+  x^{(n)}+\Arow\xstack=0,
 \end{equation}
-Write~\eqref{eq:closed-loop} in state-space form if needed. Invoke each
-assumption at its exact use-site, derive the required inequality or
-eigenstructure relation, and conclude the stated performance. For a sub-FAS,
-separately prove that the complete trajectory remains in the feasible set.
+which is equivalent to the following state-space form:
+\begin{equation}\label{eq:state-space}
+  \dot{x}^{(0\sim n-1)}=\Phic\xstack.
+\end{equation}
+% Complete the Lyapunov / trajectory-feasibility / contradiction argument.
+% Contradiction template (Duan & Zhou 2022 Lemma 4.4):
+%   Suppose that ... Then it follows from (...) that ... Therefore, there
+%   exists ... such that ..., which means that ... On the other side, ...
+%   This yields a contradiction. Thus ... The proof is finished.
+The proof is finished.
 \end{proof}
 
 \begin{remark}
-Explain one special case, design freedom, feasibility limitation, or practical
-interpretation. Do not introduce a missing theorem assumption here.
+Discuss design degrees of freedom, special cases, or implementation bounds here
+without hiding theorem hypotheses or proof-bearing main claims.
 \end{remark}
 
-\section{Illustrative Example}
+\section{Numerical Examples}
 
-\begin{example}
-Give the original equations, transformation or variable elimination, resulting
-FAS model, controller, closed-loop equation, and parameter choice in this order.
-\end{example}
+\begin{table}[!t]
+  \caption{System Parameters}
+  \label{tab:params}
+  \centering
+  \begin{tabular}{ccc}
+    \toprule
+    Symbol & Value & Meaning \\
+    \midrule
+    \(a_0\) & \(4\) & stiffness coefficient \\
+    \(a_1\) & \(1.2\) & damping coefficient \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
-\section{Simulation}
-Report model parameters, initial condition, reference/disturbance, controller
-parameters, numerical solver and tolerances, state/output response, control
-input, and branch-specific diagnostic quantities. State only what the figures
-actually demonstrate.
+% Use Duan narration: "The simulation results are shown in Fig. 1. It can be
+% observed that ..." and short 2-6 word noun-phrase captions.
 
 \section{Conclusion}
-Restate the solved problem, main mathematical result, and important limitation.
+Summarize the problem addressed, the main closed-loop and ROEA results, the
+numerical verification, and unaddressed scope boundaries.
 
 \end{document}

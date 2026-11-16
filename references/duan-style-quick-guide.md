@@ -2,19 +2,19 @@
 
 ## Purpose
 
-Use this file by default to check an existing Markdown/manuscript or to create a Duan-style paper skeleton. It distills recurring notation and organization; it does not replace the source theorem. For an exact mathematical claim, search the monograph or open the relevant original paper.
+Use this file together with [duan-writing-corpus.md](duan-writing-corpus.md) by default to check, draft, or polish an existing Markdown/manuscript or to create a Duan-style paper skeleton. It distills recurring notation, authentic phrasing, and structural organization; for an exact mathematical claim, search the monograph or open the relevant original paper.
 
 Default review order:
 
 1. identify the model family;
-2. check symbols and dimensions;
-3. check the boundary between the `Notations:` paragraph and model-specific definitions;
-4. check that each paper-local shorthand follows the mathematical object on which it depends;
-5. check terminology;
-6. check definitions and assumptions;
-7. check the theorem's six-part structure;
-8. check the substitution-first proof sequence;
-9. check Introduction scale, three-line tables, Remark, Example, simulation, and rendering.
+2. check Duan-first concepts, symbols, dimensions, and absence of index collisions;
+3. check the boundary between the unnumbered `Notations:` paragraph and model-specific definitions;
+4. check that each paper-local shorthand follows the mathematical object on which it depends, and that controllers are constructed before closed-loop equations;
+5. check terminology (`the ith subsystem` in switched systems, $|\varphi_i|$ instead of invented `"score"`, `"state-space form"` instead of `"first-order form"`);
+6. check definitions, assumptions, and problems (separating Duan `[E]` from paper-added `[D]`);
+7. check that every Theorem, Lemma, Proposition, and Corollary states its purpose inside its own statement, and check the six-part theorem structure;
+8. check Duan proof templates (substitution-first, trajectory-feasibility ROEA, `Duan & Zhou 2022` Lemma 4.4 contradiction, `Part III` / `Volume I` high-order backstepping);
+9. check Introduction ~1.5-page scale, three-line tables, Remark boundaries, Example/simulation narration (`"… are shown in Fig. X"`, `"It can be observed that …"`), short figure captions, `matlab/p1ot.m` plot rules, and orphan-word/Overfull layout safety.
 
 ## 1. Symbol quick reference
 
@@ -124,11 +124,11 @@ where ... , guarantees that ... .
 \end{theorem}
 ```
 
-The conclusion must name the controlled quantity, convergence type, domain of initial conditions, and exact set or performance bound.
+The conclusion must name the controlled quantity, convergence type, domain of initial conditions, and exact set or performance bound. **Every Theorem, Lemma, Proposition, and Corollary must state its purpose explicitly inside its own statement** (never relegate the real goal—such as strict ROEA enlargement or Zeno exclusion—to a surrounding sentence or Remark).
 
 ## 5. Proof organization
 
-Duan's recurring proof order is:
+Duan's recurring constructive proof order is:
 
 $$
 \text{control substitution}
@@ -144,38 +144,40 @@ $$
 \text{performance conclusion}.
 $$
 
-Useful paragraph openings:
+Open proofs directly with the deduction or object definition (do not start single-conclusion proofs with `"We first show that..."`). Useful verified paragraph openings and templates (full verbatim templates in [duan-writing-corpus.md](duan-writing-corpus.md)):
 
 ```text
 Substituting control law (...) into system (...) gives ...
+The closed-loop system (...) is equivalent to the following state-space form: ...
 In view of (...), we have ...
-It follows from Assumption ... that ...
-Combining the above relations gives ...
-Therefore, ...
-The proof is completed.
+It follows from (...) and Assumption ... that ...
+Combining (...) and (...), we obtain ...
+The first conclusion is then proven. / It remains to show that ...
+The proof is finished. / This completes the proof. / The proof is completed.
 ```
 
-For a SUB-FAS, add a separate feasibility layer after deriving the closed loop: prove that the whole response remains in the feasible set.
+- **Proof by contradiction (`Duan & Zhou 2022` Lemma 4.4 `[E]`)**: `"Suppose that [negation]. Then it follows from (x) that … Therefore, there exists … such that …, which means that [A]. On the other side, … implies that [not A]. This yields a contradiction. Thus [conclusion]. The proof is finished."` (Do not write `"We prove by contradiction"` or `"on the contrary"`.)
+- **High-order backstepping (`Part III` §4 / `Volume I` §9.2 `[E]`)**: Pre-compute $\tilde P_i(A_i^{0\sim m_i-1})$ $\to$ `The First Step` ($\tilde P_2 z_2^{(0\sim 1)} = x_2^{(0\sim 1)} - [\alpha_1^\top\ 0]^\top$, $\alpha_1$) $\to$ `The Second / k-th Step` ($\dot\alpha_{k-1} = h_{k-1} + \Delta h_{k-1}$, $\alpha_k$ with $+v_{k-1}$) $\to$ `The n-th Step` ($u$) $\to$ `The Conclusion` ($V=\sum V_i$ telescoping to $\dot V\le -\mu V+n\varepsilon$, ending with `"The above process clearly proves the following result."` before `Theorem`).
+- For a SUB-FAS, always prove full-time trajectory feasibility ($X(t)\in\mathcal F$ for all $t\ge 0$) in addition to closed-loop linear stability.
 
 ## 6. Verified high-frequency language
 
-Counts below come from the main text and appendices of the 2026 Volume I extraction and are corpus indicators, not mandatory phrases.
+Counts below come from the main text and appendices of the 2026 Volume I extraction (supplemented by the 22-paper verbatim corpus in [duan-writing-corpus.md](duan-writing-corpus.md)). **Actively prefer Duan's authentic expressions** when drafting or polishing, while writing out nontrivial algebraic steps explicitly and avoiding AI-flavored defensive `"not X, but Y"` disclaimers:
 
 | Phrase | Count | Function |
 |---|---:|---|
 | `Substituting` | 70 | begin direct algebraic substitution |
 | `Therefore` | 74 | state a derived consequence |
-| `It follows from` | 65 | cite the basis of a step |
-| `In view of` | 41 | combine a prior equation or assumption |
-| `Let us consider` | 33 | introduce a model or case |
-| `Suppose that` | 20 | introduce theorem hypotheses |
+| `It follows from` | 65 | cite the basis of a step at sentence start |
+| `In view of` | 41 | combine prior equations or assumptions (`In view of`, never `In the view of`) |
+| `The above result / theorem` | 58 (papers) | interpret what a proved result reveals or converts |
+| `Let us consider` / `Consider` | 33+ | introduce a model, subsystem, or example |
+| `Suppose that` | 20+ | introduce theorem hypotheses or contradiction negation |
 | `guarantees that` | 14 | introduce the performance conclusion |
-| `Please note that` | 13 | emphasize interpretation or a special case |
-| `For convenience` | 12 | explain a notation or scope simplification |
-| `Remark` | 84 occurrences | interpretation, comparison, limitation, or special case |
+| `clearly has the following expression:` | verified `[E]` | introduce an explicit feasible/ROEA set expression |
+| `construct the following controller:` | verified `[E]` | introduce controller on the feasible set before closed loop |
+| `Remark` | 84 occurrences | interpretation, comparison, DOFs, or special case (never hide proof-bearing main claims here) |
 | `Example` | 71 occurrences | model, procedure, or numerical illustration |
-
-`Clearly` occurs frequently in the corpus, but a new TAC manuscript should replace it with the actual implication whenever the step is nontrivial.
 
 ## 7. Remark and Example patterns
 
@@ -214,33 +216,31 @@ $$
 
 If an example is continued across sections, keep the same numbering and explicitly state which earlier equations are reused.
 
-## 8. Simulation-writing template
+## 8. Simulation, figure captions, and `matlab/p1ot.m` template
 
 Report in this order:
 
-1. model parameters and their source;
-2. initial condition and reference/disturbance signals;
-3. controller parameters and why they satisfy the theorem;
-4. solver, step size, tolerances, and simulation horizon;
-5. state or tracking response;
-6. control input;
-7. branch-specific quantities such as uncertainty estimates or feasibility margins;
-8. what the plots demonstrate—and what they do not prove.
+1. model parameters and their exact provenance (separating cited plant parameters `[E]` from paper-assumed terms `[D]`);
+2. initial value $X_0$ and reference/disturbance signals;
+3. controller parameters $A_{0\sim n-1}$, resulting Hurwitz $\Phi(A_{0\sim n-1})$, controller expression, and assigned closed-loop equation;
+4. numerical integration method, step size, tolerances, and event-handling rule;
+5. figure references using Duan's sentence pattern: `"The simulation results are shown in Fig. X. It can be observed that …"` / `"… are illustrated in Fig. X."` (never `"To illustrate …, Fig. X presents …"`);
+6. short figure captions (2–6 word noun phrases, e.g., `"State variables."`, `"Closed-loop response and switching signal."`, `"Singular sets and the state trajectory."`, without repeating proved theorems or multi-sentence explanations);
+7. MATLAB plotting rules per user's `matlab/p1ot.m`: solid `'b-'`/`'r-'`/`'m-'` with `'linewidth', 1`, LaTeX legend `'FontSize', 12`, dashed reference lines `[0.15, 0.15, 0.15]` at `'LineWidth', 1.5`, no grid, no figure title, `axis square`, explicit `xlim`/`ylim`, `'Time(s)'` x-label, Duan variable-symbol y-labels (`'$x$ and $\dot x$'`, never `'States'`), and red vertical dashed lines `'r--'` with x-tick timestamps at switching instants;
+8. accurate scope of numerical evidence—never call a finite-horizon simulation or sampled plot a proof or exact ROEA.
 
 Never change a source parameter merely to reproduce a desired curve without first documenting the necessity and effect.
 
-## 9. Duan style versus TAC style
+## 9. Duan style alignment vs. AI-prose pitfalls
 
-| Duan corpus tendency | Recommended TAC adaptation |
+| Pitfall to avoid | Duan-aligned practice |
 |---|---|
-| long motivation comparing FAS and state space | shorten to the precise obstruction addressed by the paper |
-| `Clearly` or `It can be easily observed` | show the algebraic implication |
-| repeated explanation of the FAS philosophy | state it once, then focus on the new theorem |
-| broad statements of advantage | compare assumptions, domain, controller, and conclusion explicitly |
-| theorem followed by several interpretive remarks | retain only remarks that affect novelty, implementation, or limitations |
-| simulation after a long analytic example | keep traceability but state the comparison baseline and metrics |
-
-Preserve Duan's terminology, notation, and logical chain. Do not copy promotional rhetoric or grammatical idiosyncrasies mechanically.
+| stripping out Duan's natural phrases (`clearly has the following expression`, `construct the following controller`) | retain and use Duan's authentic expressions from [duan-writing-corpus.md](duan-writing-corpus.md) |
+| defensive `"not X, but Y"` disclaimers scattered across sections | state definitions and scope conditions positively once |
+| hiding a proposition/corollary's true goal in a Remark | state the exact goal inside the Proposition/Corollary/Lemma/Theorem itself |
+| single-claim proof opening `"We first show that..."` | start directly with `"Let ... By (...), ..."` or `"It follows from (...) that..."` |
+| long multi-sentence figure captions + `"To illustrate ..., Fig. X presents..."` | 2–6 word noun-phrase caption + `"… are shown in Fig. X. It can be observed that …"` |
+| skipping a nontrivial squeeze/continuity step behind `"Clearly"` | keep Duan's connector rhythm while writing out the explicit mathematical inequality |
 
 ## 10. IEEE Transactions opening, Notations, and tables
 

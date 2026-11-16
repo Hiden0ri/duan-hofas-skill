@@ -118,7 +118,16 @@ The corresponding recurring language roles are:
 | `where ...` | immediate auxiliary definitions |
 | `guarantees that ...` | exact performance conclusion |
 
-Preserve the logical roles, but adapt capitalization and punctuation to the target journal instead of copying surface wording mechanically.
+Preserve the logical roles and **actively use Duan's verified connector wording** (see [duan-writing-corpus.md](duan-writing-corpus.md) §6 for verbatim templates of Theorems, Lemmas, Propositions, and Corollaries).
+
+### 3.1 Universal explicit-goal rule (Theorem, Lemma, Proposition, Corollary)
+
+Every `Theorem`, `Lemma`, `Proposition`, and `Corollary` must make its **actual purpose in the paper** directly visible inside its own statement:
+
+- Do **not** state only an intermediate technical fact (such as $X_0\notin\mathcal R_i$) and leave the real conclusion (such as strict enlargement $X_0\in\mathcal R_{\kappa^*}\setminus\bigcup_{i\in\mathcal P}\mathcal R_i(A_{0\sim n-1})$) to a lead-in sentence or subsequent `Remark`.
+- Multi-part conclusions follow Duan's numbered style `"Then 1) …; 2) …"` (e.g., `Duan 2023` Theorem 1; `main_v2.tex` Lemma 1).
+- Corollaries are introduced by `"Taking/Letting … in the above Theorem X gives the following corollary."` or `"The following corollary establishes that …"`, open with `"Let the conditions in Theorem X be met."` or a parallel `Let [system] satisfy … and [matrices] be …` clause (using base verb `satisfy` and separating plant assumptions from parameter conditions), and may attach the control meaning via a relative clause `", which drives all the state variables to zero exponentially"` / `", which excludes Zeno behavior"`.
+- Immediately after a major theorem or corollary, Duan often adds a single interpretive sentence: `"The above theorem/result reveals/converts/establishes …"` `[E]`.
 
 The corresponding proof should follow:
 

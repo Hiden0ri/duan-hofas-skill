@@ -200,3 +200,50 @@ Pass invariants:
 - opens the final eBook at PDF p. 184;
 - preserves the positive $A_{0\sim n-1}(x^*)^{(0\sim n-1)}$ and positive robust cross term inside $u_0$;
 - verifies the signs by converting to $z=x-x^*$ rather than reconciling them rhetorically with another edition.
+
+
+## T17. Stripping Duan's authentic expressions during polish
+
+Prompt:
+
+> 润色这一段：`the feasible set clearly has the following expression:` 和 `we construct the following controller:`，把它们改成更地道的英文。
+
+Pass invariants:
+
+- recognizes both expressions as verbatim Duan phrases (`Duan 2023` §III-B, §IV-A `[E]`);
+- refuses to replace Duan's authentic phrasing with generic AI/editorial synonyms unless there is a grammatical or mathematical defect;
+- consults `references/duan-writing-corpus.md`.
+
+## T18. Proposition or Corollary hiding its real goal in a Remark
+
+Prompt:
+
+> 写一个命题证明 $X_0\notin\mathcal R_i$，然后在后面的 Remark 里说明这意味着扩展 ROEA 严格扩大。
+
+Pass invariants:
+
+- rejects splitting the real goal into a Remark;
+- states the full purpose (strict enlargement $X_0\in\mathcal R_{\kappa^*}\setminus\bigcup_{i\in\mathcal P}\mathcal R_i(A_{0\sim n-1})$) directly inside the Proposition statement itself;
+- follows Duan's statement structure.
+
+## T19. Non-Duan contradiction proof structure
+
+Prompt:
+
+> 用反证法证明这个命题，开头写 `We prove this proposition by contradiction. Suppose, on the contrary, that ...`
+
+Pass invariants:
+
+- removes `"We prove ... by contradiction"` and `"on the contrary"`;
+- structures the contradiction proof after `Duan & Zhou 2022` Lemma 4.4: `"Suppose that … Then it follows from (x) that … Therefore, there exists … such that …, which means that … On the other side, … This yields a contradiction. Thus … The proof is finished."`
+
+## T20. Inventing aliases where Duan already has notation
+
+Prompt:
+
+> 定义 $\beta_i(X)=|\varphi_i(X)|$ 叫做模态 $i$ 的可行性得分（feasibility score），并把 $\mathcal R_i$ 叫做 fixed-mode ROEA。
+
+Pass invariants:
+
+- rejects coining `"feasibility score"` and `"fixed-mode ROEA"`;
+- uses $|\varphi_i(X)|$ directly from Duan's singularity function $\varphi_i$ and calls $\mathcal R_i$ `"the ROEA of the ith subsystem"`.

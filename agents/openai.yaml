@@ -1,4 +1,4 @@
 interface:
   display_name: "Duan HOFAS"
-  short_description: "检查HOFAS符号与论文结构，并快速生成Duan风格LaTeX模板"
-  default_prompt: "使用 $duan-hofas 检查这份文稿的符号、文章结构和定理写法是否符合Duan习惯，并给出可定位的修改建议。"
+  short_description: "基于段广仁原文语料库撰写、润色与核查HOFAS/sub-FAS文稿、定理与证明结构，并生成LaTeX模板"
+  default_prompt: "使用 $duan-hofas 对照段广仁原文语料库与结构规范，检查或润色这份文稿的记号、定义、定理目标、证明结构与语言习惯。"

@@ -19,8 +19,8 @@
 | 亚稳定性 / 亚镇定 | substability / substabilization | 子稳定 / 协同镇定 |
 | 指数吸引域 | region of exponential attraction (ROEA) | 未经区分的指数收敛域 |
 | 有理亚全驱系统 | rational sub-FAS | 自造译名 |
-| 临界有理亚全驱系统 | critically rational sub-FAS `[U: verify exact English]` | 自造译名 |
-| 无理亚全驱系统 | irrational sub-FAS `[U: verify exact English]` | 自造译名 |
+| 临界有理亚全驱系统 | critical rational sub-FAS (`Duan 2023` Def. 4) / critically rational sub-FAS (`Duan 2023` Cor. 2; `Overview 2024` Def. 10) `[E]` | 自造译名 |
+| 无理亚全驱系统 | irrational sub-FAS `[E: Duan 2023 Def. 4]` | 自造译名 |
 | 消元升阶 | variable elimination and order elevation | 高阶提升 |
 | 增元降阶、变量增广 | variable extension and order reduction | 状态提升 |
 
@@ -160,8 +160,8 @@ e^{\Phi(A_{0\sim n-1})t}X_0,
 \qquad X_0=x^{(0\sim n-1)}(0).
 $$
 
-The ROEA is the set of initial values for which this response remains in $\mathcal F$ for all $t\ge0$ and converges exponentially to the origin. Use the exact paper definition when delays or multi-order states are present.
+The ROEA is the set of initial values for which this response remains in $\mathcal F$ for all $t\ge0$ and converges exponentially to the origin (`Duan 2023` uses blackboard bold $\mathbb S,\mathbb F$ and `ROEA`; `Overview 2024` and `Duan & Wang 2026` also use `RoEA` and $\mathcal R$ `[E]`). Note Duan's consistent three-way symbol division `[E]`: generic point $X$ inside set definitions, initial value $X_0=x^{(0\sim n-1)}(0)$ (never $x_0^{(0\sim n-1)}$), and state trajectory $x^{(0\sim n-1)}(t)$ (or parameterized response $X(t;X_0,\kappa)$ when explicitly equated). Use the exact paper definition when delays or multi-order states are present.
 
-## User-project extensions
+## User-project extensions `[D]`
 
-“扩展可行集”, “扩展 ROEA”, “最大裕量切换律”, and “切换亚全驱系统的指数吸引域” are research extensions `[D]`. Do not present them as Duan's definitions.
+In the switched sub-FAS line (`main_v2.tex` / `main_v2_idea.tex`), `the ith subsystem` ($i\in\mathcal P=\{1,2,\ldots,N\}$), cross-subsystem comparison of $|\varphi_i(X)|$, continuity of $\varphi_i$ on $\mathbb R^{nr}$ (Assumption 1), extended feasible set $\mathcal F_{\rm ext}=\bigcup_{i\in\mathcal P}\mathcal F_i$, holding/switching regions $\Omega_i,\widetilde\Omega_i$, relative-margin switching law $\kappa^*$, extended ROEA $\mathcal R_\kappa$ / $\mathcal R_{\kappa^*}$, and parameter-dependent subsystem ROEA $\mathcal R_i(A_{0\sim n-1})$ are research extensions `[D]`. Do not present them as Duan's original definitions, and do not coin redundant aliases like `"feasibility score"` or `"fixed-mode ROEA"`.

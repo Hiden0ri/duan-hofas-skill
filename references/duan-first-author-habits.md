@@ -186,17 +186,18 @@ A recurring outline is:
 
 The output-dependent and unidirectionally connected series use multi-part papers: Part 1 establishes models/basic cases; later parts specialize feedback information, substabilization, or applications.
 
-## 14. Language habit versus recommended journal style
+## 14. Authentic Duan language and mathematical rigor
 
-Duan frequently uses phrases such as “For convenience,” “By our notations,” “It can be easily observed,” and “Clearly.” These are authorial patterns, but a new TAC manuscript should not copy them automatically. Replace them with the actual algebraic implication whenever the step carries mathematical content.
+Duan's papers use recurring signature expressions such as `"For convenience,"` `"In view of (...), we have,"` `"It follows from (...) that,"` `"the feasible set clearly has the following expression,"` `"we can immediately construct the following controller,"` `"is equivalent to the following state-space form,"` `"The above theorem/result reveals/converts...,"` `"gives the following corollary,"` and `"… are shown in Fig. X. It can be observed that …"` (cataloged verbatim in [duan-writing-corpus.md](duan-writing-corpus.md)).
 
-Preserve terminology and logical structure; do not imitate grammatical idiosyncrasies or unsupported claims of simplicity/superiority.
+When drafting or polishing in Duan style:
+
+1. **Preserve and prefer Duan's authentic expressions and structural templates** (including six-part theorems, explicit goals in every Theorem/Lemma/Proposition/Corollary, `Duan & Zhou 2022` Lemma 4.4 contradiction proofs, `Part III` / `Volume I` high-order backstepping, and short 2–6 word figure captions). Do **not** rewrite Duan's natural phrases into generic AI/editorial prose.
+2. **Supply explicit mathematical steps** whenever an implication is nontrivial (e.g., squeeze theorem, uniform continuity on compact trajectory closures, reverse recovery in variable elimination), and avoid unsupported superiority claims or AI-style defensive `"not X, but Y"` disclaimers.
 
 ## 15. Mandatory synthesis rule
 
-When asked to “write like Duan,” produce two layers:
+When asked to write or revise in Duan style, combine:
 
-1. **Duan-faithful mathematical layer:** model, notation, transformation, control law, closed-loop equation, parameter freedom, theorem, feasibility.
-2. **Target-journal editorial layer:** concise contribution statement, explicit limitations, precise citations, and modern TAC/Automatica language.
-
-The first layer protects technical lineage; the second prevents stylistic imitation from weakening publication quality.
+1. **Duan-authentic mathematical & stylistic layer:** Duan's concepts, symbols, `Notations:` layout, controller-before-closed-loop order, formal environment templates (with explicit goals in every statement), proof templates, and verbatim connector phrases from [duan-writing-corpus.md](duan-writing-corpus.md).
+2. **Strict provenance & precision layer:** separate `[E]` from `[D]`/`[U]`, distinguish definition / exact characterization / inner estimate / numerical approximation, and state exact assumptions used by the proof without attributing paper-added conditions to Duan.

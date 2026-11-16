@@ -120,20 +120,42 @@ Failure condition: a numerical $Z$ with singular $V(Z,F)$ is inadmissible even i
 6. derive the joint plant–controller closed loop;
 7. state whether the result is local/global and uniform/nonuniform.
 
-## Template H: new switched SUB-FAS theorem `[D]`
+## Template H: switched SUB-FAS relative-margin theorem `[D]`
 
-1. Define every mode $i\in\mathcal M$ and its $\mathcal F_i$.
-2. Define $\mathcal F_{\mathrm{ext}}=\bigcup_i\mathcal F_i$ independently of the switching law.
-3. give each $\mu_i$ and one fixed state-dependent switching law $\kappa$;
-4. specify memory, hysteresis, tie breaking, and initial mode;
-5. prove each active control law is defined along flows;
-6. prove switching preserves membership in $\mathcal F_{\mathrm{ext}}$;
-7. prove existence and uniqueness of the hybrid/switched solution under stated regularity;
-8. prove finite escape is excluded or give a continuation argument;
-9. prove non-Zeno behavior on every finite interval;
-10. derive convergence under the fixed closed loop $(\{\mu_i\},\kappa)$;
-11. define its extended ROEA after the closed loop is fixed;
-12. prove equality or inclusion claims with explicit quantifiers.
+1. Declare index set $\mathcal P=\{1,2,\ldots,N\}$ and each subsystem (`the ith subsystem`) with piecewise continuous $f_i, B_i$; assume $x^{(0\sim n-1)}$ does not jump at switching instants.
+2. Define $\mathcal S_{i,0}, \mathcal S_{i,\infty}, \mathcal S_i$, feasible set $\mathcal F_i=\mathbb R^{nr}\setminus\mathcal S_i$, and singularity functions $\varphi_{i,0}, \varphi_{i,\infty}, \varphi_i$ following Duan (2023) Definitions 5–6 `[E]`.
+3. State Assumption 1 `[D]`: each $\varphi_i:\mathbb R^{nr}\to\mathbb R$ is fixed and continuous on $\mathbb R^{nr}$.
+4. Define $\mathcal F_{\rm ext}=\bigcup_{i\in\mathcal P}\mathcal F_i=\{X:\max_{i\in\mathcal P}|\varphi_i(X)|>0\}$ and origin feasibility $\max_{i\in\mathcal P}|\varphi_i(0)|>0$.
+5. Construct subsystem controller $u_i=-B_i^{-1}(x^{(0\sim n-1)})[A_{0\sim n-1}x^{(0\sim n-1)}+f_i(x^{(0\sim n-1)})]$ on $\mathcal F_i$ first, then substitute to obtain the common linear closed-loop equation $x^{(n)}+A_{0\sim n-1}x^{(0\sim n-1)}=0$.
+6. Define the extended ROEA $\mathcal R_\kappa$ from the unique closed-loop response on $[0,\infty)$ under switching law $\kappa$ with initial value $X_0=x^{(0\sim n-1)}(0)$.
+7. Construct holding/switching regions $\Omega_i, \widetilde\Omega_i$ using $|\varphi_i(X)|$ vs. $\gamma\max_{j\in\mathcal P}|\varphi_j(X)|$ ($\gamma\in(0,1)$), deterministic `min(argmax)` tie-breaking, and switching law $\kappa^*$.
+8. Prove Lemma 1 (on $[0,T)$ with feasible limit at $T^-$: finitely many switches via uniform continuity on compact $K_T$ + unique continuation beyond $T$).
+9. Prove Theorem 1 (active controller well-defined when $\sigma(t)=i$, common state-space response $e^{\Phi(A_{0\sim n-1})t}X_0$, common Lyapunov decay, origin neighborhood in $\mathcal R_{\kappa^*}$, and exact characterization $\mathcal R_{\kappa^*}=\{X_0:e^{\Phi(A_{0\sim n-1})t}X_0\in\mathcal F_{\rm ext},\ \forall t\ge0\}$).
+10. Prove Proposition 1 (parameter-independent strict enlargement $X_0\in\mathcal R_{\kappa^*}\setminus\bigcup_{i\in\mathcal P}\mathcal R_i(A_{0\sim n-1})$ via Template I contradiction) and Corollary 1 (finite total switches on $[0,\infty)$ on compact $K_\infty$, excluding Zeno behavior).
 
-This template is not a Duan theorem. It is the user's research extension and must remain `[D]`.
+This template is the user's switched extension and must remain labeled `[D]`.
+
+## Template I: proof by contradiction (`Duan & Zhou 2022` Lemma 4.4 `[E]`)
+
+1. Start directly with `"Suppose that [negation of conclusion]."` (never write `"We prove by contradiction"` or `"Suppose, on the contrary"`).
+2. Deduce consequences using `"Then it follows from (x) that [display]."`
+3. Construct the witnessing object deduced from the negation: `"Therefore, there exists … such that [display], which means that [Property A]."`
+4. Establish the opposing fact: `"On the other side, [hypothesis / plant equation] implies that [not Property A]."`
+5. Close with the exact three-sentence cadence: `"This yields a contradiction. Thus [original conclusion]. The proof is finished."`
+
+## Template J: high-order backstepping (`Part III` §4; `2026 Volume I` §9.2 `[E]`)
+
+1. **Preparations**: Select $A_i^{0\sim m_i-1}$ with $\operatorname{Re}\lambda_k(\Phi(A_i^{0\sim m_i-1}))\le -\mu/2$, solve $\Phi^\top P_i+P_i\Phi\le -\mu P_i$ for $P_i=[P_{iF}\ P_{iL}]$, define $\tilde P_i=\mathring{I}P_i$ and $\tilde P_i^{-1}=[Q_{i1}^\top\ Q_{i2}^\top]^\top$, and verify $Q_{iL}\ne 0$.
+2. **`The First Step`**: Set $z_1^{(0\sim m_1-1)}=x_1^{(0\sim m_1-1)}$ and $\tilde P_2 z_2^{(0\sim m_2-1)}=x_2^{(0\sim m_2-1)}-[\alpha_1^\top\ 0]^\top$; design first virtual control $\alpha_1=-L_1^{-1}(A_1^{0\sim m_1-1}z_1^{(0\sim m_1-1)}+\alpha_1^*)$ to get $z_1^{(m_1)}+A_1^{0\sim m_1-1}z_1^{(0\sim m_1-1)}=\varphi_1+w_1$.
+3. **`The Second / k-th Step`**: Differentiate $\alpha_{k-1}$ only $m_k-1$ times and split certain/uncertain parts ($h_{k-1}+\Delta h_{k-1}$); express $z_k^{(m_k)}$ via $\tilde P_k^{-1}$; introduce $\tilde P_{k+1}z_{k+1}^{(0\sim m_{k+1}-1)}$; design $\alpha_k$ including coupling cancellation $+v_{k-1}$ ($v_{k-1}=L_{k-1}^\top P_{k-1,L}z_{k-1}^{(0\sim m_{k-1}-1)}$) to obtain $z_k^{(m_k)}+A_k^{0\sim m_k-1}z_k^{(0\sim m_k-1)}=\varphi_k+w_k-v_{k-1}$.
+4. **`The n-th Step`**: Design actual control law $u=-L_n^{-1}(A_n^{0\sim m_n-1}z_n^{(0\sim m_n-1)}+u^*)$ with $+v_{n-1}$, yielding $z_n^{(m_n)}+A_n^{0\sim m_n-1}z_n^{(0\sim m_n-1)}=\varphi_n-v_{n-1}$.
+5. **`The Conclusion`**: Define $V=\sum_{i=1}^n (z_i^{(0\sim m_i-1)})^\top P_i z_i^{(0\sim m_i-1)}$, cancel cross terms via $(z_i)^\top P_{iL}w_i=(z_{i+1})^\top P_{i+1,L}v_i$ (`"Adding the equations in (...) side by side, and using (...), give \dot V\le -\mu V+n\varepsilon"`), and introduce the formal theorem with `"The above process clearly proves the following result."`
+
+## Template K: sufficiency/necessity, multi-conclusion, and induction proofs `[E]`
+
+- **Sufficiency & Necessity**: Label paragraphs `"Sufficiency: …"` and `"Necessity: …"`, closing with `"Combining the above two aspects gives the complete proof of the result."` `[E: Duan 2023 Proposition 2]`.
+- **Multi-conclusion**: Prove in stated order (`"The first two conclusions are obvious. To show the third condition, …"`, `"The first conclusion is then proven."`, `"It remains to show that …"`).
+- **Mathematical induction**: Open with `"We prove the theorem via the n-step induction. Step 1: …"` or `"We use mathematical induction to prove this result."` `[E: Volume I Ch. 7–8]`.
+
+See [duan-writing-corpus.md](duan-writing-corpus.md) §7 for verbatim Duan proof passages.
 
