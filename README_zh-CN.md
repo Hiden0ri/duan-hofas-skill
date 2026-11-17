@@ -22,24 +22,62 @@
 - **算例、短图题、三线表与 MATLAB 绘图规范**（[simulation-patterns.md](references/simulation-patterns.md)）：2–6 词名词短语短图题、正文 `"... are shown in Fig. X. It can be observed that ..."` 引图句式、`booktabs` 三线表，以及对齐用户 `matlab/p1ot.m` 的绘图规范。
 - **即拿即用的 IEEEtran LaTeX 论文骨架**：`assets/duan-hofas-paper-template.tex`。
 
-## 仓库目录结构
+## 项目结构
 
-| 路径 | 作用说明 |
+```text
+duan-hofas/
+├── SKILL.md                           # 技能主入口、四大工作模式与对齐铁律
+├── README.md                          # 英文说明文档
+├── README_zh-CN.md                    # 简体中文说明文档
+├── agents/
+│   └── openai.yaml                    # Codex 界面元数据与默认触发提示词
+├── assets/                            # 可编译论文模板资产库
+│   └── duan-hofas-paper-template.tex  # IEEEtran 兼容的 Duan 风格 LaTeX 论文骨架
+├── references/                        # 25 份提炼知识库、语料库与环境/证明模板手册
+│   ├── duan-writing-corpus.md         # 核心原文逐字语料库、衔接词表与去 AI 腔对照表
+│   ├── duan-series-templates.md       # 五大专题系列标准范本库（自动化学报/IJSS/SCIS/UC-FAS/OD-FAS）
+│   ├── theorem-writing-template.md    # 823 个正式环境提炼模板库（T1–T6, L1–L6, P1–P5, C1–C4...）
+│   ├── proof-templates.md             # 3 种证明位置范式（M1–M3）与 12 类证明骨架（PT-1 至 PT-12）
+│   ├── corpus-conflict-resolution.md  # 940 条分拣块中 10 处跨篇冲突实证统计与 Check/Draft 裁定
+│   ├── corpus-guide.md                # 本地全文 MD 库、分拣分类库与 FTS5 检索使用指南
+│   └── ...                            # 其余 19 份记号词典、模型注册表、引理卡片与严密性审查参考
+├── scripts/                           # 9 个语料构建、环境分拣、全文检索与结构校验脚本
+│   ├── build_papers_corpus.py         # PDF -> 双栏重排/数学字体解码 MD + SQLite FTS5 构建器
+│   ├── sort_corpus_environments.py    # 940 条正式环境与显式证明全量自动分拣器
+│   ├── search_corpus.py               # 覆盖 32 篇论文 + Volume I 的统一命令行检索工具
+│   ├── validate_distillation.py       # 必需文件、内部链接与公式定界符完整性校验脚本
+│   └── ...                            # 其余 5 个专著索引/单页提取与本地 Zotero 盘点脚本
+├── reports/                           # 7 份早期知识蒸馏与覆盖率审查历史记录
+└── corpus -> ~/.cache/duan-hofas/corpus/   # [被 .gitignore 忽略的本地可选软链]
+    ├── INDEX.md & manifest.json       # 32 篇本地段广仁一作中英文论文总目录与元数据
+    ├── papers/*.md                    # 32 篇双栏重排、CM/Y&Y 数学字体解码全文 MD
+    └── sorted/*.md                    # 10 个按正式环境与证明全量分拣的原文分类库（共 940 块）
+```
+
+## 资产库说明
+
+### 1. 论文模板资产库（`assets/`）
+- `assets/duan-hofas-paper-template.tex`：开箱即编译的 Duan 风格 LaTeX 论文骨架（优先加载 `IEEEtran` 期刊类，缺失时自动回退至 `article`）。内置 `Definition / Assumption / Problem / Lemma / Proposition / Theorem / Corollary / Remark / Example` 正式环境、`\xstack` / `\Arow` / `\Phic` 记号宏、五段式摘要、约 1.5 页引言结构、引言末尾斜体 `Notations:` 段（不编号 `equation*` 且严格用 `=`）、`booktabs` 三线表（`\toprule/\midrule/\bottomrule`）以及 HOFAS/sub-FAS 控制律与状态空间闭环标准骨架。
+
+### 2. 提炼知识与模板参考库（`references/`，共 25 份手册）
+| 资产模块 | 包含文件与覆盖范围 |
 |---|---|
-| [SKILL.md](SKILL.md) | 技能主入口、四大工作模式、不可妥协的对齐铁律与 LaTeX 备份/编译/核查流程 |
-| [references/duan-writing-corpus.md](references/duan-writing-corpus.md) | **核心原文写作语料库**：各节结构模板、7 类正式环境、8 类证明模板、高频衔接词表与去 AI 腔正反对照表 |
-| [references/duan-series-templates.md](references/duan-series-templates.md) | **五大专题系列标准范本库**：OD-FAS（`Part 1 & 4`）、UC-FAS（`Part I–III`）、IJSS（`Part VI & X`）、SCIS 时滞/链式系列、《自动化学报》（`I–III`）与《航空学报》中文规范 |
-| [references/corpus-guide.md](references/corpus-guide.md) | **本地全文 Markdown 语料库、分拣库与统一检索指南**：说明如何通过 `scripts/build_papers_corpus.py`、`scripts/sort_corpus_environments.py` 与 `scripts/search_corpus.py` 构建、按 10 类环境分拣（940 条原文块）并毫秒级检索 32 篇一作全文 + *Volume I* |
-| [references/corpus-conflict-resolution.md](references/corpus-conflict-resolution.md) | **全集跨篇差异核查与统一裁定指南**：对 940 条分拣原文块中 10 处真实差异（`:=` `0/32` vs `\triangleq`/`=`、`Let` `63.7%` vs `Suppose`、证明位置与收尾语、`ROEA`/`RoEA`、`Hurwitz`/`stable`/`Schur` 等）给出实证统计与 Check/Draft 区分准则 |
-| [references/duan-style-quick-guide.md](references/duan-style-quick-guide.md) | 记号、章节排布、切换 sub-FAS 扩展约定与作图快速核查清单 |
-| [references/theorem-writing-template.md](references/theorem-writing-template.md) | 基于 823 个全量分拣正式环境提炼的系统化模板库（`T1–T6` 定理、`L1–L6` 引理、`P1–P5` 命题、`C1–C4` 推论、`D1–D2` 定义、`Pr1–Pr3` 问题、`R1–R5` 说明） |
-| [references/proof-templates.md](references/proof-templates.md) | 基于 117 个显式 `Proof` 块与定理前构造推导提炼的 3 种证明位置范式（`M1–M3`）、收尾语统计与 12 类标准证明模板（`PT-1` 至 `PT-12`） |
-| [references/model-definition-registry.md](references/model-definition-registry.md) | 按控制目标区分的原系统变量、维数与 $f,B$ 正则性条件注册表 |
-| [references/concepts-and-notation.md](references/concepts-and-notation.md) & [references/symbol-dictionary.md](references/symbol-dictionary.md) | 权威中英文术语、标准符号词典与下标作用域防撞检查 |
-| [references/duan-first-author-habits.md](references/duan-first-author-habits.md) & [references/writing-style.md](references/writing-style.md) | 段广仁一作论文的统计特征与行文风格边界 |
-| [references/common-assumptions.md](references/common-assumptions.md)、[references/common-lemmas.md](references/common-lemmas.md)、[references/canonical-theorems.md](references/canonical-theorems.md) | 高频假设、常用引理族与标志性定理卡片 |
-| `assets/duan-hofas-paper-template.tex` | 符合 Duan 结构与 `Notations:` 规范的可编译 IEEEtran LaTeX 论文模板 |
-| `scripts/validate_distillation.py` | 校验内部 Markdown 链接、数学公式定界符与必需知识文件完整性的自动化脚本 |
+| **原文写作语料与五大系列范本** | [duan-writing-corpus.md](references/duan-writing-corpus.md)（逐字 `[E]` 原句、衔接词表、去 AI 腔正反表）、[duan-series-templates.md](references/duan-series-templates.md)（《自动化学报》`I–III`、*IJSS* `I–X`、*SCIS* 时滞/链式、*UC-FAS* `I–III`、*OD-FAS* `1 & 4`）、[duan-style-quick-guide.md](references/duan-style-quick-guide.md)、[duan-first-author-habits.md](references/duan-first-author-habits.md)、[writing-style.md](references/writing-style.md) |
+| **正式环境与证明模板库** | [theorem-writing-template.md](references/theorem-writing-template.md)（由 823 个正式环境提炼 `T1–T6`、`L1–L6`、`P1–P5`、`C1–C4`、`D1–D2`、`Pr1–Pr3`、`R1–R5`）、[proof-templates.md](references/proof-templates.md)（`M1–M3` 证明位置范式与 `PT-1` 至 `PT-12` 证明骨架）、[corpus-conflict-resolution.md](references/corpus-conflict-resolution.md)（10 处跨篇冲突实证统计与 Check/Draft 速查表）、[derivation-patterns.md](references/derivation-patterns.md)、[canonical-theorems.md](references/canonical-theorems.md)、[common-assumptions.md](references/common-assumptions.md)、[common-lemmas.md](references/common-lemmas.md) |
+| **概念、记号词典与模型注册表** | [concepts-and-notation.md](references/concepts-and-notation.md)、[symbol-dictionary.md](references/symbol-dictionary.md)、[model-definition-registry.md](references/model-definition-registry.md)（按控制目标区分 $f,B$ 正则性）、[concept-lineage.md](references/concept-lineage.md)、[coauthored-comparison.md](references/coauthored-comparison.md) |
+| **算例、仿真绘图与严密性审查** | [example-library.md](references/example-library.md)、[simulation-patterns.md](references/simulation-patterns.md)（`matlab/p1ot.m` 作图规范与短图题）、[frequently-cited-references.md](references/frequently-cited-references.md)、[rigor-audit.md](references/rigor-audit.md)、[adversarial-tests.md](references/adversarial-tests.md) |
+| **原始文献目录与语料库指南** | [corpus-guide.md](references/corpus-guide.md)、[source-catalog.md](references/source-catalog.md)、[volume1-authority.md](references/volume1-authority.md) |
+
+### 3. 自动化构建、分拣、检索与校验工具库（`scripts/`，共 9 个脚本）
+- **全文库构建、分拣与检索**：`scripts/build_papers_corpus.py`（将 32 篇 PDF 转为双栏重排、数学字体解码 `.md` 并构建统一 FTS5 库）、`scripts/sort_corpus_environments.py`（将 823 个正式环境 + 117 个显式证明自动分拣入 10 个原文分类库）、`scripts/search_corpus.py`（支持 `--query`、`--literal`、`--label`、`--kind`、`--series` 毫秒级检索）。
+- **专著与本地文献盘点**：`scripts/build_volume1_index.py`、`scripts/search_volume1.py`、`scripts/extract_volume1_pages.py`（513 页 *Volume I* 专著索引与单页提取）；`scripts/inventory_duan_first_author.py`、`scripts/inventory_local_sources.py`（本地 Zotero 文献盘点）。
+- **结构完整性校验**：`scripts/validate_distillation.py`（自动检查全部 26 份核心知识文件、内部 Markdown 链接及 `$...$`/`$$...$$` 公式定界符）。
+
+### 4. 本地版权隔离原文与分拣缓存库（`~/.cache/duan-hofas/`，不入 Git）
+为遵守出版社版权规范，受版权保护的全文与数据库保存在本地缓存目录，通过被 `.gitignore` 忽略的 `corpus -> ~/.cache/duan-hofas/corpus` 软链挂载：
+- **第 1 层（`corpus/papers/*.md`）**：32 篇双栏重排结构化全文，内置 Computer Modern / Y&Y 数学私用区字符解码、`<!-- PDF p.X/N -->` 页码锚点与篇首 `Formal Landmarks Index`。
+- **第 2 层（`duan_corpus.sqlite` 与 `volume1.sqlite`）**：合并 32 篇一作论文与 *Volume I* 专著的 SQLite FTS5 全文及正式环境索引库。
+- **第 3 层（`corpus/sorted/*.md` 与 `summary_stats.json`）**：按 10 类正式环境与证明全量分拣的 **940 个原文块**（`theorems.md` [190]、`assumptions.md` [155]、`remarks.md` [155]、`proofs.md` [117]、`lemmas.md` [79]、`propositions.md` [74]、`definitions.md` [71]、`corollaries.md` [65]、`problems.md` [24]、`conditions.md` [10]）。
 
 ## 安装指南
 

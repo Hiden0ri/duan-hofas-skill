@@ -22,24 +22,62 @@ A unified skill (for **Antigravity**, **Claude Code**, and **Codex**) for checki
 - **Examples, captions, tables & MATLAB figure conventions** ([simulation-patterns.md](references/simulation-patterns.md)): Short noun-phrase captions, `"… are shown in Fig. X. It can be observed that …"` body narration, `booktabs` three-line tables, and `matlab/p1ot.m` figure styling.
 - **Ready-to-compile IEEEtran LaTeX skeleton**: `assets/duan-hofas-paper-template.tex`.
 
-## Repository layout
+## Project structure
 
-| Path | Role |
+```text
+duan-hofas/
+├── SKILL.md                           # Main skill instructions, 4 modes & alignment rules
+├── README.md                          # Documentation (English)
+├── README_zh-CN.md                    # Documentation (Simplified Chinese)
+├── agents/
+│   └── openai.yaml                    # Codex UI display metadata & default prompt
+├── assets/                            # Compilable manuscript template assets
+│   └── duan-hofas-paper-template.tex  # IEEEtran-compatible Duan-style LaTeX skeleton
+├── references/                        # 25 distilled knowledge, corpus & template handbooks
+│   ├── duan-writing-corpus.md         # Verbatim Duan writing corpus & phrasebook
+│   ├── duan-series-templates.md       # 5-series structural templates (AAS/IJSS/SCIS/UC-FAS/OD-FAS)
+│   ├── theorem-writing-template.md    # 823-environment template bank (T1–T6, L1–L6, P1–P5, C1–C4...)
+│   ├── proof-templates.md             # 3 proof modes (M1–M3) & 12 proof skeletons (PT-1 to PT-12)
+│   ├── corpus-conflict-resolution.md  # Empirical audit of 10 cross-corpus conflicts (Check vs Draft)
+│   ├── corpus-guide.md                # Guide to local full-text MD corpus, sorted banks & FTS5 DB
+│   └── ...                            # +19 specialized notation, model, lemma & audit references
+├── scripts/                           # 9 corpus builder, sorter, search & validation tools
+│   ├── build_papers_corpus.py         # PDF -> column-ordered MD + SQLite FTS5 builder
+│   ├── sort_corpus_environments.py    # 940-block environment & proof sorter
+│   ├── search_corpus.py               # Unified FTS5 & landmark search across 32 papers + Vol. I
+│   ├── validate_distillation.py       # Structural link, math delimiter & file validator
+│   └── ...                            # +5 Volume I indexing/extraction & Zotero inventory scripts
+├── reports/                           # 7 historical distillation & coverage audit logs
+└── corpus -> ~/.cache/duan-hofas/corpus/   # [Gitignored local symlink, optional]
+    ├── INDEX.md & manifest.json       # Catalog of 32 local first-author Duan papers
+    ├── papers/*.md                    # 32 column-reordered, CM-font-decoded full-text MDs
+    └── sorted/*.md                    # 10 sorted verbatim banks (940 formal blocks + proofs)
+```
+
+## Asset & knowledge libraries
+
+### 1. Manuscript Template Assets (`assets/`)
+- `assets/duan-hofas-paper-template.tex`: Ready-to-compile LaTeX manuscript skeleton (`IEEEtran` journal class with automatic `article` fallback). Preconfigures `Definition`, `Assumption`, `Problem`, `Lemma`, `Proposition`, `Theorem`, `Corollary`, `Remark`, and `Example` environments; macros `\xstack`, `\Arow`, `\Phic`; a 5-part Duan abstract; an ~1.5-page Introduction layout ending with an italic `Notations:` paragraph (unnumbered `equation*` using `=`); a `booktabs` three-line table (`\toprule`/`\midrule`/`\bottomrule`); and standard HOFAS/sub-FAS controller and state-space closed-loop sections.
+
+### 2. Distilled Reference & Template Library (`references/` — 25 files)
+| Module | Files & Scope |
 |---|---|
-| [SKILL.md](SKILL.md) | Skill entry point, operating modes, non-negotiable alignment rules, and LaTeX edit/compile protocol |
-| [references/duan-writing-corpus.md](references/duan-writing-corpus.md) | **Flagship verbatim Duan writing corpus**: section templates, 7 formal environments, 8 proof structures, connector phrasebook, and Anti-AI Do-vs-Don't table |
-| [references/duan-series-templates.md](references/duan-series-templates.md) | **Series-specific structural templates & verbatim corpus**: OD-FAS (`Part 1 & 4`), UC-FAS (`Part I–III`), IJSS (`Part VI & X`), SCIS Delay/Chained series, and Chinese *Acta Automatica Sinica* (`I–III`) / *Acta Aeronautica* norms |
-| [references/corpus-guide.md](references/corpus-guide.md) | **Full-text Markdown corpus, sorted banks & FTS5 search guide**: how to build (`scripts/build_papers_corpus.py`), sort all 940 formal environments & proofs (`scripts/sort_corpus_environments.py` $\to$ `corpus/sorted/*.md`), and search (`scripts/search_corpus.py`) all 32 Duan first-author papers + *Volume I* |
-| [references/corpus-conflict-resolution.md](references/corpus-conflict-resolution.md) | **Cross-corpus conflict audit & Check-vs-Draft guide**: empirical resolution of 10 notation/style variations across the 940 sorted blocks (`:=` `0/32` vs `\triangleq`/`=`, `Let` `63.7%` vs `Suppose`, proof placement & closers, `ROEA`/`RoEA`, `Hurwitz`/`stable`/`Schur`, etc.) |
-| [references/duan-style-quick-guide.md](references/duan-style-quick-guide.md) | Fast checklist for notation, article organization, switched sub-FAS extensions, and plotting |
-| [references/theorem-writing-template.md](references/theorem-writing-template.md) | Full-corpus template library distilled from 823 sorted environments (`T1–T6` Theorems, `L1–L6` Lemmas, `P1–P5` Propositions, `C1–C4` Corollaries, `D1–D2` Definitions, `Pr1–Pr3` Problems, `R1–R5` Remarks) |
-| [references/proof-templates.md](references/proof-templates.md) | 3 Duan proof-placement modes (`M1–M3`), empirical closer rules, and 12 canonical proof skeletons (`PT-1` to `PT-12`) distilled from 117 `Proof` blocks + constructive derivations |
-| [references/model-definition-registry.md](references/model-definition-registry.md) | Objective-specific original-system variables, dimensions, and regularity of $f$ and $B$ |
-| [references/concepts-and-notation.md](references/concepts-and-notation.md) & [references/symbol-dictionary.md](references/symbol-dictionary.md) | Canonical terminology, symbols, and scope collision checks |
-| [references/duan-first-author-habits.md](references/duan-first-author-habits.md) & [references/writing-style.md](references/writing-style.md) | Empirical statistics and style discipline across Duan's first-author corpus |
-| [references/common-assumptions.md](references/common-assumptions.md), [references/common-lemmas.md](references/common-lemmas.md), [references/canonical-theorems.md](references/canonical-theorems.md) | Indexed recurring assumptions, lemmas, and landmark theorems |
-| `assets/duan-hofas-paper-template.tex` | Compilable IEEEtran LaTeX template following Duan's layout and `Notations:` standard |
-| `scripts/validate_distillation.py` | Structural validator checking links, math delimiters, and required reference files |
+| **Writing Corpus & Series Templates** | [duan-writing-corpus.md](references/duan-writing-corpus.md) (verbatim `[E]` sentences, connector phrasebook, Anti-AI table), [duan-series-templates.md](references/duan-series-templates.md) (*Acta Automatica Sinica* `I–III`, *IJSS* `I–X`, *SCIS* Delay/Chained, *UC-FAS* `I–III`, *OD-FAS* `1 & 4`), [duan-style-quick-guide.md](references/duan-style-quick-guide.md), [duan-first-author-habits.md](references/duan-first-author-habits.md), [writing-style.md](references/writing-style.md) |
+| **Formal Environment & Proof Banks** | [theorem-writing-template.md](references/theorem-writing-template.md) (`T1–T6`, `L1–L6`, `P1–P5`, `C1–C4`, `D1–D2`, `Pr1–Pr3`, `R1–R5` distilled from 823 environments), [proof-templates.md](references/proof-templates.md) (`M1–M3` placement modes & `PT-1` to `PT-12` proof skeletons), [corpus-conflict-resolution.md](references/corpus-conflict-resolution.md) (10 cross-corpus conflicts & Check-vs-Draft table), [derivation-patterns.md](references/derivation-patterns.md), [canonical-theorems.md](references/canonical-theorems.md), [common-assumptions.md](references/common-assumptions.md), [common-lemmas.md](references/common-lemmas.md) |
+| **Concepts, Symbols & Models** | [concepts-and-notation.md](references/concepts-and-notation.md), [symbol-dictionary.md](references/symbol-dictionary.md), [model-definition-registry.md](references/model-definition-registry.md) (regularity of $f,B$ by control objective), [concept-lineage.md](references/concept-lineage.md), [coauthored-comparison.md](references/coauthored-comparison.md) |
+| **Examples, Plots & Rigor Audit** | [example-library.md](references/example-library.md), [simulation-patterns.md](references/simulation-patterns.md) (`matlab/p1ot.m` plotting & short captions), [frequently-cited-references.md](references/frequently-cited-references.md), [rigor-audit.md](references/rigor-audit.md), [adversarial-tests.md](references/adversarial-tests.md) |
+| **Source & Corpus Guides** | [corpus-guide.md](references/corpus-guide.md), [source-catalog.md](references/source-catalog.md), [volume1-authority.md](references/volume1-authority.md) |
+
+### 3. Automation & Retrieval Scripts (`scripts/` — 9 tools)
+- **Full-Text Corpus & 940-Block Sorter**: `scripts/build_papers_corpus.py` (converts 32 PDFs to column-ordered, font-decoded `.md` + unified FTS5 DB), `scripts/sort_corpus_environments.py` (sorts all 823 environments + 117 proofs into 10 verbatim banks), `scripts/search_corpus.py` (unified CLI search by `--query`, `--literal`, `--label`, `--kind`, `--series`).
+- **Monograph & Zotero Utilities**: `scripts/build_volume1_index.py`, `scripts/search_volume1.py`, `scripts/extract_volume1_pages.py` (513-page *Volume I* SQLite FTS5 indexing & page extraction); `scripts/inventory_duan_first_author.py`, `scripts/inventory_local_sources.py` (local Zotero PDF cataloging).
+- **Skill Validator**: `scripts/validate_distillation.py` (verifies all 26 required knowledge files, internal Markdown links, and `$...$`/`$$...$$` math delimiters).
+
+### 4. Local Full-Text & Sorted Verbatim Cache (`~/.cache/duan-hofas/`, gitignored)
+Kept outside Git for copyright compliance and linked locally via `corpus -> ~/.cache/duan-hofas/corpus`:
+- **Layer 1 (`corpus/papers/*.md`)**: 32 structured full-text papers with Computer Modern / Y&Y math font decoding, `<!-- PDF p.X/N -->` anchors, and top-of-file `Formal Landmarks Index`.
+- **Layer 2 (`duan_corpus.sqlite` & `volume1.sqlite`)**: Unified SQLite FTS5 databases indexing all 32 papers + *Volume I*.
+- **Layer 3 (`corpus/sorted/*.md` & `summary_stats.json`)**: 10 exhaustively sorted verbatim banks (**940 blocks** total: `theorems.md` [190], `assumptions.md` [155], `remarks.md` [155], `proofs.md` [117], `lemmas.md` [79], `propositions.md` [74], `definitions.md` [71], `corollaries.md` [65], `problems.md` [24], `conditions.md` [10]).
 
 ## Installation
 
