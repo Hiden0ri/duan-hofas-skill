@@ -1,6 +1,6 @@
 # Duan 原文写作语料库与环境/证明结构模板
 
-本文件从段广仁（Guang-Ren Duan）第一作者英文论文与 2026 年专著 *Fully Actuated System Approach, Volume I: Global Fully Actuated Systems* 中提取**逐字核对的原句（`[E]`）**与**固定结构模板**。使用 `duan-hofas` 撰写或润色 HOFAS / sub-FAS 稿件时，**优先沿用本语料库中的原句搭配与段落骨架**，避免改写为生造名词或防御性否定句。
+本文件从段广仁（Guang-Ren Duan）第一作者英文论文与 2026 年专著 *Fully Actuated System Approach, Volume I: Global Fully Actuated Systems* 中提取**逐字核对的原句（`[E]`）**与**固定结构模板**。使用 `duan-hofas` 撰写或润色 HOFAS / sub-FAS 稿件时，**优先沿用本语料库中的原句搭配与段落骨架**，避免改写为生造名词或防御性否定句。全库 940 条正式环境与证明的分拣模板库详见 [theorem-writing-template.md](theorem-writing-template.md)、[proof-templates.md](proof-templates.md) 及跨篇差异裁定指南 [corpus-conflict-resolution.md](corpus-conflict-resolution.md)。
 
 ---
 
@@ -88,7 +88,7 @@ and
 - **多阶 sub-FAS `[E: Duan 2023 TCYB §III-A; Underactuated 2024 §2.2]`：**
   > `"where \mu_k, k = 1, 2, \ldots, \eta, are a set of positive integers; x_k \in \mathbb{R}^{r_k}, k = 1, 2, \ldots, \eta, are the state vectors, with r_k satisfying r_1 + r_2 + \cdots + r_\eta = r; f_k(\cdot, t) \in \mathbb{R}^{r_k} are piecewise continuous nonlinear vector functions, and B(\cdot, t) \in \mathbb{R}^{r\times r} is a piecewise continuous matrix function."`
 - **切换单阶仿射 sub-FAS `[D: 对齐 Duan + Yang–Duan 2026]`：**
-  > `"Consider a continuous-time autonomous single-order affine switched sub-FAS described by the following equation: [eq], where n \geq 1 is an integer and x \in \mathbb{R}^r denotes the system state. The switching signal \sigma(t) is a piecewise constant and right-continuous function, whose value is chosen from an index set \mathcal{P}:=\{1,2,\ldots,N\}. The positive integer N denotes the total number of subsystems. The vector u_{\sigma(t)}(t)\in\mathbb{R}^r is the control input, and f_i(\cdot)\in\mathbb{R}^r and B_i(\cdot)\in\mathbb{R}^{r\times r}, i\in\mathcal{P}, are piecewise continuous vector and matrix functions of the ith subsystem, respectively. The switching sequence is denoted as \{t_0,t_1,\ldots,t_k,\ldots\}, where t_0=0 is the initial time and t_k is the kth switching instant. It is assumed that x^{(0\sim n-1)} does not jump at the switching instants."`
+  > `"Consider a continuous-time autonomous single-order affine switched sub-FAS described by the following equation: [eq], where n \geq 1 is an integer and x \in \mathbb{R}^r denotes the system state. The switching signal \sigma(t) is a piecewise constant and right-continuous function, whose value is chosen from an index set \mathcal{P}=\{1,2,\ldots,N\}. The positive integer N denotes the total number of subsystems. The vector u_{\sigma(t)}(t)\in\mathbb{R}^r is the control input, and f_i(\cdot)\in\mathbb{R}^r and B_i(\cdot)\in\mathbb{R}^{r\times r}, i\in\mathcal{P}, are piecewise continuous vector and matrix functions of the ith subsystem, respectively. The switching sequence is denoted as \{t_0,t_1,\ldots,t_k,\ldots\}, where t_0=0 is the initial time and t_k is the kth switching instant. It is assumed that x^{(0\sim n-1)} does not jump at the switching instants."`（注：用 `=` 对齐段广仁一作 `0/32` 零次使用 `:=` 的习惯；`Yang & Duan 2026` 原文用 `:=` 属合作者一作习惯。）
 
 ---
 

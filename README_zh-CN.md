@@ -29,10 +29,11 @@
 | [SKILL.md](SKILL.md) | 技能主入口、四大工作模式、不可妥协的对齐铁律与 LaTeX 备份/编译/核查流程 |
 | [references/duan-writing-corpus.md](references/duan-writing-corpus.md) | **核心原文写作语料库**：各节结构模板、7 类正式环境、8 类证明模板、高频衔接词表与去 AI 腔正反对照表 |
 | [references/duan-series-templates.md](references/duan-series-templates.md) | **五大专题系列标准范本库**：OD-FAS（`Part 1 & 4`）、UC-FAS（`Part I–III`）、IJSS（`Part VI & X`）、SCIS 时滞/链式系列、《自动化学报》（`I–III`）与《航空学报》中文规范 |
-| [references/corpus-guide.md](references/corpus-guide.md) | **本地全文 Markdown 语料库与统一检索指南**：说明如何通过 `scripts/build_papers_corpus.py` 与 `scripts/search_corpus.py` 构建并毫秒级检索 32 篇一作全文 + *Volume I* |
+| [references/corpus-guide.md](references/corpus-guide.md) | **本地全文 Markdown 语料库、分拣库与统一检索指南**：说明如何通过 `scripts/build_papers_corpus.py`、`scripts/sort_corpus_environments.py` 与 `scripts/search_corpus.py` 构建、按 10 类环境分拣（940 条原文块）并毫秒级检索 32 篇一作全文 + *Volume I* |
+| [references/corpus-conflict-resolution.md](references/corpus-conflict-resolution.md) | **全集跨篇差异核查与统一裁定指南**：对 940 条分拣原文块中 10 处真实差异（`:=` `0/32` vs `\triangleq`/`=`、`Let` `63.7%` vs `Suppose`、证明位置与收尾语、`ROEA`/`RoEA`、`Hurwitz`/`stable`/`Schur` 等）给出实证统计与 Check/Draft 区分准则 |
 | [references/duan-style-quick-guide.md](references/duan-style-quick-guide.md) | 记号、章节排布、切换 sub-FAS 扩展约定与作图快速核查清单 |
-| [references/theorem-writing-template.md](references/theorem-writing-template.md) | 定理六段式及 `Lemma`、`Proposition`、`Corollary`、`Problem` 书写模板 |
-| [references/proof-templates.md](references/proof-templates.md) | 各类标准证明的可执行填空骨架（Templates A–M） |
+| [references/theorem-writing-template.md](references/theorem-writing-template.md) | 基于 823 个全量分拣正式环境提炼的系统化模板库（`T1–T6` 定理、`L1–L6` 引理、`P1–P5` 命题、`C1–C4` 推论、`D1–D2` 定义、`Pr1–Pr3` 问题、`R1–R5` 说明） |
+| [references/proof-templates.md](references/proof-templates.md) | 基于 117 个显式 `Proof` 块与定理前构造推导提炼的 3 种证明位置范式（`M1–M3`）、收尾语统计与 12 类标准证明模板（`PT-1` 至 `PT-12`） |
 | [references/model-definition-registry.md](references/model-definition-registry.md) | 按控制目标区分的原系统变量、维数与 $f,B$ 正则性条件注册表 |
 | [references/concepts-and-notation.md](references/concepts-and-notation.md) & [references/symbol-dictionary.md](references/symbol-dictionary.md) | 权威中英文术语、标准符号词典与下标作用域防撞检查 |
 | [references/duan-first-author-habits.md](references/duan-first-author-habits.md) & [references/writing-style.md](references/writing-style.md) | 段广仁一作论文的统计特征与行文风格边界 |
@@ -163,11 +164,12 @@ python "$env:USERPROFILE\.codex\skills\duan-hofas\scripts\validate_distillation.
 
 ```bash
 python3 scripts/build_papers_corpus.py
+python3 scripts/sort_corpus_environments.py
 ln -sfn "$HOME/.cache/duan-hofas/corpus" corpus
 python3 scripts/search_corpus.py --list-docs
 ```
 
-该脚本会将全部 32 篇段广仁一作论文转换为双栏重排、数学字体解码的结构化 Markdown 全文（存于 `~/.cache/duan-hofas/corpus/papers/*.md`，技能目录内通过被 `.gitignore` 忽略的 `corpus` 软链直接访问），并与 513 页 *Volume I* 专著合并构建为统一的 SQLite FTS5 全文与定理检索库（`~/.cache/duan-hofas/duan_corpus.sqlite`）；详细检索参数见 [references/corpus-guide.md](references/corpus-guide.md)。日常记号核查、文稿润色与 LaTeX 模板生成无需依赖本地全文缓存库即可开箱即用。
+该脚本会将全部 32 篇段广仁一作论文转换为双栏重排、数学字体解码的结构化 Markdown 全文（存于 `~/.cache/duan-hofas/corpus/papers/*.md`），按 10 类正式环境与证明全量分拣为 940 个原文分类块（存于 `~/.cache/duan-hofas/corpus/sorted/*.md`，技能目录内通过被 `.gitignore` 忽略的 `corpus` 软链直接访问），并与 513 页 *Volume I* 专著合并构建为统一的 SQLite FTS5 全文与定理检索库（`~/.cache/duan-hofas/duan_corpus.sqlite`）；详细说明见 [references/corpus-guide.md](references/corpus-guide.md) 与 [references/corpus-conflict-resolution.md](references/corpus-conflict-resolution.md)。日常记号核查、文稿润色与 LaTeX 模板生成无需依赖本地全文缓存库即可开箱即用。
 
 ## 重要数学边界
 

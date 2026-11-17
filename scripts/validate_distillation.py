@@ -17,6 +17,7 @@ REQUIRED = {
     "references/common-lemmas.md",
     "references/concept-lineage.md",
     "references/concepts-and-notation.md",
+    "references/corpus-conflict-resolution.md",
     "references/corpus-guide.md",
     "references/derivation-patterns.md",
     "references/duan-first-author-habits.md",

@@ -10,6 +10,10 @@
    - 数据库路径：`/home/yzk/.cache/duan-hofas/duan_corpus.sqlite`
    - 构建脚本：`python3 scripts/build_papers_corpus.py`
    - 检索脚本：`python3 scripts/search_corpus.py`
+3. **第 3 层：按正式环境与证明全量分拣的原文分类库**（共 **940 个原文块**：823 个正式环境 + 117 个显式 `Proof` 块）
+   - 物理路径：`/home/yzk/.cache/duan-hofas/corpus/sorted/`（技能内软链路径：`corpus/sorted/`，含 `theorems.md` [190]、`assumptions.md` [155]、`remarks.md` [155]、`proofs.md` [117]、`lemmas.md` [79]、`propositions.md` [74]、`definitions.md` [71]、`corollaries.md` [65]、`problems.md` [24]、`conditions.md` [10] 及 `summary_stats.json`）
+   - 分拣脚本：`python3 scripts/sort_corpus_environments.py`
+   - 提炼模板与冲突裁定：[theorem-writing-template.md](theorem-writing-template.md)、[proof-templates.md](proof-templates.md)、[corpus-conflict-resolution.md](corpus-conflict-resolution.md)
 
 ---
 

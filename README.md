@@ -29,10 +29,11 @@ A unified skill (for **Antigravity**, **Claude Code**, and **Codex**) for checki
 | [SKILL.md](SKILL.md) | Skill entry point, operating modes, non-negotiable alignment rules, and LaTeX edit/compile protocol |
 | [references/duan-writing-corpus.md](references/duan-writing-corpus.md) | **Flagship verbatim Duan writing corpus**: section templates, 7 formal environments, 8 proof structures, connector phrasebook, and Anti-AI Do-vs-Don't table |
 | [references/duan-series-templates.md](references/duan-series-templates.md) | **Series-specific structural templates & verbatim corpus**: OD-FAS (`Part 1 & 4`), UC-FAS (`Part I–III`), IJSS (`Part VI & X`), SCIS Delay/Chained series, and Chinese *Acta Automatica Sinica* (`I–III`) / *Acta Aeronautica* norms |
-| [references/corpus-guide.md](references/corpus-guide.md) | **Full-text Markdown corpus & FTS5 search guide**: how to build (`scripts/build_papers_corpus.py`), read (`corpus/papers/*.md` local symlink), and search (`scripts/search_corpus.py`) all 32 Duan first-author papers + *Volume I* |
+| [references/corpus-guide.md](references/corpus-guide.md) | **Full-text Markdown corpus, sorted banks & FTS5 search guide**: how to build (`scripts/build_papers_corpus.py`), sort all 940 formal environments & proofs (`scripts/sort_corpus_environments.py` $\to$ `corpus/sorted/*.md`), and search (`scripts/search_corpus.py`) all 32 Duan first-author papers + *Volume I* |
+| [references/corpus-conflict-resolution.md](references/corpus-conflict-resolution.md) | **Cross-corpus conflict audit & Check-vs-Draft guide**: empirical resolution of 10 notation/style variations across the 940 sorted blocks (`:=` `0/32` vs `\triangleq`/`=`, `Let` `63.7%` vs `Suppose`, proof placement & closers, `ROEA`/`RoEA`, `Hurwitz`/`stable`/`Schur`, etc.) |
 | [references/duan-style-quick-guide.md](references/duan-style-quick-guide.md) | Fast checklist for notation, article organization, switched sub-FAS extensions, and plotting |
-| [references/theorem-writing-template.md](references/theorem-writing-template.md) | Six-part Theorem structure plus `Lemma`, `Proposition`, `Corollary`, and `Problem` templates |
-| [references/proof-templates.md](references/proof-templates.md) | Executable fill-in skeletons for Duan's canonical proof types |
+| [references/theorem-writing-template.md](references/theorem-writing-template.md) | Full-corpus template library distilled from 823 sorted environments (`T1–T6` Theorems, `L1–L6` Lemmas, `P1–P5` Propositions, `C1–C4` Corollaries, `D1–D2` Definitions, `Pr1–Pr3` Problems, `R1–R5` Remarks) |
+| [references/proof-templates.md](references/proof-templates.md) | 3 Duan proof-placement modes (`M1–M3`), empirical closer rules, and 12 canonical proof skeletons (`PT-1` to `PT-12`) distilled from 117 `Proof` blocks + constructive derivations |
 | [references/model-definition-registry.md](references/model-definition-registry.md) | Objective-specific original-system variables, dimensions, and regularity of $f$ and $B$ |
 | [references/concepts-and-notation.md](references/concepts-and-notation.md) & [references/symbol-dictionary.md](references/symbol-dictionary.md) | Canonical terminology, symbols, and scope collision checks |
 | [references/duan-first-author-habits.md](references/duan-first-author-habits.md) & [references/writing-style.md](references/writing-style.md) | Empirical statistics and style discipline across Duan's first-author corpus |
@@ -159,11 +160,12 @@ To respect publisher copyright on public GitHub, the repository does not distrib
 
 ```bash
 python3 scripts/build_papers_corpus.py
+python3 scripts/sort_corpus_environments.py
 ln -sfn "$HOME/.cache/duan-hofas/corpus" corpus
 python3 scripts/search_corpus.py --list-docs
 ```
 
-This generates column-ordered, font-decoded structured Markdown full texts (`~/.cache/duan-hofas/corpus/papers/*.md`, gitignored via `corpus` symlink) and a unified SQLite FTS5 index (`~/.cache/duan-hofas/duan_corpus.sqlite`) across all 32 Duan first-author papers plus the 513-page *Volume I* monograph; see [references/corpus-guide.md](references/corpus-guide.md). Routine checking, drafting, and template generation work out of the box without building the local full-text cache.
+This generates column-ordered, font-decoded structured Markdown full texts (`~/.cache/duan-hofas/corpus/papers/*.md`), 10 exhaustively sorted formal-environment and proof banks totaling 940 blocks (`~/.cache/duan-hofas/corpus/sorted/*.md`, gitignored via `corpus` symlink), and a unified SQLite FTS5 index (`~/.cache/duan-hofas/duan_corpus.sqlite`) across all 32 Duan first-author papers plus the 513-page *Volume I* monograph; see [references/corpus-guide.md](references/corpus-guide.md) and [references/corpus-conflict-resolution.md](references/corpus-conflict-resolution.md). Routine checking, drafting, and template generation work out of the box without building the local full-text cache.
 
 ## Important boundary
 

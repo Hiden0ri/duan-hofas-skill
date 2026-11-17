@@ -1,174 +1,107 @@
-# Executable proof templates
+# Duan 证明结构标准模板库（基于 32 篇一作论文 + *Volume I* 全量分拣）
 
-## Required proof ledger
+本文件对本地全集语料库中的 **408 条正式结论**（190 `Theorem`、79 `Lemma`、74 `Proposition`、65 `Corollary`）及其全部 **117 个显式 `Proof` 块**（分类原文见 `corpus/sorted/proofs.md`）与 **~290 处定理前构造性推导**进行全量分拣与冲突核查后提炼而成。
 
-For every nontrivial proof, maintain a five-column ledger:
+---
 
-| Step | Formula/conclusion | Basis | Assumption used | Status |
-|---|---|---|---|---|
-| 1 | … | definition/equation/theorem | A1 | `[E]`, `[D]`, or `[U]` |
+## 0. 证明组织方式与首尾句式的真实语料规律 `[E]`
 
-No assumption may remain unused. No proof step may cite “obvious” when an algebraic substitution, domain argument, or quantifier change is involved.
+### 0.1 三种合法的证明位置（纠正“每个定理后必跟 `Proof.`”的单一假设）
+1. **模式 M1——先分步构造推导、末段直接引出定理（占构造性控制定理约 60%）`[E]`**：
+   - 在全局全驱控制、高阶反步法（`Part III` §4；*Volume I* §9.2）、UC-FAS 三级级联亚镇定（`UC-FAS Part II` §3）、OD-FAS 观测器替换（`OD-FAS Part 4` §4.2）等章节，段广仁先在正文中按自然步骤推完变换、控制律与闭环/Lyapunov 不等式，最后用一句总结语直接引出 `Theorem`/`Corollary`，**定理后不再重复写 `Proof.`**：
+     - `"Based on the above analysis, we can immediately give the following result."` `[E: SCIS Delay 2]`
+     - `"The above process clearly proves the following result."` `[E: Part III §4; Volume I §9.2]`
+     - `"Applying Proposition 2.1 and Lemma 2.1 to the above system (11), immediately produces the following result."` `[E: OD-FAS Part 1]`
+2. **模式 M2——定理/引理后紧接内联 `Proof`（117 处中的主体）`[E]`**：
+   - 开头格式随期刊排版而定：IEEE / SCIS 用 `Proof.`，Taylor & Francis（IJSS）用 `Proof:`，Springer（JSSC / *Volume I*）用无标点粗体 `Proof `，中文刊用 `证明.`。
+   - **首句铁律**：单结论证明直接进入变换、代入或引用前式（如 `"Substituting the control law (14) into system (2), gives ..."`、`"In view of (10), we have ..."`），**绝不写 `"We first show that ..."` 之类空洞预告**。
+3. **模式 M3——长代数/观测器推导移入附录（Appendix Deferred Proof）`[E]`**：
+   - 当等价消元、参数化或降阶观测器误差推导超过 1 页时（如 `Part X` Appendix、`SCIS Delay 1` Appendix A、`OD-FAS Part 1` §9 `9.1. Proof of Proposition 3.3`、*Volume I* Appendix B），正文写 `"For a proof of the above proposition, one can refer to the appendix."`，附录中按小节标题 `Proof of Theorem X.Y` 分步展开。
 
-## Template A: global affine FAS control
+### 0.2 证明收尾方式统计（117 个显式 `Proof` 块核查结果 `[E]`）
+- **直接以最终推导式或结论句 + 证毕符号（`□`/`■`）收尾：98 / 117（83.8%，绝对主流！）**：
+  - 例：`"This gives (157)."`、`"This proves R_a = R_s."`、`"Therefore, system (163) is GUA stable."`——无需每段证明强加英文套话收尾！
+- **使用显式英文/中文收尾句：19 / 117（16.2%，用于特定证明类型）**：
+  - 反证法固定收尾：`"This yields a contradiction. Thus [...]. The proof is finished."` `[E: Duan & Zhou 2022 Lemma 4.4]`；
+  - 较长分步/鲁棒证明收尾：`"The proof is (then) completed."` / `"Then the proof is completed."`（5 处，`Part III`, `Part VI`, `Chained 1`）或 `"This completes the proof."`（`Duan & Wang 2026`）；
+  - 简短推论/特征值分离收尾：`"Thus the conclusion follows."`（4 处，`OD-FAS Part 1 & Part 4`）；
+  - 充要性证明收尾：`"Combining the above two aspects gives the complete proof of the result."` `[E: Duan 2023 Prop. 2]`；
+  - 中文证明收尾：`证毕。`（《航空学报》）或 `注意到上述过程的可逆性，可得定理结论. \Box`（《自动化学报》）。
 
-1. State the model and dimensions.
-2. State the domain $\mathcal D$.
-3. Verify $B(X,t)$ is square and $\det B(X,t)\ne0$ for every $(X,t)\in\mathcal D\times\mathbb R_{\ge0}$.
-4. Define $A_{0\sim n-1}$ and $v$.
-5. Give the complete control law.
-6. Substitute it into the plant line by line.
-7. obtain the target high-order linear equation;
-8. convert it to $\dot X=\Phi X+B_cv$ if a stability/response theorem is needed;
-9. invoke the appropriate linear-system result;
-10. translate the conclusion back to the original variables and domain.
+---
 
-Failure condition: if invertibility holds only on a proper subset, stop calling the model globally fully actuated and route to Template C.
+## 1. 十二类标准证明执行模板（`PT-1` 至 `PT-12`）
 
-## Template B: model conversion by elimination and order elevation
+### PT-1：直接代入 + 状态空间转换（Nominal Global HOFAS）`[E]`
+1. 核验所声明定义域上 $\det B(\cdot, t)\neq 0$（或 $\neq 0\text{ or }\infty$），保证 $B^{-1}$ 良定。
+2. 代入起手句：`"Substituting the control law (x) into system (y), gives the following closed-loop system:"` $x^{(n)} + A_{0\sim n-1}x^{(0\sim n-1)} = v$（核对括号内外正负号！）。
+3. 转状态空间句（**一律写 `state-space form`，不写 `first-order form`**）：`"The closed-loop system (z) is equivalent to the following state-space form:"` $\dot x^{(0\sim n-1)} = \Phi(A_{0\sim n-1})x^{(0\sim n-1)} + B_c v$。
+4. 由 $\Phi(A_{0\sim n-1})$ 为 Hurwitz（离散情形 $\Psi(A_{0\sim n-1})$ 为 Schur）或特征结构关系 $\Phi(A_{0\sim n-1}) = V F V^{-1}$ 直接得出指数稳定、解耦或跟踪结论。
 
-1. Write every original subsystem and declare dimensions.
-2. Select the elementary state to retain.
-3. Differentiate one order at a time.
-4. At each differentiation, state the required differentiability.
-5. Substitute intermediate variables using previously derived equations.
-6. Record the recursive transformed terms, such as $\breve h_i$ and $\breve B_i$.
-7. prove the coordinate/transformation formula is defined on its domain;
-8. obtain the final HOFAS/sub-FAS equation;
-9. prove forward equivalence: an original-system solution maps to a transformed-system solution;
-10. prove reverse recovery: transformed variables determine the eliminated variables;
-11. identify any points excluded by inversion or division.
+### PT-2：Lyapunov 导数 + 配方法有界椭球证明（Robust / Adaptive HOFAS）`[E: Part III Theorem 3.5; Part V]`
+1. 代入鲁棒/自适应控制律得含不确定项 $\Delta f$ 与补偿项 $u^*$ 的高阶闭环及状态空间形式。
+2. 引用谱裕度引理：`"Since A_i, i=0,1,\ldots,n-1, satisfy condition (9), there exists a positive definite matrix P(A_{0\sim n-1}) satisfying (10). Then the following Lyapunov function can be chosen: V = \frac{1}{2}(x^{(0\sim n-1)})^\top P x^{(0\sim n-1)}."`（自适应情形加参数误差二次项 $\frac{1}{2\gamma}\tilde\theta^\top\tilde\theta$）。
+3. 求导放缩：`"In view of (10), (12) and (17), we have \dot V \le -\frac{\mu}{2}V + \|P_L^\top x^{(0\sim n-1)}\|\rho(\cdot) - \frac{1}{4\varepsilon}\rho^2(\cdot)\|P_L^\top x^{(0\sim n-1)}\|^2 \le -\frac{\mu}{2}V + \varepsilon"`（调用配方法引理 $a - a^2/(4\varepsilon) \le \varepsilon$）。
+4. 由比较原理或 $\dot V < 0$（椭球外部）导出全局一致最终有界并收敛至椭球集 $\Theta_{\mu,\varepsilon}$。
 
-Failure condition: a formal differentiated equation without reverse recovery is not yet an equivalent model.
+### PT-3：sub-FAS 亚镇定与 ROEA 精确刻画证明 `[E: Duan 2023 TCYB, Theorem 1]`
+1. 对分条定理先处理显然项：`"Proof: The first two conclusions are obvious. To show the third condition, we first convert system (32) into the following state-space form: \dot x^{(0\sim n-1)} = \Phi(A_{0\sim n-1})x^{(0\sim n-1)}, whose solution is clearly given by x^{(0\sim n-1)}(t) = \mathrm{e}^{\Phi(A_{0\sim n-1})t}X_0, where X_0 = x^{(0\sim n-1)}(0) is the initial value."`
+2. 代入可行性条件：`"Substituting (33) into the matrix B(\cdot), gives the following feasibility conditions: \det B(T\mathrm{e}^{\Phi(A_{0\sim n-1})t}X_0, t) \neq 0\text{ or }\infty,\ t \ge 0. These are obviously constraints on the system initial value X_0."`
+3. 改写为奇异函数零集：`"Further, by definitions of normal and abnormal singularity functions, the above feasibility conditions can be written into \varphi(\mathrm{e}^{\Phi(A_{0\sim n-1})t}X_0, t)\neq 0,\ t\ge 0, which is clearly equivalent to (36). This proves R_a = R_s."`
 
-## Template C: SUB-FAS substabilization and ROEA
+### PT-4：反证法标准证明（Proof by Contradiction）`[E: Duan & Zhou 2022, Lemma 4.4]`
+1. **直接反设起手**（严禁写 `"We prove by contradiction"` 或 `"Suppose, on the contrary"`）：`"Suppose that [结论的否定]."`
+2. 正向推导存在性对象：`"Then it follows from (x) that [展示式]. Therefore, there exists [对象] such that [展示式], which means that [性质 A]."`
+3. 引出对立面：`"On the other side, it follows from [前提/原系统方程] that [展示式], which implies / means that [非 A]."`
+4. **固定三句收尾**：`"This yields a contradiction. Thus [原结论]. The proof is finished."`
 
-1. Define $\mathcal S$ and $\mathcal F$ from the open-loop input matrix/map.
-2. If using $\varphi$, prove its zero set represents the singular set claimed.
-3. State the sub-FAS control law on $\mathcal F$ only.
-4. Select $A_{0\sim n-1}$ with stable $\Phi(A_{0\sim n-1})$.
-5. Substitute to obtain the constrained linear closed-loop system.
-6. Define $X_0=x^{(0\sim n-1)}(0)$.
-7. Derive
+### PT-5：高阶反步法五步构造与叠缩证明（High-Order Backstepping）`[E: Part III §4; Volume I §9.2]`
+1. **Preparations**：选取满足 $\operatorname{Re}\lambda_k(\Phi(A_i^{0\sim m_i-1}))\le -\mu/2$ 的矩阵组及 Lyapunov 矩阵 $P_i=[P_{iF}\ P_{iL}]$，定义反单位阵置换矩阵 $\tilde P_i = \mathring{I}P_i$ 及其逆分块，声明 `"all the variables defined above are independent of system (...) and can all be easily obtained beforehand."`
+2. **The First Step**：设 $z_1^{(0\sim m_1-1)}=x_1^{(0\sim m_1-1)}$，引入高阶误差变换 $\tilde P_2 z_2^{(0\sim m_2-1)} = x_2^{(0\sim m_2-1)} - [\alpha_1^\top\ 0]^\top$，设计 $\alpha_1$ 得第一级闭环 $z_1^{(m_1)} + A_1^{0\sim m_1-1}z_1^{(0\sim m_1-1)} = \varphi_1 + w_1$。
+3. **The $k$-th Step**：对 $\alpha_{k-1}$ 仅求 $m_k-1$ 阶导并分离确定项与不确定项 $h_{k-1}+\Delta h_{k-1}$，引入 $\tilde P_{k+1}z_{k+1}^{(0\sim m_{k+1}-1)}$，在 $\alpha_k$ 中加入层间耦合抵消项 $+v_{k-1}$（$v_{k-1}=L_{k-1}^\top P_{k-1,L}z_{k-1}^{(0\sim m_{k-1}-1)}$），得 $z_k^{(m_k)} + A_k^{0\sim m_k-1}z_k^{(0\sim m_k-1)} = \varphi_k + w_k - v_{k-1}$。
+4. **The $n$-th Step**：设计实际控制律 $u$（含 $+v_{n-1}$），得末级闭环 $z_n^{(m_n)} + A_n^{0\sim m_n-1}z_n^{(0\sim m_n-1)} = \varphi_n - v_{n-1}$。
+5. **The Conclusion**：取总 Lyapunov 函数 $V = \sum_{i=1}^n (z_i^{(0\sim m_i-1)})^\top P_i z_i^{(0\sim m_i-1)}$，利用恒等式 $(z_i)^\top P_{iL}w_i = (z_{i+1})^\top P_{i+1,L}v_i$ 逐项相消：`"Adding the equations in (...) side by side, and using (...), give \dot V \le -\mu V + n\varepsilon. The above process clearly proves the following result."`（紧接主定理）。
 
-$$
-X(t)=e^{\Phi(A_{0\sim n-1})t}X_0.
-$$
+### PT-6：双向同胚等价消元与数学归纳法证明 `[E: Part II; Chained Part 1 Theorem 3; Volume I Ch. 7–8]`
+1. 归纳起手句：`"We prove the theorem via the n-step induction. Step 1: ..."` 或 `"We use mathematical induction to prove this result."`
+2. **必须双向验证**：
+   - 正向（`one-to-one` 正推）：`"For each z_{1\sim n}, Eq. (50) clearly gives a unique z^{(0\sim n-1)}."`
+   - 逆向（消元变量显式恢复）：`"Conversely, let z^{(0\sim n-1)} be given; then we have z_1 = z,\ z_2 = B_1^{-1}(\cdot)[\dot z - f_1(\cdot)], \ldots"`，并验证零平衡点不动与收敛等价传递。
 
-8. Substitute $X(t)$ into the feasibility condition.
-9. Quantify it for every $t\ge0$.
-10. Define the ROEA from precisely those $X_0$ satisfying full-time feasibility.
-11. Use stability of $\Phi$ to prove exponential convergence.
-12. Conclude both: controller well-definedness and convergence.
+### PT-7：充要条件（Sufficiency & Necessity）证明 `[E: Duan 2023 TCYB, Proposition 2]`
+- 分段标明 `"Sufficiency: ..."` 与 `"Necessity: ..."`，末句汇总：`"Combining the above two aspects gives the complete proof of the result."`
 
-Failure conditions:
+### PT-8：多结论逐条证明与多步骤长证明 `[E: Delay 1 Theorem 3; Volume I Appendix B]`
+- 多结论按陈述顺序逐一证完：`"Proof of conclusion (1). ... Proof of conclusion (2). ..."` 或 `"The first conclusion is then proven. It remains to show that ..."`。
+- 长证明在段首仅交代步骤骨架：`"The proof is composed of four steps. Step 1. ... Step 2. ..."`。
 
-- $X_0\in\mathcal F$ alone is insufficient;
-- stable $\Phi$ alone is insufficient;
-- a finite simulation horizon does not prove the all-time condition;
-- a trajectory-defined ROEA need not have a closed-form boundary.
+### PT-9：ROEA 单调区间分割与有限驻点约化证明 `[E: Duan & Wang 2026, Theorem 1]`
+1. 按指数基函数驻点将 $[0,+\infty)$ 划分为有限个单调子区间 $[t_{i-1}, t_i)$；
+2. 在每个子区间上求 $g'(t, X_0)$，证明至多存在唯一内驻点 $t^*$；
+3. `"Therefore, the maximum of g(t, x, y) over [t_{i-1}, t_i) can only be attained either at the endpoints t_{i-1} and t_i, or at the unique interior stationary point t^*, if it exists."` 分 `Case 1–4` 化为有限代数不等式交集。
 
-## Template D: complete parameterized design
+### PT-10：OD-FAS 降阶观测器 + 分块上三角 / 级联 ISS 输出反馈证明 `[E: OD-FAS Part 1 & Part 4]`
+1. **观测器证明**：写出形式上含 $\dot y$ 的全阶观测器 $\to$ 令 $z = \hat q_2 + L(\varphi^{(0\sim 1)})y$ 消去 $\dot y$ $\to$ 证得 $\dot e = A_{o1}e$（或 $\dot e = R_E(\varphi)A_L R_E^{-1}(\varphi)e$）。
+2. **闭环稳定性证明**：
+   - 定常情形：构造非奇异分块矩阵 $T$ 使 $T A_E T^{-1}$ 为分块上三角矩阵，直接给出 $\operatorname{eig}(A_E) = \operatorname{eig}(\Phi(F_{0\sim 1}))\cup\operatorname{eig}(L)$；
+   - 时变/非线性情形：代入 $z = q_2 + L y - e$ 化为单向级联系统 $\dot x^{(0\sim 1)} = \Phi(F_{0\sim 1})x^{(0\sim 1)} + G(\cdot)e,\ \dot e = A_o(t)e$，验证 $G(\cdot)$ 一致有界或次线性增长，调用级联 ISS 定理证得 GUA 稳定；
+   - sub-OD-FAS 情形：将输出轨迹表示为增广初值 $[X_0^\top\ z_0^\top]^\top\in\mathbb{R}^{nr+\nu}$ 的函数刻画增广 RoEA。
 
-1. Choose a target matrix $F$ with the desired eigenstructure.
-2. Introduce free $Z$ with its exact dimension.
-3. Construct
+### PT-11：受约束 UC-FAS 内外可行集与三级级联亚镇定证明 `[E: UC-FAS Part II, §3]`
+1. 总起句 `"The procedure is divided into three natural steps."`；
+2. 对第 1 级求 $\mathbb{F}_x = \mathbb{F}_x^{\mathrm{in}}\cap\mathbb{F}_x^{\mathrm{ex}}$、闭环指数解 $X_\dagger(X_{\dagger 0}, t)$、控制高阶导数 $u_x^{(i)} = \xi_i^x(X_{\dagger 0}, t)$ 及 $\mathcal{R}_x$；
+3. 将 $(X_\dagger, \xi_i^x)$ 代入下游子系统构造以 $X_{\dagger 0}\in\mathcal{R}_x$ 为外参的时变 sub-FAS，递推定义 $\mathbb{F}_y, \mathcal{R}_y, \mathbb{F}_z, \mathcal{R}_z$，取直和 $\mathcal{R}_{xyz} = \mathcal{R}_x \oplus \mathcal{R}_y \oplus \mathcal{R}_z$，在推导末尾引出主定理。
 
-$$
-V(Z,F)=\begin{bmatrix}Z^\top&(ZF)^\top&\cdots&(ZF^{m-1})^\top\end{bmatrix}^\top.
-$$
+### PT-12：时滞预测器与广义链式系统缩放/受扰证明 `[E: SCIS 2023 Delay 2; SCIS 2024 Chained 1–2]`
+- **输入时滞预测器**：在 $s\in[0,h]$ 上由初值历史与唯一解假设证 $Z(s) = x^{(0\sim n-1)}(t+s)$，代入超前对消律使 $t\ge h$ 后闭环化为常系数线性系统。
+- **广义链式非完整系统**：先由 Brockett 必要条件证光滑律不存在（`Prop. 1`）；不连续分支用 $x_0(t)=x_0(0)\mathrm{e}^{-\beta t}\neq 0$ 做 $z_i=x_{n-i+1}/x_0^{n-i}$ 缩放转 SFS/FAS；连续分支将 $x_0$-通道升为二阶系统提取非零主导实模态 $\sigma_0(t)=c_2\mathrm{e}^{-\beta t}\neq 0$，缩放后利用可积指数衰减扰动 $\int_0^\infty \rho_\Delta(s)\mathrm{d}s < \infty$ 证 UGE 稳定。
 
-4. Impose $\det V(Z,F)\ne0$.
-5. Define $A_{0\sim m-1}=-ZF^mV^{-1}(Z,F)$.
-6. Verify by block multiplication that $\Phi(A_{0\sim m-1})V=VF$.
-7. infer $\Phi(A_{0\sim m-1})=VFV^{-1}$;
-8. separate eigenstructure selected through $F$ from remaining freedom in $Z$;
-9. state any secondary objective imposed on $Z$.
+---
 
-Failure condition: a numerical $Z$ with singular $V(Z,F)$ is inadmissible even if a simulation happens to run.
+## 2. 用户切换 sub-FAS 相对裕度扩展证明链 `[D: main_v2.tex]`
 
-## Template E: uncertain/robust/adaptive branch
-
-1. Split known and uncertain terms exactly as the source does.
-2. List measurable signals and known bounds.
-3. map each uncertainty assumption to the compensation term using it;
-4. state the Lyapunov function and all positive-definiteness conditions;
-5. compute its derivative without suppressing cross terms;
-6. apply each inequality with its constants visible;
-7. distinguish asymptotic, exponential, ultimate-bounded, practical, and finite-time conclusions;
-8. show all closed-loop signals required by the theorem remain bounded;
-9. verify the implemented controller uses no unavailable quantity.
-
-## Template F: delay and predictor branch
-
-1. Declare every delay and bound, and specify the initial-history interval.
-2. State the existence/uniqueness assumption for the original delay system.
-3. construct the predictor with the source's $Y$ and shifted $Z$ variables;
-4. prove predictor equality on its declared horizon;
-5. substitute predicted current/future variables into the delayed input channel;
-6. derive the delay-compensated closed loop;
-7. verify causality: the controller uses only available history and computed prediction;
-8. carry feasibility conditions over the required delayed stack.
-
-## Template G: output-feedback / OD-FAS branch (`OD-FAS Part 1 & Part 4` `[E]`)
-
-1. Decompose drift into state-dependent $f_x$ and output-dependent $f_y$, with output-dependent input matrix $B(y(t-\sigma_j(t))\vert_{j=1\sim q}, t)$, and apply $u(t)=-B^{-1}(\cdot, t)(f_y(\cdot, t)-u_0)$ (`Proposition 2.1`).
-2. For unmeasured derivatives ($q_2=\dot x$ in position feedback or $q_1=x$ in velocity feedback, optionally augmented with disturbance $d$), start from the formal full-order observer containing $\dot y$, introduce $z=\hat q_2+L(\varphi^{(0\sim 1)})y$ to cancel $\dot y$, and prove $\dot e=A_{o1}e$ (or $\dot e=R_E(\varphi)A_L R_E^{-1}(\varphi)e$).
-3. Write the ideal full-state controller $u_0$ first, replace unmeasured variables by $\hat q_2$ (`"Now, since q_2 = \dot x in (...) is unknown, let us substitute \dot x with \hat q_2..."`), and rearrange into the standard 4-block compensator $u_0=K_{11}y+K_{12}z,\ \dot z=K_{21}y+K_{22}z$.
-4. Prove closed-loop stability either via block-upper-triangular similarity $T A_E T^{-1}$ (`eig(A_E) = eig(\Phi(F_{0\sim 1})) \cup eig(L)`) or via cascade ISS stability (`Theorem 3.2 / Corollary 3.2`) under bounded / sublinear coupling growth.
-5. For sub-OD-FAS dynamical output feedback, characterize the RoEA in the **augmented initial-value space** $[X_0^\top\ z_0^\top]^\top \in \mathbb R^{nr+\nu}$ (`OD-FAS Part 1, Theorem 4.2`), and recover original coordinates via the diffeomorphism.
-
-## Template H: switched SUB-FAS relative-margin theorem `[D]`
-
-1. Declare index set $\mathcal P=\{1,2,\ldots,N\}$ and each subsystem (`the ith subsystem`) with piecewise continuous $f_i, B_i$; assume $x^{(0\sim n-1)}$ does not jump at switching instants.
-2. Define $\mathcal S_{i,0}, \mathcal S_{i,\infty}, \mathcal S_i$, feasible set $\mathcal F_i=\mathbb R^{nr}\setminus\mathcal S_i$, and singularity functions $\varphi_{i,0}, \varphi_{i,\infty}, \varphi_i$ following Duan (2023) Definitions 5–6 `[E]`.
-3. State Assumption 1 `[D]`: each $\varphi_i:\mathbb R^{nr}\to\mathbb R$ is fixed and continuous on $\mathbb R^{nr}$.
-4. Define $\mathcal F_{\rm ext}=\bigcup_{i\in\mathcal P}\mathcal F_i=\{X:\max_{i\in\mathcal P}|\varphi_i(X)|>0\}$ and origin feasibility $\max_{i\in\mathcal P}|\varphi_i(0)|>0$.
-5. Construct subsystem controller $u_i=-B_i^{-1}(x^{(0\sim n-1)})[A_{0\sim n-1}x^{(0\sim n-1)}+f_i(x^{(0\sim n-1)})]$ on $\mathcal F_i$ first, then substitute to obtain the common linear closed-loop equation $x^{(n)}+A_{0\sim n-1}x^{(0\sim n-1)}=0$.
-6. Define the extended ROEA $\mathcal R_\kappa$ from the unique closed-loop response on $[0,\infty)$ under switching law $\kappa$ with initial value $X_0=x^{(0\sim n-1)}(0)$.
-7. Construct holding/switching regions $\Omega_i, \widetilde\Omega_i$ using $|\varphi_i(X)|$ vs. $\gamma\max_{j\in\mathcal P}|\varphi_j(X)|$ ($\gamma\in(0,1)$), deterministic `min(argmax)` tie-breaking, and switching law $\kappa^*$.
-8. Prove Lemma 1 (on $[0,T)$ with feasible limit at $T^-$: finitely many switches via uniform continuity on compact $K_T$ + unique continuation beyond $T$).
-9. Prove Theorem 1 (active controller well-defined when $\sigma(t)=i$, common state-space response $e^{\Phi(A_{0\sim n-1})t}X_0$, common Lyapunov decay, origin neighborhood in $\mathcal R_{\kappa^*}$, and exact characterization $\mathcal R_{\kappa^*}=\{X_0:e^{\Phi(A_{0\sim n-1})t}X_0\in\mathcal F_{\rm ext},\ \forall t\ge0\}$).
-10. Prove Proposition 1 (parameter-independent strict enlargement $X_0\in\mathcal R_{\kappa^*}\setminus\bigcup_{i\in\mathcal P}\mathcal R_i(A_{0\sim n-1})$ via Template I contradiction) and Corollary 1 (finite total switches on $[0,\infty)$ on compact $K_\infty$, excluding Zeno behavior).
-
-This template is the user's switched extension and must remain labeled `[D]`.
-
-## Template I: proof by contradiction (`Duan & Zhou 2022` Lemma 4.4 `[E]`)
-
-1. Start directly with `"Suppose that [negation of conclusion]."` (never write `"We prove by contradiction"` or `"Suppose, on the contrary"`).
-2. Deduce consequences using `"Then it follows from (x) that [display]."`
-3. Construct the witnessing object deduced from the negation: `"Therefore, there exists … such that [display], which means that [Property A]."`
-4. Establish the opposing fact: `"On the other side, [hypothesis / plant equation] implies that [not Property A]."`
-5. Close with the exact three-sentence cadence: `"This yields a contradiction. Thus [original conclusion]. The proof is finished."`
-
-## Template J: high-order backstepping (`Part III` §4; `2026 Volume I` §9.2 `[E]`)
-
-1. **Preparations**: Select $A_i^{0\sim m_i-1}$ with $\operatorname{Re}\lambda_k(\Phi(A_i^{0\sim m_i-1}))\le -\mu/2$, solve $\Phi^\top P_i+P_i\Phi\le -\mu P_i$ for $P_i=[P_{iF}\ P_{iL}]$, define $\tilde P_i=\mathring{I}P_i$ and $\tilde P_i^{-1}=[Q_{i1}^\top\ Q_{i2}^\top]^\top$, and verify $Q_{iL}\ne 0$.
-2. **`The First Step`**: Set $z_1^{(0\sim m_1-1)}=x_1^{(0\sim m_1-1)}$ and $\tilde P_2 z_2^{(0\sim m_2-1)}=x_2^{(0\sim m_2-1)}-[\alpha_1^\top\ 0]^\top$; design first virtual control $\alpha_1=-L_1^{-1}(A_1^{0\sim m_1-1}z_1^{(0\sim m_1-1)}+\alpha_1^*)$ to get $z_1^{(m_1)}+A_1^{0\sim m_1-1}z_1^{(0\sim m_1-1)}=\varphi_1+w_1$.
-3. **`The Second / k-th Step`**: Differentiate $\alpha_{k-1}$ only $m_k-1$ times and split certain/uncertain parts ($h_{k-1}+\Delta h_{k-1}$); express $z_k^{(m_k)}$ via $\tilde P_k^{-1}$; introduce $\tilde P_{k+1}z_{k+1}^{(0\sim m_{k+1}-1)}$; design $\alpha_k$ including coupling cancellation $+v_{k-1}$ ($v_{k-1}=L_{k-1}^\top P_{k-1,L}z_{k-1}^{(0\sim m_{k-1}-1)}$) to obtain $z_k^{(m_k)}+A_k^{0\sim m_k-1}z_k^{(0\sim m_k-1)}=\varphi_k+w_k-v_{k-1}$.
-4. **`The n-th Step`**: Design actual control law $u=-L_n^{-1}(A_n^{0\sim m_n-1}z_n^{(0\sim m_n-1)}+u^*)$ with $+v_{n-1}$, yielding $z_n^{(m_n)}+A_n^{0\sim m_n-1}z_n^{(0\sim m_n-1)}=\varphi_n-v_{n-1}$.
-5. **`The Conclusion`**: Define $V=\sum_{i=1}^n (z_i^{(0\sim m_i-1)})^\top P_i z_i^{(0\sim m_i-1)}$, cancel cross terms via $(z_i)^\top P_{iL}w_i=(z_{i+1})^\top P_{i+1,L}v_i$ (`"Adding the equations in (...) side by side, and using (...), give \dot V\le -\mu V+n\varepsilon"`), and introduce the formal theorem with `"The above process clearly proves the following result."`
-
-## Template K: sufficiency/necessity, multi-conclusion, and induction proofs `[E]`
-
-- **Sufficiency & Necessity**: Label paragraphs `"Sufficiency: …"` and `"Necessity: …"`, closing with `"Combining the above two aspects gives the complete proof of the result."` `[E: Duan 2023 Proposition 2]`.
-- **Multi-conclusion**: Prove in stated order (`"The first two conclusions are obvious. To show the third condition, …"`, `"The first conclusion is then proven."`, `"It remains to show that …"`).
-- **Mathematical induction**: Open with `"We prove the theorem via the n-step induction. Step 1: …"` or `"We use mathematical induction to prove this result."` `[E: Volume I Ch. 7–8]`.
-
-See [duan-writing-corpus.md](duan-writing-corpus.md) §7 for verbatim Duan proof passages.
-
-
-## Template L: constrained UC-FAS cascade substabilization (`UC-FAS Part II` §3 `[E]`)
-
-1. Open the derivation with `"The procedure is divided into three natural steps."` (or $k$ steps).
-2. **Subsystem 1**: Define internal feasibility set $\mathbb F_x^{\mathrm{in}}$, design $u_x=u_{x0}^{\mathrm{d}}(x^{(0\sim n_x-1)},t)$ on $\mathbb F_x^{\mathrm{in}}$, write $X_\dagger(X_{\dagger 0},t)=\exp(\Phi(A_{0\sim n_x-1}^x)t)X_{\dagger 0}$ and control derivatives $u_{xi}^{\mathrm{d}}$, define external feasibility set $\mathbb F_x^{\mathrm{ex}}$ from joint state–input-derivative constraints, set $\mathbb F_x=\mathbb F_x^{\mathrm{in}}\cap\mathbb F_x^{\mathrm{ex}}$, and characterize $\mathcal R_x$.
-3. **Downstream subsystems**: Substitute $X_\dagger(X_{\dagger 0},t)$ and explicit upstream input derivatives $u_x^{(i)}=\xi_i^x(X_{\dagger 0},t)$ into the next subsystem to form a time-varying sub-FAS parameterized by $X_{\dagger 0}\in\mathcal R_x$; define $\mathbb F_y=\mathbb F_y^{\mathrm{in}}\cap\mathbb F_y^{\mathrm{ex}}$ and $\mathcal R_y$ (and similarly $\mathbb F_z, \mathcal R_z$).
-4. Take direct sums $\mathbb F_{xyz}=\mathbb F_x\oplus\mathbb F_y\oplus\mathbb F_z$ and $\mathcal R_{xyz}=\mathcal R_x\oplus\mathcal R_y\oplus\mathcal R_z$, and state the main substabilization theorem at the end of the cascade construction (`"Then we have the following conclusion. Theorem 3.1: ..."`).
-
-## Template M: generalized chained-form scaling & perturbation proofs (`SCIS 2024 Parts 1–2` `[E]`)
-
-1. Prove nonexistence of smooth / time-invariant continuous stabilizing laws first via Brockett's necessary condition (`Proposition 1`).
-2. **Discontinuous branch (`Part 1`)**: Set $u_0=-\beta x_0$ ($x_0(0)\ne 0$, `Assumption X`: $x_0(t)=x_0(0)e^{-\beta t}$), apply scaling $z_i=x_{n-i+1}/x_0^{n-i}$ to obtain an SFS (`Problem 1` $\Longleftrightarrow$ `Problem 2`), convert the SFS to a single-order FAS/sub-FAS, and prove both forward and inverse (`one-to-one`) convergence recovery.
-3. **Continuous dynamic branch (`Part 2`)**: Extend $\dot x_0=u_0$ to $\ddot x_0+a_1\dot x_0+a_0 x_0=0$ ($\alpha>\beta>0$) under $\dot x_0(0)\ne -\alpha x_0(0)$ (`Assumption B`), decompose $x_0(t)=\sigma_0(t)[1-\omega(t)]$ with nonvanishing $\sigma_0(t)=c_2 e^{-\beta t}\ne 0$, scale by $\sigma_0^{n-i}$ into a perturbed SFS/FAS, and prove UGE stability via integrable decaying perturbation bounds $\int_0^\infty \rho_\Delta(s)\mathrm d s<\infty$.
-
-See [duan-series-templates.md](duan-series-templates.md) for verbatim passages across OD-FAS, UC-FAS, IJSS Parts VI & X, SCIS series, and Chinese *Acta Automatica Sinica* papers.
+1. 声明指标集 $\mathcal{P}=\{1,2,\ldots,N\}$ 与 `the ith subsystem`，按 `Duan 2023` 定义 $\mathcal{S}_i,\mathcal{F}_i,\varphi_i$ `[E]`，单列 `Assumption 1`（$\varphi_i$ 在 $\mathbb{R}^{nr}$ 上固定且连续 `[D]`）。
+2. 在 $\mathcal{F}_i$ 上先构造子系统控制器 $u_i$，再代入得公共常系数线性闭环 $x^{(n)}+A_{0\sim n-1}x^{(0\sim n-1)}=0$，构造基于 $|\varphi_i(X)|$ 与 $\gamma\max_j|\varphi_j(X)|$ 的滞环保持/切换集 $\Omega_i,\widetilde\Omega_i$ 及切换律 $\kappa^*$ `[D]`。
+3. **Lemma 1 `[D]`**：在 $[0,T)$ 极限落入 $\mathcal{F}_{\mathrm{ext}}$ 前提下，用紧集 $K_T$ 上一致连续性反证有限切换次数并唯一延拓过 $T$。
+4. **Theorem 1 `[D]`**：证全时域可行、公共状态空间响应 $\mathrm{e}^{\Phi(A_{0\sim n-1})t}X_0$ 指数收敛、原点邻域包含及扩展 ROEA 精确刻画 $\mathcal{R}_{\kappa^*} = \{X_0 \mid \mathrm{e}^{\Phi(A_{0\sim n-1})t}X_0\in\mathcal{F}_{\mathrm{ext}},\ \forall t\ge 0\}$。
+5. **Proposition 1 & Corollary 1 `[D]`**：套 `PT-4` 反证模板证与增益无关的严格扩大 $X_0\in\mathcal{R}_{\kappa^*}\setminus\bigcup_{i\in\mathcal{P}}\mathcal{R}_i(A_{0\sim n-1})$，并在紧集 $K_\infty$ 上证 $[0,\infty)$ 总切换次数有限、排除 Zeno 行为。

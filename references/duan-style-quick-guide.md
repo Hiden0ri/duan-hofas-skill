@@ -124,7 +124,7 @@ where ... , guarantees that ... .
 \end{theorem}
 ```
 
-The conclusion must name the controlled quantity, convergence type, domain of initial conditions, and exact set or performance bound. **Every Theorem, Lemma, Proposition, and Corollary must state its purpose explicitly inside its own statement** (never relegate the real goal—such as strict ROEA enlargement or Zeno exclusion—to a surrounding sentence or Remark).
+The conclusion must name the controlled quantity, convergence type, domain of initial conditions, and exact set or performance bound. Across all 190 Theorems in the 32-paper + *Volume I* corpus, **`Let ...` openings (`63.7%`, e.g., `"Let Assumptions A1–A2 be met, and F_{0\sim n-1} be a matrix making \Phi(F_{0\sim n-1}) Hurwitz. Then..."`) and referencing a pre-constructed numbered controller (`is given by (30)`) are just as canonical as `Suppose that...` (`12.1%`) and inline controller displays**; see [theorem-writing-template.md](theorem-writing-template.md) (`T1–T6`, `L1–L6`, `P1–P5`, `C1–C4`) and [corpus-conflict-resolution.md](corpus-conflict-resolution.md). **Every Theorem, Lemma, Proposition, and Corollary must state its purpose explicitly inside its own statement** (never relegate the real goal—such as strict ROEA enlargement or Zeno exclusion—to a surrounding sentence or Remark).
 
 ## 5. Proof organization
 
@@ -278,13 +278,13 @@ x^{(n)}=f_i\!\left(x^{(0\sim n-1)}\right)
 \end{equation}
 For convenience, define
 \begin{equation}
-X:=x^{(0\sim n-1)}.
+X=x^{(0\sim n-1)}.
 \end{equation}
 ```
 
 Retain time arguments when the selected Duan model family is time varying, and replace this example with the correct single-order, multi-order, affine, nonaffine, global-FAS, or SUB-FAS form. The reusable rule is only the dependency order: the model must precede a shorthand defined from that model. It does not prescribe a fixed order for feasible sets, assumptions, controllers, switching quantities, or later results; arrange those items according to the mathematical argument of the manuscript.
 
-The use of `:=` in the body is intentional: it introduces a paper-local object. It does not conflict with the `Notations` rule that general symbol conventions use `=`.
+In Duan's 32 first-author papers, `:=` appears `0/32` times `[E]`: body definitions use `=` (`8/32` papers, e.g., `Duan 2023 TCYB`) or `\triangleq` (`24/32` papers, e.g., `Overview 2024`, `OD-FAS 2026`), whereas `:=` comes from coauthored papers such as `Yang & Duan 2026`. Prefer `=` or `\triangleq` in pure Duan style (see [corpus-conflict-resolution.md](corpus-conflict-resolution.md)).
 
 ### 10.4 Tables
 
