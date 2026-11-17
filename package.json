@@ -1,0 +1,42 @@
+{
+  "name": "@hiden0ri/duan-hofas-skill",
+  "version": "1.0.0",
+  "description": "Unified Duan-style HOFAS / sub-FAS / switched sub-FAS manuscript checker, drafter, 940-block formal/proof template bank, and IEEEtran LaTeX skeleton for Antigravity, Claude Code, and Codex.",
+  "keywords": [
+    "hofas",
+    "fully-actuated-system",
+    "sub-fas",
+    "guang-ren-duan",
+    "control-theory",
+    "latex",
+    "agent-skill",
+    "codex",
+    "claude-code",
+    "antigravity"
+  ],
+  "homepage": "https://github.com/Hiden0ri/duan-hofas-skill#readme",
+  "bugs": {
+    "url": "https://github.com/Hiden0ri/duan-hofas-skill/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hiden0ri/duan-hofas-skill.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "files": [
+    "SKILL.md",
+    "README.md",
+    "README_zh-CN.md",
+    "agents/",
+    "assets/",
+    "references/",
+    "scripts/*.py"
+  ],
+  "scripts": {
+    "validate": "python3 scripts/validate_distillation.py",
+    "build:release": "python3 scripts/build_release_packages.py"
+  },
+  "private": false
+}

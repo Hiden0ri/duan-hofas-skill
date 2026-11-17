@@ -29,6 +29,7 @@ duan-hofas/
 ├── SKILL.md                           # Main skill instructions, 4 modes & alignment rules
 ├── README.md                          # Documentation (English)
 ├── README_zh-CN.md                    # Documentation (Simplified Chinese)
+├── package.json                       # @hiden0ri/duan-hofas-skill package manifest
 ├── agents/
 │   └── openai.yaml                    # Codex UI display metadata & default prompt
 ├── assets/                            # Compilable manuscript template assets
@@ -41,13 +42,14 @@ duan-hofas/
 │   ├── corpus-conflict-resolution.md  # Empirical audit of 10 cross-corpus conflicts (Check vs Draft)
 │   ├── corpus-guide.md                # Guide to local full-text MD corpus, sorted banks & FTS5 DB
 │   └── ...                            # +19 specialized notation, model, lemma & audit references
-├── scripts/                           # 9 corpus builder, sorter, search & validation tools
+├── scripts/                           # 10 corpus, sorter, search, packager & validator tools
 │   ├── build_papers_corpus.py         # PDF -> column-ordered MD + SQLite FTS5 builder
 │   ├── sort_corpus_environments.py    # 940-block environment & proof sorter
 │   ├── search_corpus.py               # Unified FTS5 & landmark search across 32 papers + Vol. I
+│   ├── build_release_packages.py      # Builds .skill, .zip, .tar.gz, npm .tgz & SHA256SUMS
 │   ├── validate_distillation.py       # Structural link, math delimiter & file validator
 │   └── ...                            # +5 Volume I indexing/extraction & Zotero inventory scripts
-├── reports/                           # 7 historical distillation & coverage audit logs
+├── reports/                           # [Gitignored local historical distillation & audit logs]
 └── corpus -> ~/.cache/duan-hofas/corpus/   # [Gitignored local symlink, optional]
     ├── INDEX.md & manifest.json       # Catalog of 32 local first-author Duan papers
     ├── papers/*.md                    # 32 column-reordered, CM-font-decoded full-text MDs
@@ -68,10 +70,10 @@ duan-hofas/
 | **Examples, Plots & Rigor Audit** | [example-library.md](references/example-library.md), [simulation-patterns.md](references/simulation-patterns.md) (`matlab/p1ot.m` plotting & short captions), [frequently-cited-references.md](references/frequently-cited-references.md), [rigor-audit.md](references/rigor-audit.md), [adversarial-tests.md](references/adversarial-tests.md) |
 | **Source & Corpus Guides** | [corpus-guide.md](references/corpus-guide.md), [source-catalog.md](references/source-catalog.md), [volume1-authority.md](references/volume1-authority.md) |
 
-### 3. Automation & Retrieval Scripts (`scripts/` — 9 tools)
+### 3. Automation, Packaging & Retrieval Scripts (`scripts/` — 10 tools)
 - **Full-Text Corpus & 940-Block Sorter**: `scripts/build_papers_corpus.py` (converts 32 PDFs to column-ordered, font-decoded `.md` + unified FTS5 DB), `scripts/sort_corpus_environments.py` (sorts all 823 environments + 117 proofs into 10 verbatim banks), `scripts/search_corpus.py` (unified CLI search by `--query`, `--literal`, `--label`, `--kind`, `--series`).
 - **Monograph & Zotero Utilities**: `scripts/build_volume1_index.py`, `scripts/search_volume1.py`, `scripts/extract_volume1_pages.py` (513-page *Volume I* SQLite FTS5 indexing & page extraction); `scripts/inventory_duan_first_author.py`, `scripts/inventory_local_sources.py` (local Zotero PDF cataloging).
-- **Skill Validator**: `scripts/validate_distillation.py` (verifies all 26 required knowledge files, internal Markdown links, and `$...$`/`$$...$$` math delimiters).
+- **Skill Validator & Release Packager**: `scripts/validate_distillation.py` (verifies all 26 required knowledge files, internal Markdown links, and `$...$`/`$$...$$` math delimiters); `scripts/build_release_packages.py` (builds copyright-safe `.skill`, `.zip`, `.tar.gz`, npm `.tgz`, and `SHA256SUMS.txt`).
 
 ### 4. Local Full-Text & Sorted Verbatim Cache (`~/.cache/duan-hofas/`, gitignored)
 Kept outside Git for copyright compliance and linked locally via `corpus -> ~/.cache/duan-hofas/corpus`:

@@ -10,3 +10,7 @@ Thumbs.db
 
 corpus
 corpus/
+dist/
+*.tgz
+*.skill
+node_modules/

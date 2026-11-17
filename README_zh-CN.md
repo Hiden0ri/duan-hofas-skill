@@ -29,6 +29,7 @@ duan-hofas/
 ├── SKILL.md                           # 技能主入口、四大工作模式与对齐铁律
 ├── README.md                          # 英文说明文档
 ├── README_zh-CN.md                    # 简体中文说明文档
+├── package.json                       # @hiden0ri/duan-hofas-skill 包清单与发布配置
 ├── agents/
 │   └── openai.yaml                    # Codex 界面元数据与默认触发提示词
 ├── assets/                            # 可编译论文模板资产库
@@ -41,13 +42,14 @@ duan-hofas/
 │   ├── corpus-conflict-resolution.md  # 940 条分拣块中 10 处跨篇冲突实证统计与 Check/Draft 裁定
 │   ├── corpus-guide.md                # 本地全文 MD 库、分拣分类库与 FTS5 检索使用指南
 │   └── ...                            # 其余 19 份记号词典、模型注册表、引理卡片与严密性审查参考
-├── scripts/                           # 9 个语料构建、环境分拣、全文检索与结构校验脚本
+├── scripts/                           # 10 个语料构建、环境分拣、全文检索、打包与校验脚本
 │   ├── build_papers_corpus.py         # PDF -> 双栏重排/数学字体解码 MD + SQLite FTS5 构建器
 │   ├── sort_corpus_environments.py    # 940 条正式环境与显式证明全量自动分拣器
 │   ├── search_corpus.py               # 覆盖 32 篇论文 + Volume I 的统一命令行检索工具
+│   ├── build_release_packages.py      # 构建 .skill / .zip / .tar.gz / npm .tgz 发行包与校验和
 │   ├── validate_distillation.py       # 必需文件、内部链接与公式定界符完整性校验脚本
 │   └── ...                            # 其余 5 个专著索引/单页提取与本地 Zotero 盘点脚本
-├── reports/                           # 7 份早期知识蒸馏与覆盖率审查历史记录
+├── reports/                           # [被 .gitignore 忽略的本地早期蒸馏与覆盖率审查记录]
 └── corpus -> ~/.cache/duan-hofas/corpus/   # [被 .gitignore 忽略的本地可选软链]
     ├── INDEX.md & manifest.json       # 32 篇本地段广仁一作中英文论文总目录与元数据
     ├── papers/*.md                    # 32 篇双栏重排、CM/Y&Y 数学字体解码全文 MD
@@ -68,10 +70,10 @@ duan-hofas/
 | **算例、仿真绘图与严密性审查** | [example-library.md](references/example-library.md)、[simulation-patterns.md](references/simulation-patterns.md)（`matlab/p1ot.m` 作图规范与短图题）、[frequently-cited-references.md](references/frequently-cited-references.md)、[rigor-audit.md](references/rigor-audit.md)、[adversarial-tests.md](references/adversarial-tests.md) |
 | **原始文献目录与语料库指南** | [corpus-guide.md](references/corpus-guide.md)、[source-catalog.md](references/source-catalog.md)、[volume1-authority.md](references/volume1-authority.md) |
 
-### 3. 自动化构建、分拣、检索与校验工具库（`scripts/`，共 9 个脚本）
+### 3. 自动化构建、分拣、检索、打包与校验工具库（`scripts/`，共 10 个脚本）
 - **全文库构建、分拣与检索**：`scripts/build_papers_corpus.py`（将 32 篇 PDF 转为双栏重排、数学字体解码 `.md` 并构建统一 FTS5 库）、`scripts/sort_corpus_environments.py`（将 823 个正式环境 + 117 个显式证明自动分拣入 10 个原文分类库）、`scripts/search_corpus.py`（支持 `--query`、`--literal`、`--label`、`--kind`、`--series` 毫秒级检索）。
 - **专著与本地文献盘点**：`scripts/build_volume1_index.py`、`scripts/search_volume1.py`、`scripts/extract_volume1_pages.py`（513 页 *Volume I* 专著索引与单页提取）；`scripts/inventory_duan_first_author.py`、`scripts/inventory_local_sources.py`（本地 Zotero 文献盘点）。
-- **结构完整性校验**：`scripts/validate_distillation.py`（自动检查全部 26 份核心知识文件、内部 Markdown 链接及 `$...$`/`$$...$$` 公式定界符）。
+- **结构校验与发行包构建**：`scripts/validate_distillation.py`（自动检查全部 26 份核心知识文件、内部 Markdown 链接及 `$...$`/`$$...$$` 公式定界符）；`scripts/build_release_packages.py`（一键生成版权安全的 `.skill`、`.zip`、`.tar.gz`、npm `.tgz` 与 `SHA256SUMS.txt`）。
 
 ### 4. 本地版权隔离原文与分拣缓存库（`~/.cache/duan-hofas/`，不入 Git）
 为遵守出版社版权规范，受版权保护的全文与数据库保存在本地缓存目录，通过被 `.gitignore` 忽略的 `corpus -> ~/.cache/duan-hofas/corpus` 软链挂载：
