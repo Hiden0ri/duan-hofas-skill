@@ -212,3 +212,29 @@ python3 scripts/search_corpus.py --list-docs
 ## 重要数学边界
 
 关于原系统变量、维数以及随控制目标变化的 $f$ 与 $B$ 正则性条件，请查阅 [references/model-definition-registry.md](references/model-definition-registry.md)。动笔前应先选定所属模型分支与控制目标：**切勿将某一篇特定论文的光滑性或全局非奇异假设泛化为所有 HOFAS/sub-FAS 的通用要求，也切勿将本文新增的 `[D]` 构造归于段广仁名下**。
+
+
+## 更新历史与说明
+
+### 版本演进记录
+
+- **2026-11-17（`b4107c3` – `c5a1aca`）— 940 块环境/证明全量分拣模板库、跨篇冲突裁定与双语架构文档**
+  - 新增 `scripts/sort_corpus_environments.py`，从 32 篇一作全文 + *Volume I* 中按精确起止边界自动分拣 **940 个原文块**（823 个正式环境 + 117 个显式 `Proof` 块）归入 10 个本地分类库（`corpus/sorted/*.md`）。
+  - 基于全量分拣库重构 [theorem-writing-template.md](references/theorem-writing-template.md)（`T1–T6` 定理、`L1–L6` 引理、`P1–P5` 命题、`C1–C4` 推论、`D1–D2` 定义、`Pr1–Pr3` 问题、`R1–R5` 说明）与 [proof-templates.md](references/proof-templates.md)（`M1–M3` 三种证明位置范式 + `PT-1` 至 `PT-12` 标准证明骨架）。
+  - 新增 [corpus-conflict-resolution.md](references/corpus-conflict-resolution.md)，基于全库统计对 **10 处跨篇差异与旧规冲突**给出实证频数及 Check/Draft 双轨裁定（如 `:=` 一作出现 `0/32` 次 vs `\triangleq`/`=`、定理 `Let` 开头占 `63.7%` vs `Suppose` `12.1%`、证明无套话收尾占 `83.8%`、`ROEA`/`RoEA`、`Hurwitz`/`stable`/`Schur` 等）。
+  - 新增中英文一键切换文档（[README_zh-CN.md](README_zh-CN.md)）、完整目录树与四大资产库分层说明。
+- **2026-11-16（`8b39b3d` – `b42a7cb`）— 32 篇五大系列全覆盖蒸馏、全文 Markdown 语料库与统一 FTS5 检索**
+  - 新增 [duan-writing-corpus.md](references/duan-writing-corpus.md) 与 [duan-series-templates.md](references/duan-series-templates.md)，完成段广仁五大 FAS 系列全覆盖提炼：《自动化学报》（`I–III`）/《航空学报》中文系列、*IJSS*（`Part I–X` + 欠驱动）、*SCIS* 离散/连续时滞与广义链式双篇系列、*UC-FAS*（`Part I–III`）以及最新 *OD-FAS*（`Part 1 & Part 4`）。
+  - 新增 `scripts/build_papers_corpus.py`、`scripts/search_corpus.py` 与 [corpus-guide.md](references/corpus-guide.md)，实现双栏坐标重排、Computer Modern / Y&Y Type-1 数学字体私用区解码（多轮独立复核实现 0 私用区残留、0 `U+FFFD` 乱码、地标行号 0 偏移）及 32 篇论文 + *Volume I* 统一 SQLite FTS5 检索。
+  - 打通 **Antigravity**、**Claude Code** 与 **Codex** 三端统一接入规范。
+- **2026-09-09 – 2026-09-10（`c245800` – `d81fa43`）— 按控制目标区分的模型注册表与改稿规范**
+  - 新增 [model-definition-registry.md](references/model-definition-registry.md)，按控制目标严格区分原系统变量、维数与 $f,B$ 正则性条件（未声明 / `piecewise continuous` / `smooth`）。
+  - 细化引言末尾 `Notations:` 段与正文局部记号的边界及 LaTeX 备份编译流程。
+- **2026-09-08（`790833f` – `0bee51e`）— 初始版本发布与 *Volume I* 专著基座**
+  - 发布 `duan-hofas` 初始版本，构建 513 页 *Volume I* 专著 SQLite FTS5 索引（`scripts/build_volume1_index.py`、`scripts/search_volume1.py`）、核心概念与符号词典、常用假设/引理/高频引文手册、可编译 `assets/duan-hofas-paper-template.tex` 模板及 Linux/macOS/Windows 跨平台安装说明。
+
+### 维护、同步与覆盖范围说明
+
+1. **日常拉取更新 vs. 本地全文缓存重建**：日常执行 `git pull` 并运行 `python3 scripts/validate_distillation.py`，即可在软链关联的三端 Agent 中同步全部 26 份提炼手册、模板与规则，无需重跑构建脚本；**仅当本地 Zotero 新增段广仁 PDF 文献时**，才需重新运行 `build_papers_corpus.py` 与 `sort_corpus_environments.py` 刷新本地缓存库。
+2. **当前文献覆盖范围与待补篇目**：当前本地语料库覆盖 **32 篇段广仁一作中英文 FAS 论文**（英文 28 篇 + 中文 4 篇，2020–2026）及 2026 年 Springer 专著 *Volume I*（513 页）。其中 2026 最新 *OD-FAS* 系列已收录本地现有的 `Part 1` 与 `Part 4`；`OD-FAS Part 2` 与 `Part 3` 暂未存入本地 Zotero，后续补入 PDF 后在 `build_papers_corpus.py` 登记并重跑脚本即可自动完成全文解码、FTS5 入库与环境分拣。
+3. **版权隔离与仓库卫生**：`/corpus` 软链与 `*.sqlite` 数据库已在 `.gitignore` 中严格排除。向公开仓库提交修改前，切勿强行添加全文 `.md`、分拣原文库或原版 PDF，仅提交提炼后的模板、规则与脚本，并务必先执行 `scripts/validate_distillation.py` 确认结构与链接无误。

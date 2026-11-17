@@ -208,3 +208,29 @@ This generates column-ordered, font-decoded structured Markdown full texts (`~/.
 ## Important boundary
 
 For source-faithful definitions of original-system variables, dimensions, and objective-dependent conditions on $f$ and $B$, read [references/model-definition-registry.md](references/model-definition-registry.md). Select the model family and control objective first; never promote one paper's smoothness or nonsingularity condition to a universal HOFAS assumption, and never attribute paper-specific `[D]` extensions to Duan.
+
+
+## Update history & maintenance notes
+
+### Changelog
+
+- **2026-11-17 (`b4107c3` – `c5a1aca`) — 940-Block Sorted Template Banks, Conflict Reconciliation & Bilingual Docs**
+  - Added `scripts/sort_corpus_environments.py` to exhaustively extract and sort **940 verbatim blocks** (823 formal environments + 117 explicit `Proof` blocks) across all 32 first-author papers + *Volume I* into 10 local category banks (`corpus/sorted/*.md`).
+  - Rebuilt [theorem-writing-template.md](references/theorem-writing-template.md) (`T1–T6`, `L1–L6`, `P1–P5`, `C1–C4`, `D1–D2`, `Pr1–Pr3`, `R1–R5`) and [proof-templates.md](references/proof-templates.md) (`M1–M3` placement modes + `PT-1` to `PT-12` canonical proof skeletons) from the full sorted banks.
+  - Added [corpus-conflict-resolution.md](references/corpus-conflict-resolution.md) auditing and resolving **10 cross-corpus variations** with empirical counts and Check-vs-Draft rules (`:=` `0/32` vs `\triangleq`/`=`, `Let` `63.7%` vs `Suppose` `12.1%`, bare vs verbal proof closers, `ROEA`/`RoEA`, `Hurwitz`/`stable`/`Schur`, etc.).
+  - Added switchable Chinese documentation ([README_zh-CN.md](README_zh-CN.md)), visual project tree, and 4-layer asset library documentation.
+- **2026-11-16 (`8b39b3d` – `b42a7cb`) — 32-Paper Full-Series Distillation, Full-Text Markdown Corpus & Unified FTS5 Search**
+  - Added [duan-writing-corpus.md](references/duan-writing-corpus.md) and [duan-series-templates.md](references/duan-series-templates.md), completing verbatim & structural distillation across all 5 major Duan FAS series: Chinese *Acta Automatica Sinica* (`I–III`) / *Acta Aeronautica*, *IJSS* (`Part I–X` + Underactuated), *SCIS* Discrete/Continuous Delay & Generalized Chained series, *UC-FAS* (`Part I–III`), and *OD-FAS* (`Part 1 & Part 4`).
+  - Added `scripts/build_papers_corpus.py`, `scripts/search_corpus.py`, and [corpus-guide.md](references/corpus-guide.md) featuring two-column layout reconstruction, Computer Modern / Y&Y Type-1 math font decoding (verified 0 PUA, 0 `U+FFFD`, and 0-offset landmark line numbers), and unified SQLite FTS5 search across 32 papers + *Volume I*.
+  - Unified multi-agent configuration across **Antigravity**, **Claude Code**, and **Codex**.
+- **2026-09-09 – 2026-09-10 (`c245800` – `d81fa43`) — Objective-Specific Model Registry & Editing Protocol**
+  - Added [model-definition-registry.md](references/model-definition-registry.md) distinguishing original-system variables, dimensions, and objective-dependent regularity of $f$ and $B$ (`unspecified` vs `piecewise continuous` vs `smooth`).
+  - Refined `Notations:` vs paper-local symbol placement rules and safe LaTeX backup/compile workflows.
+- **2026-09-08 (`790833f` – `0bee51e`) — Initial Release & *Volume I* Foundation**
+  - Initial release of `duan-hofas` with 513-page *Volume I* SQLite FTS5 indexing (`scripts/build_volume1_index.py`, `scripts/search_volume1.py`), core concept/symbol dictionaries, recurring assumptions/lemmas/citations guides, `assets/duan-hofas-paper-template.tex`, and Linux/macOS/Windows setup guides.
+
+### Maintenance & coverage notes
+
+1. **Routine updates vs. local cache rebuilds**: Pulling new skill updates (`git pull` + `python3 scripts/validate_distillation.py`) updates all 26 distilled knowledge files, templates, and rules immediately across linked agents. Re-running `build_papers_corpus.py` and `sort_corpus_environments.py` is needed **only** when new Duan PDFs are added to local Zotero storage.
+2. **Current source coverage & pending PDFs**: The corpus currently indexes **32 local Duan first-author FAS papers** (28 English + 4 Chinese, 2020–2026) plus the 2026 Springer monograph *Volume I* (513 pp.). Within the 2026 *OD-FAS* series, `Part 1` and `Part 4` are included locally; `OD-FAS Part 2` and `Part 3` are not yet present in local Zotero storage and can be indexed incrementally once their PDFs become available.
+3. **Copyright & repository hygiene**: `/corpus` and `*.sqlite` are strictly gitignored. Never force-add full-text `.md` papers, sorted verbatim dumps, or publisher PDFs to public commits—commit only distilled templates, rules, and scripts, and always run `scripts/validate_distillation.py` before pushing.
