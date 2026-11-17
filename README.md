@@ -1,22 +1,24 @@
 # Duan HOFAS Skill
 
+English | [简体中文](README_zh-CN.md)
+
 A unified skill (for **Antigravity**, **Claude Code**, and **Codex**) for checking, drafting, and polishing HOFAS / FAS / sub-FAS / switched sub-FAS Markdown files and LaTeX manuscripts using **Guang-Ren Duan's authentic vocabulary, sentence patterns, notation, article organization, formal environments, and proof templates**. It also provides a compilable IEEEtran-compatible Duan-style LaTeX manuscript skeleton.
 
 ## Core capabilities
 
-- **Corpus-backed Duan-style drafting & polishing** ([duan-writing-corpus.md](references/duan-writing-corpus.md)): Write and revise manuscripts using verbatim `[E]` expressions distilled from 22 first-author Duan papers and the 2026 monograph *Fully Actuated System Approach, Volume I*, preserving Duan's signature phrasing (`"the feasible set clearly has the following expression:"`, `"we construct the following controller:"`, `"is equivalent to the following state-space form:"`, `"The above result converts/reveals..."`) while eliminating AI-flavored `"not X, but Y"` defensive disclaimers and single-claim meta-previews.
+- **Corpus-backed Duan-style drafting & polishing** ([duan-writing-corpus.md](references/duan-writing-corpus.md), [duan-series-templates.md](references/duan-series-templates.md)): Write and revise manuscripts using verbatim `[E]` expressions and series-specific structural templates distilled from **all 32 local first-author Duan FAS papers** (28 English + 4 Chinese across *Acta Automatica Sinica*, *IJSS*, *SCIS*, *IEEE TCYB*, *UC-FAS*, and *OD-FAS*) plus the 2026 monograph *Fully Actuated System Approach, Volume I*, preserving Duan's signature phrasing (`"the feasible set clearly has the following expression:"`, `"we construct the following controller:"`, `"is equivalent to the following state-space form:"`, `"The above result converts/reveals..."`) while eliminating AI-flavored `"not X, but Y"` defensive disclaimers and single-claim meta-previews.
 - **Duan-first concept & notation alignment** ([duan-style-quick-guide.md](references/duan-style-quick-guide.md), [concepts-and-notation.md](references/concepts-and-notation.md)): Prioritize Duan's established concepts and symbols ($\varphi_0,\varphi_\infty,\varphi$, $|\varphi_i|$, $\mathbb{S}/\mathcal{S}$, $\mathbb{F}/\mathcal{F}$, substability, ROEA/RoEA, $X_0=x^{(0\sim n-1)}(0)$, end-of-Introduction `Notations:` with `=` and unnumbered `equation*`, no `:=` or `\col`), introducing new `[D]` objects only where Duan has no counterpart.
 - **Strict provenance discipline (`[E]` / `[D]` / `[U]`)** ([model-definition-registry.md](references/model-definition-registry.md)): Keep Duan's original definitions/assumptions strictly separate from paper-added `[D]` conditions and `[U]` unverified items; never read unstated smoothness or topological assumptions into Duan's texts.
 - **Formal environment templates & explicit-goal rule** ([theorem-writing-template.md](references/theorem-writing-template.md)): Standardize `Problem`, `Definition`, `Assumption`/`Condition`, `Lemma`, `Proposition`, `Theorem` (6-part structure + `Then 1)...; 2)...`), `Corollary`, and `Remark` (6 roles), enforcing that **every `Theorem`, `Lemma`, `Proposition`, and `Corollary` states its final purpose directly inside its own statement**.
-- **Eight canonical Duan proof structures** ([proof-templates.md](references/proof-templates.md)):
+- **Canonical & series-specific Duan proof structures** ([proof-templates.md](references/proof-templates.md), [duan-series-templates.md](references/duan-series-templates.md)):
   1. Direct substitution + state-space form + Lyapunov decay;
   2. SUB-FAS substabilization & exact ROEA characterization (`Duan 2023 TCYB`);
   3. Proof by contradiction (`Duan & Zhou 2022`, Lemma 4.4: `"Suppose that … Then it follows from … On the other side, … This yields a contradiction. Thus … The proof is finished."`);
   4. High-order backstepping (`Part III` §4 / `Volume I` §9.2 with $\tilde P_i(A_i^{0\sim m_i-1})=\mathring{I}P_i$ and telescoping Lyapunov sum);
-  5. Sufficiency & necessity (`Sufficiency:` / `Necessity:` / `"Combining the above two aspects..."`);
-  6. Multi-conclusion & multi-step proofs;
-  7. Order-raising elimination & mathematical induction (both forward and inverse directions);
-  8. Monotonic-interval splitting & finite stationary-point ROEA reduction (`Duan & Wang 2026`).
+  5. Sufficiency & necessity (`Sufficiency:` / `Necessity:` / `"Combining the above two aspects..."`), multi-conclusion, and mathematical induction;
+  6. Monotonic-interval splitting & finite stationary-point ROEA reduction (`Duan & Wang 2026`);
+  7. OD-FAS reduced-order observer ($\dot y$-free $z$-variable), 4-block output-feedback compensator, $T A_E T^{-1}$ block-triangular / cascade ISS proof, and augmented $[X_0^\top\ z_0^\top]^\top$ RoEA (`OD-FAS Part 1 & Part 4`);
+  8. Constrained UC-FAS internal/external feasibility decomposition ($\mathbb{F}^{\mathrm{in}}\cap\mathbb{F}^{\mathrm{ex}}$) and 3-step cascade substabilization (`UC-FAS Parts I–III`), plus delay-predictor (`SCIS 2023`) and generalized chained-form scaling/perturbation (`SCIS 2024`).
 - **Examples, captions, tables & MATLAB figure conventions** ([simulation-patterns.md](references/simulation-patterns.md)): Short noun-phrase captions, `"… are shown in Fig. X. It can be observed that …"` body narration, `booktabs` three-line tables, and `matlab/p1ot.m` figure styling.
 - **Ready-to-compile IEEEtran LaTeX skeleton**: `assets/duan-hofas-paper-template.tex`.
 
