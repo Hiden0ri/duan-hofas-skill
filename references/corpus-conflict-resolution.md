@@ -1,6 +1,6 @@
-# Duan 全集语料库跨篇冲突核查与统一裁定指南（940 条环境/证明分拣复核）
+# Duan 全集语料库跨篇冲突核查与统一裁定指南（984 条环境/证明分拣复核）
 
-在对全部 **32 篇本地段广仁一作中英文论文 + 2026 专著 *Volume I***（合计 **823 个正式环境 + 117 个显式 `Proof` 块**，分拣结果存于 `corpus/sorted/*.md` 与 `corpus/sorted/summary_stats.json`）做横向比对时，段广仁本人从 2020 年至 2026 年不同系列/不同出版社论文之间，以及旧版技能归纳与全量统计之间，存在 **10 处真实差异或潜在冲突**。本文件逐条给出全库实证数据与统一裁定准则，供**核查原文（Check）**与**起草新稿（Draft/Polish）**时严格区分。
+在对全部 **32 篇本地段广仁一作中英文论文 + 2026 专著 *Volume I***（合计 **867 个正式环境 + 117 个显式 `Proof` 块**，分拣结果存于 `corpus/sorted/*.md` 与 `corpus/sorted/summary_stats.json`）做横向比对时，段广仁本人从 2020 年至 2026 年不同系列/不同出版社论文之间，以及旧版技能归纳与全量统计之间，存在 **10 处真实差异或潜在冲突**。本文件逐条给出全库实证数据与统一裁定准则，供**核查原文（Check）**与**起草新稿（Draft/Polish）**时严格区分。
 
 ---
 
@@ -40,7 +40,7 @@
 
 - **全库实证统计 `[E]`**：
   - `IJSS Part II–V`（2021）及 *Volume I* 第 5、9、10 章（高阶反步法中下标 $i$ 已被子系统层号占用时）写上标 **`A^{0\sim n-1}` / `A_i^{0\sim m_i-1}`**；其余大部分论文（`Part I, VI–X`, `Duan 2023`, `Overview 2024`, `UC-FAS 2025`, `OD-FAS 2026`）写下标 **`A_{0\sim n-1}`**（多通道用 $A_{k,0\sim\mu_k-1}$ 或 $A_{0\sim n_x-1}^x$）；
-  - 控制律括号内符号存在分支差异：常规镇定写 $u = -B^{-1}[f + A_{0\sim n-1}x^{(0\sim n-1)} - v] \implies x^{(n)}+A_{0\sim n-1}x^{(0\sim n-1)}=v$；而 **OD-FAS 输出抵消变换**写 $u = -B^{-1}[f_y - u_0] \implies x^{(n)} = f_x + u_0$；**离散时间 `Part X`** 写 $u(k) = B^{-1}[-f + A_{0\sim\varpi-1}x^{\lfloor 0\sim\varpi-1\rfloor}(k) + v(k)] \implies x(k+1) = A_{0\sim\varpi-1}x^{\lfloor 0\sim\varpi-1\rfloor}(k) + v(k)$。
+  - 控制律括号内符号存在分支差异：常规镇定写 $u = -B^{-1}[f + A_{0\sim n-1}x^{(0\sim n-1)} - v] \implies x^{(n)}+A_{0\sim n-1}x^{(0\sim n-1)}=v$；而 **OD-FAS 输出抵消变换**写 $u = -B^{-1}[f_y - u_0] \implies x^{(n)} = f_x + u_0$；**离散时间后退步 `Part X`** 写 $u(k) = B^{-1}[-f + A_{0\sim\varpi-1}x^{\lceil 0\sim\varpi-1\rceil}(k) + v(k)] \implies x(k+1) = A_{0\sim\varpi-1}x^{\lceil 0\sim\varpi-1\rceil}(k) + v(k)$。
 - **裁定准则**：单阶系统默认优先用下标 `A_{0\sim n-1}`（若子系统下标占用了 $i$，内部哑指标改用 $j=0,1,\ldots,n-1$）；每次引用控制律必须现场代入验算闭环正负号，严禁跨分支盲抄符号。
 
 ## 冲突 6：全驱非奇异条件 `\det B \ne 0` vs `\det B \ne 0 \text{ or } \infty`

@@ -1,7 +1,7 @@
 {
   "name": "@hiden0ri/duan-hofas-skill",
-  "version": "1.0.0",
-  "description": "Unified Duan-style HOFAS / sub-FAS / switched sub-FAS manuscript checker, drafter, 940-block formal/proof template bank, and IEEEtran LaTeX skeleton for Antigravity, Claude Code, and Codex.",
+  "version": "1.1.0",
+  "description": "Unified Duan-style HOFAS / sub-FAS / switched sub-FAS manuscript checker, drafter, 984-block formal/proof template bank, 109-definition index, FAS advantages corpus, and IEEEtran LaTeX skeleton for Antigravity, Claude Code, and Codex.",
   "keywords": [
     "hofas",
     "fully-actuated-system",

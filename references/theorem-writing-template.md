@@ -1,6 +1,6 @@
-# Duan 正式数学环境标准模板库（基于 32 篇一作论文 + *Volume I* 共 823 个环境全量分拣）
+# Duan 正式数学环境标准模板库（基于 32 篇一作论文 + *Volume I* 共 867 个环境全量分拣）
 
-本文件并非基于单篇论文抽样，而是对本地全集语料库（32 篇段广仁一作中英文论文 + 2026 专著 *Volume I*，共提取分拣 **823 个正式环境**：`Theorem` 190、`Assumption` 155、`Remark` 155、`Lemma` 79、`Proposition` 74、`Definition` 71、`Corollary` 65、`Problem` 24、`Condition` 10；分类原文见本地缓存 `corpus/sorted/*.md`）逐一归类与冲突复核后提炼出的**标准结构模板库**。
+本文件并非基于单篇论文抽样，而是对本地全集语料库（32 篇段广仁一作中英文论文 + 2026 专著 *Volume I*，共提取分拣 **867 个正式环境**：`Theorem` 198、`Assumption` 165、`Remark` 155、`Definition` 94、`Lemma` 80、`Proposition` 76、`Corollary` 65、`Problem` 24、`Condition` 10；分类原文见本地缓存 `corpus/sorted/*.md`）逐一归类与冲突复核后提炼出的**标准结构模板库**。
 
 ---
 
@@ -89,8 +89,8 @@
 
 ## 5. `Definition`、`Assumption / Condition`、`Problem` 与 `Remark` 标准模板 `[E]`
 
-- **`Definition`（71 例：单概念型 35 例 vs 分条分类学型 36 例）**：
-  - **D1 单概念型**：`"Let / Denote [...]. If [condition], then [...] is called / is said to be [...]."`
+- **`Definition`（94 例：单概念型 vs 分条分类学型，全集主题索引见 [canonical-definitions-index.md](canonical-definitions-index.md)）**：
+  - **D1 单概念型**：`"Let / Denote [...]. Then [...] is called / is said to be [...]."`（或 `"If [condition], then [...] is called [...]."`）
   - **D2 分条分类学型**：`"The sub-FAS (18) is called: 1) a rational sub-FAS if ...; 2) a critical rational sub-FAS if ...; 3) an irrational sub-FAS if ..."`
 - **`Assumption`（155 例）vs `Condition`（10 例）边界**：93.9% 使用 `Assumption`（全驱性、可微性、可测性、伴随子系统稳定性）；仅在需将“不确定性界或线性可检测条件”与主全驱假设区分时才偶用 `Condition`。奇异集/可行集永远属于 `Definition`，本文新增条件单独列为 `Assumption` `[D]`。
 - **`Problem`（24 例）三类模板**：

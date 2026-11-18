@@ -5,15 +5,15 @@
 1. **第 1 层：双栏重排结构化 Markdown 全文库**（共 32 篇段广仁一作中英文论文）
    - 物理路径：`/home/yzk/.cache/duan-hofas/corpus/papers/<doc_id>.md`
    - 技能内软链路径：`corpus/papers/<doc_id>.md`（总目录见 `corpus/INDEX.md` 与 `corpus/manifest.json`，已在 `.gitignore` 中忽略 `/corpus`）
-   - 特性：基于 PyMuPDF 按真实双栏/单栏坐标重排阅读顺序，内置 Computer Modern（`CMMI`/`CMSY`/`CMEX`/`CMR`/`MSBM`）私用区数学字符解码与 NFKC 连字归一；每篇顶部自动生成 **Formal Landmarks Index**（列出全部 `Definition / Assumption / Condition / Problem / Lemma / Proposition / Theorem / Corollary / Remark / 定义 / 定理 / 说明` 所在 PDF 页码与 `.md` 行号），正文中每页带有 `<!-- PDF p.X/N -->` 锚点。
+   - 特性：基于 PyMuPDF 按真实双栏/单栏坐标重排阅读顺序，内置 Computer Modern（`CMMI`/`CMSY`/`CMEX`/`CMR`/`MSBM`）、`EuclidMathTwo` 与方正数学符号（`FZS_Extra_S92`）私用区/缺失 `ToUnicode` 解码及仅针对拉丁连字的无损归一（完整保留 `ϖ/ϑ/ϕ` 等希腊变体）；每篇顶部自动生成 **Formal Landmarks Index**（列出全部 `Definition / Assumption / Condition / Problem / Lemma / Proposition / Theorem / Corollary / Remark / 定义 / 定理 / 说明` 所在 PDF 页码与 `.md` 行号），正文中每页带有 `<!-- PDF p.X/N -->` 锚点。
 2. **第 2 层：统一 SQLite FTS5 全文与定理检索库**（合并 32 篇论文 + 513 页 2026 专著 *Volume I*）
    - 数据库路径：`/home/yzk/.cache/duan-hofas/duan_corpus.sqlite`
    - 构建脚本：`python3 scripts/build_papers_corpus.py`
    - 检索脚本：`python3 scripts/search_corpus.py`
-3. **第 3 层：按正式环境与证明全量分拣的原文分类库**（共 **940 个原文块**：823 个正式环境 + 117 个显式 `Proof` 块）
-   - 物理路径：`/home/yzk/.cache/duan-hofas/corpus/sorted/`（技能内软链路径：`corpus/sorted/`，含 `theorems.md` [190]、`assumptions.md` [155]、`remarks.md` [155]、`proofs.md` [117]、`lemmas.md` [79]、`propositions.md` [74]、`definitions.md` [71]、`corollaries.md` [65]、`problems.md` [24]、`conditions.md` [10] 及 `summary_stats.json`）
-   - 分拣脚本：`python3 scripts/sort_corpus_environments.py`
-   - 提炼模板与冲突裁定：[theorem-writing-template.md](theorem-writing-template.md)、[proof-templates.md](proof-templates.md)、[corpus-conflict-resolution.md](corpus-conflict-resolution.md)
+3. **第 3 层：按正式环境与证明全量分拣的原文分类库**（共 **984 个原文块**：867 个正式环境 + 117 个显式 `Proof` 块，外加 109 条经典定义主题合集与 53 段 FAS 方法优势/对比/边界主题合集）
+   - 物理路径：`/home/yzk/.cache/duan-hofas/corpus/sorted/`（技能内软链路径：`corpus/sorted/`，含 `theorems.md` [198]、`assumptions.md` [165]、`remarks.md` [155]、`proofs.md` [117]、`definitions.md` [94]、`classic_definitions_by_topic.md` [94 正式 + 15 正文 = 109]、`fas_advantages_by_theme.md` [53]、`lemmas.md` [80]、`propositions.md` [76]、`corollaries.md` [65]、`problems.md` [24]、`conditions.md` [10] 及 `summary_stats.json`）
+   - 分拣脚本：`python3 scripts/sort_corpus_environments.py`、`python3 scripts/build_classic_definitions_bank.py` 与 `python3 scripts/build_fas_advantages_bank.py`
+   - 提炼模板、优势语料、定义索引与冲突裁定：[fas-advantages-corpus.md](fas-advantages-corpus.md)、[canonical-definitions-index.md](canonical-definitions-index.md)、[theorem-writing-template.md](theorem-writing-template.md)、[proof-templates.md](proof-templates.md)、[corpus-conflict-resolution.md](corpus-conflict-resolution.md)
 
 ---
 

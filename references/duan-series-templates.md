@@ -102,15 +102,15 @@
    - 外系统扰动 $d^{(k)} = S_{0\sim k-1}d^{(0\sim k-1)}$，验证增广可检测性（`Theorem 4.4`：$(\Phi_E, C_I)$ 可观/可检 $\Longleftrightarrow$ $(\Phi(S_{0\sim k-1}), E)$ 可观/可检）；
    - 用非齐次 GSE 通解 $(\Pi, \Gamma) = (\Pi_0 + V, \Gamma_0 + W)$（`Lemma 4.2`）与右互质分解（RCF，`Theorem 4.5`）给出观测器增益 $(L_x, L_d)$ 及反馈矩阵的完整参数化通解（自由度由 $F_1, Z_1, Z_2$ 显式承载）。
 
-### 3.2 `Part X`：离散时间高阶全驱系统基础与移位记号 `[E: IJSS 2022, Part X]`
-1. **后退步（Step-Backward）与前进步（Step-Forward）记号的严格区分（分量排列顺序相反！）**：
-   - **后退步算子** $q^{-i}x(k) = x^{\lfloor i\rfloor}(k) = x(k-i)$，堆叠向量**从当前时刻往过去排**：
-     $$x^{\lfloor 0\sim n\rfloor}(k) = \begin{bmatrix} x^\top(k) & x^\top(k-1) & \cdots & x^\top(k-n) \end{bmatrix}^\top;$$
-   - **前进步算子** $q^i x(k) = x^{\lceil i\rceil}(k) = x(k+i)$，堆叠向量**从最高超前步往当前排**：
-     $$x^{\lceil 0\sim n\rceil}(k) = \begin{bmatrix} x^\top(k+n) & \cdots & x^\top(k+1) & x^\top(k) \end{bmatrix}^\top.$$
+### 3.2 `Part X`：离散时间高阶全驱系统基础与移位记号 `[E: IJSS 2022, Part X; Overview 2024, Eq. (7)]`
+1. **前进步（Step-Forward）与后退步（Step-Backward）记号的严格区分（上下括号与分量排列顺序相反！）**：
+   - **前进步算子（下取整括号 `floor`）** $x^{\lfloor i\rfloor}(k) = x(k+i)$，堆叠向量**从最高超前步往当前排**：
+     $$x^{\lfloor 0\sim n\rfloor}(k) = \begin{bmatrix} x^\top(k+n) & \cdots & x^\top(k+1) & x^\top(k) \end{bmatrix}^\top;$$
+   - **后退步算子（上取整括号 `ceiling`）** $x^{\lceil i\rceil}(k) = x(k-i)$，堆叠向量**从当前时刻往过去排**：
+     $$x^{\lceil 0\sim n\rceil}(k) = \begin{bmatrix} x^\top(k) & x^\top(k-1) & \cdots & x^\top(k-n) \end{bmatrix}^\top.$$
 2. **前进步与后退步模型的控制本质差异（`Definition 3.2` & `Remark 3.1–3.2`）**：
    - 前进步模型 $x(k+n) = \sum_{i=0}^{n-1}A_{n-i-1}x(k+i) + Bu(k)$ **本质上是含输入时滞的离散系统**；
-   - 后退步模型 $x(k+1) = f(x^{\lfloor 0\sim n-1\rfloor}(k), k) + B(x^{\lfloor 0\sim n-1\rfloor}(k), k)u(k)$ 可直接由当前及历史状态因果求解 $u(k)$，获得定常线性闭环 $x(k+1) = A_{0\sim \varpi-1}x^{\lfloor 0\sim\varpi-1\rfloor}(k) + v(k)$。
+   - 后退步模型 $x(k+1) = f(x^{\lceil 0\sim n-1\rceil}(k), k) + B(x^{\lceil 0\sim n-1\rceil}(k), k)u(k)$ 可直接由当前及历史状态因果求解 $u(k)$，获得定常线性闭环 $x(k+1) = A_{0\sim \varpi-1}x^{\lceil 0\sim\varpi-1\rceil}(k) + v(k)$。
 3. **离散伴随矩阵与 Schur 镇定归约（`Remark 5.3`）**：
    - 离散伴随矩阵记为 $\Psi(A_{0\sim n-1}) = \Psi(0_{0\sim n-1}) + \Gamma_c A_{0\sim n-1}$，反馈增益设计归结为选取**Schur 稳定矩阵** $F$（特征值位于单位圆内）进行特征结构参数化配置；
    - 可行轨迹集定义在有界离散序列空间 $\mathbb{B}_N^\kappa$ 上（`Definition 4.1–4.2`）。

@@ -87,8 +87,32 @@ EXTENSION_SPACE_PREFIXES = (
 )
 
 
+LIGATURE_HEX = {
+    "fi": "00660069", "fl": "0066006C", "ff": "00660066", "ffi": "006600660069", "ffl": "00660066006C",
+    "f_i": "00660069", "f_l": "0066006C", "f_f": "00660066", "f_f_i": "006600660069", "f_f_l": "00660066006C",
+}
+
+
+def _codepoint_to_utf16be_hex(u: int) -> str:
+    if u <= 0xFFFF:
+        return f"{u:04X}"
+    hi = 0xD800 + ((u - 0x10000) >> 10)
+    lo = 0xDC00 + ((u - 0x10000) & 0x3FF)
+    return f"{hi:04X}{lo:04X}"
+
+
+def _valid_utf16be_hex(h: str) -> bool:
+    if not h or len(h) % 4 != 0:
+        return False
+    try:
+        s = bytes.fromhex(h).decode("utf-16-be")
+    except Exception:
+        return False
+    return bool(s) and all(ord(ch) != 0xFFFD and not is_pua(ord(ch)) for ch in s)
+
+
 def patch_pdf_tounicode(doc: fitz.Document) -> None:
-    """Repair broken/incomplete Type-1 ToUnicode CMaps in memory using PDF /Encoding /Differences."""
+    """Repair broken/incomplete Type-1 ToUnicode CMaps in memory while preserving multi-char ligatures."""
     seen: set[int] = set()
     for pno in range(len(doc)):
         for f in doc.get_page_fonts(pno):
@@ -97,52 +121,68 @@ def patch_pdf_tounicode(doc: fitz.Document) -> None:
                 continue
             seen.add(xref)
             obj = doc.xref_object(xref)
+            base_fl = f[3].lower().split("+")[-1]
             m_enc = re.search(r"/Encoding\s+(\d+)\s+0\s+R", obj)
             m_tu = re.search(r"/ToUnicode\s+(\d+)\s+0\s+R", obj)
-            if not (m_enc and m_tu):
+            if not m_tu:
                 continue
-            enc_obj = doc.xref_object(int(m_enc.group(1)))
-            m_diff = re.search(r"/Differences\s*\[(.*?)\]", enc_obj, re.S)
-            if not m_diff:
-                continue
-            diff_map: dict[int, int] = {}
-            cur_code = 0
-            for tok in re.findall(r"\d+|/[A-Za-z0-9_.]+", m_diff.group(1)):
-                if tok.isdigit():
-                    cur_code = int(tok)
-                else:
-                    gname = tok[1:]
-                    if gname in GLYPH_UNICODE:
-                        diff_map[cur_code] = GLYPH_UNICODE[gname]
-                    elif gname.startswith(EXTENSION_SPACE_PREFIXES):
-                        diff_map[cur_code] = 0x0020
-                    elif len(gname) == 1 and "A" <= gname <= "Z":
-                        diff_map[cur_code] = ord(gname)
-                    cur_code += 1
+            diff_map: dict[int, str] = {}
+            if m_enc:
+                enc_obj = doc.xref_object(int(m_enc.group(1)))
+                m_diff = re.search(r"/Differences\s*\[(.*?)\]", enc_obj, re.S)
+                if m_diff:
+                    cur_code = 0
+                    for tok in re.findall(r"\d+|/[A-Za-z0-9_.]+", m_diff.group(1)):
+                        if tok.isdigit():
+                            cur_code = int(tok)
+                        else:
+                            gname = tok[1:]
+                            if gname in LIGATURE_HEX:
+                                diff_map[cur_code] = LIGATURE_HEX[gname]
+                            elif gname in GLYPH_UNICODE:
+                                diff_map[cur_code] = _codepoint_to_utf16be_hex(GLYPH_UNICODE[gname])
+                            elif gname.startswith(EXTENSION_SPACE_PREFIXES):
+                                diff_map[cur_code] = "0020"
+                            elif len(gname) == 1 and "A" <= gname <= "Z":
+                                diff_map[cur_code] = f"{ord(gname):04X}"
+                            cur_code += 1
+            elif base_fl.startswith("cmex"):
+                for slot_c, sym_ch in CMEX_SLOT_MAP.items():
+                    diff_map[slot_c] = _codepoint_to_utf16be_hex(ord(sym_ch))
             if not diff_map:
                 continue
             tu_xref = int(m_tu.group(1))
             old_tu = doc.xref_stream(tu_xref).decode("latin1", errors="ignore")
-            merged: dict[int, int] = {}
+            merged: dict[int, str] = {}
             for rng_blk in re.findall(r"beginbfrange(.*?)endbfrange", old_tu, re.S):
-                for lo_h, hi_h, dst_h in re.findall(r"<([0-9A-Fa-f]{2})>\s*<([0-9A-Fa-f]{2})>\s*<([0-9A-Fa-f]{4,6})>", rng_blk):
+                # Form 1: <lo> <hi> [ <h0> <h1> ... ]
+                for lo_h, hi_h, arr_s in re.findall(r"<([0-9A-Fa-f]{2})>\s*<([0-9A-Fa-f]{2})>\s*\[(.*?)\]", rng_blk, re.S):
+                    lo_i, hi_i = int(lo_h, 16), int(hi_h, 16)
+                    hex_items = re.findall(r"<([0-9A-Fa-f]+)>", arr_s)
+                    for offset_i, c_i in enumerate(range(lo_i, hi_i + 1)):
+                        if offset_i < len(hex_items) and _valid_utf16be_hex(hex_items[offset_i]):
+                            merged[c_i] = hex_items[offset_i].upper()
+                # Form 2: <lo> <hi> <dst>
+                rng_no_arr = re.sub(r"<[0-9A-Fa-f]{2}>\s*<[0-9A-Fa-f]{2}>\s*\[.*?\]", "", rng_blk, flags=re.S)
+                for lo_h, hi_h, dst_h in re.findall(r"<([0-9A-Fa-f]{2})>\s*<([0-9A-Fa-f]{2})>\s*<([0-9A-Fa-f]{4,6})>", rng_no_arr):
                     lo_i, hi_i, dst_i = int(lo_h, 16), int(hi_h, 16), int(dst_h, 16)
                     for offset_i, c_i in enumerate(range(lo_i, hi_i + 1)):
                         u_i = dst_i + offset_i
                         if u_i != 0xFFFD and not is_pua(u_i):
-                            merged[c_i] = u_i
+                            merged[c_i] = _codepoint_to_utf16be_hex(u_i)
             for chr_blk in re.findall(r"beginbfchar(.*?)endbfchar", old_tu, re.S):
-                for hc, hu in re.findall(r"<([0-9A-Fa-f]{2})>\s*<([0-9A-Fa-f]{4,6})>", chr_blk):
-                    c_i, u_i = int(hc, 16), int(hu, 16)
-                    if u_i != 0xFFFD and not is_pua(u_i):
-                        merged[c_i] = u_i
-            for c_i, u_i in diff_map.items():
+                for hc, hu in re.findall(r"<([0-9A-Fa-f]{2})>\s*<([0-9A-Fa-f]{4,32})>", chr_blk):
+                    c_i = int(hc, 16)
+                    if _valid_utf16be_hex(hu):
+                        merged[c_i] = hu.upper()
+            needs_patch = False
+            for c_i, hx in diff_map.items():
                 if c_i not in merged:
-                    merged[c_i] = u_i
-            entries = "\n".join(
-                f"<{c:02X}> <{u:04X}>" if u <= 0xFFFF else f"<{c:02X}> <{0xD800 + ((u - 0x10000) >> 10):04X}{0xDC00 + ((u - 0x10000) & 0x3FF):04X}>"
-                for c, u in sorted(merged.items())
-            )
+                    merged[c_i] = hx
+                    needs_patch = True
+            if not needs_patch:
+                continue
+            entries = "\n".join(f"<{c:02X}> <{hx}>" for c, hx in sorted(merged.items()))
             cmap = (
                 "/CIDInit /ProcSet findresource begin 12 dict begin begincmap\n"
                 "/CIDSystemInfo << /Registry (Adobe) /Ordering (UCS) /Supplement 0 >> def\n"
@@ -199,6 +239,29 @@ APPLE_PUA_BRACES = {
     0xF8F9: "⎤", 0xF8FA: "⎥", 0xF8FB: "⎦",
     0xF8FC: "⎫", 0xF8FD: "⎬", 0xF8FE: "⎭",
 }
+FOUNDER_SYMBOL_BRACES = {
+    0xE6: "⎛", 0xE7: "⎜", 0xE8: "⎝",
+    0xE9: "⎡", 0xEA: "⎢", 0xEB: "⎣",
+    0xEC: "⎧", 0xED: "⎨", 0xEE: "⎩", 0xEF: "⎪",
+    0xF6: "⎞", 0xF7: "⎟", 0xF8: "⎠",
+    0xF9: "⎤", 0xFA: "⎥", 0xFB: "⎦",
+    0xFC: "⎫", 0xFD: "⎬", 0xFE: "⎭",
+}
+BLACKBOARD_MAP = {
+    "A": "𝔸", "B": "𝔹", "C": "ℂ", "D": "𝔻", "E": "𝔼", "F": "𝔽", "G": "𝔾",
+    "H": "ℍ", "I": "𝕀", "J": "𝕁", "K": "𝕂", "L": "𝕃", "M": "𝕄", "N": "ℕ",
+    "O": "𝕆", "P": "ℙ", "Q": "ℚ", "R": "ℝ", "S": "𝕊", "T": "𝕋", "U": "𝕌",
+    "V": "𝕍", "W": "𝕎", "X": "𝕏", "Y": "𝕐", "Z": "ℤ",
+}
+LATIN_LIGATURES_TRANS = str.maketrans({
+    "\ufb00": "ff", "\ufb01": "fi", "\ufb02": "fl", "\ufb03": "ffi", "\ufb04": "ffl",
+    "\ufb05": "st", "\ufb06": "st", "\u00a0": " ",
+})
+
+
+def _safe_text_norm(s: str) -> str:
+    """Expand Latin ligatures without NFKC-collapsing Greek math variants (ϖ, ϑ, ϕ, ϵ) or standalone accents (˘)."""
+    return s.translate(LATIN_LIGATURES_TRANS)
 
 
 def is_pua(code: int) -> bool:
@@ -226,9 +289,11 @@ def decode_span(font: str, text: str, is_yandy: bool = False) -> str:
     if "+" in fl:
         fl = fl.split("+", 1)[1]
     if fl.startswith(("dcr", "dcti", "dcbx", "dcss")):
-        return unicodedata.normalize("NFKC", text.replace("\u2026", "fi").replace("¤", "ff").replace("¢", "ffi"))
-    if fl.startswith("msbm"):
-        return "".join({"R": "ℝ", "N": "ℕ", "Z": "ℤ", "C": "ℂ", "Q": "ℚ", "F": "𝔽", "S": "𝕊", "B": "𝔹"}.get(c, c) for c in text)
+        return _safe_text_norm(text.replace("\u2026", "fi").replace("¤", "ff").replace("¢", "ffi"))
+    if fl.startswith(("msbm", "euclidmathtwo")):
+        return "".join(BLACKBOARD_MAP.get(c, c) for c in text if not is_pua(ord(c)) and c != "\ufffd")
+    if fl.startswith("fzs_extra"):
+        return "".join(FOUNDER_SYMBOL_BRACES.get(ord(c), c) for c in text if not is_pua(ord(c)) and c != "\ufffd")
     if is_yandy:
         if fl.startswith("cmmi"):
             return "".join(
@@ -264,7 +329,6 @@ def decode_span(font: str, text: str, is_yandy: bool = False) -> str:
                 if s in CMEX_SLOT_MAP:
                     out.append(CMEX_SLOT_MAP[s])
             return "".join(out)
-    # Modern Unicode LaTeX PDFs: convert Apple Symbol PUA big delimiters (0xF8EB..0xF8FE) to Unicode box-drawing braces, strip remaining PUA/FFFD
     out_chars = []
     for c in text:
         code = ord(c)
@@ -272,14 +336,14 @@ def decode_span(font: str, text: str, is_yandy: bool = False) -> str:
             out_chars.append(APPLE_PUA_BRACES[code])
         elif not is_pua(code) and c != "\ufffd":
             out_chars.append(c)
-    return unicodedata.normalize("NFKC", "".join(out_chars))
+    return _safe_text_norm("".join(out_chars))
 
 
-# Strict case-sensitive landmark matcher: rejects lowercase prose wraps ('problem for', 'condition is') and comma-references ('Corollary 5.2, we...')
+# Strict case-sensitive landmark matcher: supports A2’, A.1, Av1, and inline math starts ('det ', 'rank ')
 EN_LANDMARK_RE = re.compile(
     r"^(Definition|Assumption|Condition|Problem|Lemma|Proposition|Theorem|Corollary|Remark)\s+"
-    r"([A-Z]?\d+(?:\.\d+)*[′']?|[IVX]+|[A-Z][A-Za-z0-9ϕφψθτΔΓ′']{0,6})(?!\.\d|[A-Za-z0-9],|,)"
-    r"(?:[:.]|\s+\(|\s+[A-Z\u4e00-\u9fa5(]|$)"
+    r"([A-Z]?\d+(?:\.\d+)*[′'’]?|[A-Z]\.\d+(?:\.\d+)*|[IVX]+|[A-Z][A-Za-z0-9ϕφψθτΔΓ′'’]{0,6})(?!\.\d|[A-Za-z0-9],|,)"
+    r"(?:[:.]|\s+\(|\s+[A-Z\u4e00-\u9fa5(]|\s+(?:det|rank)\b|$)"
 )
 ZH_LANDMARK_RE = re.compile(
     r"^(定义|假设|条件|问题|引理|命题|定理|推论|说明)\s*([A-Z]?\d+(?:\.\d+)*|[A-Z]{1,4}\d*|\d+|)"
@@ -348,6 +412,19 @@ def get_unmapped_cm_fonts(doc: fitz.Document) -> set[str]:
     return unmapped
 
 
+RUNNING_MARGIN_RE = re.compile(
+    r"^(?:IEEE TRANSACTIONS ON\b|INTERNATIONAL JOURNAL OF SYSTEMS SCIENCE\b|"
+    r"Duan G[\s\-]*R\s+Sci China Inf Sci\b|FULLY ACTUATED SYSTEM APPROACH IN FREQUENCY-DOMAIN\b|"
+    r"DUAN:\s+[A-Z]|GUANG-REN DUAN$|G\.\s*DUAN$|G\.-R\.\s*DUAN$|"
+    r"自\s*动\s*化\s*学\s*报|自\s*动\s*化$|学\s*报$|航\s*空\s*学\s*报|航\s*空$|^[学报]$|"
+    r"629552-\d+|第\s*\d+\s*卷|\d+\s*期\s*段广仁|CONTACT\s+G\.\s*R\.\s*Duan\b)"
+)
+WATERMARK_ANYWHERE_RE = re.compile(
+    r"^(?:Authorized licensed use limited to:|©\s*20\d{2}\s+The Author\(s\)\.\s*Published by Informa UK|"
+    r"(?:自动化|自动化学报|航空|航空学报|学报)$)"
+)
+
+
 def spans_to_lines(spans: list[tuple[float, float, float, float, float, str]]) -> list[str]:
     if not spans:
         return []
@@ -371,13 +448,28 @@ def spans_to_lines(spans: list[tuple[float, float, float, float, float, str]]) -
         prev_x1: float | None = None
         for x0, y0, x1, y1, yb, txt in row:
             if prev_x1 is not None and (x0 - prev_x1) > 2.4 and not (parts and parts[-1].endswith(" ")) and not txt.startswith(" "):
-                parts.append(" ")
+                # Do not insert artificial ASCII space between adjacent CJK characters
+                if not (parts and "\u4e00" <= parts[-1][-1] <= "\u9fff" and "\u4e00" <= txt[0] <= "\u9fff" and (x0 - prev_x1) < 9.0):
+                    parts.append(" ")
             parts.append(txt)
             prev_x1 = max(prev_x1 or x1, x1)
         line = "".join(parts)
+        line = re.sub(r" ?([\u0302\u0303\u0306\u0307\u0308])([A-Za-zΑ-Ωα-ω𝕊𝔽ℝℚ])", r"\2\1", line)
         line = line.replace("̸=", "≠").replace("̸ =", "≠").replace("↦−→", "↦").replace("↦→", "↦").replace("−↦", "↦")
+        line = line.replace("\u3000", " ")
+        # Collapse Founder justification single spaces between CJK characters, preserving unnumbered 说明/证明 headers
+        line = re.sub(r"^(说\s*明|证\s*明)\s+(?=[\u4e00-\u9fff])", lambda m: re.sub(r"\s+", "", m.group(1)) + "\u0000", line.strip())
+        line = re.sub(r"(?<=[\u4e00-\u9fff])[ \t]+(?=[\u4e00-\u9fff])", "", line)
+        line = line.replace("\u0000", " ")
+        line = re.sub(r"^(\d+)\.\s+(\d+)\s+(?=[\u4e00-\u9fff])", r"\1.\2 ", line.strip())
+        line = re.sub(
+            r"^(Definition|Assumption|Condition|Problem|Lemma|Proposition|Theorem|Corollary|Remark)([A-Z]?\d+(?:\.\d+)*[:.])",
+            r"\1 \2",
+            line,
+        )
+        line = re.sub(r"^(Assumption\s+[A-Z])\s+(\d+\s*[:.])", r"\1\2", line)
         line = re.sub(r"[ \t]+", " ", line).strip()
-        if not line:
+        if not line or line in ("自动化", "自动化学报", "航空", "航空学报", "学报"):
             continue
         if prev_yb is not None and (cur_yb - prev_yb) > 17.5:
             out_lines.append("")
@@ -404,17 +496,35 @@ def extract_page_ordered_lines(page: fitz.Page, is_yandy: bool) -> list[str]:
                 if "+" in fl:
                     fl = fl.split("+", 1)[1]
                 t = decode_span(sp["font"], sp["text"], is_yandy=is_yandy)
-                if not t.strip():
+                if not t or (not t.strip() and not any(0x0300 <= ord(ch) <= 0x036F for ch in t)):
                     continue
                 raw_joined.append(t.strip())
                 sx0, sy0, sx1, sy1 = sp["bbox"]
-                yb = (0.5 * (sy0 + sy1) + 3.0) if fl.startswith(("cmex", "mtex")) else sp["origin"][1]
+                # Shift sx0 past leading ASCII spaces so ' +' does not sort left of ')'
+                n_lead_sp = len(t) - len(t.lstrip(" "))
+                if n_lead_sp > 0 and len(t) > n_lead_sp:
+                    char_w = max(2.2, (sx1 - sx0) / max(1, len(t)))
+                    sx0 = sx0 + n_lead_sp * char_w * 0.85
+                    t = " " + t.lstrip(" ")
+                ts = t.strip()
+                if fl.startswith(("cmex", "mtex")):
+                    yb = 0.5 * (sy0 + sy1) + 3.0
+                elif ts in ("\u0302", "\u0303", "\u0306", "\u0307", "\u0308", "ˆ", "˜", "˘", "˙", "¨"):
+                    yb = sp["origin"][1] + 4.2
+                elif ts in ("′", "∗"):
+                    yb = sp["origin"][1] + 2.4
+                else:
+                    yb = sp["origin"][1]
                 ln_spans.append((sx0, sy0, sx1, sy1, yb, t))
             if not ln_spans:
                 continue
-            joined_s = "".join(raw_joined).strip()
-            # Drop isolated running page numbers in top/bottom margins
-            if (ly0 < 0.088 * H or ly1 > 0.915 * H) and re.fullmatch(r"\d{1,4}", joined_s):
+            joined_s = " ".join(x for x in raw_joined if x).strip()
+            joined_compact = re.sub(r"(?<=[\u4e00-\u9fff])\s+(?=[\u4e00-\u9fff])", "", joined_s)
+            if WATERMARK_ANYWHERE_RE.match(joined_compact):
+                continue
+            if (ly0 < 0.096 * H or ly1 > 0.892 * H) and (
+                re.fullmatch(r"[\d\-–—\s]{1,10}", joined_compact) or RUNNING_MARGIN_RE.search(joined_compact)
+            ):
                 continue
             line_items.append((lx0, ly0, lx1, ly1, ln_spans))
 
@@ -422,10 +532,11 @@ def extract_page_ordered_lines(page: fitz.Page, is_yandy: bool) -> list[str]:
         1 for lx0, ly0, lx1, ly1, _ in line_items
         if lx0 < W * 0.20 and W * 0.36 <= lx1 <= W * 0.52 and 0.08 * H < ly0 < 0.92 * H
     )
-    right_col_lines = sum(
-        1 for lx0, ly0, lx1, ly1, _ in line_items
+    right_col_cands = [
+        lx0 for lx0, ly0, lx1, ly1, _ in line_items
         if W * 0.48 <= lx0 <= W * 0.62 and lx1 > W * 0.80 and 0.08 * H < ly0 < 0.92 * H
-    )
+    ]
+    right_col_lines = len(right_col_cands)
     full_width_lines = sum(
         1 for lx0, ly0, lx1, ly1, _ in line_items
         if lx0 < W * 0.22 and lx1 > W * 0.76 and 0.12 * H < ly0 < 0.88 * H
@@ -439,6 +550,8 @@ def extract_page_ordered_lines(page: fitz.Page, is_yandy: bool) -> list[str]:
     if not is_two_col:
         all_sp = [sp for _, _, _, _, sps in line_items for sp in sps]
         return ["\n".join(spans_to_lines(all_sp))]
+
+    right_col_min_x = sorted(right_col_cands)[len(right_col_cands) // 4] if right_col_cands else mid + 4.0
 
     # Two-column page: sort lines vertically, split into bands at full-width spanning lines (title/authors/wide eqs)
     sorted_lns = sorted(line_items, key=lambda item: (round(item[1], 1), round(item[0], 1)))
@@ -456,7 +569,8 @@ def extract_page_ordered_lines(page: fitz.Page, is_yandy: bool) -> list[str]:
                 cur_right = []
             sections_out.append("\n".join(spans_to_lines(sps)))
         else:
-            if 0.5 * (lx0 + lx1) < mid:
+            # Keep slightly overflowing left-column math tails (e.g. 'u.' at x=302 < right_col_min_x=312) in left column
+            if 0.5 * (lx0 + lx1) < mid or (lx0 < right_col_min_x - 1.8 and (lx1 - lx0) < 28.0):
                 cur_left.extend(sps)
             else:
                 cur_right.extend(sps)

@@ -22,7 +22,16 @@ PROOF_LINE_RE = re.compile(
 )
 STOP_FOR_LM = re.compile(
     r"^(?:\*\*(?:Definition|Assumption|Condition|Problem|Lemma|Proposition|Theorem|Corollary|Remark|定义|假设|条件|问题|引理|命题|定理|推论|说明)\b"
-    r"|###\s+|(?:Example|例)\s*[0-9.]+)"
+    r"|###\s+|(?:Example|例)\s*[0-9.]+|\d+\)\s+[A-Z][A-Za-z\s\-]+:)"
+)
+DEF_POST_PROSE_STOP_RE = re.compile(
+    r"^(?:Based on\b|With (?:the|𝔽|this)\b|Regarding\b|Consider\b|Now,\b|Next,\b|In this article\b|"
+    r"In general,\b|To (?:implement|describe|introduce|conclude|characterize)\b|It (?:is|follows|can be)\b|"
+    r"The (?:following|above)\b|Denoting\b|If the term\b|Similarly,\b|Obviously,\b|Clearly,\b|"
+    r"For convenience, a\b|Parallel to\b|Corresponding to\b|Correspondingly,\b|Let 𝕊 be\b|Let us\b|"
+    r"Convention C\d+\b|Therefore,\b|According to\b|By definition,\b|When the system\b|For a particularly\b|"
+    r"Recall Proposition\b|In the context of\b|"
+    r"基于(?:此|上述)|在此基础上|由定义\s*\d+|与文献|二阶亚|高阶亚|具有时变|现在考虑|类似地|特别地,\s*对于下述|进一步地,\s*称)"
 )
 STOP_FOR_PROOF = re.compile(
     r"^(?:\*\*(?:Definition|Assumption|Condition|Problem|Lemma|Proposition|Theorem|Corollary|Remark|定义|假设|条件|问题|引理|命题|定理|推论|说明)\b"
@@ -154,11 +163,18 @@ def main() -> None:
                         continue
                     if STOP_FOR_LM.match(sj) or PROOF_LINE_RE.match(sj):
                         break
+                    if kind == "Definition" and sj and DEF_POST_PROSE_STOP_RE.match(sj):
+                        non_empty_prev = [x for x in blk if x]
+                        joined_so_far = " ".join(non_empty_prev)
+                        if non_empty_prev and non_empty_prev[-1].endswith((".", "。", "）", ")")) and any(
+                            kw in joined_so_far for kw in ("called", "said to be", "belong to class", "称为", "定义为", "全驱", "能控", "能观")
+                        ):
+                            break
                     if sj:
                         blk.append(sj)
                     elif blk and blk[-1] != "":
                         blk.append("")
-                    if len(blk) > 50:
+                    if len(blk) > 65:
                         break
                     j += 1
                 text_blk = "\n".join(blk).strip()
@@ -224,24 +240,54 @@ def main() -> None:
 
     # Also harvest Volume I (2026 Springer monograph) landmarks and proofs if available
     if DEFAULT_VOL1_DB.is_file():
+        def _clean_vol1_dots(s: str) -> str:
+            s = s.replace("\ufb01", "fi").replace("\ufb02", "fl").replace("\ufb00", "ff")
+            s = re.sub(r"^\.\s*", "", s)
+            s = re.sub(r"(?<=\s)\.\s*(?=[A-Za-z0-9α-ωΑ-Ω(\[¯ˆ˜˙¨‖])", "", s)
+            s = re.sub(r"(?<=[a-z])\.(?=[a-zA-Z(])", " ", s)
+            return s
+
         vconn = sqlite3.connect(f"file:{DEFAULT_VOL1_DB}?mode=ro", uri=True)
+        v_pages = vconn.execute("SELECT pdf_page, printed_page, chapter, text FROM pages ORDER BY pdf_page").fetchall()
+        page_text_map = {pdf_p: txt for pdf_p, _, _, txt in v_pages}
+        full_vol1_lines = []
+        for pdf_p, pr_p, chap, txt in v_pages:
+            for ln in txt.splitlines():
+                full_vol1_lines.append((pdf_p, pr_p or pdf_p, _clean_vol1_dots(ln.strip())))
+
         for kind, label, pdf_p, pr_p, chap, stmt in vconn.execute(
             "SELECT kind, label, pdf_page, printed_page, chapter, statement_start FROM landmarks"
         ):
+            # Reconstruct full untruncated block from pages table (spanning pdf_p and pdf_p+1)
+            combined_txt = page_text_map.get(pdf_p, "") + "\n" + page_text_map.get(pdf_p + 1, "")
+            c_lns = [_clean_vol1_dots(x.strip()) for x in combined_txt.splitlines()]
+            lbl_norm = label.replace("\ufb01", "fi")
+            s_idx = next((idx for idx, x in enumerate(c_lns) if x.startswith(lbl_norm)), None)
+            if s_idx is not None:
+                v_env_blk = [c_lns[s_idx]]
+                for k_i in range(s_idx + 1, min(len(c_lns), s_idx + 45)):
+                    vk = c_lns[k_i]
+                    if not vk or re.fullmatch(r"\d{1,3}", vk) or vk.startswith("Chapter ") or "Models of Global FASs" in vk or "Robust Stabilization of Type I" in vk or "Control of FASs" in vk:
+                        continue
+                    if re.match(r"^(?:Theorem|Lemma|Proposition|Corollary|Definition|Assumption|Remark|Problem|Proof)\b", vk):
+                        break
+                    if kind == "Definition" and DEF_POST_PROSE_STOP_RE.match(vk):
+                        joined_v = " ".join(v_env_blk)
+                        if v_env_blk[-1].endswith(".") and any(w in joined_v for w in ("called", "said to be", "belong to class", "fixed")):
+                            break
+                    v_env_blk.append(vk)
+                full_stmt = "\n".join(v_env_blk).strip()
+            else:
+                full_stmt = _clean_vol1_dots(stmt)
             buckets[kind].append(
                 {
                     "doc_id": "book_2026_volume1",
                     "page": pdf_p,
                     "line": pr_p or pdf_p,
-                    "text": stmt,
-                    "flat": norm_one_line(stmt),
+                    "text": full_stmt,
+                    "flat": norm_one_line(full_stmt),
                 }
             )
-        v_pages = vconn.execute("SELECT pdf_page, printed_page, chapter, text FROM pages ORDER BY pdf_page").fetchall()
-        full_vol1_lines = []
-        for pdf_p, pr_p, chap, txt in v_pages:
-            for ln in txt.splitlines():
-                full_vol1_lines.append((pdf_p, pr_p or pdf_p, ln.strip()))
         vi = 0
         while vi < len(full_vol1_lines):
             pdf_p, pr_p, vs = full_vol1_lines[vi]
