@@ -8,8 +8,10 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-corpus
-corpus/
+corpus/papers
+corpus/papers/
+corpus/INDEX.md
+corpus/manifest.json
 dist/
 *.tgz
 *.skill

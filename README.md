@@ -54,10 +54,10 @@ duan-hofas/
 │   ├── validate_distillation.py       # Structural link, math delimiter & file validator
 │   └── ...                            # +5 Volume I indexing/extraction & Zotero inventory scripts
 ├── reports/                           # [Gitignored local historical distillation & audit logs]
-└── corpus -> ~/.cache/duan-hofas/corpus/   # [Gitignored local symlink, optional]
-    ├── INDEX.md & manifest.json       # Catalog of 32 local first-author Duan papers
-    ├── papers/*.md                    # 32 column-reordered, CM/Euclid/Founder-decoded full-text MDs
-    └── sorted/*.md                    # 12 sorted verbatim banks (984 blocks + 109 defs + 53 advantages)
+└── corpus/                            # Corpus directory (sorted/ tracked; papers/ gitignored symlink)
+    ├── sorted/*.md & summary_stats.json # [Tracked] 13 sorted banks (984 blocks + 109 defs + 53 advantages)
+    ├── INDEX.md & manifest.json       # [Gitignored] Local 32-paper catalog symlinks
+    └── papers/*.md                    # [Gitignored] Local 32 full-text paper symlinks
 ```
 
 ## Asset & knowledge libraries
@@ -79,11 +79,10 @@ duan-hofas/
 - **Monograph & Zotero Utilities**: `scripts/build_volume1_index.py`, `scripts/search_volume1.py`, `scripts/extract_volume1_pages.py` (513-page *Volume I* SQLite FTS5 indexing & page extraction); `scripts/inventory_duan_first_author.py`, `scripts/inventory_local_sources.py` (local Zotero PDF cataloging).
 - **Skill Validator & Release Packager**: `scripts/validate_distillation.py` (verifies all 28 required knowledge files, internal Markdown links, and `$...$`/`$$...$$` math delimiters); `scripts/build_release_packages.py` (builds copyright-safe `.skill`, `.zip`, `.tar.gz`, npm `.tgz`, and `SHA256SUMS.txt`).
 
-### 4. Local Full-Text & Sorted Verbatim Cache (`~/.cache/duan-hofas/`, gitignored)
-Kept outside Git for copyright compliance and linked locally via `corpus -> ~/.cache/duan-hofas/corpus`:
-- **Layer 1 (`corpus/papers/*.md`)**: 32 structured full-text papers with lossless Computer Modern / `EuclidMathTwo` / Founder math font decoding, `<!-- PDF p.X/N -->` anchors, and top-of-file `Formal Landmarks Index`.
-- **Layer 2 (`duan_corpus.sqlite` & `volume1.sqlite`)**: Unified SQLite FTS5 databases indexing all 32 papers + *Volume I*.
-- **Layer 3 (`corpus/sorted/*.md` & `summary_stats.json`)**: 10 exhaustively sorted verbatim banks (**984 blocks** total: `theorems.md` [198], `assumptions.md` [165], `remarks.md` [155], `proofs.md` [117], `definitions.md` [94], `lemmas.md` [80], `propositions.md` [76], `corollaries.md` [65], `problems.md` [24], `conditions.md` [10]), plus `classic_definitions_by_topic.md` (**109 definitions**) and `fas_advantages_by_theme.md` (**53 passages**).
+### 4. Bundled Sorted Banks (`corpus/sorted/`) & Gitignored Full-Text Cache (`~/.cache/duan-hofas/`)
+Balancing out-of-the-box completeness with publisher copyright compliance:
+- **Shipped in Git & Release Archives (`corpus/sorted/`, 13 files, 981 KB)**: Ready out of the box with all **984 sorted formal-environment & proof blocks** (`theorems.md` [198], `assumptions.md` [165], `remarks.md` [155], `proofs.md` [117], `definitions.md` [94], `lemmas.md` [80], `propositions.md` [76], `corollaries.md` [65], `problems.md` [24], `conditions.md` [10], `summary_stats.json`), **109 classic definitions** (`classic_definitions_by_topic.md`), and **53 FAS advantage/boundary passages** (`fas_advantages_by_theme.md`).
+- **Local Copyright-Isolated Cache (`~/.cache/duan-hofas/`, gitignored)**: Complete full-text papers (`corpus/papers/*.md`) and SQLite FTS5 databases (`duan_corpus.sqlite`, `volume1.sqlite`) stay strictly local via gitignored symlinks.
 
 ## Installation
 
@@ -245,4 +244,4 @@ For source-faithful definitions of original-system variables, dimensions, and ob
 
 1. **Routine updates vs. local cache rebuilds**: Pulling new skill updates (`git pull` + `python3 scripts/validate_distillation.py`) updates all 28 required knowledge files, templates, and rules immediately across linked agents. Re-running `build_papers_corpus.py` and the sorter scripts is needed **only** when new Duan PDFs are added to local Zotero storage.
 2. **Current source coverage & pending PDFs**: The corpus currently indexes **32 local Duan first-author FAS papers** (28 English + 4 Chinese, 2020–2026) plus the 2026 Springer monograph *Volume I* (513 pp.). Within the 2026 *OD-FAS* series, `Part 1` and `Part 4` are included locally; `OD-FAS Part 2` and `Part 3` are not yet present in local Zotero storage and can be indexed incrementally once their PDFs become available.
-3. **Copyright & repository hygiene**: `/corpus` and `*.sqlite` are strictly gitignored. Never force-add full-text `.md` papers, sorted verbatim dumps, or publisher PDFs to public commits—commit only distilled templates, rules, and scripts, and always run `scripts/validate_distillation.py` before pushing.
+3. **Copyright & repository hygiene**: `corpus/sorted/` ships with the repository, whereas full-text papers (`corpus/papers/`, `corpus/INDEX.md`, `corpus/manifest.json`) and `*.sqlite` databases remain strictly gitignored. Never force-add full-text `.md` papers or publisher PDFs to public commits, and always run `scripts/validate_distillation.py` before pushing.

@@ -39,6 +39,22 @@ REQUIRED = {
     "references/writing-style.md",
 }
 
+REQUIRED_SORTED = {
+    "corpus/sorted/assumptions.md",
+    "corpus/sorted/classic_definitions_by_topic.md",
+    "corpus/sorted/conditions.md",
+    "corpus/sorted/corollaries.md",
+    "corpus/sorted/definitions.md",
+    "corpus/sorted/fas_advantages_by_theme.md",
+    "corpus/sorted/lemmas.md",
+    "corpus/sorted/problems.md",
+    "corpus/sorted/proofs.md",
+    "corpus/sorted/propositions.md",
+    "corpus/sorted/remarks.md",
+    "corpus/sorted/summary_stats.json",
+    "corpus/sorted/theorems.md",
+}
+
 LINK = re.compile(r"\[[^]]+\]\(([^)]+\.md)\)")
 
 
@@ -53,7 +69,7 @@ def main() -> int:
     root = Path(args.skill).expanduser().resolve()
     errors: list[str] = []
 
-    for relative in sorted(REQUIRED):
+    for relative in sorted(REQUIRED | REQUIRED_SORTED):
         if not (root / relative).is_file():
             errors.append(f"missing required file: {relative}")
 
@@ -81,7 +97,7 @@ def main() -> int:
         return 1
 
     print(f"Duan HOFAS distillation structure valid: {root}")
-    print(f"Required knowledge files: {len(REQUIRED)}")
+    print(f"Required knowledge files: {len(REQUIRED)} (+ {len(REQUIRED_SORTED)} sorted banks)")
     return 0
 
 

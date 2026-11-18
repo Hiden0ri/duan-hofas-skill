@@ -1,0 +1,72 @@
+{
+  "counts_32_papers": {
+    "Assumption": 165,
+    "Condition": 10,
+    "Corollary": 65,
+    "Definition": 94,
+    "Lemma": 80,
+    "Problem": 24,
+    "Proposition": 76,
+    "Remark": 155,
+    "Theorem": 198,
+    "Proof": 117
+  },
+  "theorem_openings": {
+    "Let-first": 124,
+    "Suppose/Assume-first": 27,
+    "Other": 20,
+    "Direct-claim-with-inline-if": 15,
+    "For/Consider-first": 8,
+    "Under/If/When-first": 4
+  },
+  "theorem_numbered_conclusions": "169/198",
+  "lemma_openings": {
+    "Let-first": 41,
+    "For/Consider-first": 11,
+    "Other": 10,
+    "Suppose/Assume-first": 6,
+    "Under/If/When-first": 6,
+    "Direct-claim-with-inline-if": 6
+  },
+  "proposition_openings": {
+    "Let-first": 37,
+    "Direct-claim-with-inline-if": 16,
+    "For/Consider-first": 10,
+    "Other": 7,
+    "Suppose/Assume-first": 4,
+    "Under/If/When-first": 2
+  },
+  "corollary_openings": {
+    "Let-first": 36,
+    "Direct-claim-with-inline-if": 10,
+    "Other": 8,
+    "Under/If/When-first": 7,
+    "Suppose/Assume-first": 3,
+    "For/Consider-first": 1
+  },
+  "proof_types": {
+    "Direct-Algebraic/Citation": 46,
+    "Direct-Substitution": 33,
+    "Multi-Conclusion": 17,
+    "Equivalence/Homeomorphism": 15,
+    "State-Space-Conversion": 13,
+    "Observer/Error-Dynamics": 12,
+    "Lyapunov": 12,
+    "Multi-Step": 3,
+    "Contradiction": 2,
+    "Stationary-Point-Reduction": 1,
+    "Sufficiency-Necessity": 1,
+    "Induction": 1
+  },
+  "proof_closers": {
+    "Direct-final-equation/sentence (no verbal closer)": 71,
+    "QED-symbol-only (□/▪)": 27,
+    "The proof is completed.": 5,
+    "Thus the conclusion follows.": 4,
+    "The proof is finished.": 4,
+    "证毕。": 3,
+    "可得定理结论 / 得证": 1,
+    "This completes the proof.": 1,
+    "Combining the above two aspects...": 1
+  }
+}

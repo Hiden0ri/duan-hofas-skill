@@ -13,7 +13,7 @@ import zipfile
 from pathlib import Path
 
 ALLOWED_TOP = {"SKILL.md", "README.md", "README_zh-CN.md", "package.json"}
-ALLOWED_DIRS = {"agents", "assets", "references", "scripts"}
+ALLOWED_DIRS = {"agents", "assets", "corpus/sorted", "references", "scripts"}
 FORBIDDEN_SUFFIXES = {".pdf", ".sqlite", ".sqlite3", ".db", ".pyc", ".pyo", ".tgz", ".skill"}
 
 
@@ -35,8 +35,10 @@ def collect_release_files(root: Path) -> list[Path]:
             files.append(p)
     for p in files:
         rel = p.relative_to(root).parts
-        if rel[0] in {"corpus", "reports", ".git", "dist", "node_modules"}:
+        if rel[0] in {"reports", ".git", "dist", "node_modules"}:
             raise RuntimeError(f"Forbidden path in release bundle: {p}")
+        if rel[0] == "corpus" and (len(rel) < 2 or rel[1] != "sorted"):
+            raise RuntimeError(f"Forbidden full-text corpus path in release bundle: {p}")
     return files
 
 

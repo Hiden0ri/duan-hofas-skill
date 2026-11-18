@@ -54,10 +54,10 @@ duan-hofas/
 │   ├── validate_distillation.py       # 必需文件、内部链接与公式定界符完整性校验脚本
 │   └── ...                            # 其余 5 个专著索引/单页提取与本地 Zotero 盘点脚本
 ├── reports/                           # [被 .gitignore 忽略的本地早期蒸馏与覆盖率审查记录]
-└── corpus -> ~/.cache/duan-hofas/corpus/   # [被 .gitignore 忽略的本地可选软链]
-    ├── INDEX.md & manifest.json       # 32 篇本地段广仁一作中英文论文总目录与元数据
-    ├── papers/*.md                    # 32 篇双栏重排、CM/Euclid/方正数学字体无损解码全文 MD
-    └── sorted/*.md                    # 12 个按正式环境、证明、经典定义与方法优势分拣的原文分类库
+└── corpus/                            # 语料库目录（sorted/ 随仓库分发；papers/ 仅本地软链隔离）
+    ├── sorted/*.md & summary_stats.json # [入库分发] 13 个分拣库（984 环境/证明 + 109 定义 + 53 优势）
+    ├── INDEX.md & manifest.json       # [被 .gitignore 忽略] 本地 32 篇论文目录软链
+    └── papers/*.md                    # [被 .gitignore 忽略] 本地 32 篇双栏无损解码整篇全文软链
 ```
 
 ## 资产库说明
@@ -79,11 +79,10 @@ duan-hofas/
 - **专著与本地文献盘点**：`scripts/build_volume1_index.py`、`scripts/search_volume1.py`、`scripts/extract_volume1_pages.py`（513 页 *Volume I* 专著索引与单页提取）；`scripts/inventory_duan_first_author.py`、`scripts/inventory_local_sources.py`（本地 Zotero 文献盘点）。
 - **结构校验与发行包构建**：`scripts/validate_distillation.py`（自动检查全部 28 份核心知识文件、内部 Markdown 链接及 `$...$`/`$$...$$` 公式定界符）；`scripts/build_release_packages.py`（一键生成版权安全的 `.skill`、`.zip`、`.tar.gz`、npm `.tgz` 与 `SHA256SUMS.txt`）。
 
-### 4. 本地版权隔离原文与分拣缓存库（`~/.cache/duan-hofas/`，不入 Git）
-为遵守出版社版权规范，受版权保护的全文与数据库保存在本地缓存目录，通过被 `.gitignore` 忽略的 `corpus -> ~/.cache/duan-hofas/corpus` 软链挂载：
-- **第 1 层（`corpus/papers/*.md`）**：32 篇双栏重排结构化全文，内置 Computer Modern / `EuclidMathTwo` / 方正数学私用区无损解码、`<!-- PDF p.X/N -->` 页码锚点与篇首 `Formal Landmarks Index`。
-- **第 2 层（`duan_corpus.sqlite` 与 `volume1.sqlite`）**：合并 32 篇一作论文与 *Volume I* 专著的 SQLite FTS5 全文及正式环境索引库。
-- **第 3 层（`corpus/sorted/*.md` 与 `summary_stats.json`）**：按 10 类正式环境与证明全量分拣的 **984 个原文块**（`theorems.md` [198]、`assumptions.md` [165]、`remarks.md` [155]、`proofs.md` [117]、`definitions.md` [94]、`lemmas.md` [80]、`propositions.md` [76]、`corollaries.md` [65]、`problems.md` [24]、`conditions.md` [10]），以及 **109 条经典定义合集**（`classic_definitions_by_topic.md`）与 **53 段方法优势/边界合集**（`fas_advantages_by_theme.md`）。
+### 4. 内置分拣原文库（`corpus/sorted/`）与本地版权隔离全文缓存（`~/.cache/duan-hofas/`）
+兼顾开箱即用与出版社版权规范，仓库采用分层隔离设计：
+- **随仓库直接分发（`corpus/sorted/`，共 13 个文件，981 KB）**：克隆仓库或下载 Release 包即可直接调阅全部 **984 个正式环境与证明原文块**（`theorems.md` [198]、`assumptions.md` [165]、`remarks.md` [155]、`proofs.md` [117]、`definitions.md` [94]、`lemmas.md` [80]、`propositions.md` [76]、`corollaries.md` [65]、`problems.md` [24]、`conditions.md` [10]、`summary_stats.json`）、**109 条经典定义合集**（`classic_definitions_by_topic.md`）以及 **53 段方法优势/边界合集**（`fas_advantages_by_theme.md`）。
+- **本地版权隔离缓存（`~/.cache/duan-hofas/`，被 `.gitignore` 排除，不入 Git）**：32 篇整篇期刊全文（`corpus/papers/*.md`）以及 `duan_corpus.sqlite` / `volume1.sqlite` 全文数据库仅保存在本地缓存并通过软链挂载。
 
 ## 安装指南
 
@@ -249,4 +248,4 @@ python3 scripts/search_corpus.py --list-docs
 
 1. **日常拉取更新 vs. 本地全文缓存重建**：日常执行 `git pull` 并运行 `python3 scripts/validate_distillation.py`，即可在软链关联的三端 Agent 中同步全部 28 份核心知识文件、模板与规则，无需重跑构建脚本；**仅当本地 Zotero 新增段广仁 PDF 文献时**，才需重新运行 `build_papers_corpus.py` 与分拣脚本刷新本地缓存库。
 2. **当前文献覆盖范围与待补篇目**：当前本地语料库覆盖 **32 篇段广仁一作中英文 FAS 论文**（英文 28 篇 + 中文 4 篇，2020–2026）及 2026 年 Springer 专著 *Volume I*（513 页）。其中 2026 最新 *OD-FAS* 系列已收录本地现有的 `Part 1` 与 `Part 4`；`OD-FAS Part 2` 与 `Part 3` 暂未存入本地 Zotero，后续补入 PDF 后在 `build_papers_corpus.py` 登记并重跑脚本即可自动完成全文解码、FTS5 入库与环境分拣。
-3. **版权隔离与仓库卫生**：`/corpus` 软链与 `*.sqlite` 数据库已在 `.gitignore` 中严格排除。向公开仓库提交修改前，切勿强行添加全文 `.md`、分拣原文库或原版 PDF，仅提交提炼后的模板、规则与脚本，并务必先执行 `scripts/validate_distillation.py` 确认结构与链接无误。
+3. **版权隔离与仓库卫生**：`corpus/sorted/` 分拣库随仓库分发；整篇论文全文 `corpus/papers/`、`corpus/INDEX.md`、`corpus/manifest.json` 与 `*.sqlite` 数据库已在 `.gitignore` 中严格排除。向公开仓库提交修改前，切勿强行添加整篇全文 `.md` 或原版 PDF，并务必先执行 `scripts/validate_distillation.py` 确认结构与链接无误。
