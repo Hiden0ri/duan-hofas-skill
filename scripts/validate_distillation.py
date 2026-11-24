@@ -49,6 +49,7 @@ REQUIRED_SORTED = {
     "corpus/sorted/definitions.md",
     "corpus/sorted/fas_advantages_by_theme.md",
     "corpus/sorted/lemmas.md",
+    "corpus/sorted/physical_examples_catalog.md",
     "corpus/sorted/problems.md",
     "corpus/sorted/proofs.md",
     "corpus/sorted/propositions.md",
