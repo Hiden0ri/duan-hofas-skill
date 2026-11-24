@@ -1,5 +1,7 @@
 # Structural example library
 
+> 按**物理背景**（航天器、四旋翼/直升机、机械臂/精密平台、吊车/倒立摆/惯性轮摆、USV/船舶、非完整移动机器人/Brockett、伺服/LSRM/直流微电网、主动悬架/气动、容错与脉冲 sub-FAS）查阅具体动力学方程、FAS 转化形式、代表仿真参数与各背景专属优势，请直接阅读 [physical-examples-and-advantages.md](physical-examples-and-advantages.md)。
+
 ## Selection principle
 
 Choose an example by mathematical structure, not application name. Match, in order:

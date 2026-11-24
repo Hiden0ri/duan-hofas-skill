@@ -30,6 +30,7 @@ REQUIRED = {
     "references/fas-advantages-corpus.md",
     "references/frequently-cited-references.md",
     "references/model-definition-registry.md",
+    "references/physical-examples-and-advantages.md",
     "references/proof-templates.md",
     "references/rigor-audit.md",
     "references/simulation-patterns.md",
