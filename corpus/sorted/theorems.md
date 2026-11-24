@@ -1,4 +1,4 @@
-# Sorted Theorem Corpus Across 32 Duan First-Author Papers + Volume I (198 items)
+# Sorted Theorem Corpus Across 32 Duan First-Author Papers + Volume I (208 items)
 
 ## [1] `aaas_2024_subsfs` (PDF p.5, L511)
 
@@ -1978,7 +1978,47 @@ z (k) = = N x (k) . (38)
 ⎢⎢⎢⎢⎢⎢⎣ ... ⎥⎥⎥⎥⎥⎥⎦ ⎢⎢⎢⎢⎢⎢⎣ ... ⎥⎥⎥⎥⎥⎥⎦
 zr(k) εTr
 
-## [63] `odfas_2026_part1` (PDF p.6, L648)
+## [63] `jssc_2023_brockett2` (PDF p.6, L253)
+
+Theorem 2.5 All the above five systems (2), (3), (4), (6) and (7) are equivalent to the
+Brockett’s system (1).
+
+## [64] `jssc_2023_brockett2` (PDF p.11, L538)
+
+Theorem 3.1 Let a0 and a1 be determined by (38)–(39), with α > β > 0; b0 and b1 be
+two positive scalars. Further, let the controller for the system (7) be designed as (32). Then
+
+1) the singularity condition ˙z1 = 0 is equivalent to
+
+c (t) x0 + d (t) y0 = 0, (40)
+
+where x0 = z1 (0) and y0 = ˙z1 (0) are the system initial values, and
+
+c (t) = (e−(α−β)t − 1)αβ, (41)
+
+d (t) = αe−(α−β)t − β; (42)
+
+2) the state variables zi (t), ˙zi (t) , i = 1, 3, and u1 = ˙z1 all converge to zero exponentially as
+long as the system initial values x0 = z1 (0) and y0 = ˙z1 (0) are taken from the region of
+attraction
+ℚ = ℚ1 ∪ ℚ2, (43)
+
+with
+⎧ y0 > 0, ⎫
+ℚ1 = ⎨(x0, y0) ⎬, (44)
+||||||y0 + αx0 > 0
+⎩ ⎭
+⎧ y0 < 0, ⎫
+ℚ2 = ⎨(x0, y0) ⎬, (45)
+||||||y0 + αx0 < 0
+⎩ ⎭
+which is a sector field in the initial value plane (x0, y0) as shown in Figure 3; and
+
+3) the variables z2, ˙u1 and u2 also converge exponentially to zero when the system initial
+values x0 = z1 (0) and y0 = ˙z1 (0) are taken from the region of attraction ℚ, and the
+polynomial s2 + b1s + b0 has two distinct roots which are both less than −α.
+
+## [65] `odfas_2026_part1` (PDF p.6, L648)
 
 Theorem 2.1. Let system (11) be a global OD-
 FAS. Then an output feedback stabilizing con-
@@ -2000,7 +2040,7 @@ To end this subsection, let us consider an ex-
 ample in the form of (11) using the above Theo-
 rem 2.1.
 
-## [64] `odfas_2026_part1` (PDF p.11, L1231)
+## [66] `odfas_2026_part1` (PDF p.11, L1231)
 
 Theorem 3.1. The spacecraft rendezvous sys-
 tem (48)-(50) has a uniformly globally asymptot-
@@ -2017,7 +2057,7 @@ by (59)-(60), where all the variables are defined
 above, and L, K1, and K0 are three symmetric
 positive definite matrices.
 
-## [65] `odfas_2026_part1` (PDF p.13, L1511)
+## [67] `odfas_2026_part1` (PDF p.13, L1511)
 
 Theorem 4.1. Let (82) be a stabilizing con-
 troller for linear system (81). Then, under the
@@ -2035,7 +2075,7 @@ for OD-FAS (25) makes sense and drives the
 closed-loop response x(0∼n−1)(t) exponentially to
 zero.
 
-## [66] `odfas_2026_part1` (PDF p.14, L1602)
+## [68] `odfas_2026_part1` (PDF p.14, L1602)
 
 Theorem 4.2. Let (87) be a stabilizing con-
 troller for linear system (81). Then, under the
@@ -2055,7 +2095,7 @@ for OD-FAS (25) makes sense and drives the
 closed-loop responses z (t) and x(0∼n−1)(t) both
 exponentially to zero.
 
-## [67] `odfas_2026_part1` (PDF p.19, L2107)
+## [69] `odfas_2026_part1` (PDF p.19, L2107)
 
 Theorem 5.1. Under the feasibility condition
 (121), or equivalently, |y2| < c, the OD-FAS
@@ -2080,7 +2120,7 @@ y3 = ξ = cθ˙ cos θ,
 the above controller for the initial wheel pendu-
 lum indeed uses the feedback of θ(0∼1) and x only.
 
-## [68] `odfas_2026_part1` (PDF p.24, L2665)
+## [70] `odfas_2026_part1` (PDF p.24, L2665)
 
 Theorem 8.1. System (141) is uniformly
 asymptotically stable if, for arbitrary t ≥ 0,
@@ -2089,7 +2129,106 @@ M (t) > 0, K (t) > 0, K˙ (t) ≤ 0, (142)
 M˙ (t) − D (t) + DT(t) < 0. (143)
 ( )
 
-## [69] `odfas_2026_part4` (PDF p.13, L805)
+## [71] `odfas_2026_part2` (PDF p.11, L1239)
+
+Theorem 3.1: Let condition (37) be satisfied, and f (·)
+and B(·) are given by (41). Then a GUE stabilising
+output feedback controller for system (36) is given by
+
+⎧ −1
+u = B (y)(uab − f (y))
+
+⎪⎪⎪⎪⎪⎪⎪⎨uab = diag(K11a, K11b)To−1y
+[︃ ]︃ (63)
++ diag(K12a, K12b) za
+zb
+
+⎪⎪⎪⎪⎪⎪⎪⎩ ż∗ = K21∗y∗ + K22∗z∗, ∗ = a, b,
+
+with Kij∗, i, j = 1, 2; ∗ = a, b, given by (56) and (58),
+where La ∈ ℝr×r and Lb ∈ ℝ2r×2r are Hurwitz matri-
+ces,andF0a∼1 ∈ ℝr×2r andF0b∼3 ∈ ℝr×4r arerealmatri-
+cesmaking(F0a∼1)and(F0b∼3)Hurwitz,respectively.
+Furthermore,theclosed-loopsystemislinearwiththeset
+of eigenvalues given by (62).
+
+## [72] `odfas_2026_part2` (PDF p.17, L1884)
+
+Theorem 4.1: Let condition (37) be satisfied. Then
+a GUE stabilising output feedback controller for sys-
+tem (88) is given by
+⎧ [︃ ]︃ (︃[︃ ]︃ )︃
+⎪⎪⎨ u1 = B−1 ua − fy(y)
+u2 ub
+u∗ = K11∗y∗ + K12∗z∗ (122)
+⎪⎪⎩ ż∗ = K21∗y∗ + K22∗z∗, ∗ = a, b,
+
+with Kij∗, i, j = 1, 2; ∗ = a, b, given by (112) and (118),
+where F0a∼1 ∈ ℝr×2r and F0b∼3 ∈ ℝr×4r are matrices
+making (m13F0a∼1) and (Gb0∼3 + F0b∼3) Hurwitz,
+respectively, and matrices La ∈ ℝr×r and Aob ∈ ℝ2r×2r
+are both Hurwitz. Furthermore, the closed-loop system
+
+is linear and the set of closed-loop eigenvalues is given
+by the sum of
+(︃ )︃
+1 a
+eig F0∼1 ∪ eig(La),
+m3
+
+and
+
+eig(Gb0∼3 + F0b∼3) ∪ eig(Aob).
+
+## [73] `odfas_2026_part2` (PDF p.19, L2093)
+
+Theorem 5.1: Let (127) be a stabilising controller for
+linearsystem(126).Then,undertheinitialvaluecondi-
+tion
+[︃ ]︃ [︄ (0∼µk−1) ]︄
+X0 = xk |k=1∼η(0) ∈ R, (131)
+, z0 z(0)
+
+the following output feedback controller
+
+⎧⎨ u(t) = −B−1(·, t)[fy(·, t) − u0(t)]
+u0(t) = K11(t)y(t) + K12(t)z(t) (132)
+⎩
+ż(t) = K21(t)y(t) + K22(t)z(t)
+
+forOD-FAS(82)makessenseanddrivestheclosed-loop
+responses z(t) and xk(0∼µk−1)|k=1∼η(t) both exponen-
+tially to zero.
+
+## [74] `odfas_2026_part2` (PDF p.20, L2230)
+
+Theorem 5.2: Let the set of stabilising controllers for
+thesetoflinearsystemsin(135)begivenby(136).Then,
+under the initial value condition
+
+[︃ ]︃ [︄ (0∼µk−1) ]︄
+X1∼η,0 = xk |k=1∼η(0) ∈ R, (138)
+z1∼η,0 z1∼η(0)
+
+the following output feedback controller
+
+⎧ u(t) = −B−1(·, t)[fy(·, t) − u0,1∼η(t)]
+⎪⎪⎨
+u0k(t) = Kk21(t)yk(t) + Kk22(t)zk(t)
+(139)
+zk̇(t) = Kk11(t)yk(t) + Kk12(t)zk(t),
+⎪⎪⎩
+k = 1, 2, . . . , η,
+
+for OD-FAS (133) makes sense and drives the closed-
+loop responses z(t) and xk(0∼µk−1)|k=1∼η(t) both expo-
+nentially to zero.
+
+A practical example for the above dynamical out-
+put feedback sub-stabilisation is provided in the next
+subsection.
+
+## [75] `odfas_2026_part4` (PDF p.13, L805)
 
 Theorem 3.1. Suppose system
 
@@ -2099,7 +2238,7 @@ is uniformly asymptotically stable. If Rs (t) ∈ ℝn×n is uniformly bounded a
 
 definite, then system (3.2)-(3.3) is uniformly asymptotically stable.
 
-## [70] `odfas_2026_part4` (PDF p.15, L916)
+## [76] `odfas_2026_part4` (PDF p.15, L916)
 
 Theorem 3.2. The origin of system (3.10)-(3.11) is GUA stable if
 
@@ -2111,7 +2250,7 @@ Theorem 3.2. The origin of system (3.10)-(3.11) is GUA stable if
 
 The above theorem clearly has the following corollary.
 
-## [71] `odfas_2026_part4` (PDF p.19, L1123)
+## [77] `odfas_2026_part4` (PDF p.19, L1123)
 
 Theorem 4.1. Let Assumptions A1-A2, Aϕ1, and Ap1 be satisfied, and F0∼1 ∈ ℝr×2r be a matrix
 
@@ -2133,7 +2272,7 @@ K22(ϕ(0∼1)) = Ao1 + K12(ϕ(0∼1)),
 
 where Ao1 is an arbitrary Hurwitz matrix, ΘIa(ϕ(0∼2)) is defined in (4.8).
 
-## [72] `odfas_2026_part4` (PDF p.21, L1241)
+## [78] `odfas_2026_part4` (PDF p.21, L1241)
 
 Theorem 4.2. Let Assumptions A0-A2 and Aϕ1, and Ap1 be satisfied, and F0∼1 ∈ ℝr×2r be a
 
@@ -2156,7 +2295,7 @@ Kij (⋅) , i, j = 1, 2, being given by (4.28).
 
 To demonstrate the result, let us consider an example.
 
-## [73] `odfas_2026_part4` (PDF p.23, L1380)
+## [79] `odfas_2026_part4` (PDF p.23, L1380)
 
 Theorem 4.3. Let Assumptions Aϕ2 and Ap1 be satisfied, Ao1 ∈ ℝ2n×2n be an arbitrary Hurwitz
 
@@ -2181,7 +2320,7 @@ with
 
 L (y1) = Ao1 + R (y1) C (y1) . (4.44)
 
-## [74] `odfas_2026_part4` (PDF p.31, L1831)
+## [80] `odfas_2026_part4` (PDF p.31, L1831)
 
 Theorem 5.1. Let Assumptions A1-A2, Aϕ1 and Ap1 be satisfied, F0∼1 ∈ ℝr×2r be a matrix
 
@@ -2209,7 +2348,7 @@ where ΘIb(ϕ(0∼2)) is given by (5.14). Furthermore, when Assumption Ap2 is me
 
 given by (5.23) and with Li ∈ ℝr×r, i = 1, 2, making AL Hurwitz.
 
-## [75] `odfas_2026_part4` (PDF p.33, L1924)
+## [81] `odfas_2026_part4` (PDF p.33, L1924)
 
 Theorem 5.2. Let Assumptions A0-A2, AD, Aϕ1, and Ap1 be met, F0∼1 ∈ ℝr×2r be a matrix
 
@@ -2237,7 +2376,7 @@ to add
 
 is given by (5.26), and the following result follows from Propositions 4.1 and 5.2.
 
-## [76] `odfas_2026_part4` (PDF p.43, L2455)
+## [82] `odfas_2026_part4` (PDF p.43, L2455)
 
 Theorem 6.1. Let Assumptions A0-A2 and Av1-Av2 be satisfied, Ao2 be an arbitrary Hurwitz ma-
 
@@ -2251,7 +2390,7 @@ or by (6.28) when A0(ϕ(0∼1)) = A0 is constant.
 
 to add
 
-## [77] `odfas_2026_part4` (PDF p.50, L2836)
+## [83] `odfas_2026_part4` (PDF p.50, L2836)
 
 Theorem 7.1. Let Assumptions A0-A2, Av1-Av3 be met. Then a GUA stabilizing observer-based
 
@@ -2278,7 +2417,7 @@ z˙ = K21(ϕ(0∼1))y + K22 (ϕ) z,
 
 where Kij (⋅) , i, j = 1, 2, are given by (7.28) with AoII ∈ ℝ2r×2r being a Hurwitz matrix
 
-## [78] `odfas_2026_part4` (PDF p.55, L3118)
+## [84] `odfas_2026_part4` (PDF p.55, L3118)
 
 Theorem 8.1. Let Assumptions Aφ and AG be met, F0∼1 ∈ ℝ3×6 be a matrix making Φ(F0∼1)
 
@@ -2327,7 +2466,7 @@ stabilizing controller for system (8.19).
 
 By Theorem 7.1, we can also immediately obtain the following result.
 
-## [79] `odfas_2026_part4` (PDF p.56, L3167)
+## [85] `odfas_2026_part4` (PDF p.56, L3167)
 
 Theorem 8.2. Let Assumptions Aφ and AG be met, Aτ ∈ ℝ3×3 be a Hurwitz matrix, L] ∈ ℝ6×3
 
@@ -2335,7 +2474,7 @@ make
 
 AoII = [0 −10 ] + L] A0 I3⌋
 
-## [80] `odfas_2026_part4` (PDF p.60, L3397)
+## [86] `odfas_2026_part4` (PDF p.60, L3397)
 
 Theorem 8.3. Let Assumptions Aφ and AG be met. Furthermore, Let Assumption Aφ be satisfied,
 
@@ -2353,7 +2492,7 @@ u2 = uφ − A22φ − fy2 y†, φ, t ,
 ( )
 where uζ is given by (8.43)-(8.45), and uφ is given by (8.46).
 
-## [81] `scis_2022_discdelay1` (PDF p.11, L707)
+## [87] `scis_2022_discdelay1` (PDF p.11, L707)
 
 Theorem 1. Let Assumption 3 be met. Further, let ̟i ⩾ 1, i = 1, 2, . . ., η be a set of integers, and
 [Ai]0∼̟i−1 ∈ ℝri×̟iri, i = 1, 2, . . ., η be a set of arbitrarily given matrices. Then the following controller:
@@ -2410,7 +2549,7 @@ equal to each other, that is,
 
 Specially, letting η = 1 in the above theorem, we have the following corollary.
 
-## [82] `scis_2022_discdelay1` (PDF p.14, L878)
+## [88] `scis_2022_discdelay1` (PDF p.14, L878)
 
 Theorem 2. Let Assumption 4 be met. Further, let ̟ be an integer satisfying 1 ⩽ ̟ ⩽ n, and
 [A]0∼̟−1 ∈ ℝr×̟r be an arbitrarily given matrix. Then the following controller:
@@ -2428,7 +2567,7 @@ x (k + 1) = A0∼̟−1x⌈0∼̟−1⌉(k) + v (k) , k ⩾ h. (64)
 Please note that the initial value of the closed-loop system is x⌈0∼̟−1⌉(h), which is provided by the
 first h steps self-running of the system.
 
-## [83] `scis_2022_discdelay1` (PDF p.15, L961)
+## [89] `scis_2022_discdelay1` (PDF p.15, L961)
 
 Theorem 3. Let Assumption 5 be met. Further, let ̟i ⩾ 1, i = 1, 2, . . ., η be a set of integers, and
 [Ai]0∼̟i−1 ∈ ℝri×̟iri, i = 1, 2, . . ., η be a set of arbitrarily given matrices. Then the controller (65) for
@@ -2444,7 +2583,7 @@ of fact, the discrete-time delay FAS in the form of (32) with interconnections i
 complicated large-scale systems. However, for only the purpose of demonstrating the proposed approach,
 let us present a simple example.
 
-## [84] `scis_2022_discdelay2` (PDF p.10, L616)
+## [90] `scis_2022_discdelay2` (PDF p.10, L616)
 
 Theorem 1. Let 𝔽k be the set of feasible points of system (41) at time k. Further, let ̟ ⩾ 1 be an
 integer, and A0∼̟−1 ∈ ℝr×̟r be an arbitrarily given matrix. Then the following controller:
@@ -2513,7 +2652,7 @@ two methods:
 (1) Method based on Lyapunov matrix equation. It is well-known that, for constant stable linear
 systems, there exists a converged exponential trajectory envelope which is represented by the solution to
 
-## [85] `scis_2022_discdelay2` (PDF p.12, L779)
+## [91] `scis_2022_discdelay2` (PDF p.12, L779)
 
 Theorem 2. Let 𝔽k be the set of feasible points of system (27) at time k. Further, let ̟ be an integer
 greater than 1, and A0∼̟−1 ∈ ℝr×̟r be an arbitrarily given matrix. Then the following controller:
@@ -2535,7 +2674,7 @@ Duan G R Sci China Inf Sci September 2022 Vol. 65 192201:13
 Please note that the initial value of the closed-loop system is x⌈0∼̟−1⌉(h), which is provided by the
 first h steps self-running of the open-loop system (27).
 
-## [86] `scis_2023_delay1` (PDF p.15, L980)
+## [92] `scis_2023_delay1` (PDF p.15, L980)
 
 Theorem 1. ( Let 𝔽 ⊂ ℝm, m ⩽) γnr be the set of feasible points of single-order affine sub-FAS (62),
 and A0∼n−1 ∈ ℝr×nr be an arbitrarily given matrix. Design the following controller:
@@ -2562,7 +2701,7 @@ u˜ (t) = −f (x(0∼n−1)(t − τj (t)) |j=1∼ζ, t − u∗(t)) , (84)
 and eventually, the same closed-loop linear system as (82) is resulted in.
 To demonstrate the above proposed controller, let us consider two examples treated in Sections 2 and 4.
 
-## [87] `scis_2023_delay1` (PDF p.16, L1047)
+## [93] `scis_2023_delay1` (PDF p.16, L1047)
 
 Theorem 2. Let 𝔽 ⊂ ℝM be the set of feasible points of the sub-FAS (71), and A ∈ ℝr×κ0 be an
 arbitrarily given matrix. Then the following controller
@@ -2594,7 +2733,7 @@ and the same closed-loop system as (91) is achieved.
 
 Duan G R Sci China Inf Sci January 2023 Vol. 66 112201:17
 
-## [88] `scis_2023_delay1` (PDF p.22, L1416)
+## [94] `scis_2023_delay1` (PDF p.22, L1416)
 
 Theorem 3. Let Ac be stable, T ∈ ℝm×n be a given matrix. Then, for the system (114) there exists a
 constant number κ > 0 satisfying (115). Particularly,
@@ -2617,7 +2756,7 @@ Recall that Ac = A + BK, all the estimates (117)–(120) are dependent on the fe
 Particularly, when parametric eigenstructure assignment is applied to the solution of K, the design
 degrees of freedom can be used to minimize the number κ through formulas (119) and (120).
 
-## [89] `scis_2023_delay1` (PDF p.23, L1481)
+## [95] `scis_2023_delay1` (PDF p.23, L1481)
 
 Theorem 4. Let v = 0, d be a positive scalar, T ∈ ℝm×n be a given matrix, 𝔽 ⊂ ℝm be a region
 containing the origin, and
@@ -2631,7 +2770,7 @@ where
 𝔹0 = {y | ‖y‖ ⩽ d, y ∈ ℝn}.
 κ
 
-## [90] `scis_2023_delay1` (PDF p.24, L1525)
+## [96] `scis_2023_delay1` (PDF p.24, L1525)
 
 Theorem 5. Let v ∈ ℝr be a constant vector, ye be given by (126), d be a positive scalar, T ∈ ℝm×n,
 𝔽 ⊂ ℝm, and
@@ -2645,7 +2784,7 @@ where
 κ
 The above result may suit the case that the set 𝔽 ⊂ ℝn may not contain the origin.
 
-## [91] `scis_2023_delay1` (PDF p.24, L1562)
+## [97] `scis_2023_delay1` (PDF p.24, L1562)
 
 Theorem 6. Let v = 0, d be a positive scalar, TE be defined by (131) and (132), 𝔽 ⊂ ℝm be a region
 containing the origin, and
@@ -2659,7 +2798,7 @@ where
 κs
 Corresponding to Theorem 5, we also have the following more general result.
 
-## [92] `scis_2023_delay1` (PDF p.24, L1573)
+## [98] `scis_2023_delay1` (PDF p.24, L1573)
 
 Theorem 7. Let v ∈ ℝr be a constant vector, ye be given by (126), ze be defined as
 
@@ -2694,7 +2833,7 @@ where
 κs
 The above result may suit the case that the set 𝔽 ⊂ ℝn may not contain the origin.
 
-## [93] `scis_2023_delay1` (PDF p.27, L1723)
+## [99] `scis_2023_delay1` (PDF p.27, L1723)
 
 Theorem 8. Let Assumption A5 be satisfied. Further, let [Ai]0∼µi−1 ∈ ℝri×µiri, i = 1, 2, . . . , η be a
 set of arbitrarily given matrices. Then the following controller for system (138):
@@ -2743,7 +2882,7 @@ To conclude this section, we remark that the concepts and results proposed in th
 be generalized into the case of sub-FASs. Also, the concepts of controllability and stabilizability of the
 generalized FASs (138) and (141) can also be defined.
 
-## [94] `scis_2023_delay2` (PDF p.11, L708)
+## [100] `scis_2023_delay2` (PDF p.11, L708)
 
 Theorem 1. Let Assumptions A1 and A3 be satisfied, and A0∼n−1 ∈ ℝr×nr be an arbitrarily given
 matrix. Then the following controller:
@@ -2757,7 +2896,7 @@ Z (θ) = x(0∼n−1)(θ + t), θ ∈ [−τ (t) , 0] ,
 for the single-order affine system (21) produces the constant linear closed-loop system (57), where v (t)
 is an external input vector.
 
-## [95] `scis_2023_delay2` (PDF p.13, L875)
+## [101] `scis_2023_delay2` (PDF p.13, L875)
 
 Theorem 2. Let Assumptions A2 and A4 be satisfied, and τ (t) be defined in (68). Further, let
 A ∈ ℝr×ηκ0 be an arbitrarily given matrix. Then the following controller:
@@ -2807,7 +2946,7 @@ vη
 For a systematic parametric method to solve the controller parameter matrix A such that the closed-loop
 linear system possesses a desired eigenstructure, please refer to [39].
 
-## [96] `scis_2024_chained1` (PDF p.10, L629)
+## [102] `scis_2024_chained1` (PDF p.10, L629)
 
 Theorem 1. Let Assumption X be met. Then, under the following transformation:
 xn−i+1
@@ -2826,7 +2965,7 @@ where
 gi (x0, z1∼i, t) = [(n − i) β + ϕn−i (x0, xn−i+1∼n, t)] zi, (34)
 hi (x0, z1∼i, t) = γn−iψn−i (x0, xn−i+1∼n, t) , i = 1, 2, . . ., n − 1. (35)
 
-## [97] `scis_2024_chained1` (PDF p.12, L764)
+## [103] `scis_2024_chained1` (PDF p.12, L764)
 
 Theorem 2. Let Assumptions X and A3 be satisfied, and gk (x0, z1∼k, t) and hk (x0, z1∼k, t) , k =
 1, 2, . . . , n − 1, be differentiable with respect to all variables. With the convention of gn (x0, z1∼n, t) = 0,
@@ -2858,7 +2997,7 @@ z(n) = fn(x0, z1∼n, t) + Bn(x0, z1∼n, t)u. (51)
 
 The following result confirms some properties of the above transformation (50).
 
-## [98] `scis_2024_chained1` (PDF p.12, L793)
+## [104] `scis_2024_chained1` (PDF p.12, L793)
 
 Theorem 3. Let the assumptions in Theorem 2 be met. Then the transformation (50)
 (1) is one-to-one;
@@ -2867,7 +3006,7 @@ Theorem 3. Let the assumptions in Theorem 2 be met. Then the transformation (50)
 lim z(0∼n−1) = 0 =⇒ lim z1∼n = 0.
 t→∞ t→∞
 
-## [99] `scis_2024_chained1` (PDF p.14, L879)
+## [105] `scis_2024_chained1` (PDF p.14, L879)
 
 Theorem 4. Let Assumption A3 be met, β > 0, x0 (0) ≠ 0, and b0∼n−1 be an arbitrary vector making
 Φ(b0∼n−1) Hurwitz. Then,
@@ -2898,7 +3037,7 @@ can be readily applied. Please note that the controller (59) is smooth under the
 Furthermore, when the open-loop system (6) is time-invariant, that is, when all the functions gi (·) and
 hi (·) , i = 1, 2, . . ., n − 1 are time-invariant, the above controller (59) is also time-invariant.
 
-## [100] `scis_2024_chained1` (PDF p.16, L1013)
+## [106] `scis_2024_chained1` (PDF p.16, L1013)
 
 Theorem 5. Let bi, i = 0, 1 be two positive scalars, x0 (0) ≠ 0, and
 
@@ -2926,7 +3065,7 @@ f2(x0∼2, t) = ∆1x1 + ∆2x2,
 
 Duan G-R Sci China Inf Sci February 2024, Vol. 67, Iss. 2, 122201:17
 
-## [101] `scis_2024_chained1` (PDF p.20, L1239)
+## [107] `scis_2024_chained1` (PDF p.20, L1239)
 
 Theorem 6. Let the assumptions in Theorem 5 be met. Then a controller for the nonholonomic
 system (88) is given by (75), with f2(x0∼2, t) being defined as in (91), which drives all the state variables
@@ -2934,7 +3073,7 @@ xi, i = 0, 1, 2 to zero.
 If, further, letting ψ (x0, x2, t) ≡ 1 in addition to (87), following the above Theorem 6, we obtain the
 following corollary.
 
-## [102] `scis_2024_chained1` (PDF p.21, L1322)
+## [108] `scis_2024_chained1` (PDF p.21, L1322)
 
 Theorem 7. Let Assumption X be met. Then, under transformation (32), the sub-normal system (28)
 with singular set 𝕊x (x0) is equivalently transformed into system (33)–(35) with the following singular
@@ -2950,7 +3089,7 @@ hi (x0, z1∼i, t) ≠ 0, ∀z1∼n ∈ 𝔽z (x0) , i = 1, 2, . . ., n − 1. (
 
 With this understanding, following the proof of Theorem 2, we can also prove the following result.
 
-## [103] `scis_2024_chained1` (PDF p.21, L1335)
+## [109] `scis_2024_chained1` (PDF p.21, L1335)
 
 Theorem 8. Let Assumption X be satisfied, gk (x0, z1∼k, t) and hk (x0, z1∼k, t) , k = 1, 2, . . ., n be
 differentiable with respect to all variables, and Bk(x0, z(0∼k−1), t) and fk(x0, z(0∼k−1), t), k = 1, 2, . . . , n
@@ -2958,7 +3097,7 @@ be given by (46)–(49). Then, for z1∼n ∈ 𝔽z (x0), the transformation (50
 limt→∞ z1∼n = 0 if limt→∞ z(0∼n−1) = 0, and transforms the SFS (33)–(35) into the sub-FAS (51) with
 the singular set 𝕊z (x0) defined in (97).
 
-## [104] `scis_2024_chained1` (PDF p.21, L1354)
+## [110] `scis_2024_chained1` (PDF p.21, L1354)
 
 Theorem 9. Let gk (x0, z1∼k, t) and hk (x0, z1∼k, t) , k = 1, 2, . . . , n be differentiable with respect to all
 variables. Further, let β > 0, x0 (0) ≠ 0 and b0∼n−1 be an arbitrary vector making Φ(b0∼n−1) Hurwitz.
@@ -2994,7 +3133,7 @@ not empty, the designed sub-stabilizing controller (99) is no longer a UGE stabi
 Lyapunov sense, it may even not be a locally asymptotically stabilizing controller. To better understand
 the above result, let us introduce the following definition.
 
-## [105] `scis_2024_chained1` (PDF p.23, L1469)
+## [111] `scis_2024_chained1` (PDF p.23, L1469)
 
 Theorem 10. Let Assumption X be met. Then, under transformation (32), the time-delay system
 described by (103)–(105) is equivalently transformed into the following system:
@@ -3019,7 +3158,7 @@ It can be easily figured out that gid(·) is a function of the arguments x0 (t �
 and C2 on the series of functions ψˆid(·) and ψid(·) , i = 1, 2, . . . , n − 1, we have the following assumption
 on the functions hdi(·) , i = 1, 2, . . . , n − 1.
 
-## [106] `scis_2024_chained1` (PDF p.24, L1507)
+## [112] `scis_2024_chained1` (PDF p.24, L1507)
 
 Theorem 11. Let Assumptions X and C3 be satisfied, and with the convention of gnd(·) = 0, define
 k
@@ -3049,7 +3188,7 @@ Clearly, it follows from (107) that Assumption C3 is equivalent to
 B˜n ([x0]t , [z1∼n]t , t) ≠ 0,
 for all involved variables. Therefore, under Assumption C3, the above system (112) is a global FAS.
 
-## [107] `scis_2024_chained1` (PDF p.24, L1534)
+## [113] `scis_2024_chained1` (PDF p.24, L1534)
 
 Theorem 12. Let Assumption C3 be met, β > 0, x0 (0) ≠ 0 and b0∼n−1 be an arbitrary vector making
 Φ(b0∼n−1) Hurwitz. Then,
@@ -3068,7 +3207,7 @@ To end this subsection, let us point out that the above FAS approach for stabili
 normal system (15)–(17) with time delays can also be generalized to the time-delay locally normal and
 sub-normal cases.
 
-## [108] `scis_2024_chained2` (PDF p.6, L409)
+## [114] `scis_2024_chained2` (PDF p.6, L409)
 
 Theorem 1. Let Assumption B be met. Then, under the following transformation:
 
@@ -3094,7 +3233,7 @@ h′i(·) ≜ h′i(ζ0, η0, z1∼i, t) =[ γn−iψn′−i(ζ0, η0, xn−i+1
 
 i = 1, 2, . . . , n − 1.
 
-## [109] `scis_2024_chained2` (PDF p.12, L759)
+## [115] `scis_2024_chained2` (PDF p.12, L759)
 
 Theorem 2. Let Assumption C be satisfied, u = u (z1∼n, t) be a UGE stabilizing controller for system
 (54) such that, with f (x, t) and ∆f (x, t) being given by (58) and (59), respectively, there exist a contin-
@@ -3106,7 +3245,7 @@ Further, if
 then u = u (z1∼n, t) is also a controller that UGE stabilizes system (27).
 Similarly, using Corollary 3, the following result can also be immediately obtained.
 
-## [110] `scis_2024_chained2` (PDF p.12, L768)
+## [116] `scis_2024_chained2` (PDF p.12, L768)
 
 Theorem 3. Let Assumption C be satisfied, gi′(·) and h′i(·) , i = 1, 2, . . ., n − 1, be continuously
 differentiable with respect to t, and satisfy one of the following conditions:
@@ -3134,7 +3273,7 @@ system (27) can be realized by finding a UGE stabilizing controller of system (5
 With the above understanding, again, to solve Problem 1, under Assumption C and the mild condition
 (63) or (64), it often suffices to solve Problem 2.
 
-## [111] `scis_2024_chained2` (PDF p.13, L808)
+## [117] `scis_2024_chained2` (PDF p.13, L808)
 
 Theorem 4. Let Assumption A′′ be satisfied, and gk′(ζ0, η0, z1∼k, t) and h′k(ζ0, η0, z1∼k, t) , k = 1, 2, . . .,
 n − 1, be differentiable with respect to all variables. With the convention of gn′(ζ0, η0, z1∼n, t) = 0, let
@@ -3196,7 +3335,7 @@ Applying the above Theorem 4, immediately gives the following result.
 
 Duan G-R Sci China Inf Sci March 2024, Vol. 67, Iss. 3, 132201:14
 
-## [112] `scis_2024_chained2` (PDF p.14, L896)
+## [118] `scis_2024_chained2` (PDF p.14, L896)
 
 Theorem 5. Let Assumptions A′′, B, and C be met, a0 and a1 be determined by (15), with α > β > 0,
 and b0∼n−1 be an arbitrary vector making Φ(b0∼n−1) Hurwitz. Then (1) a stabilizing controller for
@@ -3232,7 +3371,7 @@ In the case of n = 2, we immediately have the following result.
 
 Duan G-R Sci China Inf Sci March 2024, Vol. 67, Iss. 3, 132201:15
 
-## [113] `scis_2024_chained2` (PDF p.16, L1034)
+## [119] `scis_2024_chained2` (PDF p.16, L1034)
 
 Theorem 6. Let Assumption C be satisfied, and z1∼n(Z0, ζ0, η0, t) given by Algorithm 1 UGE converge
 to zero for all Z0 ∈ ℝn, ζ0 ∈ ℝ, and η0 ≠ −βζ0. If, further,
@@ -3252,7 +3391,126 @@ z˙n = u (ζ0, η0, z1∼n, t) .
 Through examining (98), we can conclude that in many cases z1∼n(Z0, ζ0, η0, t) exponentially converges
 to zero. The following corollary reveals a particular case.
 
-## [114] `tcyb_2023_robustdelay` (PDF p.7, L828)
+## [120] `scis_2025_chained3` (PDF p.14, L918)
+
+Theorem 1. Let Assumption C3 be satisfied, u = u (z1∼n, t) be a uniformly globally exponentially
+stabilizing controller for system (60) such that, with f (z1∼n, t) and ∆f (z1∼n, t) being given by (62),
+respectively, there exist a continuous function V (z1∼n, t) : ℝn × ℝ ↦ ℝ and a positive function ρv (t)
+satisfying the inequalities (66)–(68), with x = z1∼n. Further, if
+∞
+∫ ρv (s) ‖ρh (s)‖ e−αsds = M < ∞, (75)
+0
+
+then u = u (z1∼n, t) is also a controller that uniformly globally exponentially stabilizes system (53).
+Again, when ρv (t) = ρv is a nonnegative constant, condition (75) reduces to
+∞
+∫ ‖ρh (s)‖ e−αsds = M < ∞. (76)
+
+Duan G-R Sci China Inf Sci June 2025, Vol. 68, Iss. 6, 162201:15
+
+Conditions (75) and (76) are not strict at all. They allow ρv (t) ‖ρh (t)‖ or ‖ρh (t)‖ to diverge with
+exponential rates. Specifically, Eqs. (75) and (76) respectively allow
+
+ρv (t) ‖ρh (t)‖ < eαt and ‖ρh (s)‖ < eαt.
+
+For given functions Hi (·) or Ψ˜i (·) , i = 1, 2, . . . , n − 1, these two conditions are often satisfied or can be
+satisfied by adjusting the design parameter α. Therefore, roughly speaking, in most cases the stabilization
+of system (51) can be realized by finding a uniformly globally exponentially stabilizing controller of system
+(63).
+With the above understanding, again, in order to solve Problem 1, under Assumption C3 and the mild
+condition (75) or (76), it often suffices to solve Problem 3. Therefore, in Section 5, let us mainly give a
+FAS approach for solution to Problem 3.
+
+## [121] `scis_2025_chained3` (PDF p.17, L1066)
+
+Theorem 2. Let Assumptions C1 and C2 be satisfied, and z1∼n ∈ 𝔽z (α, β, ζ0, η0). Then, under the
+transformation (81), the sub-SFS (60) is equivalently transformed into the following sub-FAS:
+
+z(n) = fˇn(α, β, ζ0, η0, z(0∼n−1), t) + Bˇn(α, β, ζ0, η0, z(0∼n−1), t)u. (90)
+
+## [122] `scis_2025_chained3` (PDF p.17, L1088)
+
+Theorem 3. Let Assumptions C1 and C2 be met, and A0∼n−1 be an arbitrary matrix making Φ(A0∼n−1)
+Hurwitz. Then a sub-stabilizing controller for system (60) is given by
+
+u = −Bˇn−1(α, β, ζ0, η0, z(0∼n−1), t) fˇn(α, β, ζ0, η0, z(0∼n−1), t) + A0∼n−1z(0∼n−1) . (92)
+[ ]
+Furthermore, the corresponding closed-loop system is
+
+z(n) + A0∼n−1z(0∼n−1) = 0, (93)
+
+with the following state constraint:
+
+z(0∼n−1) ∈ 𝔽 (α, β, ζ0, η0) , (94)
+
+or, equivalently, the state initial value constraint
+
+z(0∼n−1)(0) ∈ Rˇs (α, β, ζ0, η0) = {X0| exp (Φ(A0∼n−1)t) X0 ∈ 𝔽 (α, β, ζ0, η0)} . (95)
+
+Duan G-R Sci China Inf Sci June 2025, Vol. 68, Iss. 6, 162201:18
+
+Please note that the closed-loop system (93) can be equivalently written in the following state-space
+form:
+z(0∼n−1) = Φ(A0∼n−1)z(0∼n−1), (96)
+˙
+whose solution is given by
+
+z(0∼n−1)(t) = exp (Φ(A0∼n−1)t) z(0∼n−1)(0) . (97)
+
+Obviously, the well-known technique of pole assignment can be applied to solve the matrix A0∼n−1.
+Particularly, the complete parametric approach proposed in [15] (see also the Proposition 2 in [18]) can
+be readily applied. This matrix parameter A0∼n−1 can be properly selected to ensure the dynamical
+properties of the closed-loop system (96).
+The region Rˇs (α, β, ζ0, η0) is actually the RoEA for this sub-stabilization [33]. When the system initial
+values are chosen within the RoEA Rˇs (α, β, ζ0, η0), the trajectories of the system obey (97) and go to the
+origin uniformly exponentially. Regarding the stability of the closed-loop system, we have the following
+three circumstances.
+(1) When system (60) is globally normal, or equivalently, system (90) is a global FAS, we have
+𝔽 (α, β, ζ0, η0) = Rˇs (α, β, ζ0, η0) = ℝnr. Thus the constraints (94) and (95) vanish. In this case, the
+closed-loop system is clearly globally uniformly exponentially stable, and the controller (92) is a globally
+uniformly exponentially stabilizing controller for system (90).
+(2) When system (60) is locally normal, or equivalently, system (90) is a rational FAS, that is,
+𝔽 (α, β, ζ0, η0) and Rˇs (α, β, ζ0, η0) contain the origin as an inner point, the closed-loop system is locally
+uniformly exponentially stable, and the controller (92) is a locally uniformly exponentially stabilizing
+controller for the system (90).
+(3) When system (60) is abnormal, or equivalently, system (90) is an irrational FAS, that is, 𝔽(α, β, ζ0,
+η0) and Rˇs (α, β, ζ0, η0) contain the origin as a boundary point, the closed-loop system is only sub-stable
+in the sense that all trajectories of the system starting from Rˇs (α, β, ζ0, η0) converge exponentially to
+zero within 𝔽 (α, β, ζ0, η0). However, the system can by no means be stable in the Lyapunov sense. In
+this case, the controller (92) is a sub-stabilizing controller for system (90).
+In many practical applications, the feasible set 𝔽 (α, β, ζ0, η0) or the corresponding RoEA Rˇs(α, β, ζ0,
+η0), is sufficiently large such that the singular case seldom or even never happens. In such cases, although
+the designed controller is not even a local stabilizing one in the Lyapunov sense, it does work practically.
+When the initial values are inevitably chosen out of the RoEA Rˇs (α, β, ζ0, η0), a pre-controller can
+be easily designed (see also [1, 8, 51]), to drive the trajectory of the closed-loop system into the RoEA
+Rˇs (α, β, ζ0, η0) first, and then let the above controller (92) take over. Clearly, the design of such a pre-
+controller is much easier than solving a stabilizing controller because the RoEA is generally a very large
+region, while the stabilization in the Lyapunov sense requires convergence of the states to a single point,
+which is usually the origin.
+
+## [123] `scis_2025_chained3` (PDF p.18, L1163)
+
+Theorem 4. Let Assumptions C1 and C2 be met, and A0∼n−1 be an arbitrary matrix making Φ(A0∼n−1)
+Hurwitz. Then we have the following:
+(1) a sub-stabilizing controller for system (60) is given by (99) which has a region of attraction
+Rs (α, β, ζ0, η0); and
+
+Duan G-R Sci China Inf Sci June 2025, Vol. 68, Iss. 6, 162201:19
+
+(2) the response of the closed-loop system starting from Rs (α, β, ζ0, η0) is given by
+
+z1∼n (t) = Bˇe−1(α, β, ζ0, η0, z(0∼n−1), t) z(0∼n−1) −fˇe(α, β, ζ0, η0, z(0∼n−1), t) ,
+z(0∼n−1)(t) = exp (Φ(A0∼n−1)t) z(0∼n−[1)(0) , ] (100)
+{
+z(0∼n−1)(0) ∈ Rˇs (α, β, ζ0, η0) .
+
+It is easily observed that, when the open-loop system (9) is time-invariant, that is, when all the functions
+Gi (·) and Hi (·) , i = 1, 2, . . . , n − 1, are time-invariant, the above controller (99) is also time-invariant.
+Since z(0∼n−1)(t) is globally and uniformly exponentially converging to zero, it follows from (100)
+that, under very mild conditions on Bˇe(·) and fˇe(·), the system response z1∼n (t) also tends to zero
+exponentially.
+
+## [124] `tcyb_2023_robustdelay` (PDF p.7, L828)
 
 Theorem 1: Let A0∼n−1 ∈ ℝr×nr be a matrix satisfy-
 ing (36), and Assumptions B2–B4 be met. Then, a control
@@ -3281,7 +3539,7 @@ x(0∼n−1) = Φ(A0∼n−1 + Θ) x(0∼n−1)
 Therefore, Theorem 1 immediately follows from the following
 technical lemma.
 
-## [115] `tcyb_2023_robustdelay` (PDF p.8, L966)
+## [125] `tcyb_2023_robustdelay` (PDF p.8, L966)
 
 Theorem 2: Let [Ai]0∼μi−1 ∈ ℝri×riμi, i = 1, 2, . . . , η, be
 a set of matrices satisfying (44), Assumptions A2–A4 be met.
@@ -3293,7 +3551,7 @@ In view of Proposition 1, we immediately have from the
 above result the following corollary, which gives the solution
 to Problem 1.
 
-## [116] `tcyb_2023_robustdelay` (PDF p.8, L1026)
+## [126] `tcyb_2023_robustdelay` (PDF p.8, L1026)
 
 Theorem 3: Let A0∼n−1 ∈ ℝr×nr be a matrix satisfy-
 ing (36), Assumptions B0, B3′, and B4 hold. Then, a controller
@@ -3313,7 +3571,7 @@ where ε ∈ (0, 1) is an arbitrarily given number.
 The following result immediately follows from Theorem 3
 and Corollary 1.
 
-## [117] `tcyb_2023_robustdelay` (PDF p.9, L1141)
+## [127] `tcyb_2023_robustdelay` (PDF p.9, L1141)
 
 Theorem 4: Let A0∼n−1 ∈ ℝr×nr be a matrix satisfy-
 ing (36), and Assumptions B2–B6 be met. Then, a control
@@ -3339,7 +3597,7 @@ actuation Assumption B0, while Assumption B3′ on the
 nonlinear uncertainty Δf(·) becomes the following assump-
 tion.
 
-## [118] `tcyb_2023_robustdelay` (PDF p.9, L1171)
+## [128] `tcyb_2023_robustdelay` (PDF p.9, L1171)
 
 Theorem 5: Let A0∼n−1 ∈ ℝr×nr be a matrix satisfy-
 ing (36), Assumptions B0 and B3′′ be met. Then, a controller
@@ -3375,7 +3633,7 @@ Without loss of generality, here we only quote a result on
 the parametric solution of the matrix A0∼n−1 satisfying (36),
 which is actually [28, Corollary 1] (see [30]–[32]).
 
-## [119] `tcyb_2023_subfas` (PDF p.7, L835)
+## [129] `tcyb_2023_subfas` (PDF p.7, L835)
 
 Theorem 1: Let 𝔽 ⊂ ℝm, m ≤ γ nr, be the feasible set of
 the single-order affine sub-FAS (18), and A0∼n−1 ∈ ℝr×nr be
@@ -3396,7 +3654,7 @@ Rs = ⎨X0 |||j=1∼γ ⎬
 where ϕ(·) is the singularity function of the sub-
 FAS (18).
 
-## [120] `tcyb_2023_subfas` (PDF p.8, L931)
+## [130] `tcyb_2023_subfas` (PDF p.8, L931)
 
 Theorem 2: Let Assumption 1 be met, 𝔽 ⊂ ℝm1, m1 ≤
 γ nr1, be the feasible set of the single-order affine sub-
@@ -3430,7 +3688,7 @@ For a proper detailed example demonstrating the above the-
 ory of substabilization of a single-order FAS, please refer
 to [38].
 
-## [121] `tcyb_2023_subfas` (PDF p.8, L977)
+## [131] `tcyb_2023_subfas` (PDF p.8, L977)
 
 Theorem 3: Let AE ∈ ℝM be a Hurwitz matrix. Then, a
 substabilizing controller for the multiorder affine sub-FAS (25)
@@ -3499,7 +3757,7 @@ q1, are grouped together as xk(μk)|k=1∼q1 ∈ ℝϱ1,
 xk(0∼μk−1)|k=1∼q1 ∈ ℝκ1 and will be produced by a
 single linear system in the closed loop.
 
-## [122] `tcyb_2023_subfas` (PDF p.9, L1090)
+## [132] `tcyb_2023_subfas` (PDF p.9, L1090)
 
 Theorem 4: Let Assumption 2 be met, and 𝔽 ⊂ ℝM be the
 feasible set of the sub-FAS (25), and Ai ∈ ℝϱi×κi, i = 1 ∼ l,
@@ -3541,7 +3799,7 @@ x˙k(0∼μk−1)(t)|k=1∼q1 = ΦExk(0∼μk−1)(t)|k=1∼q1 (50)
 which is the equivalent state-space form of the linear
 system in (48).
 
-## [123] `tcyb_2024_overview` (PDF p.4, L508)
+## [133] `tcyb_2024_overview` (PDF p.4, L508)
 
 Theorem 1: The linear system (11) is controllable if and
 only if it can be converted equivalently into the following
@@ -3600,7 +3858,7 @@ The following result indicates that a feedback linearizable
 system can be represented by a FAS model (a modified version
 of that in [2]).
 
-## [124] `tcyb_2024_overview` (PDF p.5, L566)
+## [134] `tcyb_2024_overview` (PDF p.5, L566)
 
 Theorem 2: Let system (13) be locally feedback linearizable
 at (x0, u0) via the feedback (14). Then it is equivalent to a
@@ -3608,7 +3866,7 @@ FAS in the form of (2) within a neighborhood of (x0, u0).
 A discrete-time version of the above result can be found in
 [14].
 
-## [125] `tcyb_2024_overview` (PDF p.6, L689)
+## [135] `tcyb_2024_overview` (PDF p.6, L689)
 
 Theorem 3: Let system (13) possess, on 𝕏 ⊂ ℝn, a control-
 oriented flat output y in the form of (20) satisfying (19) and
@@ -3645,7 +3903,7 @@ with this output are well defined (see [25], [30]). The following
 definition clarifies a full set of relative degrees of a nonlinear
 system associated with an output.
 
-## [126] `tcyb_2024_overview` (PDF p.7, L777)
+## [136] `tcyb_2024_overview` (PDF p.7, L777)
 
 Theorem 4: Let y ∈ ℝr be an output of system (13) having
 a set of control-oriented relative degrees µk, k = 1, 2, . . . , η,
@@ -3688,7 +3946,7 @@ are briefly described below. Please note that our generalized
 FASs are not restricted to second-order systems, and neither
 are the UASs.
 
-## [127] `tcyb_2024_overview` (PDF p.7, L876)
+## [137] `tcyb_2024_overview` (PDF p.7, L876)
 
 Theorem 5: Let A0∼n−1 ∈ ℝr×nr be a set of arbitrarily
 given matrices. Then the following controller
@@ -3720,7 +3978,7 @@ nonlinear control field, can also be easily solved with the FAS
 approach. Also, we remark that the above comments also apply
 to the case of sub-FAS control discussed in Subsection IV-B.
 
-## [128] `tcyb_2024_overview` (PDF p.8, L914)
+## [138] `tcyb_2024_overview` (PDF p.8, L914)
 
 Theorem 6: Let Ak,0∼µk−1 ∈ ℝrk×µkrk, k = 1, 2, . . . , η,
 be a set of arbitrarily given matrices. Then the following
@@ -3748,7 +4006,7 @@ Ak,0∼µk−1, k = 1, 2, . . . , η (see Subsection IV-D).
 
 B. Sub-Stabilization of Sub-FASs
 
-## [129] `tcyb_2024_overview` (PDF p.8, L947)
+## [139] `tcyb_2024_overview` (PDF p.8, L947)
 
 Theorem 7: Let 𝔽 be the set of feasibility of FAS (1), and
 A0∼n−1 ∈ ℝr×nr be an arbitrarily given matrix. Then, when
@@ -3772,7 +4030,7 @@ be chosen outside the RoEA, a pre-controller can be usually
 easily designed to drive the trajectory of the system into the
 RoEA first, and then let the sub-stabilizing controller take over.
 
-## [130] `tcyb_2024_overview` (PDF p.8, L982)
+## [140] `tcyb_2024_overview` (PDF p.8, L982)
 
 Theorem 8: Let 𝔽 ⊂ ℝκ be the set of feasibility of the
 system (2), whose dimension is greater than 1. Further, let
@@ -3841,7 +4099,7 @@ are piece-wise continuous functions, and h z(0∼m−1) is a
 ( )
 K∞-bounded function (see the Definition 3 in [31]). The
 
-## [131] `tcyb_2024_overview` (PDF p.10, L1204)
+## [141] `tcyb_2024_overview` (PDF p.10, L1204)
 
 Theorem 9: Let f0 x(0∼n−1), t ∈ ℝr be a desired function
 ( )
@@ -3884,7 +4142,7 @@ specific problem of finite-time stabilization (see [37], and the
 review paper [38]). For convenience of presentation, let us
 introduce the following definition.
 
-## [132] `tcyb_2024_overview` (PDF p.11, L1290)
+## [142] `tcyb_2024_overview` (PDF p.11, L1290)
 
 Theorem 10: The controller (63) is a finite-time sub-
 stabilizing controller for sub-FAS (1) if f0 (x1∼n, t) is a func-
@@ -3906,7 +4164,7 @@ a matter of fact, many researches on nonlinear systems
 are focused on the well-known strict-feedback systems,
 which have been proven to be global FASs ([3], [42]).
 
-## [133] `tcyb_2024_overview` (PDF p.13, L1607)
+## [143] `tcyb_2024_overview` (PDF p.13, L1607)
 
 Theorem 11: Let the variables B˘k x(0∼k−1), t and
 h˘k x(0∼k−1), t , k = 1, 2, . . . , n, be given by (79), (80)()
@@ -3920,7 +4178,7 @@ x(n) = h˘n(x(0∼n−1), t)+ B˘n(x(0∼n−1), t)u. (84)
 Therefore, stabilization of the sub-SFS (77) can be realized
 by carrying out the sub-stabilization of the sub-FAS (84).
 
-## [134] `ucfas_2025_part1` (PDF p.10, L1071)
+## [144] `ucfas_2025_part1` (PDF p.10, L1071)
 
 Theorem 6.1: Let systems (72)–(74) be all SFSs with
 respect to variables x1∼nx, y1∼ny and z1∼nz, respectively.
@@ -3945,7 +4203,7 @@ into a FAS instead of a UC-FAS.
 To conclude this subsection, let us give the following
 remarks.
 
-## [135] `ucfas_2025_part2` (PDF p.5, L451)
+## [145] `ucfas_2025_part2` (PDF p.5, L451)
 
 Theorem 2.1: Let ∅ ≠ 𝔽 ⊂ ℝnr be the set of feasibil-
 ity of the constrained FAS (1) and (2), defined by (11),
@@ -3956,7 +4214,7 @@ the linear closed-loop system (7), whose response is given
 by (12) and satisfies the constraint (2) and x(0∼n−1)(t) ∈
 𝔽in.
 
-## [136] `ucfas_2025_part2` (PDF p.5, L528)
+## [146] `ucfas_2025_part2` (PDF p.5, L528)
 
 Theorem 2.2: Let ∅ ≠ 𝔽 ⊂ ℝκ be the set of feasi-
 bility of the constrained FAS (3) and (4). Further,
@@ -3979,7 +4237,7 @@ For solution of the parameter matrices Ak,0∼μk−1 ∈
 given in Duan et al. (2024).
 To end this section, let us give a few remarks.
 
-## [137] `ucfas_2025_part2` (PDF p.9, L973)
+## [147] `ucfas_2025_part2` (PDF p.9, L973)
 
 Theorem 3.1: The UC-FAS (22)–(24) has a sub-
 stabilising controller if Rxyz is not empty, and in this
@@ -4007,7 +4265,7 @@ i = 1, 2, 3.
 
 Figure 1. Illustration of the sub-stabilisation process for weakly UC-FASs.
 
-## [138] `ucfas_2025_part3` (PDF p.6, L485)
+## [148] `ucfas_2025_part3` (PDF p.6, L485)
 
 Theorem 3.1: Restrict
 π
@@ -4015,7 +4273,7 @@ Theorem 3.1: Restrict
 2
 Then all Models I to V are equivalent to each other.
 
-## [139] `ucfas_2025_part3` (PDF p.9, L893)
+## [149] `ucfas_2025_part3` (PDF p.9, L893)
 
 Theorem 4.1: The sub-stabilising controller for UC-
 FAS (49) is given by (52) and (65). As long as
@@ -4042,7 +4300,7 @@ enough so as to let y(0∼1) and u2 converge to zero
 exponentially (will be seen clearly in the following
 section).
 
-## [140] `book_2026_volume1` (PDF p.63, L42)
+## [150] `book_2026_volume1` (PDF p.63, L42)
 
 Theorem 1.1 Let A ∈ Rn×n , B ∈ Rn×r be two matrices satisfying Assumptions 1.1
 and 1.2, and N (s) and D (s) be a pair of right coprime polynomial matrices given
@@ -4070,7 +4328,7 @@ where si , i = 1, 2, . . . , n, are clearly the closed-loop eigenvalues to be as
 This subsection treats the case that the closed-loop eigenvalues are allowed to be
 undetermined and sought later according to some system requirements.
 
-## [141] `book_2026_volume1` (PDF p.64, L43)
+## [151] `book_2026_volume1` (PDF p.64, L43)
 
 Theorem 1.2 Let A ∈ Rn×n , B ∈ Rn×r be two matrices satisfying Assumptions 1.1
 and 1.2, and. N (s) and. D (s) be a pair of right coprime polynomial matrices satisfying
@@ -4094,20 +4352,20 @@ a diagonal matrix. For the same reason, the system resulted in by the above cont
 (1.19) is nondefective.
 44                                                                             1 Introduction
 
-## [142] `book_2026_volume1` (PDF p.65, L44)
+## [152] `book_2026_volume1` (PDF p.65, L44)
 
 Theorem 1.3 Let A ∈ Rn×n , B ∈ Rn×r be two matrices satisfying Assumptions 1.1
 and 1.2, F ∈ Cn×n be a diagonal matrix in the form of (1.18). Further, let N̂i ∈ Rn×r
 and D̂i ∈ Rr ×r , i = 1, 2, . . . , n, be given by (1.22)–(1.23). Then all the solutions to
 
-## [143] `book_2026_volume1` (PDF p.84, L64)
+## [153] `book_2026_volume1` (PDF p.84, L64)
 
 Theorem 2.1 System (2.66) is controllable if and only if it can be equivalently
 converted into the following linear FAS:
 z (n) + αn−1 z (n−1) + · · · + α1 ż + α0 z = u,               (2.71)
 with αi , i = 0, 1, . . . , n − 1, given by (2.67).
 
-## [144] `book_2026_volume1` (PDF p.86, L66)
+## [154] `book_2026_volume1` (PDF p.86, L66)
 
 Theorem 2.2 System (2.74) is controllable if and only if it can be equivalently
 converted into the following linear multi-order FAS:
@@ -4142,7 +4400,7 @@ B̃ = ⎢                      ⎥,
 ⎢             . .   .. ⎥
 ⎣                 . . ⎦
 
-## [145] `book_2026_volume1` (PDF p.98, L78)
+## [155] `book_2026_volume1` (PDF p.98, L78)
 
 Theorem 2.3 Let the LTV system (2.109) satisfy Assumptions 2.5 and 2.6. Under
 the state transformation
@@ -4176,7 +4434,7 @@ n =
 e           μi max − n.
 i=1
 
-## [146] `book_2026_volume1` (PDF p.100, L80)
+## [156] `book_2026_volume1` (PDF p.100, L80)
 
 Theorem 2.4 Let Assumptions 2.5 and 2.6 be satisfied,.[ Ak ]0∼μk −1 ,.k = 1, 2, . . . , η,
 be a series of given matrices, and the state transformation
@@ -4192,7 +4450,7 @@ x (t) = P −1 (t) exp (    0 t) Z 0 ,            (2.127)
 with Z 0 = z k(0∼μk         |k=1∼η (0) and
 0 = diag          [ Ai ]0∼μi −1 , i = 1, 2, . . . , η .
 
-## [147] `book_2026_volume1` (PDF p.105, L85)
+## [157] `book_2026_volume1` (PDF p.105, L85)
 
 Theorem 2.5 Let system (2.132) be feedback linearizable via (2.133). Then system
 (2.132) is equivalent to the following global FAS:
@@ -4208,7 +4466,7 @@ k=1∼η                                                  k=1∼η
 integers satisfying (2.91), f z (·) ∈ Rr is a function, and B̂ ∈ Rr ×r is a nonsingular
 matrix.
 
-## [148] `book_2026_volume1` (PDF p.107, L87)
+## [158] `book_2026_volume1` (PDF p.107, L87)
 
 Theorem 2.6 If system (2.141) is globally feedback linearizable, then it is equivalent
 to a globally nonaffine FAS in the form of
@@ -4223,7 +4481,7 @@ system to a FAS is finding a homeomorphism under which the system can be trans-
 formed into the FAS and vice versa. This actually can be seen from the above proof
 of Theorem 2.5, and also the proof of the above Theorem 2.6 given in Duan (2026b).
 
-## [149] `book_2026_volume1` (PDF p.120, L100)
+## [159] `book_2026_volume1` (PDF p.120, L100)
 
 Theorem 3.1 Let A0∼n−1 ∈ Rr×nr be a set of arbitrarily given matrices. Then the
 following controller
@@ -4253,7 +4511,7 @@ in an LTI closed-loop system with an arbitrarily desired eigenstructure.
 Furthermore, it can be easily observed that, when all Ai , i = 0, 1, . . . , n − 1,
 are chosen to be diagonal, r decoupled systems can be immediately obtained. This
 
-## [150] `book_2026_volume1` (PDF p.121, L101)
+## [160] `book_2026_volume1` (PDF p.121, L101)
 
 Theorem 3.2 Let Ak,0∼μk −1 ∈ Rrk ×μk rk , k = 1, 2, . . . , η, be a set of arbitrarily
 given matrices. Then the following controller
@@ -4294,7 +4552,7 @@ In the case of
 g xk(0∼μk         |k=1∼η , u, t = B xk(0∼μk                |k=1∼η , t u,   (3.33)
 the nonaffine FAS (3.12) becomes affine FAS (3.9), and controller (3.30) reduces to
 
-## [151] `book_2026_volume1` (PDF p.122, L102)
+## [161] `book_2026_volume1` (PDF p.122, L102)
 
 Theorem 3.3 Let A E ∈ Rr×κ0 be an arbitrarily given matrix. Then the following
 controller
@@ -4328,7 +4586,7 @@ is treated.
 3.4.1 Decoupled Design
 In Sect. 3.3.2, the proposed decoupled controller (3.30) for nonaffine FAS (3.12), or
 
-## [152] `book_2026_volume1` (PDF p.123, L103)
+## [162] `book_2026_volume1` (PDF p.123, L103)
 
 Theorem 3.4 Let k ∈ {1, 2, · · · , η}. Then, for an arbitrary matrix Fk ∈ Rμk rk ×μk rk ,
 all the matrices Ak,0∼μk −1 and Vk ∈ Rμk rk ×μk rk , satisfying det Vk 0 and
@@ -4363,7 +4621,7 @@ in the choice of the matrix F, and the second part is given by Z k ∈ Rrk ×μk
 dd
 freedom     = μ1r12 + μ2 r22 + · · · + μη rη2 (3.45)
 
-## [153] `book_2026_volume1` (PDF p.154, L135)
+## [163] `book_2026_volume1` (PDF p.154, L135)
 
 Theorem 4.1 For an arbitrarily selected matrix F ∈ Rnr ×nr , all the matrices
 A 0∼n−1 and V ∈ R
@@ -4375,7 +4633,7 @@ A0∼n−1 = −Z F n V −1 (Z , F) ,                 (4.31)
 with Z ∈ Rr ×nr being a parameter matrix satisfying
 detV (Z , F) = 0.               (4.32)
 
-## [154] `book_2026_volume1` (PDF p.154, L135)
+## [164] `book_2026_volume1` (PDF p.154, L135)
 
 Theorem 4.2 Let F ∈ Rnr×nr be a given Hurwitz matrix, and f i ∈ R and Fi ∈
 Rnr×nr , i = 0, 1, 2, . . . , nr, are determined by
@@ -4414,7 +4672,7 @@ FiT (C V )T (C V ) P20 F,
 ⎩  2
 i=0
 
-## [155] `book_2026_volume1` (PDF p.160, L141)
+## [165] `book_2026_volume1` (PDF p.160, L141)
 
 Theorem 4.3 Consider FAS (4.45), with the disturbance d (t) generated by (4.13),
 and let Assumptions 4.1 and 4.4 be met. If the control law is taken as (4.60)–
@@ -4453,7 +4711,7 @@ following asymptotical output regulation requirement is always met:
 lim yr (t) = 0.                          (4.66)
 t→∞
 
-## [156] `book_2026_volume1` (PDF p.162, L143)
+## [166] `book_2026_volume1` (PDF p.162, L143)
 
 Theorem 4.3 in the case of dynamical state feedback.
 Firstly, let us give a necessary and sufficient condition for the observability
@@ -4462,12 +4720,12 @@ Firstly, let us give a necessary and sufficient condition for the observability
 E =                           , C I = Inr 0 (4.73)
 0         (S0∼k−1 )
 
-## [157] `book_2026_volume1` (PDF p.162, L143)
+## [167] `book_2026_volume1` (PDF p.162, L143)
 
 Theorem 4.4 The matrix pair ( E , C I ) defined by (4.73) is observable (detectable)
 if and only if ( (S0∼k−1 ) , E) is observable (detectable).
 
-## [158] `book_2026_volume1` (PDF p.163, L144)
+## [168] `book_2026_volume1` (PDF p.163, L144)
 
 Theorem 4.5 Suppose that E and C I are given by (4.73) and ( (S0∼k−1 ) , E)
 is observable. Let N (s) and D (s) be a pair of right coprime polynomial matrices
@@ -4510,7 +4768,7 @@ and Z 0 ∈ Rnr ×(nr+kp) is a parameter matrix satisfying
 Di
 det                               Z 0 F0i   = 0.         (4.82)
 
-## [159] `book_2026_volume1` (PDF p.175, L156)
+## [169] `book_2026_volume1` (PDF p.175, L156)
 
 Theorem 4.5. Again, for simplicity, only a specific pair of solutions is given, as
 follows:
@@ -4548,7 +4806,7 @@ angles
 ⎨                       Lx
 +      θ̂ (0∼2) − θ (0∼2)                        (4.158)
 
-## [160] `book_2026_volume1` (PDF p.183, L164)
+## [170] `book_2026_volume1` (PDF p.183, L164)
 
 Theorem 5.1 Suppose that system (5.2) satisfies Assumptions 5.1 and 5.2. Let.μ and
 ε be two arbitrarily given positive numbers, and Ai ∈ Rr ×r , i = 0, 1, . . . , n − 1, be
@@ -4578,7 +4836,7 @@ the following ellipsoid:
 5.1.2 Robust Tracking
 Let x ∗ (t) ∈ Rr be a reference signal to be tracked by the state x (t), and define
 
-## [161] `book_2026_volume1` (PDF p.184, L165)
+## [171] `book_2026_volume1` (PDF p.184, L165)
 
 Theorem 5.2 Suppose that system (5.2) satisfies Assumptions 5.1 and 5.2. Let.μ and
 ε be two arbitrarily given positive numbers, and Ai ∈ Rr ×r , i = 0, 1, . . . , n − 1, be
@@ -4596,7 +4854,7 @@ T                          ε
 μ,ε   (x ∗ )(0∼n−1) = x (0∼n−1)            (x − x ∗ )(0∼n−1)       P(x − x ∗ )(0∼n−1) ≤       .
 μ
 
-## [162] `book_2026_volume1` (PDF p.189, L170)
+## [172] `book_2026_volume1` (PDF p.189, L170)
 
 Theorem 5.3 Suppose that Assumption 5.1 holds. Let. Ai ∈ Rr ×r , i = 0, 1, . . . , n −
 1, be a set of matrices such that the matrix A0∼n−1 ) is stable, and PL ( A0∼n−1 ) be
@@ -4631,7 +4889,7 @@ Thus system (5.27) turns into
 z (n) = H T z (0∼n−1) , t θ + q z (0∼n−1) , t + L z (0∼n−1) , t u − x ∗              (5.34)
 Applying Theorem 5.3 to the above system, we can obtain the following adaptive
 
-## [163] `book_2026_volume1` (PDF p.190, L171)
+## [173] `book_2026_volume1` (PDF p.190, L171)
 
 Theorem 5.4 Suppose that system (5.27) satisfies Assumption 5.1. Let Ai ∈
 Rr ×r , i = 0, 1, . . . , n − 1, be a set of matrices such that A0∼n−1 ) is stable, and
@@ -4651,7 +4909,7 @@ when applied to system (5.27), guarantees the following:
 1. x (0∼n−1) − (x ∗ ) (0∼n−1) → 0, t → ∞;
 2. θ − θ̂ is bounded.
 
-## [164] `book_2026_volume1` (PDF p.199, L180)
+## [174] `book_2026_volume1` (PDF p.199, L180)
 
 Theorem 5.5 Suppose that FAS (5.49), together with the pre-estimation θ0 of
 the unknown parameter vector θ, satisfies Assumptions 5.1, 5.2 and 5.3. Let μ
@@ -4687,7 +4945,7 @@ put
 ∗
 x̃ = x − x ,
 
-## [165] `book_2026_volume1` (PDF p.201, L182)
+## [175] `book_2026_volume1` (PDF p.201, L182)
 
 Theorem 5.6 Suppose that FAS (5.49), together with a pre-estimation θ0 of the
 unknown parameter vector θ, satisfies Assumptions 5.1–5.3. Let μ and ε be two
@@ -4703,7 +4961,7 @@ x̃ (0∼n−1)                  2          2         ε+δ
 θ̃                                           μ
 To end this section, we further present some related remarks.
 
-## [166] `book_2026_volume1` (PDF p.203, L184)
+## [176] `book_2026_volume1` (PDF p.203, L184)
 
 Theorem 5.7 Suppose that FAS (5.49) satisfies Assumptions 5.1 and 5.4, and the
 parameter vector.θ is constant. Let.μ and.ε be two selected positive real numbers, with
@@ -4740,7 +4998,7 @@ Therefore, asymptotical tracking of the system state vector to the reference sig
 can be realized in such a case. In the particular case of f (x (0∼n−1) ) = 0, this result
 reduces to the one given in Duan (2021d).
 
-## [167] `book_2026_volume1` (PDF p.218, L200)
+## [177] `book_2026_volume1` (PDF p.218, L200)
 
 Theorem 6.1 Let Assumption 6.1 be satisfied, then, under the following transfor-
 mation       ⎧
@@ -4774,7 +5032,7 @@ For a proof of the theorem, please refer to Appendix B. Please note that the abo
 iteration (6.5)–(6.7) gives
 h (x1 , ζ, t) = f 1 (x1 , ζ, t) , L 1 (x1 , ζ, t) = G 1 (x1 , ζ, t) .
 
-## [168] `book_2026_volume1` (PDF p.221, L203)
+## [178] `book_2026_volume1` (PDF p.221, L203)
 
 Theorem 6.2 Let Condition 6.1 be satisfied, then, under the following transforma-
 tion               ⎧
@@ -4808,7 +5066,7 @@ f n (x1∼n , ζ, t)
 where L 0 = Ir , and in (6.13)–(6.14) the xk , k = 2, 3, . . . , n, and their derivatives
 are all given or determined by transformation (6.11).
 
-## [169] `book_2026_volume1` (PDF p.223, L205)
+## [179] `book_2026_volume1` (PDF p.223, L205)
 
 Theorem 6.3 Let Assumption 6.2 be met, then, under the following transformation
 ⎧
@@ -4850,7 +5108,7 @@ SFS (6.18) clearly has the following companion form:
 ⎧
 ⎪
 
-## [170] `book_2026_volume1` (PDF p.224, L206)
+## [180] `book_2026_volume1` (PDF p.224, L206)
 
 Theorem 6.4 Let Condition 6.2 be met, then, under the following transformation
 ⎧
@@ -4891,7 +5149,7 @@ f n (x1∼n   , ζ, t)
 where L 0 = Ir , and in (6.28)–(6.29) the xk , k = 2, 3, . . . , n, and their derivatives
 are given or determined by transformation (6.26).
 
-## [171] `book_2026_volume1` (PDF p.226, L208)
+## [181] `book_2026_volume1` (PDF p.226, L208)
 
 Theorem 6.5 Let Assumption 6.3 hold, then, under the following transformation
 ⎧
@@ -4930,7 +5188,7 @@ where in (6.37)–(6.38) the xk , k = 2, 3, . . . , n, and their derivatives are
 determined by transformation (6.35).
 For a proof of the above result, please refer to Appendix B.
 
-## [172] `book_2026_volume1` (PDF p.228, L210)
+## [182] `book_2026_volume1` (PDF p.228, L210)
 
 Theorem 6.6 Let Condition 6.3 be met, then, under the following transformation
 ⎧
@@ -4970,7 +5228,7 @@ h n (z
 ⎣ f n−1     (xi            |i=1∼n−1 , ζ, t) ⎦
 f n (xi(0∼m i −1) |i=1∼n , ζ, t)
 
-## [173] `book_2026_volume1` (PDF p.238, L220)
+## [183] `book_2026_volume1` (PDF p.238, L220)
 
 Theorem 6.7 Let Condition 6.3 be met, then there exists an invertible transformation
 x
@@ -5005,7 +5263,7 @@ and in (6.86)–(6.87) the xk , k = 2, 3, . . . , n, and their derivatives are g
 transformation (6.84).
 6.6 Additional Principle                                                                         221
 
-## [174] `book_2026_volume1` (PDF p.247, L229)
+## [184] `book_2026_volume1` (PDF p.247, L229)
 
 Theorem 7.1 Let Assumption 7.1 be satisfied, then under the transformation
 (i− p)                           (0∼i−1− p)
@@ -5028,7 +5286,7 @@ Ḡ 1∼i+1 =                         Q i−1 Ḡ i+1 ,                 (7.11)
 i = 1, 2, . . . , n − 1.
 with L 1 (·) = f 1 (x12 ) and Ḡ 1∼1 = Ḡ 1 .
 
-## [175] `book_2026_volume1` (PDF p.253, L235)
+## [185] `book_2026_volume1` (PDF p.253, L235)
 
 Theorem 7.2 Let Assumption 7.2 be satisfied, then under the following transforma-
 tion
@@ -5061,7 +5319,7 @@ For a proof of the above theorem, please refer to Appendix B.
 7.2 Second-Order SFSs with Increasing Dimensions
 In Duan (2021b), the author proposes more generalized second-order and high-order
 
-## [176] `book_2026_volume1` (PDF p.255, L237)
+## [186] `book_2026_volume1` (PDF p.255, L237)
 
 Theorem 7.3 Let Assumption 7.1 be satisfied, then under the following transforma-
 tion
@@ -5095,7 +5353,7 @@ the following second-order SFS is discussed:
 ⎪
 ⎪ ẍ1 = f 1 x1(0∼1) + G 1 x1(0∼1) x2
 
-## [177] `book_2026_volume1` (PDF p.259, L241)
+## [187] `book_2026_volume1` (PDF p.259, L241)
 
 Theorem 7.4 Let Assumption 7.3 be satisfied, then under the following transforma-
 tion
@@ -5128,7 +5386,7 @@ and Ḡ 1∼1 (·) = Ḡ 1 x̄12    .
 The above theorem can be similarly proven.
 7.3 High-Order Case with Increasing Dimensions
 
-## [178] `book_2026_volume1` (PDF p.262, L244)
+## [188] `book_2026_volume1` (PDF p.262, L244)
 
 Theorem 7.5 Let Assumption 7.1 be satisfied, then under the following transforma-
 tion
@@ -5164,7 +5422,7 @@ more general high-order SFS with G i , i = 1, 2, . . . , n, being matrix functio
 ⎪
 ⎪ x1(m 1 ) = f 1 x1(0∼m 1 −1) + G 1 x1(0∼m 1 −1) x2
 
-## [179] `book_2026_volume1` (PDF p.266, L248)
+## [189] `book_2026_volume1` (PDF p.266, L248)
 
 Theorem 7.6 Let Assumption 7.4 be satisfied, then under the transformation
 (q        )                                (0∼q p∼i−1 −1)
@@ -5199,7 +5457,7 @@ with L 1 = f¯1 x̄12
 and Ḡ 1∼1 = Ḡ 1 x̄1(0∼m 1 −1) .
 Again, this theorem can be similarly proven.
 
-## [180] `book_2026_volume1` (PDF p.280, L262)
+## [190] `book_2026_volume1` (PDF p.280, L262)
 
 Theorem 8.1 Let Assumption 8.1 be satisfied, then, under the following transfor-
 mation:
@@ -5245,7 +5503,7 @@ ż + ∂l 1 (z,x
 ,xk ,ζ (0∼k−3) ,t) (0∼k−2)
 + ∂l k−1 (z ∂z (0∼k−2)                    ż
 
-## [181] `book_2026_volume1` (PDF p.288, L270)
+## [191] `book_2026_volume1` (PDF p.288, L270)
 
 Theorem 8.2 Let Assumption 8.3 be satisfied, then, under the following transfor-
 mations
@@ -5286,7 +5544,7 @@ l k (z (0∼2k−1) , xk+1 , ζ (0∼2k−4) , t)
 (0∼1)
 = g̃k−1 (z (0∼2k−2) , ζ (0∼2k−4) , t)g k (x1∼k    , xk+1 , ζ, t),                           (8.39)
 
-## [182] `book_2026_volume1` (PDF p.299, L281)
+## [192] `book_2026_volume1` (PDF p.299, L281)
 
 Theorem 8.3 Let Assumption 8.5 hold, then, under the transformations
 ⎧
@@ -5327,7 +5585,7 @@ j=0
 +
 ∂ xk
 
-## [183] `book_2026_volume1` (PDF p.331, L314)
+## [193] `book_2026_volume1` (PDF p.331, L314)
 
 Theorem 9.1 Suppose that Assumption 9.1 holds. Let μ and ε be two arbitrarily
 given positive numbers, and Ai0∼1 , Pi ( Ai(0∼1) ) and Pi L ( Ai(0∼1) ), i = 1, 2, . . . , n − 1,
@@ -5357,7 +5615,7 @@ T                                 nε
 μ
 9.3 Backstepping for Mixed-Order SFSs                                                                315
 
-## [184] `book_2026_volume1` (PDF p.337, L320)
+## [194] `book_2026_volume1` (PDF p.337, L320)
 
 Theorem 9.2 Suppose that Assumption 9.2 holds. Let μ and ε be two arbitrarily
 given positive numbers, and Ai0∼m i −1 ∈ R1×m i , i = 1, 2, . . . , n, be a set of matrices
@@ -5389,7 +5647,7 @@ T                        nε
 μ
 To end this section, we make a few remarks.
 
-## [185] `book_2026_volume1` (PDF p.352, L336)
+## [195] `book_2026_volume1` (PDF p.352, L336)
 
 Theorem 10.1 Let Assumption 10.1 hold, and Ai0∼1 ∈ R1×2 , i = 1, 2, . . . , n, be a
 set of matrices such that. Ai0∼1 ∈ R2×2 , i = 1, 2, . . . , n, are stable. Then, for any
@@ -5404,7 +5662,7 @@ z 1∼n (0), or equivalently, αi−1 (x1∼i (0)) = 0, i = 2, 3, . . . , n, the
 x (0∼1) → 0, t → ∞, i = 1, 2, . . . , n.
 i
 
-## [186] `book_2026_volume1` (PDF p.358, L342)
+## [196] `book_2026_volume1` (PDF p.358, L342)
 
 Theorem 10.2 Let Assumption 10.2 hold, and Ai0∼m i −1 ∈ R1×m i , i = 1, 2, . . . , n,
 be a set of matrices which make.   Ai0∼m i −1 , i = 1, 2, . . . , n, stable. Then, for any
@@ -5433,7 +5691,7 @@ applications,.m i ,.i = 1, 2, . . . , n, often take the values of.1 and.2, and i
 tions, the mixed-order backstepping method is in fact simpler than the second-order
 backstepping method.
 
-## [187] `book_2026_volume1` (PDF p.368, L353)
+## [197] `book_2026_volume1` (PDF p.368, L353)
 
 Theorem 11.1 Suppose that Assumptions 11.1–11.3 hold. Let
 1. μc and μo be two positive numbers;
@@ -5450,7 +5708,7 @@ Then, the observer-based controller (11.3) guarantees that system (11.23) is
 uniformly exponentially stable.
 For a proof of the above result, please refer to Appendix B.
 
-## [188] `book_2026_volume1` (PDF p.372, L357)
+## [198] `book_2026_volume1` (PDF p.372, L357)
 
 Theorem 11.2 Let condition (11.37) be met. Then the closed-loop system consisting
 of system (11.25) and reduced-order observer-based output feedback (11.33)–(11.34)
@@ -5468,12 +5726,12 @@ and
 e = x2(0∼n 2 −1) − x̂2(0∼n 2 −1) ,                               (11.40)
 33 =     0r2 ×n 2 r2 ) + B2 F22 + L B1 F12 (11.41)
 
-## [189] `book_2026_volume1` (PDF p.373, L358)
+## [199] `book_2026_volume1` (PDF p.373, L358)
 
 Theorem 11.3 The matrix pair (                       F , B E ) defined by (11.45)–(11.46) is controllable.
 11.3 Reduced-Order Observer-Based Control                                                                          359
 
-## [190] `book_2026_volume1` (PDF p.375, L360)
+## [200] `book_2026_volume1` (PDF p.375, L360)
 
 Theorem 11.4 There exists an observer gain L such that 33 is Hurwitz if and only
 if one of the following conditions holds:
@@ -5504,7 +5762,7 @@ s F22
 i=0
 f    f
 
-## [191] `book_2026_volume1` (PDF p.377, L362)
+## [201] `book_2026_volume1` (PDF p.377, L362)
 
 Theorem 11.5 The closed-loop system consisting of system (11.25) and reduced-
 order observer-based output feedback (11.33)–(11.34) is given by
@@ -5516,7 +5774,7 @@ ẋ1(0∼n 1 −1)          x1                      B1 f 1
 ė                    e             L B1 f 1 + B2 f 2
 where AC , e, and 33 are given by (11.39)–(11.41).
 
-## [192] `book_2026_volume1` (PDF p.378, L363)
+## [202] `book_2026_volume1` (PDF p.378, L363)
 
 Theorem 11.6 Let Assumptions 11.4 and 11.5 be met, condition (11.48) be satisfied,
 and the feedback and observer gains A F and L be designed such that AC is Hurwitz.
@@ -5528,7 +5786,7 @@ ACT P + P AC + kα 2 In P Bc
 BcT P            −k Ir
 is satisfied.
 
-## [193] `book_2026_volume1` (PDF p.381, L366)
+## [203] `book_2026_volume1` (PDF p.381, L366)
 
 Theorem 11.7 Let Assumptions 11.4 and 11.5 be met, condition (11.48) be satisfied,
 and the feedback and observer gains A F and L be designed such that F and 33
@@ -5565,7 +5823,7 @@ and             ⎧
 i
 with γ being the specific heat ratio of the medium, x f being the location of the heat
 
-## [194] `book_2026_volume1` (PDF p.402, L388)
+## [204] `book_2026_volume1` (PDF p.402, L388)
 
 Theorem 12.1 Let. A0∼n−1 ∈ Rr×nr be a matrix satisfying (12.33), and Assumptions
 12.6–12.10 be met. Then, a control law that robustly input-to-state stabilizes the
@@ -5589,7 +5847,7 @@ f (·) + h z (0∼m−1)
 Therefore, the above Theorem 12.1 immediately follows from the following technical
 lemma.
 
-## [195] `book_2026_volume1` (PDF p.404, L390)
+## [205] `book_2026_volume1` (PDF p.404, L390)
 
 Theorem 12.2 Let [ Ai ]0∼μi −1 ∈ Rri ×ri μi , i = 1, 2, . . . , η, be a set of matrices sat-
 isfying (12.41), Assumptions 12.4–12.8 be met. Then, a control law that robustly
@@ -5601,7 +5859,7 @@ arbitrarily given number.
 In view of Proposition 12.1, we immediately have from the above result the
 following corollary, which gives the solution to Problem 12.1.
 
-## [196] `book_2026_volume1` (PDF p.406, L392)
+## [206] `book_2026_volume1` (PDF p.406, L392)
 
 Theorem 12.3 Let. A0∼n−1 ∈ Rr×nr be a matrix satisfying (12.33), and Assumptions
 12.2, 12.10, and 12.11 hold. Then a controller that robustly input-to-state stabilizes
@@ -5619,7 +5877,7 @@ min   L
 where ε ∈ (0, 1) is an arbitrarily given number.
 The following result immediately follows from the above Theorem 12.3 and
 
-## [197] `book_2026_volume1` (PDF p.408, L394)
+## [207] `book_2026_volume1` (PDF p.408, L394)
 
 Theorem 12.4 Let A0∼n−1 ∈ Rr×nr be a matrix satisfying (12.33), and Assumptions
 12.6–12.13 be met. Then, a control law that robustly input-to-state stabilizes the
@@ -5635,7 +5893,7 @@ where the matrix B x (0∼n−1) , t still satisfies the full-actuation Assumpti
 while Assumption 12.11 on the nonlinear uncertainty f (·) becomes
 12.4 Extended and Simplified Cases                                                        395
 
-## [198] `book_2026_volume1` (PDF p.409, L395)
+## [208] `book_2026_volume1` (PDF p.409, L395)
 
 Theorem 12.5 Let. A0∼n−1 ∈ Rr×nr be a matrix satisfying (12.33), and Assumptions
 12.2 and 12.11 be met. Then a controller that robustly and globally stabilizes the

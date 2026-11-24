@@ -1,4 +1,4 @@
-# Sorted Lemma Corpus Across 32 Duan First-Author Papers + Volume I (80 items)
+# Sorted Lemma Corpus Across 32 Duan First-Author Papers + Volume I (87 items)
 
 ## [1] `ijss_2021_part3` (PDF p.6, L522)
 
@@ -856,7 +856,285 @@ possesses arbitrary desired eigenvalues
 Due to the above lemma, we can obtain the
 following result.
 
-## [39] `odfas_2026_part4` (PDF p.12, L785)
+## [39] `odfas_2026_part2` (PDF p.8, L846)
+
+Lemma 2.1: Let condition (18) be satisfied, ρ∗ be an
+arbitraryscalargreaterthanρ,andFi ∈ ℝr×r, i = 0, 1,
+be matrices making (F0∼1) Hurwitz. Then a dynami-
+cal GUA stabilising controller for system (29) is given in
+the form of
+{︄
+u01 = K11(y1, ξ, ∗)x1 + K12(y1, ξ, ∗)z
+(33)
+ż = K21(y1, ξ, ∗)x1 + K22(y1, ξ, ∗)z,
+
+with z ∈ ℝr and
+⎧
+K11(y1, ξ, ∗) = −F0 + ρ∗K12(y1, ξ, ∗)
+
+K12(y1, ξ, ∗) = −(F1 + H(y1, ξ, ∗))
+
+⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎨K21(y1, ξ, ∗) = ρ∗(H(y1, ξ, ∗) − ρ∗Ir)
+(34)
++ K11(y1, ξ, ∗)
+
+K22(y1, ξ, ∗) = H(y1, ξ, ∗) − ρ∗Ir
+⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎩
++ K12(y1, ξ, ∗).
+
+Particularly, in the case of ρ < 0, controller (33)–(34)
+can also be replaced by the static output feedback GUA
+stabilising controller
+
+u01 = −αx1, α > 0. (35)
+
+Based on the above discussion, an overall dynami-
+cal output feedback GUA stabilising controller for the
+original system (16) is given by
+⎧ −1
+u = B (y1, y2, ∗)
+(︃[︃ ]︃ )︃
+u01
+⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎨ × − fy((y1, y2, ∗),σ) ̇
+u02
+
+u01 = K11(y1, y2, ∗)y1 + K12(y1, y2, ∗)z
+
+ż = K21(y1, y2, ∗)y1 + K22(y1, y2, ∗)z
+⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎩
+u02 = −βy2, β > 0,
+
+where Kij(y1, y2, ∗), i, j = 1, 2, are given by (34).
+Particularly, in the case of ρ < 0, an overall static
+output feedback GUA stabilising controller for the
+original system (16) is given by
+
+⎧ −1
+u = B (y1, y2, ∗)
+(︃[︃ ]︃ )︃
+⎪⎪⎪⎪⎪⎪⎪⎨ × u01 − fy((y1, y2, ∗),σ) ̇
+u02
+
+u01 = −αx1, α > 0
+⎪⎪⎪⎪⎪⎪⎪⎩
+u02 = −βx2, β > 0.
+
+## [40] `odfas_2026_part2` (PDF p.10, L1138)
+
+Lemma 3.1: Let La ∈ ℝr×r be a Hurwitz matrix, and
+Fia ∈ ℝr×r, i = 0, 1, be matrices making (F0a∼1) Hur-
+witz. Then a stabilising controller for linear system (53)
+is given in the form of (55) with za ∈ ℝr and
+
+⎧ K11a = −F0a + F1aLa
+⎪⎪⎨ Ka = −Fa
+12a 1a a 2 (56)
+⎪⎪⎩ K21 = −F0 + F1La − La
+K22a = −F1a + La.
+
+Furthermore, the set of closed-loop eigenvalues is given
+by eig((F0a∼1)) ∪ eig(La).
+
+## [41] `odfas_2026_part2` (PDF p.11, L1171)
+
+Lemma 3.2: LetLb ∈ ℝ2r×2r beaHurwitzmatrix,and
+Fib ∈ ℝr×r, i = 0, 1, 2, 3, be matrices making (F0b∼3)
+Hurwitz. Then a stabilising controller for linear sys-
+tem (54) is given in the form of (55) with zb ∈ ℝ2r
+and
+⎧ K11b = −F02b + F13bLb
+⎪⎪⎪⎪⎨ K12b = −F13b
+K21b = (F02[︃ − F13]︃Lb) − L2b (58)
+
+⎪⎪⎪⎪⎩ K22b = Lb − 0 F13b,
+Ir
+where
+b [︁ b b ]︁ b [︁ b b ]︁
+F02 = F0 F2 , F13 = F1 F3 . (59)
+
+Furthermore, the set of closed-loop eigenvalues is given
+by eig((F0b∼3)) ∪ eig(Lb).
+
+PleaserefertotheAppendixforaproofoftheabove
+result.
+In the case of r = 1, let us choose
+[︃ ]︃
+−3 0 b [︁ ]︁
+Lb = , F0∼3 = 4 10 10 5 .
+0 −4
+
+Thus we have
+b [︁ ]︁ b [︁ ]︁
+F02 = 4 10 , F13 = 10 5 .
+
+Following(58),weobtainadynamicaloutputfeedback
+controller for the system as
+⎧ [︃ ]︃ [︃ ]︃
+⎪⎨ −9 1 3 0
+zḃ = −34 −46 yb − 10 9 zb
+(60)
+⎪⎩ [︁ ]︁ [︁ ]︁
+u0b = − 34 30 yb − 10 5 zb,
+
+which assigns the set of closed-loop eigenvalues
+
+{−1 ± i, −1, −2, −3, −4}.
+
+Combining the above two lemmas, we can conclude
+that an exponentially stabilising output feedback con-
+troller for system (46) is given by
+⎧[︃ ]︃
+ua = diag(K11a, K11b)To−1y
+ub
+⎪⎪⎪⎪⎪⎪⎨ [︃ ]︃
+a b za (61)
++ diag(K12, K12)
+zb
+
+⎪⎪⎪⎪⎪⎪⎩ ż∗ = K21∗y∗ + K22∗z∗, ∗ = a, b,
+
+with Kij∗, i, j = 1, 2; ∗ = a, b, given by (56) and (58),
+La ∈ ℝr×r, Lb ∈ ℝ2r×2r, F0a∼1 ∈ ℝr×2r and F0b∼3 ∈
+ℝr×4r. Furthermore, the closed-loop system is linear
+with the following set of eigenvalues
+
+= eig((F0a∼1)) ∪ eig((F0b∼3))
+
+∪ eig(La) ∪ eig(Lb). (62)
+
+Based on the above discussion, we now have the fol-
+
+## [42] `odfas_2026_part2` (PDF p.17, L1782)
+
+Lemma 4.1: LetFia ∈ ℝr×r, i = 0, 1,bematricesmak-
+ing(m13F0a∼1)Hurwitz,andLa ∈ ℝr×r isanarbitrary
+Hurwitz matrix. Then a stabilising controller for linear
+system (109) is given in the form of
+
+{︄ a a
+ua = K11ya + K12za
+a a (111)
+zȧ = K21ya + K22za,
+
+where za ∈ ℝr and
+⎧
+K11a = − 1 F0a + 1 (F1a − d3Ir)L˜a
+m3 m3
+
+⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎨K12a = − 1 F1a + 1 d3Ir
+m3 m3
+(112)
+K21a = 1 (−F0a + F1aL˜a) − ˜L2a
+m3
+
+⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎩K22a = − 1 F1a + ˜La,
+m3
+
+with
+d3
+L˜a = La + Ir. (113)
+m3
+Furthermore, the set of closed-loop eigenvalues is given
+by
+[︃ (︃ )︃]︃
+1 a
+eig F0∼1 ∪ eig(La).
+m3
+
+For a proof of the above lemma, please refer to the
+appendix.
+For stabilisation of system (110), we can also give
+a dynamical output feedback stabilising controller
+whose presentation uses the following notations:
+
+⎡ d1 ⎤
+− Ir 0
+Ab = ⎢⎣ d m1 ⎥⎦ , (114)
+
+## [43] `odfas_2026_part2` (PDF p.17, L1840)
+
+Lemma 4.2: Let Fib ∈ ℝr×r, i = 0, 1, 2, 3, be matrices
+making(F0b∼3 + Gb0∼3)Hurwitz,andAob ∈ ℝ2r×2r be
+
+aHurwitzmatrix.Thenastabilisingcontrollerforlinear
+system (110) is given in the form of
+
+{︄ b b
+zḃ = K21yb + K22zb
+(117)
+ub = K11byb + K12bzb,
+
+with zb ∈ ℝ2r and
+
+⎧K11b = −(F˜02b − ˜F13b(Aob − Ab)Cb−1)
+
+K12b = −˜F13b
+[︃ ]︃ )︃
+⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎨ b (︃[︁ ]︁ 0 b
+K21 = 02r×r b − I F˜02 (118)
+r
+
+− K22b(Aob − Ab)Cb−1
+[︃ ]︃
+⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎩K22b = Aob − 0 F˜13b,
+Ir
+
+where Ab, Cb and b are given by (114)– (116), and
+[︃ ]︃
+F˜02b = F0b 1 F2b , (119)
+m1
+[︃ ]︃
+F˜13b = F1b − d1 F2b F3b . (120)
+m1
+
+Furthermore, the set of closed-loop eigenvalues is given
+by
+
+= eig[(F0b∼3 + Gb0∼3)] ∪ eig(Aob). (121)
+
+For a proof of the above result, please refer to the
+appendix.
+Based on the above discussion, we have the follow-
+ing result.
+
+## [44] `odfas_2026_part2` (PDF p.23, L2608)
+
+Lemma 6.1: LetLbeanegativescalar,andFi, i = 0, 1,
+bepositivescalars.Thenastabilisingcontrollerforlinear
+
+system (167) is given in the form of
+{︃
+ub = K11yb + K12z
+(171)
+ż = K21yb + K22z,
+
+with z being a scalar variable, and
+⎧
+K11 = −F0 + F1L
+⎪⎪⎨
+K12 = −F1
+K21 = −F0 + F1L − L2 (172)
+⎪⎪⎩
+K22 = −F1 + L.
+
+Furthermore, the set of closed-loop eigenvalues is given
+by eig((F0∼1)) ∪ eig(L).
+
+Particularly, let us choose
+
+L = −1, F0 = 2, F1 = 3.
+
+Following the above lemma, we obtain a dynamical
+output feedback controller as
+{︃
+ż = −6yb − 4z
+(173)
+ub = −5yb − 3z,
+
+which assigns the set of closed-loop eigenvalues
+{−1, −1, −2}.
+
+## [45] `odfas_2026_part4` (PDF p.12, L785)
 
 Lemma 3.1. The LTV system (3.1) is uniformly asymptotically stable if and only if, for an arbitrary
 
@@ -876,7 +1154,7 @@ As (t) = Rs (t) A0 (t) Rs−1(t) , (3.3)
 
 with A0 (t) , Rs (t) ∈ ℝn×n.
 
-## [40] `odfas_2026_part4` (PDF p.14, L874)
+## [46] `odfas_2026_part4` (PDF p.14, L874)
 
 Lemma 3.2. The origin of system (3.7)-(3.8) is globally uniformly asymptotically (GUA) stable if
 
@@ -896,7 +1174,7 @@ where x ∈ ℝn, u ∈ ℝr, A ∈ ℝn×n, and G(x, t) ∈ ℝn×r. Regarding 
 
 system, the following result can be easily proven.
 
-## [41] `odfas_2026_part4` (PDF p.14, L892)
+## [47] `odfas_2026_part4` (PDF p.14, L892)
 
 Lemma 3.3. Let A ∈ ℝn×n be Hurwitz. Then system (3.9) is input-to-state stable if G(x, t) ∈ ℝn×r
 
@@ -908,7 +1186,7 @@ satisfies one of the following conditions:
 
 3. it is locally Lipschitz with G(0, t) being uniformly bounded.
 
-## [42] `odfas_2026_part4` (PDF p.26, L1547)
+## [48] `odfas_2026_part4` (PDF p.26, L1547)
 
 Lemma 5.1. Let Assumptions A2 and AD be satisfied. Then there exists an L(ϕ(0∼1)) such that
 
@@ -916,7 +1194,7 @@ AoI(ϕ(0∼1)) , AI (ϕ(0∼1)) + L(ϕ(0∼1))CI (5.11)
 
 is uniformly asymptotically stable
 
-## [43] `odfas_2026_part4` (PDF p.29, L1683)
+## [49] `odfas_2026_part4` (PDF p.29, L1683)
 
 Lemma 5.2. There exist Li ∈ ℝr×r, i = 1, 2, such that
 
@@ -925,7 +1203,7 @@ L2 AD
 
 possesses a set of prescribed eigenvalues.
 
-## [44] `odfas_2026_part4` (PDF p.29, L1716)
+## [50] `odfas_2026_part4` (PDF p.29, L1716)
 
 Lemma 5.3. Define
 
@@ -937,7 +1215,7 @@ Then AoI(ϕ(0∼1)) given by (5.11) has the following expression:
 
 AoI(ϕ(0∼1)) = AoI (ϕ) = RE (ϕ) ALR−E1(ϕ) . (5.24)
 
-## [45] `odfas_2026_part4` (PDF p.30, L1745)
+## [51] `odfas_2026_part4` (PDF p.30, L1745)
 
 Lemma 5.4. Let Assumption Ap2 be met, and AL ∈ ℝ2r×2r be Hurwitz. Then the following system
 
@@ -945,7 +1223,7 @@ e˙ = RE (ϕ) ALRE−1(ϕ) e, ∀ϕ (t) ∈ ℝnϕ, (5.25)
 
 is uniformly asymptotically stable.
 
-## [46] `odfas_2026_part4` (PDF p.44, L2523)
+## [52] `odfas_2026_part4` (PDF p.44, L2523)
 
 Lemma 7.1. Let Assumption Av2 hold. Then there exists L] ϕ(0∼1)) such that the following system
 (
@@ -967,7 +1245,7 @@ AoII = AII + L] A0 Ir⌋, (7.11)
 
 can be arbitrarily assigned.
 
-## [47] `odfas_2026_part4` (PDF p.53, L3017)
+## [53] `odfas_2026_part4` (PDF p.53, L3017)
 
 Lemma 8.1. The matrix R (φ) given in (8.36) admits the following properties:
 
@@ -989,7 +1267,7 @@ we have R ˙ (φ) ≤ |ω| . Thus R (φ) is also locally Lipschitz. Therefore, a
 
 sponding to the assumptions on M (ϕ) for the case of velocity feedback control are satisfied.
 
-## [48] `odfas_2026_part4` (PDF p.57, L3232)
+## [54] `odfas_2026_part4` (PDF p.57, L3232)
 
 Lemma 8.2. Let Assumption Aφ be met, and partition
 
@@ -1018,7 +1296,7 @@ and
 {φ¨ = A21ζ + uφ
 y2 = φ(0∼1). (8.35)
 
-## [49] `scis_2022_discdelay2` (PDF p.5, L312)
+## [55] `scis_2022_discdelay2` (PDF p.5, L312)
 
 Lemma 1. Let L(x⌈τ1∼ζ(k)⌉(k)) be a given linear function, with τi (k) , i = 1, 2, . . . , ζ, being a group of
 nonnegative bounded integer-valued functions. Let
@@ -1057,7 +1335,7 @@ with A¯i, i = 1, 2, . . . , ρ, being a group of proper matrix coefficients.
 
 Duan G R Sci China Inf Sci September 2022 Vol. 65 192201:6
 
-## [50] `scis_2022_discdelay2` (PDF p.7, L466)
+## [56] `scis_2022_discdelay2` (PDF p.7, L466)
 
 Lemma 2. Let h (·) be a given nonlinear function in the form of (26). Define
 
@@ -1092,7 +1370,7 @@ r
 
 corresponding to (19), the full-actuation assumption becomes Assumption 1.
 
-## [51] `scis_2023_delay2` (PDF p.9, L612)
+## [57] `scis_2023_delay2` (PDF p.9, L612)
 
 Lemma 1. Let Assumptions A1 and A3 be met, τ (t) be defined in (41), and x(0∼n−1)(s) , s ⩽ t be
 available and satisfy the FAS (21). Then there holds
@@ -1107,7 +1385,7 @@ It clearly follows from the above lemma that
 
 x(0∼n−1)(t + h) = Z (h) . (50)
 
-## [52] `scis_2023_delay2` (PDF p.13, L821)
+## [58] `scis_2023_delay2` (PDF p.13, L821)
 
 Lemma 2. Let Assumption A4 be met, and τ (t) be defined in (68), and xk(0∼µk−1)(s) |k=1∼η, s ⩽ t be
 available and satisfy the FAS (28). Construct the system
@@ -1137,7 +1415,7 @@ Z˙(s) = ΦEZ (s) + BcEf (Z (s − τj (s + t)) |j=1∼ζ, s + t)
 
 with the same initial value condition (71).
 
-## [53] `scis_2024_chained2` (PDF p.8, L510)
+## [59] `scis_2024_chained2` (PDF p.8, L510)
 
 Lemma 1. Consider the following perturbed nonlinear system:
 
@@ -1165,7 +1443,58 @@ with ρ∆(t) being a nonnegative function satisfying
 
 Then system (38) is UGE stable.
 
-## [54] `tcyb_2023_robustdelay` (PDF p.6, L694)
+## [60] `scis_2025_chained3` (PDF p.14, L870)
+
+Lemma 1. Consider the perturbed nonlinear system
+
+x˙ = f(x, t) + ∆f(x, t), (65)
+
+where x ∈ ℝn is the state vector. Suppose that
+(1) there exists a continuous function V (x, t) : ℝn × ℝ ↦ ℝ that satisfies the inequalities:
+
+µ1‖x‖2 ⩽ V (x, t) ⩽ µ2‖x‖2, (66)
+
+∂V + ∂V f(x, t) ⩽ −µ3‖x‖2, (67)
+∂t ∂x
+∂V
+⩽ ρv (t) ‖x‖, (68)
+‖‖‖‖ ∂x‖‖‖‖
+
+with µi, i = 1, 2, 3, being a set of positive scalars, and ρv (t) being a nonnegative scalar function;
+(2) ∆f(x, t) ∈ ℝn satisfies
+‖∆f(x, t)‖ ⩽ ρ∆(t)‖x‖, (69)
+
+with ρ∆(t) being a nonnegative function satisfying
+∞
+∫ ρv (s) ρ∆(s)ds = M < ∞. (70)
+0
+
+Then system (65) is uniformly globally exponentially stable.
+Particularly, when ρv (t) = ρv is a nonnegative constant, condition (70) obviously reduces to
+∞
+∫ ρ∆(s)ds = M < ∞. (71)
+0
+
+Under Assumption C3, we have, using the expression of ∆fi (t) in (62), the following relations:
+
+‖∆fi (·)‖ ⩽ |γ˜i| ‖Hi (·) zi+1‖ e−αt
+⩽ |γ˜i| ρhi (t) e−αt‖z1∼n‖ , i = 1, 2, . . . , n − 1.
+
+Therefore,
+n−1 12
+‖∆f (·)‖ ⩽ ( γ˜i2) ‖ρh (t)‖ e−αt‖z1∼n‖ , (72)
+∑i=1
+where
+T
+ρh (t) = [ρh1 (t) ρh2 (t) · · · ρh,n−1 (t)] . (73)
+
+This implies that inequality (69) is satisfied with x = z1∼n and
+
+ρ∆ (t) = ‖ρh (t)‖ e−αt. (74)
+
+With the above analysis, the following result can be immediately obtained using Lemma 1.
+
+## [61] `tcyb_2023_robustdelay` (PDF p.6, L694)
 
 Lemma 1: If there exists a continuously differentiable
 scalar function V(t, x) such that
@@ -1194,7 +1523,7 @@ of the compound system (29)-(30) possess the same property?
 The next lemma given in [45] shows that this will be the case
 if (29), with z viewed as input, is input-to-state stable.
 
-## [55] `tcyb_2023_robustdelay` (PDF p.6, L720)
+## [62] `tcyb_2023_robustdelay` (PDF p.6, L720)
 
 Lemma 2: Let f1(x, z, t) ∈ ℝn and f2(z, t) ∈ ℝm be piece-
 wise continuous in t and locally Lipschitz in [x z]T. If the
@@ -1215,7 +1544,7 @@ Then, according to Lemma 2, and also in view of Convention I,
 we immediately have the following result regarding robust
 stabilizability of the uncertain type I system (17).
 
-## [56] `tcyb_2023_robustdelay` (PDF p.6, L792)
+## [63] `tcyb_2023_robustdelay` (PDF p.6, L792)
 
 Lemma 3: Let A ∈ ℝn×n satisfy
 γ
@@ -1226,7 +1555,7 @@ P ∈ ℝn×n, with ‖P‖ ≤ 1, satisfying
 
 ATP + PA ≤ −γ P. (35)
 
-## [57] `tcyb_2023_robustdelay` (PDF p.6, L801)
+## [64] `tcyb_2023_robustdelay` (PDF p.6, L801)
 
 Lemma 4: For any μ > 0, there exist a set of matrices
 Ai ∈ ℝr×r, i = 0, 1, . . . , n − 1, satisfying
@@ -1254,7 +1583,7 @@ r
 Based on the above preparations, we can now give the
 following result.
 
-## [58] `tcyb_2023_robustdelay` (PDF p.7, L854)
+## [65] `tcyb_2023_robustdelay` (PDF p.7, L854)
 
 Lemma 5: Let A0∼n−1 ∈ ℝr×nr be a matrix satisfying (36),
 and Assumptions B3 and B4 be met. Then, the system (42)
@@ -1265,7 +1594,7 @@ Further, if ρ(·) = σ(·) ≡ 0, then Θ = 0, and Δf(·) van-
 ishes. Thus, the above lemma immediately gives the following
 corollary.
 
-## [59] `tcyb_2023_robustdelay` (PDF p.9, L1130)
+## [66] `tcyb_2023_robustdelay` (PDF p.9, L1130)
 
 Lemma 6: Let A0∼n−1 ∈ ℝr×nr be a matrix satisfying (36),
 and Assumptions B3–B6 be met. Then, the system (57) is
@@ -1279,7 +1608,7 @@ A proof of the above lemma is also given in the Appendix.
 With the help of the above lemma, the following result can
 be immediately deduced.
 
-## [60] `ucfas_2025_part2` (PDF p.17, L1680)
+## [67] `ucfas_2025_part2` (PDF p.17, L1680)
 
 Lemma 4.1: Let s1 and s2 (s2 > s1) be two positive
 scalars satisfying
@@ -1292,7 +1621,7 @@ Rexb = {(x30, x3d) |x3d + s2x30 > 0, x30 > 0} .
 
 Then constraint (96) is equivalent to (x30, x3d) ∈ Rexb.
 
-## [61] `ucfas_2025_part3` (PDF p.7, L682)
+## [68] `ucfas_2025_part3` (PDF p.7, L682)
 
 Lemma 4.1: Restrict
 
@@ -1334,7 +1663,7 @@ u1
 y˙ = ϖ1(·) − ϖ0(·) . (44)
 u1 u1
 
-## [62] `ucfas_2025_part3` (PDF p.10, L1066)
+## [69] `ucfas_2025_part3` (PDF p.10, L1066)
 
 Lemma 5.1: Let s1 and s2 (s2 > s1) be two positive
 scalars satisfying
@@ -1365,7 +1694,7 @@ b#(t) = s2e−(s2−s1)t − s2.
 Figure 2 shows the region Rinpv for the case of
 (s1, s2) = (4, 5) and (s1, s2) = (0.1, 1).
 
-## [63] `book_2026_volume1` (PDF p.96, L76)
+## [70] `book_2026_volume1` (PDF p.96, L76)
 
 Lemma 2.1 Let A (t) ∈ Rn×n and B (t) ∈ Rn×r be at least n-times continuously
 differentiable on the time interval of interest J. For t0 ∈ J, if there exists t0 < t1 ∈ J
@@ -1395,7 +1724,7 @@ t≥t0
 Regarding controllability indices of the LTV system (2.109), we have the following
 definition.
 
-## [64] `book_2026_volume1` (PDF p.99, L79)
+## [71] `book_2026_volume1` (PDF p.99, L79)
 
 Lemma 2.2 Consider the LTV system (2.109) under Assumptions 2.6 and 2.7. There
 exists an auxiliary system in the form of
@@ -1407,7 +1736,7 @@ The specific expressions for Ae1 (t) , Ae2 (t) , and Be (t) can be found in Val�
 and Olgaç (1999). Applying Lemma 2.2 and Theorem 2.3, it is not difficult to directly
 obtain the following corollary.
 
-## [65] `book_2026_volume1` (PDF p.152, L133)
+## [72] `book_2026_volume1` (PDF p.152, L133)
 
 Lemma 4.1 For an arbitrarily selected matrix F ∈ Rq×q , all the matrices W ∈
 Rr ×q and V ∈ Rnr ×q satisfying the above Eq. (4.26) are given by
@@ -1434,11 +1763,11 @@ The above result can be easily proven by using Theorem 4.3 in Duan (2015, p.
 The second preliminary result gives an analytical expression of the H.2 norm of a
 transfer function in terms of solutions to Lyapunov matrix equations [see, e g., the
 
-## [66] `book_2026_volume1` (PDF p.153, L134)
+## [73] `book_2026_volume1` (PDF p.153, L134)
 
 Lemma 5.1 in Duan and Yu (2013, p. 140)].
 
-## [67] `book_2026_volume1` (PDF p.153, L134)
+## [74] `book_2026_volume1` (PDF p.153, L134)
 
 Lemma 4.2 Let A ∈ Rn×n ,. B ∈ Rn×r , C ∈ Rm×n and A be Hurwitz. Then
 C (s In − A)−1 B 2 = trace C P1 C T = trace B T P2 B ,
@@ -1456,7 +1785,7 @@ i=0                                                    i=0
 Then we have the following result which is simplified from Theorem 9.2 in Duan
 (2015, p. 356).
 
-## [68] `book_2026_volume1` (PDF p.153, L134)
+## [75] `book_2026_volume1` (PDF p.153, L134)
 
 Lemma 4.3 If . ∈ Rn×n is Hurwitz, then, for an arbitrary positive definite matrix
 Q ∈ R     , the Lyapunov equation
@@ -1479,7 +1808,7 @@ Now let us turn to consider the solution to the H.2 problem.
 Explicit solution of. A0∼n−1
 To derive a parametric solution of the coefficient matrix A0∼n−1 in controller (4.19),
 
-## [69] `book_2026_volume1` (PDF p.157, L138)
+## [76] `book_2026_volume1` (PDF p.157, L138)
 
 Lemma 4.4 Suppose that system (4.47) satisfies Assumptions 4.2–4.3. Let the
 control law for the system be designed as
@@ -1515,7 +1844,7 @@ and
 A2 = B ( − K ) ;
 2. the asymptotical output regulation requirement
 
-## [70] `book_2026_volume1` (PDF p.158, L139)
+## [77] `book_2026_volume1` (PDF p.158, L139)
 
 Lemma 4.5 Let F ∈ Cq×q , R ∈ Rr×q Then all the matrices .                ∈ Cnr ×q and . ∈
 Cr ×q satisfying Eq. (4.55) are given by
@@ -1529,7 +1858,7 @@ Z F n−1
 where Z ∈ Rr ×q is an arbitrary parameter matrix.
 140                                                         4 Disturbance Attenuation and Decoupling
 
-## [71] `book_2026_volume1` (PDF p.182, L163)
+## [78] `book_2026_volume1` (PDF p.182, L163)
 
 Lemma 5.1 Let A ∈ Rn×n satisfy
 γ
@@ -1538,7 +1867,7 @@ Re λi (A) < − , i = 1, 2, . . . , n,
 where γ > 0, then there exists a positive definite matrix P ∈ Rn×n satisfying
 AT P + P A < −γ P.                       (5.4)
 
-## [72] `book_2026_volume1` (PDF p.182, L163)
+## [79] `book_2026_volume1` (PDF p.182, L163)
 
 Lemma 5.2 For any μ > 0, there exists a set of matrices Ai ∈ Rr ×r , i =
 0, 1, . . . , n − 1 satisfying
@@ -1546,7 +1875,7 @@ Lemma 5.2 For any μ > 0, there exists a set of matrices Ai ∈ Rr ×r , i =
 Re λi ( (A0∼n−1 )) < − , i = 1, 2, . . . , nr.
 (5.5)
 
-## [73] `book_2026_volume1` (PDF p.183, L164)
+## [80] `book_2026_volume1` (PDF p.183, L164)
 
 Lemma 5.3 Let a, b be two real numbers, and b > 0. Then the following relation
 holds:
@@ -1557,7 +1886,7 @@ Stabilizing controller
 About the robust stabilization for the high-order system (5.2) with nonlinear
 uncertainties, we have the following theorem.
 
-## [74] `book_2026_volume1` (PDF p.197, L178)
+## [81] `book_2026_volume1` (PDF p.197, L178)
 
 Lemma 5.4 Suppose that Assumption 5.3 is met, then, for the variables defined in
 (5.50), the following relations hold:
@@ -1565,7 +1894,7 @@ Lemma 5.4 Suppose that Assumption 5.3 is met, then, for the variables defined in
 2. θ̃rT0 θ̃ ≤ 21 δ02 + θ̃        ;
 3. θ̃˙rT0 θ̃ ≤ 21 δ12 + θ̃
 
-## [75] `book_2026_volume1` (PDF p.367, L352)
+## [82] `book_2026_volume1` (PDF p.367, L352)
 
 Lemma 11.1 Let A ∈ Rn×n satisfy
 γ
@@ -1574,7 +1903,7 @@ Reλi (A) < − , i = 1, 2, . . . , n,
 where γ > 0, then there exists a positive definite matrix P ∈ Rn×n satisfying
 AT P + P A ≤ −γ P.                              (11.10)
 
-## [76] `book_2026_volume1` (PDF p.367, L352)
+## [83] `book_2026_volume1` (PDF p.367, L352)
 
 Lemma 11.2 For any μc > 0, there exist a set of matrices Ai ∈ Rr ×r , i =
 0, 1, . . . , n − 1, satisfying
@@ -1603,7 +1932,7 @@ and the second equation of (11.3) can be written as
 x̂˙ (0∼n−1) =    (A0∼n−1 ) x̂ (0∼n−1) − LC0∼n−1 x̃ (0∼n−1) (11.17)
 Since
 
-## [77] `book_2026_volume1` (PDF p.399, L385)
+## [84] `book_2026_volume1` (PDF p.399, L385)
 
 Lemma 12.1 If there exists a continuously differentiable scalar function V (t, x)
 such that
@@ -1625,7 +1954,7 @@ what condition will the origin (x, z) = (0, 0) of the compound system (12.28)–
 (12.29) possess the same property? The next lemma given in Khalil (2002a) shows
 that this will be the case if (12.28), with z viewed as input, is input-to-state stable.
 
-## [78] `book_2026_volume1` (PDF p.400, L386)
+## [85] `book_2026_volume1` (PDF p.400, L386)
 
 Lemma 12.2 Let f 1 (x, z, t) ∈ Rn and f 2 (z, t) ∈ Rm be piecewise continuous in t
 and locally Lipschitz with respect to x and z. If system (12.28), with z as input, is
@@ -1645,7 +1974,7 @@ Then, according to Lemma 12.2, and also in view of Convention I, we immediately
 have the following result regarding robust stabilizability of the uncertain Type I
 system (12.16).
 
-## [79] `book_2026_volume1` (PDF p.402, L388)
+## [86] `book_2026_volume1` (PDF p.402, L388)
 
 Lemma 12.3 Let A0∼n−1 ∈ Rr×nr be a matrix satisfying (12.33), and Assumptions
 12.9 and 12.10 be met. Then, system (12.39) or (12.40), is input-to-state stable, with
@@ -1657,7 +1986,7 @@ Further, if ρ (·) = σ (·) ≡ 0, then . = 0, and f (·) vanishes. Thus the a
 lemma immediately gives the following corollary.
 12.3 Robust Stabilization with Full State Feedback                                                   389
 
-## [80] `book_2026_volume1` (PDF p.408, L394)
+## [87] `book_2026_volume1` (PDF p.408, L394)
 
 Lemma 12.4 Let A0∼n−1 ∈ Rr×nr be a matrix satisfying (12.33), and Assumptions
 12.6–12.13 be met. Then, system (12.54) is input-to-state stable, with z (0∼m−1) being

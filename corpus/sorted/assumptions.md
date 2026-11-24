@@ -1,4 +1,4 @@
-# Sorted Assumption Corpus Across 32 Duan First-Author Papers + Volume I (165 items)
+# Sorted Assumption Corpus Across 32 Duan First-Author Papers + Volume I (178 items)
 
 ## [1] `aaas_2024_subsfs` (PDF p.3, L267)
 
@@ -1111,19 +1111,25 @@ x(p) 0 v
 
 (143)
 
-## [46] `odfas_2026_part4` (PDF p.10, L680)
+## [46] `odfas_2026_part2` (PDF p.5, L503)
+
+Assumption A1: det B(X, t) ≠ 0 or ∞, ∀ X ∈ ℝqκ0
+and t ≥ 0.
+■
+
+## [47] `odfas_2026_part4` (PDF p.10, L680)
 
 Assumption A0 det B (Y, t) ≠ 0 or ∞, ∀Y ∈ ℝmq, t ≥ 0;
 
 M (ϕ) ∈ ℝr×r is differentiable and satisfies
 
-## [47] `odfas_2026_part4` (PDF p.10, L684)
+## [48] `odfas_2026_part4` (PDF p.10, L684)
 
 Assumption A1 R (ϕ) = M−1(ϕ) exists for all ϕ ∈ ℝnϕ.
 
 To express the other assumption on M (ϕ), let us introduce the following concepts.
 
-## [48] `odfas_2026_part4` (PDF p.11, L714)
+## [49] `odfas_2026_part4` (PDF p.11, L714)
 
 Assumption A2 M (ϕ) meets one of the following conditions:
 
@@ -1133,7 +1139,7 @@ Assumption A2 M (ϕ) meets one of the following conditions:
 
 3. it is locally Lipschitz.
 
-## [49] `odfas_2026_part4` (PDF p.18, L1103)
+## [50] `odfas_2026_part4` (PDF p.18, L1103)
 
 Assumption Ap1 A1(ϕ(0∼1)) is smooth and uniformly bounded.
 
@@ -1153,7 +1159,7 @@ u0 = −F0y −(F1 + R (ϕ) A1(ϕ(0∼1)))qˆ2.
 
 Based on this idea, we further obtain the following result.
 
-## [50] `odfas_2026_part4` (PDF p.25, L1493)
+## [51] `odfas_2026_part4` (PDF p.25, L1493)
 
 Assumption AD AD ∈ ℝr×r is a Hurwitz matrix.
 
@@ -1177,7 +1183,7 @@ Therefore, the output feedback control problem of system (5.1) reduces to the ou
 
 problem of the above system (5.4).
 
-## [51] `odfas_2026_part4` (PDF p.29, L1675)
+## [52] `odfas_2026_part4` (PDF p.29, L1675)
 
 Assumption Ap2 R (ϕ) is uniformly bounded and uniformly positive definite.
 
@@ -1187,11 +1193,11 @@ definite.
 
 Firstly, let us state a simple result.
 
-## [52] `odfas_2026_part4` (PDF p.38, L2172)
+## [53] `odfas_2026_part4` (PDF p.38, L2172)
 
 Assumption Av1 det A0(ϕ(0∼1)) ≠ 0, ∀ϕ(0∼1) ∈ ℝ2nϕ.
 
-## [53] `odfas_2026_part4` (PDF p.38, L2174)
+## [54] `odfas_2026_part4` (PDF p.38, L2174)
 
 Assumption Av2 A−01(ϕ(0∼1)) meets one of the following conditions:
 
@@ -1213,7 +1219,7 @@ x¨ = R (ϕ) A0(ϕ(0∼1))x + u0
 { (6.5)
 y = ⌊0 Ir⌋x(0∼1).
 
-## [54] `odfas_2026_part4` (PDF p.52, L2968)
+## [55] `odfas_2026_part4` (PDF p.52, L2968)
 
 Assumption AG There exists a constant vector h ∈ ℝ3 such that
 
@@ -1262,7 +1268,7 @@ E = 1 0 0 . (8.13)
 
 Then, as a preliminary result, we can summarize some of the known results regarding R (φ).
 
-## [55] `scis_2022_discdelay1` (PDF p.8, L499)
+## [56] `scis_2022_discdelay1` (PDF p.8, L499)
 
 Assumption 1. det gi (x1∼i (k)) ≠ 0, ∀x1∼i (k) ∈ ℝir, i = 1, 2, . . . , n, and k ⩾ h.
 In [29], it is shown that the above strict-feedback system (25), with h = 0, can be equivalently converted
@@ -1270,7 +1276,7 @@ into a FAS with state delays only. Applying this result to the above strict-feed
 h ≠ 0, gives the following result which tells us that a strict-feedback system (25) with input delay can be
 converted equivalently into a FAS with both state and control delays.
 
-## [56] `scis_2022_discdelay1` (PDF p.9, L548)
+## [57] `scis_2022_discdelay1` (PDF p.9, L548)
 
 Assumption 2. det B x⌈τ1∼ζ(k)⌉(k) , k ≠ 0, ∀x⌈τ1∼ζ(k)⌉(k) and k ⩾ h.
 Corresponding to the general linear discrete-time delay FAS (13) with interconnections, we can also()
@@ -1294,7 +1300,7 @@ vector functions, and B (·) ∈ ℝr×r is a nonlinear matrix function satisfyi
 assumption.
 ⌈τp,1∼ζp(k)⌉ ⌈τp,1∼ζp (k)⌉
 
-## [57] `scis_2022_discdelay1` (PDF p.9, L569)
+## [58] `scis_2022_discdelay1` (PDF p.9, L569)
 
 Assumption 3. det B(xp (k) |p=1∼η, k) ≠ 0, ∀xp (k) |p=1∼η, and k ⩾ h.
 Let
@@ -1331,7 +1337,7 @@ u˜ = , u˜i ∈ ℝ . (35)
 ...
 u˜η
 
-## [58] `scis_2022_discdelay1` (PDF p.10, L616)
+## [59] `scis_2022_discdelay1` (PDF p.10, L616)
 
 Assumption 4. g x⌈τ1∼ζ(k)⌉(k) , k, u = ˜u forms a differential homeomorphism from u to ˜u for all
 x⌈τ1∼ζ(k)⌉(k) and k ⩾( h. )
@@ -1344,7 +1350,7 @@ x1∼η (k + 1) = f (xp (k) |p=1∼η, k)+ g(xp (k) |p=1∼η, k, u (k − h)), 
 where g (·) ∈ ℝr is a nonlinear function satisfying the following full-actuation assumption.
 ⌈τp,1∼ζp(k)⌉
 
-## [59] `scis_2022_discdelay1` (PDF p.10, L626)
+## [60] `scis_2022_discdelay1` (PDF p.10, L626)
 
 Assumption 5. g(xp (k) |p=1∼η, k, u) = ˜u forms a differential homeomorphism from u to ˜u for
 ⌈τp,1∼ζp(k)⌉
@@ -1357,7 +1363,7 @@ u˜ (k − h) = g(xp (k) |p=1∼η, k, u (k − h)),
 and with this control variable transformation, the FAS (37) can be also turned into the standard form of
 (33), as well as the decoupled form of (34).
 
-## [60] `scis_2022_discdelay1` (PDF p.10, L654)
+## [61] `scis_2022_discdelay1` (PDF p.10, L654)
 
 Assumption 6. B(x⌈pτp,1∼ζp(k)⌉(k) |p=1∼η, u⌈σ1∼ξ(k)⌉(k − h) , k) is nonsingular for all its variables when
 k ⩾ h.
@@ -1392,7 +1398,7 @@ x1∼η (k + 1) = fx,u (k) + g(xp⌈τp,1∼ζp(k)⌉(k) |p=1∼η, u⌈σ1∼ξ
 
 where ˜u = g (·, ·, k, u) forms a differential homeomorphism from u to ˜u.
 
-## [61] `scis_2022_discdelay2` (PDF p.8, L500)
+## [62] `scis_2022_discdelay2` (PDF p.8, L500)
 
 Assumption 1. detB (X, k) ≠ 0 or ∞, ∀X ∈ ℝκ(k) and k ⩾ h.
 Parallelly, the non-affine discrete-time delay FAS (20) has the following equivalent form:
@@ -1403,7 +1409,7 @@ x (k + 1) = f (ψ (k) , k) + g(x⌈p0∼γp(k)⌉(k) , k, u (k − h)), (32)
 where ψ (k) takes one of the forms in (28)–(30), and represents the delay terms in the f (·) function, while
 the function g (·) satisfies the following assumption.
 
-## [62] `scis_2022_discdelay2` (PDF p.8, L508)
+## [63] `scis_2022_discdelay2` (PDF p.8, L508)
 
 Assumption 2. g (X, k, u) = ˜u forms a differential homeomorphism from u to ˜u for all X ∈ ℝκ(k) and
 k ⩾ h.
@@ -1427,17 +1433,17 @@ x (k + 1) = fe x⌈1∼ρ(k)⌉(k) , u⌈1∼ξ(k)⌉(k − h) , k + ge x⌈1∼
 where ˜u = ge (X, U, k, u) forms a differential homeomorphism from u to ˜u for all X ∈ ℝrρ(k), U ∈ ℝrξ(k)
 and k ⩾ h.
 
-## [63] `scis_2023_delay1` (PDF p.4, L278)
+## [64] `scis_2023_delay1` (PDF p.4, L278)
 
 Assumption A. There exists a non-empty set Ω1 ⊂ ℝγr such that det B1 (X, t) ≠ 0 or ∞, for all X ∈ Ω1
 and t ⩾ 0.
 
-## [64] `scis_2023_delay1` (PDF p.4, L280)
+## [65] `scis_2023_delay1` (PDF p.4, L280)
 
 Assumption B. There exists a non-empty set Ω2 ⊂ ℝ2γr such that det B2 (Y, t) ≠ 0 or ∞, for all Y ∈ Ω2
 and t ⩾ 0.
 
-## [65] `scis_2023_delay1` (PDF p.7, L471)
+## [66] `scis_2023_delay1` (PDF p.7, L471)
 
 Assumption A1. det B (X, t) ≠ 0 or ∞, ∀X∈ℝγnr and t ⩾ 0.
 Recall that the system (23)-(24) obtained in Example 1 serves as an example for a single-order FAS
@@ -1460,7 +1466,7 @@ x(n)(t) = Cix(0∼n−1)(t − τi (t)) + Bu (t) , (31)
 where B is a constant square nonsingular matrix, and Ci ∈ ℝr×nr, i = 0, 1, . . ., m are the coefficient
 matrices.
 
-## [66] `scis_2023_delay1` (PDF p.8, L510)
+## [67] `scis_2023_delay1` (PDF p.8, L510)
 
 Assumption A2. The following mapping
 
@@ -1473,7 +1479,7 @@ u˜ (t) = g x(0∼n−1)(t − σj (t)) |j=1∼γ, t, u (t) , (34)
 under which the single-order non-affine (global) FAS (32) can be equivalently represented into the stan-
 dard form of (30).
 
-## [67] `scis_2023_delay1` (PDF p.9, L572)
+## [68] `scis_2023_delay1` (PDF p.9, L572)
 
 Assumption A3. det B (X, t) ≠ 0 or ∞, ∀X ∈ ℝγκ0 and t ⩾ 0.
 Let
@@ -1531,7 +1537,7 @@ x (t − τζ (t))
 
 Duan G R Sci China Inf Sci January 2023 Vol. 66 112201:10
 
-## [68] `scis_2023_delay1` (PDF p.10, L640)
+## [69] `scis_2023_delay1` (PDF p.10, L640)
 
 Assumption A4. The following mapping
 
@@ -1544,7 +1550,7 @@ u˜ (t) = g x(0k∼µk−1)(t − σj (t)) |k=1∼η, j=1∼γ, t, u (t) , (51)
 ( )
 and the multi-order non-affine (global) FAS (49) can also be represented into the standard form of (44).
 
-## [69] `scis_2023_delay1` (PDF p.26, L1686)
+## [70] `scis_2023_delay1` (PDF p.26, L1686)
 
 Assumption A5. det B (X, Y, t) ≠ 0 or ∞, ∀X ∈ ℝγκ0, Y ∈ ℝrξ and t ⩾ 0.
 Under Assumption A5, we can introduce a new control vector
@@ -1565,7 +1571,7 @@ x(kµk)|k=1∼η (t) = f x(0k∼µk−1)(t − τj (t)) |k=1∼η, j=1∼ζ, u (
 The above system (141) is called a non-affine (global) FAS if the function g (·) satisfies the following
 assumption.
 
-## [70] `scis_2023_delay1` (PDF p.26, L1704)
+## [71] `scis_2023_delay1` (PDF p.26, L1704)
 
 Assumption A6. The following mapping
 
@@ -1580,7 +1586,7 @@ under which the multi-order non-affine (global) FAS (141) is also turned into th
 
 Duan G R Sci China Inf Sci January 2023 Vol. 66 112201:27
 
-## [71] `scis_2023_delay2` (PDF p.6, L407)
+## [72] `scis_2023_delay2` (PDF p.6, L407)
 
 Assumption A1. det B (X, t) ≠ 0 or ∞, ∀X ∈ ℝγnr and t ⩾ 0.
 Clearly, a constant linear single-order FAS with state time-varying delays and a constant input delay
@@ -1598,7 +1604,7 @@ where g (·) ∈ ℝr is a nonlinear function, and the other variables are as st
 call the system (23) a single-order non-affine (global) FAS if the function g (·) satisfies the following
 assumption.
 
-## [72] `scis_2023_delay2` (PDF p.6, L422)
+## [73] `scis_2023_delay2` (PDF p.6, L422)
 
 Assumption A1′. The following mapping:
 
@@ -1608,7 +1614,7 @@ forms a differential homeomorphism from u to ˜u for all X ∈ ℝγnr and t ⩾
 
 Duan G R Sci China Inf Sci February 2023 Vol. 66 122201:7
 
-## [73] `scis_2023_delay2` (PDF p.7, L472)
+## [74] `scis_2023_delay2` (PDF p.7, L472)
 
 Assumption A2. det B (X, t) ≠ 0 or ∞, ∀X ∈ ℝγκ0 and t ⩾ 0.
 Obviously, in the case of η = 1, the above FAS model (28) reduces to the form of the single-order FAS
@@ -1634,7 +1640,7 @@ system (32) a non-affine (global) multi-order FAS if the function g (·) satisfi
 
 Duan G R Sci China Inf Sci February 2023 Vol. 66 122201:8
 
-## [74] `scis_2023_delay2` (PDF p.8, L498)
+## [75] `scis_2023_delay2` (PDF p.8, L498)
 
 Assumption A2′. The following mapping:
 
@@ -1642,7 +1648,7 @@ u˜ (t) = g (X, t, u (t)) (33)
 
 forms a differential homeomorphism from u to ˜u for all X ∈ ℝγκ0 and t ⩾ 0.
 
-## [75] `scis_2023_delay2` (PDF p.8, L504)
+## [76] `scis_2023_delay2` (PDF p.8, L504)
 
 Assumption A2:
 u˜ (t − h) = B xk(0∼µk−1)(t − σj (t)) |k=1∼η, j=1∼γ, t u (t − h) , (34)
@@ -1674,7 +1680,7 @@ u˜η
 However, the transformations (34) and (35) may become unrealizable if h > 0 since future states may be
 involved in these transformations.
 
-## [76] `scis_2023_delay2` (PDF p.9, L606)
+## [77] `scis_2023_delay2` (PDF p.9, L606)
 
 Assumption A3. The system (46) has a unique solution with respect to arbitrarily given initial values
 and external input u (t).
@@ -1683,7 +1689,7 @@ Z (s) = Y (t + s) = x(0∼n−1)(t + s).
 
 We immediately have the following result.
 
-## [77] `scis_2023_delay2` (PDF p.12, L812)
+## [78] `scis_2023_delay2` (PDF p.12, L812)
 
 Assumption A4. The system (67) has a unique solution with respect to arbitrarily given initial values
 and external input u (t) .
@@ -1692,7 +1698,7 @@ result.
 
 Duan G R Sci China Inf Sci February 2023 Vol. 66 122201:13
 
-## [78] `scis_2024_chained1` (PDF p.4, L280)
+## [79] `scis_2024_chained1` (PDF p.4, L280)
 
 Assumption A1. For all x0, u0 ∈ ℝ, xi+1∼n ∈ ℝn−i, and t ⩾ 0, there holds
 
@@ -1712,7 +1718,7 @@ with ρi = u0, i = 1, 2, . . . , n−1, becomes the Brockett’s second chained 
 the famous Brockett integrator (3) as a special case [1,2].
 The following result reveals some special features of the proposed system (6).
 
-## [79] `scis_2024_chained1` (PDF p.6, L435)
+## [80] `scis_2024_chained1` (PDF p.6, L435)
 
 Assumption B1. There exists a ball (neighborhood) 𝔹ˆ0 centered at (x0∼n, u0) = (0, 0), such that
 
@@ -1722,7 +1728,7 @@ Corresponding to the above Definition 1, we also have the following one.
 
 Duan G-R Sci China Inf Sci February 2024, Vol. 67, Iss. 2, 122201:7
 
-## [80] `scis_2024_chained1` (PDF p.7, L483)
+## [81] `scis_2024_chained1` (PDF p.7, L483)
 
 Assumption C1. For all Xi ∈ ℝn−i+1, i = 1, 2, . . ., n − 1, y ∈ ℝ, and t ⩾ −h, there holds
 
@@ -1761,7 +1767,7 @@ where
 
 with kijϕ : [0, τij] → ℝ and kijψ : [0, σij] → ℝ denoting the delay kernels.
 
-## [81] `scis_2024_chained1` (PDF p.9, L568)
+## [82] `scis_2024_chained1` (PDF p.9, L568)
 
 Assumption A2. For all x0 ∈ ℝ, xi+1∼n ∈ ℝn−i, and t ⩾ 0, there holds
 
@@ -1789,7 +1795,7 @@ In this case, system (28) is a unified representation of 2n−1 number of system
 Parallel to Definition 1, a nonlinear system in the form of (28) is also called globally normal if As-
 sumption A2 is satisfied. For system (28), we can also introduce the local assumption.
 
-## [82] `scis_2024_chained1` (PDF p.9, L593)
+## [83] `scis_2024_chained1` (PDF p.9, L593)
 
 Assumption B2. There exists a ball (neighborhood) 𝔹0 centered at x0∼n = 0, such that
 
@@ -1801,13 +1807,13 @@ When u0 is designed as in (23), x0 (t) is given by (25). Hence, in the above sub
 x0 (0) e−βt is a time-varying parameter rather than a state variable. Since x0 (t) = 0, t ⩾ 0 makes the
 subsystem (28) uncontrollable, let us impose the following assumption.
 
-## [83] `scis_2024_chained1` (PDF p.9, L602)
+## [84] `scis_2024_chained1` (PDF p.9, L602)
 
 Assumption X. x0 (t) = x0 (0) e−βt, x0 (0) ≠ 0.
 Based on the above deduction, it can be clearly seen that, to stabilize system (6), it suffices to solve
 the following basic problem.
 
-## [84] `scis_2024_chained1` (PDF p.11, L704)
+## [85] `scis_2024_chained1` (PDF p.11, L704)
 
 Assumption A3. For all x0 ≠ 0, z1∼i ∈ ℝi and t ⩾ 0, there holds
 
@@ -1816,7 +1822,7 @@ hi (x0, z1∼i, t) ≠ 0, i = 1, 2, . . . , n − 1.
 Clearly, system (33) is an SFS when the above Assumption A3 is met.
 According to the above Theorem 1, Problem 1 is clearly equivalently converted into the following one.
 
-## [85] `scis_2024_chained1` (PDF p.23, L1462)
+## [86] `scis_2024_chained1` (PDF p.23, L1462)
 
 Assumption C2. For all Xi ∈ ℝn−i+1, i = 1, 2, . . ., n − 1, and t ⩾ −h, there holds
 
@@ -1826,7 +1832,7 @@ Therefore, in this case the problem becomes the one of finding, under Assumption
 stabilize system (103)–(105).
 Once again, let us start with giving an extension of Theorem 1.
 
-## [86] `scis_2024_chained1` (PDF p.24, L1493)
+## [87] `scis_2024_chained1` (PDF p.24, L1493)
 
 Assumption C3. For all x ∈ ℝ, Zi ∈ ℝi2, i = 1, 2, . . ., n − 1, and t ⩾ −h, there holds
 
@@ -1834,7 +1840,7 @@ hdi(x, Zi, t) ≠ 0, i = 1, 2, . . ., n − 1.
 
 Under the above Assumption C3, it is clear that the above system (106) is an SFS with time delays.
 
-## [87] `scis_2024_chained2` (PDF p.3, L213)
+## [88] `scis_2024_chained2` (PDF p.3, L213)
 
 Assumption A. For all x0, u0 ∈ ℝ, xi+1∼n ∈ ℝn−i, and t ⩾ 0, there holds
 
@@ -1882,7 +1888,7 @@ These obviously contain the Brockett’s first and second example systems propos
 4].
 The following result is given in [1], which reveals the nonholonomic feature of the proposed system (1).
 
-## [88] `scis_2024_chained2` (PDF p.5, L351)
+## [89] `scis_2024_chained2` (PDF p.5, L351)
 
 Assumption B. η0 = ˙x0 (0) ≠ −αx0 (0) = −αζ0.
 Then, under the above assumption, we clearly have
@@ -1894,7 +1900,7 @@ With the help of the above Proposition 2, the following result can be immediatel
 
 Duan G-R Sci China Inf Sci March 2024, Vol. 67, Iss. 3, 132201:6
 
-## [89] `scis_2024_chained2` (PDF p.6, L387)
+## [90] `scis_2024_chained2` (PDF p.6, L387)
 
 Assumption A′. For all ζ0, η0 ∈ ℝ, xi+1∼n ∈ ℝn−i, and t ⩾ 0, there holds
 
@@ -1919,7 +1925,7 @@ with the help of the partial controller (11) or (12), it suffices to solve the p
 
 To stabilize system (25), let us transform the system into an almost SFS using an extended σ-process.
 
-## [90] `scis_2024_chained2` (PDF p.8, L492)
+## [91] `scis_2024_chained2` (PDF p.8, L492)
 
 Assumption A′′. For all ζ0, η0 ∈ ℝ, z1∼i ∈ ℝi, and t ⩾ 0, there holds
 
@@ -1930,7 +1936,7 @@ in [15], the transformed system (27) is no longer a linear one.
 With the above understanding, to realize the stabilization of system (25), it suffices to solve the
 following problem.
 
-## [91] `scis_2024_chained2` (PDF p.11, L713)
+## [92] `scis_2024_chained2` (PDF p.11, L713)
 
 Assumption C. There exists a series of positive functions ρψi (t) , i = 1, 2, . . ., n − 1, satisfying
 
@@ -1977,7 +1983,170 @@ This implies that, in view of c1 ≠ 0, inequality (42) is satisfied with
 
 With the above analysis, the following result can be immediately obtained by using Corollary 1.
 
-## [92] `tcyb_2023_robustdelay` (PDF p.3, L355)
+## [93] `scis_2025_chained3` (PDF p.4, L276)
+
+Assumption A1. There exists an x1∼n ∈ ℝnr such that
+
+det Ψi (x0, xi+1∼n, u0, t) ≠ 0 or ∞, ∀x0, u0 ∈ ℝr, and t ⩾ 0, i = 1, 2, . . . , n − 1.
+
+Further,
+ρi (x0, u0) = ΓTi(cix0 + diu0) , i = 1, 2, . . . , n − 1, (11)
+
+with Γi ∈ ℝr, i = 1, 2, . . . , n − 1, being a set of given vectors, and ci and di, i = 1, 2, . . . , n − 1, being two
+sets of given scalars satisfying Assumption A2.
+
+## [94] `scis_2025_chained3` (PDF p.4, L285)
+
+Assumption A2. c2i + d2i ≠ 0, Γi ≠ 0, i = 1, 2, . . ., n − 1.
+Clearly, Assumption A1 is necessary because otherwise system (9) contains at least one subsystem
+which has no controls; and Assumption A2 ensures that each ρi (x0, u0) is not identically zero, which
+is required by the controllability of system (9). Furthermore, it is easily observed that the system is a
+time-invariant one if and only if Φi (·) and Ψi (·) , i = 1, 2, . . . , n − 1, are all time-invariant.
+The following result reveals some special features of the proposed system (9).
+
+## [95] `scis_2025_chained3` (PDF p.8, L492)
+
+Assumption A1d. There exist Xi ∈ ℝ(n−i)r, i = 1, 2, . . ., n − 1, such that
+
+det Ψdi(y0, Xi, y, t) ≠ 0 or ∞, ∀y0, y ∈ ℝr and t ⩾ −h, i = 1, 2, . . . , n − 1.
+
+This paper emphasizes on stabilization of the proposed system (9)–(11), while the proposed FAS
+approach can also be extended to stabilization of the time-delay system (26)–(28) following the treatment
+presented in the Section 7 of [10] for the FAS approach for time-delay systems with xi, i = 1, 2, . . ., n− 1,
+being scalar variables.
+Please note that the functions Φdi(·) and Ψdi(·) , i = 1, 2, . . ., n − 1, possessing the forms in (27) and
+(28) are simple in the sense that the variable u0 and each xi have only simple delays. As is claimed
+in [10], the proposed approach is also applicable to the cases where these two sets of functions possess
+much more complicated delay terms, such as multiple delays and distributed delays.
+As in [10], the multi-vector form (9)–(11) can also be extended to the following uncertain case, repre-
+sented as
+
+x˙0 = u0 + d,
+x˙1 = u + ∆f0 (x0∼n, u0, t) ,
+x˙2 = [Φ1 (·) + ∆Φ1 (·)] x2 + ρ1 (x0, u0) [Ψ1 (·) + ∆Ψ1 (·)] x1 + ∆f1 (x0∼n, u0, t) ,
+
+{x˙3 = [Φ2 (·) + ∆Φ2 (·)] x3 + ρ2 (x0, u0) [Ψ2 (·) + ∆Ψ2 (·)] x2 + ∆f2 (x0∼n, u0, t) ,
+
+...
+x˙n = [Φn−1 (·) + ∆Φn−1 (·)] xn + ρn−1 (x0, u0) [Ψn−1 (·) + ∆Ψn−1 (·)] xn−1 + ∆fn−1 (x0∼n, u0, t) ,
+(29)
+where ∆Φi (·) , ∆Ψi (·) ∈ ℝr×r, and ∆fi (x0∼n, u0, t) ∈ ℝr, i = 1, 2, . . . , n − 1, are the uncertainties,
+and robust stabilization of the above system can also be solved with the proposed FAS approach (under
+consideration).
+
+## [96] `scis_2025_chained3` (PDF p.9, L561)
+
+Assumption A3. α + β = −a1 < 0, αβ = a0 > 0.
+Then, regarding the response of the above system (35), we have the following result [49].
+
+## [97] `scis_2025_chained3` (PDF p.9, L581)
+
+Assumption A4. β ≠ dcii, when di ≠ 0, i = 1, 2, . . ., n − 1.
+
+## [98] `scis_2025_chained3` (PDF p.9, L582)
+
+Assumption A5. η0 ∈ P /.
+Then, Assumptions A2 and A4 imply
+
+ci − βdi ≠ 0, i = 1, 2, . . . , n − 1,
+
+and Assumption A5 implies
+
+ΓTiφ0 = 1 ΓTi(η0 + αζ0) ≠ 0, i = 1, 2, . . ., n − 1.
+α − β
+
+Further, in view of Proposition 2, we can derive
+
+ρi (x0,x ˙0) = ΓTi(cix0 + diu0)
+= ΓTi ci −φ˜0e−tα + φ0e−tβ + di αφ˜0e−tα − βφ0e−tβ
+[ ( ) ( )]
+= ΓTi (−ci + αdi) φ˜0e−tα + (ci − βdi) φ0e−tβ .
+[ ]
+The above deduction yields the following result.
+
+## [99] `scis_2025_chained3` (PDF p.10, L627)
+
+Assumption B1. ωi ≠ 0, i = 1, 2, . . . , n − 1.
+Further, for system (41), let us give the following definition.
+
+## [100] `scis_2025_chained3` (PDF p.10, L652)
+
+Assumption B2. 𝔽x (α, β, ζ0, η0) ≠ ∅.
+Based on the above discussion, it is clearly seen that, to solve the problem of stabilizing system (9), it
+suffices to solve the following one.
+
+## [101] `scis_2025_chained3` (PDF p.11, L711)
+
+Assumption C1. γi ≠ 0, i = 1, 2, . . ., n − 1.
+Parallel to Definition 1, we also have the following one for system (51) or (53).
+
+## [102] `scis_2025_chained3` (PDF p.11, L728)
+
+Assumption C2. 𝔽z (α, β, ζ0, η0) ≠ ∅.
+This assumption means that, for some chosen β ∈ ℝ and ζ0 ∈ ℝr, there holds
+
+det Hi (α, β, ζ0, η0, z1∼i, t) ≠ 0 or ∞, ∃z1∼i ∈ ℝir and ∀t ⩾ 0, i = 1, 2, . . ., n − 1. (55)
+
+According to the above discussion, Problem 1 can clearly be equivalently converted into the following
+one.
+
+## [103] `scis_2025_chained3` (PDF p.12, L770)
+
+Assumption A5′. ζ0 ∈ S /.
+This assumption means that the initial value ζ0 is not allowed to be on a specified series of hyperplanes
+containing the origin. Under such an assumption, there hold
+
+ΓTiφ0 = 1 ΓTi(η0 + αζ0) = ΓTiζ0 ≠ 0, i = 1, 2, . . . , n − 1,
+α − β
+
+which give, together with Assumption A4,
+
+ωi = (ci − βdi) ΓTiφ0 ≠ 0, i = 1, 2, . . ., n − 1.
+
+Eventually, system (51) reduces to
+
+z˙1 = G1 (·) z1 + γ1e−tβH1 (·) z2,
+z˙2 = G2 (·) z2 + γ2e−tβH2 (·) z3,
+
+{... (60)
+z˙n−1 = Gn−1 (·) zn−1 + γn−1e−tβHn−1 (·) zn,
+z˙n = u.
+
+Recall that γi ≠ 0, i = 1, 2, . . . , n−1. The above system (60) is an SFS when it is globally normal, that
+is, 𝕊z (α, β, ζ0, η0) = ∅, or 𝔽z (α, β, ζ0, η0) = ℝnr. For strictness, let us further introduce the following
+definition.
+
+## [104] `scis_2025_chained3` (PDF p.13, L840)
+
+Assumption C3. There exist a series of positive functions ρhi (t) , i = 1, 2, . . . , n − 1, satisfying
+
+‖Hi (α, β, ζ0, η0, z1∼i, t) zi+1‖ ⩽ ρhi (t) ‖z1∼n‖ , t ⩾ 0, i = 1, 2, . . . , n − 1.
+
+This assumption characterizes a big class of functions of Hi (·) which we can handle. Such a type
+requirement is commonly seen in (robust) stability analysis.
+Define
+
+G1 (·) z1 + γ1e−tβH1 (·) z2 γ˜1e−tαH1 (·) z2
+G2 (·) z2 + γ2e−tβH2 (·) z3 γ˜2e−tαH2 (·) z3
+f (z1∼n, t) = ... , ∆f (z1∼n, t) = ... , (62)
+
+Gn−1 (·) zn−1 + γn−1e−tβHn−1 (·) zn γ˜n−1e−tαHn−1 (·) zn
+u (z1∼n, t) 0
+
+and suppose now a feedback controller u = u (z1∼n, t) is found. When the controller is applied to sub-SFS
+(60), the closed-loop system can be represented in the form of
+
+z˙1∼n = f (z1∼n, t) , (63)
+
+and when the controller is applied to the SFS-like system (53), the closed-loop system can be represented
+in the form of
+z˙1∼n = f (z1∼n, t) + ∆f (z1∼n, t) . (64)
+
+In order to analyze the stability of system (64), let us first quote the following result [11].
+
+Duan G-R Sci China Inf Sci June 2025, Vol. 68, Iss. 6, 162201:14
+
+## [105] `tcyb_2023_robustdelay` (PDF p.3, L355)
 
 Assumption A0: detB˜(X, Y, Z, t) ≠ 0, or ∞, for all X ∈
 ℝκ, Y ∈ ℝςκ, Z ∈ ℝrν, and t ≥ 0, where
@@ -2018,7 +2187,7 @@ x(0∼n−1) t − τxς(t)
 ( )
 and Assumption A0 becomes the following assumption.
 
-## [93] `tcyb_2023_robustdelay` (PDF p.3, L393)
+## [106] `tcyb_2023_robustdelay` (PDF p.3, L393)
 
 Assumption B0: det B(X, Y, Z, t) ≠ 0, or ∞, for all X ∈
 ℝnr, Y ∈ ℝςnr, Z ∈ ℝrν, and t ≥ 0.
@@ -2032,14 +2201,14 @@ and model reference tracking control treated in [35] and [36].
 When the time-delay terms are present, the control of these
 FAS models is treated in [40] and [41].
 
-## [94] `tcyb_2023_robustdelay` (PDF p.4, L480)
+## [107] `tcyb_2023_robustdelay` (PDF p.4, L480)
 
 Assumption A1: The subsystem (10) is GUA stable at the
 origin.
 Furthermore, the following full-actuation assumption is also
 imposed.
 
-## [95] `tcyb_2023_robustdelay` (PDF p.4, L484)
+## [108] `tcyb_2023_robustdelay` (PDF p.4, L484)
 
 Assumption A2: detB˜(X, Y, Z, zk(0∼γk−1)|k=1∼ξ, ζZ, t) ≠ 0
 or ∞, for all X ∈ ℝκ, Y ∈ ℝςκ, Z ∈ ℝrν, t ≥ 0, and
@@ -2078,12 +2247,12 @@ z(0∼m−1) t − τzγ (t)
 In this circumstance, Assumptions A1 and A2, respectively,
 become the following assumptions.
 
-## [96] `tcyb_2023_robustdelay` (PDF p.4, L520)
+## [109] `tcyb_2023_robustdelay` (PDF p.4, L520)
 
 Assumption B1: The system (13) is GUA stable at the
 origin.
 
-## [97] `tcyb_2023_robustdelay` (PDF p.4, L522)
+## [110] `tcyb_2023_robustdelay` (PDF p.4, L522)
 
 Assumption B2: det B(X, Y, Z, z(0∼m−1), ζz, t) ≠ 0 for all
 X ∈ ℝnr, Y ∈ ℝςnr, Z ∈ ℝrν, t ≥ 0, and arbitrary ζz and
@@ -2120,7 +2289,7 @@ k
 the robust stabilization problem to be formulated in the next
 section.
 
-## [98] `tcyb_2023_robustdelay` (PDF p.5, L606)
+## [111] `tcyb_2023_robustdelay` (PDF p.5, L606)
 
 Assumption A3: There exist two sets of non-negative func-
 tions ˜ρi(·) and ˜σi(·), i = 1, 2, . . . , η, such that each of the
@@ -2144,14 +2313,14 @@ h˜(·) = , ˜hi ∈ ℝ (20)
 h˜η(·)
 in (17) is required to satisfy the following assumption.
 
-## [99] `tcyb_2023_robustdelay` (PDF p.5, L627)
+## [112] `tcyb_2023_robustdelay` (PDF p.5, L627)
 
 Assumption A4: h˜i(zk(0∼γk−1)|k=1∼ξ), i = 1, 2, . . . , η, are a
 series of K∞-bounded functions.
 Based on the above description, the main problem to be
 solved in this article can be described as follows.
 
-## [100] `tcyb_2023_robustdelay` (PDF p.5, L648)
+## [113] `tcyb_2023_robustdelay` (PDF p.5, L648)
 
 Assumption B3: There exist two non-negative functions
 ρ(·) and σ(·), such that
@@ -2160,12 +2329,12 @@ Assumption B3: There exist two non-negative functions
 ‖‖‖ ‖‖‖ (‖‖‖ ‖‖‖
 where κ(·) is a K∞ function.
 
-## [101] `tcyb_2023_robustdelay` (PDF p.5, L654)
+## [114] `tcyb_2023_robustdelay` (PDF p.5, L654)
 
 Assumption B4: h(z(0∼m−1)) is a K∞-bounded function.
 Furthermore, Problem 1 reduces to the following one.
 
-## [102] `tcyb_2023_robustdelay` (PDF p.8, L1017)
+## [115] `tcyb_2023_robustdelay` (PDF p.8, L1017)
 
 Assumption B3′: There exist two non-negative functions
 ρ(x(0∼n−1), ζx, ζu, t) and σ(x(0∼n−1), ζx, ζu, t) such that the
@@ -2177,7 +2346,7 @@ nonlinear uncertainty Δf(·) ∈ ℝr satisfies
 (‖‖‖ ‖‖‖
 where κ(·) is a K∞ function.
 
-## [103] `tcyb_2023_robustdelay` (PDF p.9, L1074)
+## [116] `tcyb_2023_robustdelay` (PDF p.9, L1074)
 
 Assumption B5: The following condition:
 
@@ -2186,7 +2355,7 @@ Assumption B5: The following condition:
 holds for all the variables x(0∼n−1), ζx, ζu, z(0∼m−1), ζz
 and t ≥ 0.
 
-## [104] `tcyb_2023_robustdelay` (PDF p.9, L1080)
+## [117] `tcyb_2023_robustdelay` (PDF p.9, L1080)
 
 Assumption B6: There exist two non-negative functions
 ρb(·) and σb(·), such that
@@ -2239,7 +2408,7 @@ and define
 Then, as a generalization to Lemma 5, we have the following‖
 lemma.
 
-## [105] `tcyb_2023_robustdelay` (PDF p.9, L1164)
+## [118] `tcyb_2023_robustdelay` (PDF p.9, L1164)
 
 Assumption B3′′: There exists a non-negative function
 ρ(x(0∼n−1), ζx, ζu, t) such that
@@ -2249,7 +2418,7 @@ Assumption B3′′: There exists a non-negative function
 As a direct corollary of Theorem 3, the following result
 holds.
 
-## [106] `tcyb_2023_subfas` (PDF p.7, L902)
+## [119] `tcyb_2023_subfas` (PDF p.7, L902)
 
 Assumption 1: The matrix B(·) in the single-order affine
 sub-FAS (18) has relations only with x1(0∼n−1)(t−σj(t) )|j=1∼γ ,
@@ -2279,7 +2448,7 @@ u2(t)
 
 The effect of this controller is clearly given as follows.
 
-## [107] `tcyb_2023_subfas` (PDF p.9, L1062)
+## [120] `tcyb_2023_subfas` (PDF p.9, L1062)
 
 Assumption 2: The matrix B(·) in the sub-FAS (25) takes
 the following form:
@@ -2310,7 +2479,7 @@ u∗l
 The conditions and variables as well as the effect of the
 controller (47) are given in the following theorem.
 
-## [108] `tcyb_2024_overview` (PDF p.7, L826)
+## [121] `tcyb_2024_overview` (PDF p.7, L826)
 
 Assumption A1 There exists a simply connected set Ω1 ⊂
 ℝ2m, which contains the origin at least as a boundary point,
@@ -2324,7 +2493,7 @@ following:
 { ˙x = u (41)
 y˙ = g (x, y, t) .
 
-## [109] `tcyb_2024_overview` (PDF p.7, L847)
+## [122] `tcyb_2024_overview` (PDF p.7, L847)
 
 Assumption A2 There exists a simply connected set U1 ⊂
 ℝ2m+n, which contains the origin at least as a boundary point,
@@ -2346,11 +2515,11 @@ two second-order types, Type III and IV, into global FASs or
 sub-FASs. Furthermore, some guideline is also provided in [2]
 to convert a general dynamical system into a FAS.
 
-## [110] `book_2026_volume1` (PDF p.62, L41)
+## [123] `book_2026_volume1` (PDF p.62, L41)
 
 Assumption 1.1 (A, B) is controllable.
 
-## [111] `book_2026_volume1` (PDF p.62, L41)
+## [124] `book_2026_volume1` (PDF p.62, L41)
 
 Assumption 1.2 rank B = r.
 When a controller for system (1.10) is chosen as
@@ -2362,7 +2531,7 @@ ẋ = (A + B K ) x.                     (1.12)
 The purpose of this subsection is to present solutions to the following generalized
 ESA problem.
 
-## [112] `book_2026_volume1` (PDF p.76, L56)
+## [125] `book_2026_volume1` (PDF p.76, L56)
 
 Assumption 2.1 det B (X, t) = 0 or .∞, .∀X ∈ Rnr , t ≥ 0.
 When the above assumption is met, we can get from (2.39) the following:
@@ -2381,7 +2550,7 @@ piece-wise continuous vector function.
 The above nonaffine system (2.41) is called a global FAS due to the following
 assumption.
 
-## [113] `book_2026_volume1` (PDF p.77, L57)
+## [126] `book_2026_volume1` (PDF p.77, L57)
 
 Assumption 2.2 The following mapping
 ũ = g (X, u, t)
@@ -2402,7 +2571,7 @@ Based on the above two control transformations, both the affine FAS (2.39) and t
 nonaffine FAS (2.41) are reduced to the following linear system:
 x (n) = û.
 
-## [114] `book_2026_volume1` (PDF p.81, L61)
+## [127] `book_2026_volume1` (PDF p.81, L61)
 
 Assumption 2.3 det B (X, t) = 0 or .∞ for X ∈ Rκ0 , and t ≥ 0.
 If we denote
@@ -2442,7 +2611,7 @@ following form:
 ⎡                                    ⎤
 ⎡         ⎤                    −1)
 
-## [115] `book_2026_volume1` (PDF p.82, L62)
+## [128] `book_2026_volume1` (PDF p.82, L62)
 
 Assumption 2.4 The following mapping
 ũ = g (X, u, t) ,
@@ -2460,17 +2629,17 @@ h xk(0∼μk ) |k=1∼η , t = u,                                   (2.64)
 2.4 Linear Time-Invariant FASs                                                       63
 where h (·) is some proper vector function of the same size as u.
 
-## [116] `book_2026_volume1` (PDF p.97, L77)
+## [129] `book_2026_volume1` (PDF p.97, L77)
 
 Assumption 2.5 The LTV system (2.109) is lexicography-fixedly controllable on
 t ∈ [t0 , ∞).
 
-## [117] `book_2026_volume1` (PDF p.97, L77)
+## [130] `book_2026_volume1` (PDF p.97, L77)
 
 Assumption 2.6 For .∀t ≥ t0 , all elements of A (t) and B (t) are at least n-times
 continuously differentiable.
 
-## [118] `book_2026_volume1` (PDF p.99, L79)
+## [131] `book_2026_volume1` (PDF p.99, L79)
 
 Assumption 2.7 The LTV system (2.109) is uniformly controllable but not
 lexicography-fixedly controllable on t ∈ [t0 , ∞) and the maximum values μi max ,
@@ -2488,7 +2657,7 @@ A e2 (t) ∈ R e     and Be (t) ∈ Rn e ×r being the auxiliary system matrices
 mined. Regarding the augmented system, Valasek and Olgac provide the following
 result (Valášek & Olgac, 1999).
 
-## [119] `book_2026_volume1` (PDF p.147, L128)
+## [132] `book_2026_volume1` (PDF p.147, L128)
 
 Assumption 4.1 det B (X, ζ, t) = 0 or .∞, ∀X ∈ Rnr , ζ ∈ R p , and t ≥ 0.
 From its appearance, the above Assumption 4.1 seems to be strict. While as a
@@ -2519,11 +2688,11 @@ tor functions, and G i ∈ Rr×r , i = 1, 2, . . . , n, are a set of nonsingular
 According to Theorem 3.1 or 3.6 in Duan (2021b), we have the following simplified
 result.
 
-## [120] `book_2026_volume1` (PDF p.157, L138)
+## [133] `book_2026_volume1` (PDF p.157, L138)
 
 Assumption 4.2 The matrix pair (A, B) is stabilizable.
 
-## [121] `book_2026_volume1` (PDF p.157, L138)
+## [134] `book_2026_volume1` (PDF p.157, L138)
 
 Assumption 4.3 The matrix pair ( Ã, C̃) is detectable, where
 A   Ew
@@ -2533,7 +2702,7 @@ The following lemma is a simplified version of Theorem 2.4.1 in Saberi et al.
 (2012, p. 25) [see also Theorem 2.6 in Duan (2015, p. 51)], which gives a basic
 output regulation result for the linear system (4.47).
 
-## [122] `book_2026_volume1` (PDF p.159, L140)
+## [135] `book_2026_volume1` (PDF p.159, L140)
 
 Assumption 4.4 The matrix pair (                  E , C E ) defined by (4.59) is detectable.
 Let us introduce the following control law for FAS (4.45):
@@ -2577,7 +2746,7 @@ where                             ⎧                     n −1
 ⎩                            n−1
 Z 1 F1
 
-## [123] `book_2026_volume1` (PDF p.181, L162)
+## [136] `book_2026_volume1` (PDF p.181, L162)
 
 Assumption 5.1 det L (X ) = 0 or .∞, ∀X ∈ Rnr .
 Correspondingly, for some nonlinear systems subject to uncertainties, often their
@@ -2590,7 +2759,7 @@ modeling, see, e g., Example 2 in Duan (2021b), when the disturbances di , i =
 In this section, let us consider the control of systems represented by the single-
 order FAS model (5.2) under the following condition:
 
-## [124] `book_2026_volume1` (PDF p.181, L162)
+## [137] `book_2026_volume1` (PDF p.181, L162)
 
 Assumption 5.2 There exists a non-negative continuous scalar function
 ρ(x (0∼n−1) ) such that the nonlinear uncertainty f (x (0∼n−1) ) ∈ Rr satisfies
@@ -2607,12 +2776,12 @@ Preliminaries
 In order to give a control law for the above high-order system (5.2) with dynamic
 uncertainties, let us give two preliminary results.
 
-## [125] `book_2026_volume1` (PDF p.196, L177)
+## [138] `book_2026_volume1` (PDF p.196, L177)
 
 Assumption 5.3 For two non-negative real numbers δ0 and δ1 , there hold
 θ (t) −θ0 (t) ≤ δ0 , θ̇ (t) −θ̇0 (t) ≤ δ1 , ∀t ≥ 0.
 
-## [126] `book_2026_volume1` (PDF p.202, L183)
+## [139] `book_2026_volume1` (PDF p.202, L183)
 
 Assumption 5.4 There exists a non-negative continuous scalar function
 ρ(x (0∼n−1) ), such that
@@ -2637,7 +2806,7 @@ u a = H T (x (0∼n−1) )θ̂ .
 As a result, we have the following theorem.
 184                                                           5 Robust and Adaptive Control
 
-## [127] `book_2026_volume1` (PDF p.218, L200)
+## [140] `book_2026_volume1` (PDF p.218, L200)
 
 Assumption 6.1 For arbitrary xi ∈ Rr , i = 1, 2, . . . , n, and ζ ∈ Rm , there holds
 det G i (x1∼i , ζ, t)   0, ∀t ≥ 0.                         (6.2)
@@ -2649,7 +2818,7 @@ iterative formulas using. f i (x1∼i ) and G i (x1∼i ),.i = 1, 2, . . . , n. 
 time version of similar results can be found in Duan (2022f), and generalization of
 the results to SFSs with time-varying delays can be found in Duan (2023b, 2023c).
 
-## [128] `book_2026_volume1` (PDF p.223, L205)
+## [141] `book_2026_volume1` (PDF p.223, L205)
 
 Assumption 6.2 For arbitrary xi ∈ Rr , i = 1, 2, . . . , n, and ζ ∈ Rm , there holds
 (0∼1)
@@ -2657,7 +2826,7 @@ det G i (x1∼i   , ζ, t)      0, ∀t ≥ 0.
 6.3.1 Recursive Solution
 In parallel to the first-order case, we have the following conclusion.
 
-## [129] `book_2026_volume1` (PDF p.226, L208)
+## [142] `book_2026_volume1` (PDF p.226, L208)
 
 Assumption 6.3 For all xk ∈ Rr , k = 1, 2, . . . , n, and ζ ∈ Rm , there holds
 det G k (xi(0∼m i −1) |i=1∼k , ζ, t)   0, ∀t ≥ 0.
@@ -2668,17 +2837,17 @@ p = pn .
 Then, parallel to the first-order and second-order cases, we have the following
 conclusion.
 
-## [130] `book_2026_volume1` (PDF p.246, L228)
+## [143] `book_2026_volume1` (PDF p.246, L228)
 
 Assumption 7.1 The gain matrices G i , i = 1, 2, . . . , n, are all of full-row rank,
 i e., rank(G i ) = ri , i = 1, 2, . . . , n.
 
-## [131] `book_2026_volume1` (PDF p.246, L228)
+## [144] `book_2026_volume1` (PDF p.246, L228)
 
 Assumption 7.1 The gain matrices G i , i = 1, 2, . . . , n, are all of full-row rank,
 i e., rank(G i ) = ri , i = 1, 2, . . . , n.
 
-## [132] `book_2026_volume1` (PDF p.251, L233)
+## [145] `book_2026_volume1` (PDF p.251, L233)
 
 Assumption 7.2 For any x1∼i ∈ Rπi , the matrix function G i (x1∼i ) is of full-row
 rank, i e., rankG i (x1∼i ) = ri , i = 1, 2, . . . , n.
@@ -2719,7 +2888,7 @@ Then the inverse mapping from x̄ to x can be written as
 ⎪
 ⎪ x2 = Q 1 (x̄1 )x̄2 Q̄ 1 (x̄1 )x̄2
 
-## [133] `book_2026_volume1` (PDF p.256, L238)
+## [146] `book_2026_volume1` (PDF p.256, L238)
 
 Assumption 7.3 For any X i ∈ R3r1 +···+3ri−1 and Yi ∈ R2ri , the matrix function
 G i (X i , Yi ) is of full-row rank, i e., rankG i (X i , Yi ) = ri , i = 1, 2, . . . , n.
@@ -2759,7 +2928,7 @@ x̄3 = Q −1
 ⎩ x̄n = Q −1     (0∼1)
 xn .
 
-## [134] `book_2026_volume1` (PDF p.263, L245)
+## [147] `book_2026_volume1` (PDF p.263, L245)
 
 Assumption 7.4 For any X i ∈ R i with i =         (m p + 1)r p and Yi ∈ Rm i ri , the
 p=1
@@ -2800,7 +2969,7 @@ i=1∼n−1
 Similar to the reasoning given in Sect. 7.2 of this chapter, the inverse mapping from
 x̄ to x can be written as
 
-## [135] `book_2026_volume1` (PDF p.279, L261)
+## [148] `book_2026_volume1` (PDF p.279, L261)
 
 Assumption 8.1 For arbitrary xi ∈ Rr , i = 1, 2, . . . , n, ζ ∈ Rm , and t ≥ 0, there
 hold
@@ -2834,11 +3003,11 @@ in such cases.
 The purpose of this section is to find a homeomorphism under which the above
 nonaffine SFS (8.1) is equivalently converted into a nonaffine FAS.
 
-## [136] `book_2026_volume1` (PDF p.282, L264)
+## [149] `book_2026_volume1` (PDF p.282, L264)
 
 Assumption 8.1 becomes
 
-## [137] `book_2026_volume1` (PDF p.282, L264)
+## [150] `book_2026_volume1` (PDF p.282, L264)
 
 Assumption 8.2 For arbitrary xi ∈ Rr , i = 1, 2, . . . , n, ζ ∈ Rm , and t ≥ 0, there
 hold
@@ -2867,7 +3036,7 @@ and
 where xn+1 = u, immediately gives the following corollary.
 8.1 First-Order Nonaffine SFSs                                                                                265
 
-## [138] `book_2026_volume1` (PDF p.287, L269)
+## [151] `book_2026_volume1` (PDF p.287, L269)
 
 Assumption 8.3 For arbitrary xi ∈ Rr , i = 1, 2, . . . , n, ζ ∈ Rm , and .∀t ≥ 0, there
 hold
@@ -2907,7 +3076,7 @@ to help in such cases.
 The purpose of this section is to find a homeomorphism under which the above
 nonaffine SFS (8.29) is equivalently converted into a nonaffine FAS.
 
-## [139] `book_2026_volume1` (PDF p.291, L273)
+## [152] `book_2026_volume1` (PDF p.291, L273)
 
 Assumption 8.4 For arbitrary xi ∈ Rr , i = 1, 2, . . . , n, and .∀t ≥ 0, there hold
 det ∂ x∂i+1 gi (xi+1 , t)   0, i = 1, 2, . . . , n − 1
@@ -2937,7 +3106,7 @@ gi (x1∼i   , xi+1 , ζ, t) = gi (xi+1 , t) ,
 ∂t                              ∂t
 in Theorem 8.2 immediately gives the following corollary.
 
-## [140] `book_2026_volume1` (PDF p.298, L280)
+## [153] `book_2026_volume1` (PDF p.298, L280)
 
 Assumption 8.5 For arbitrary xk ∈ Rr , k = 1, 2, . . . , n − 1, ζ ∈ Rm , and .∀t ≥ 0,
 there hold
@@ -2972,11 +3141,11 @@ In certain high-dimensional cases, the above Assumption 8.5 may be difficult to
 verify. It is recommended that symbolic computation techniques may be considered
 to help in such cases.
 
-## [141] `book_2026_volume1` (PDF p.302, L284)
+## [154] `book_2026_volume1` (PDF p.302, L284)
 
 Assumption 8.5 becomes
 
-## [142] `book_2026_volume1` (PDF p.302, L284)
+## [155] `book_2026_volume1` (PDF p.302, L284)
 
 Assumption 8.6 For arbitrary xk ∈ Rr , k = 1, 2, . . . , n, ζ ∈ Rm , and t ≥ 0, there
 hold
@@ -3002,7 +3171,7 @@ and                                    ⎧
 ∂t                           ∂t
 in Theorem 8.3 immediately gives the following corollary.
 
-## [143] `book_2026_volume1` (PDF p.321, L304)
+## [156] `book_2026_volume1` (PDF p.321, L304)
 
 Assumption 9.1 det G i (x1∼i   )           0, ∀xi ∈ Rr , i = 1, 2, . . . , n.
 In the event that the nonlinear uncertainties in the above second-order SFS do
@@ -3047,7 +3216,7 @@ generalized into
 (0∼1)                 (0∼1)
 G 0i (x 1∼i )x i+1 + G 1i (x 1∼i ) ẋ i+1 ,
 
-## [144] `book_2026_volume1` (PDF p.322, L305)
+## [157] `book_2026_volume1` (PDF p.322, L305)
 
 Assumption 9.2 det G k (xi(0∼m i −1) |i=1∼k )            0, ∀xi ∈ Rr , k = 1, 2, . . . , n.
 Regarding the derivation of the above uncertain mixed-order SFS (9.3), we make
@@ -3089,7 +3258,7 @@ appears as follows:
 xn = f n (xi(0∼m i −1) |i=1∼n ) + f n (xi(0∼m i −1) |i=1∼n ) + G n (xi(0∼m i −1) |i=1∼n )u.
 (9.4)
 
-## [145] `book_2026_volume1` (PDF p.344, L328)
+## [158] `book_2026_volume1` (PDF p.344, L328)
 
 Assumption 10.1 gi (x1∼i   )          0, ∀xi , ẋi ∈ R, i = 1, 2, . . . , n.
 Besides physical modeling, many conventional first-order SFSs can also be
@@ -3131,7 +3300,7 @@ parameters:
 ⎪
 ⎪   (m n−1 )
 
-## [146] `book_2026_volume1` (PDF p.344, L328)
+## [159] `book_2026_volume1` (PDF p.344, L328)
 
 Assumption 10.2 gk (xi(0∼m i −1) | i=1∼k )         0, ∀xi(0∼m i −1) ∈ Rm i , k = 1, 2, . . . , n.
 10.2 Backstepping for Second-Order SFSs                                                           329
@@ -3168,11 +3337,11 @@ Suppose Ai0∼1 ∈ R1×2 , i = 1, 2, . . . , n, are a set of matrices which mak
 Ai0∼1 ∈ R2×2 , i = 1, 2, . . . , n, stable, and
 Pi Ai0∼1 = Pi F Ai0∼1                    Pi L Ai0∼1    ∈ R2×2 ,
 
-## [147] `book_2026_volume1` (PDF p.365, L350)
+## [160] `book_2026_volume1` (PDF p.365, L350)
 
 Assumption 11.1 det B (y, t) = 0 or ∞, for all y ∈ Rm , and t ≥ 0.
 
-## [148] `book_2026_volume1` (PDF p.365, L350)
+## [161] `book_2026_volume1` (PDF p.365, L350)
 
 Assumption 11.2 There exist a scalar ρ > 0 and a convex subset .                  ⊆ Rnr
 containing the origin such that:
@@ -3200,13 +3369,13 @@ ẋ (0∼n−1) =   (00∼n−1 ) x (0∼n−1) + B c          f (·) − A0∼n
 Then, we impose the following assumption, which plays a role in the subsequent
 stability analysis.
 
-## [149] `book_2026_volume1` (PDF p.366, L351)
+## [162] `book_2026_volume1` (PDF p.366, L351)
 
 Assumption 11.3 The matrix pair ( (00∼n−1 ) ,C0∼n−1 ) is observable.
 Based on the above preparation, we can now state the problem to be solved in this
 section as follows.
 
-## [150] `book_2026_volume1` (PDF p.369, L354)
+## [163] `book_2026_volume1` (PDF p.369, L354)
 
 Assumption 11.4 det B(z, t)               0 or .∞, .∀z ∈ Rn 1 r1 and t ≥ 0.
 Without loss of generality, the function f (·, ·) can be always decomposed as
@@ -3240,7 +3409,7 @@ is a feedback gain with A11 ∈ Rr1 ×n 1 r1 , A12 ∈ Rr1 ×n 2 r2 , A21 ∈ Rr
 Rr2 ×n 2 r2 Under this controller, the closed-loop system is given by
 x1(n 1 )             F11 − A11 F12 − A12                     x1(0∼n 1 −1)
 
-## [151] `book_2026_volume1` (PDF p.376, L361)
+## [164] `book_2026_volume1` (PDF p.376, L361)
 
 Assumption 11.5 The function f 0 (·, ·) : Rn 1 r1 × Rn 2 r2 → Rr1 +r2 is α-Lipschitz with
 respect to its second argument, that is, there exists a scalar α > 0 such that
@@ -3256,7 +3425,7 @@ f 2 x1(0∼n 1 −1) , x2(0∼n 2 −1) , x̂2(0∼n 2 −1)
 where f 1 : Rn 1 r1 × Rn 2 r2 → Rr1 , f 2 : Rn 1 r1 × Rn 2 r2 → Rr2 Then all f 0 , f 1
 and f 2 are present, and now Theorem 11.2 becomes the following.
 
-## [152] `book_2026_volume1` (PDF p.393, L379)
+## [165] `book_2026_volume1` (PDF p.393, L379)
 
 Assumption 12.1 det B̃ (X, t) = 0 or ∞, for all X ∈ Rκ0 , and t ≥ 0, where
 η
@@ -3269,7 +3438,7 @@ one:
 x     = f x (0∼n−1) , t + B x (0∼n−1) , t u,               (12.8)
 and the above Assumption 12.1 becomes
 
-## [153] `book_2026_volume1` (PDF p.393, L379)
+## [166] `book_2026_volume1` (PDF p.393, L379)
 
 Assumption 12.2 det B (X, t) = 0 or ∞, for all X ∈ Rnr , and t ≥ 0.
 It is known from linear systems theory that a stabilizable linear system can be
@@ -3303,13 +3472,13 @@ GUA stable if its state-space form is GUA stable.
 Without loss of generality, in this chapter, the following stability assumption is
 proposed:
 
-## [154] `book_2026_volume1` (PDF p.394, L380)
+## [167] `book_2026_volume1` (PDF p.394, L380)
 
 Assumption 12.3 Subsystem (12.10) is GUA stable at the origin.
 Furthermore, the following full-actuation assumption is also imposed.
 (0∼γk −1)
 
-## [155] `book_2026_volume1` (PDF p.394, L380)
+## [168] `book_2026_volume1` (PDF p.394, L380)
 
 Assumption 12.4 det B̃ X, z k                           |k=1∼ξ , t = 0 or .∞, for all X ∈ Rκ0 , t ≥ 0,
 (0∼γ −1)             (0∼γ −1)
@@ -3331,11 +3500,11 @@ where n and m are two positive integers.
 In this circumstance, the above Assumptions 12.3 and 12.4 respectively become
 12.2 Robust Control Problem Formulation                                                  381
 
-## [156] `book_2026_volume1` (PDF p.395, L381)
+## [169] `book_2026_volume1` (PDF p.395, L381)
 
 Assumption 12.5 Subsystem (12.12) is GUA stable at the origin.
 
-## [157] `book_2026_volume1` (PDF p.395, L381)
+## [170] `book_2026_volume1` (PDF p.395, L381)
 
 Assumption 12.6 det B X, z (0∼m−1) , t = 0 or .∞ for all X ∈ Rnr , t ≥ 0, and
 (0∼m−1)
@@ -3380,7 +3549,7 @@ and the following closed-loop system is obtained:
 ⎩ z k(γk ) |k=1∼ξ = g̃ z k(0∼γk −1) |k=1∼ξ , t ,
 which is clearly GUA stable if the coefficient matrices [ Ak ]0∼μk −1 , k = 1, 2, . . . , η,
 
-## [158] `book_2026_volume1` (PDF p.397, L383)
+## [171] `book_2026_volume1` (PDF p.397, L383)
 
 Assumption 12.7 There exist two sets of nonnegative functions ρ̃i (·) and σ̃i (·) ,
 i = 1, 2, . . . , η, such that the nonlinear uncertainty f˜i (·) ∈ Rri satisfies
@@ -3401,25 +3570,25 @@ h̃ η (·)
 in (12.16) is required to satisfy the following assumption.
 (0∼γk −1)
 
-## [159] `book_2026_volume1` (PDF p.398, L384)
+## [172] `book_2026_volume1` (PDF p.398, L384)
 
 Assumption 12.8 h̃ i z k                  |k=1∼ξ , i = 1, 2, . . . , η, are a series of K∞ -
 bounded functions.
 Based on the above description, the main problem to be solved in this chapter can
 be described as follows.
 
-## [160] `book_2026_volume1` (PDF p.398, L384)
+## [173] `book_2026_volume1` (PDF p.398, L384)
 
 Assumption 12.9 There exist two nonnegative functions ρ (·), σ (·) , such that
 f (·)          ρ (·) x (0∼n−1) + σ (·) κ             z (0∼m−1)   ,
 where κ (·) is a K∞ function.
 
-## [161] `book_2026_volume1` (PDF p.398, L384)
+## [174] `book_2026_volume1` (PDF p.398, L384)
 
 Assumption 12.10 h z (0∼m−1) is a K∞ -bounded function.
 Moreover, Problem 12.1 reduces to the following one.
 
-## [162] `book_2026_volume1` (PDF p.406, L392)
+## [175] `book_2026_volume1` (PDF p.406, L392)
 
 Assumption 12.11 There exist two nonnegative scalar functions ρ x (0∼n−1) , t and
 (0∼n−1)
@@ -3429,13 +3598,13 @@ where κ (·) is a K∞ function.
 When Assumption 12.9 is substituted with Assumption 12.11, Theorem 12.1
 becomes the following.
 
-## [163] `book_2026_volume1` (PDF p.407, L393)
+## [176] `book_2026_volume1` (PDF p.407, L393)
 
 Assumption 12.12 The following condition
 B (·) B −1 (·) ≤ c < 1,                      (12.52)
 holds for all the variables x (0∼n−1) , z (0∼m−1) , and t ≥ 0.
 
-## [164] `book_2026_volume1` (PDF p.407, L393)
+## [177] `book_2026_volume1` (PDF p.407, L393)
 
 Assumption 12.13 There exist two nonnegative functions ρb (·) and σb (·) , such
 that
@@ -3466,7 +3635,7 @@ c      1
 ε σmin
 (PL )
 
-## [165] `book_2026_volume1` (PDF p.409, L395)
+## [178] `book_2026_volume1` (PDF p.409, L395)
 
 Assumption 12.14 There exists a nonnegative function ρ x (0∼n−1) , t such that
 f (·)       ρ x (0∼n−1) , t   x (0∼n−1) .

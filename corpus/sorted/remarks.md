@@ -1,4 +1,4 @@
-# Sorted Remark Corpus Across 32 Duan First-Author Papers + Volume I (155 items)
+# Sorted Remark Corpus Across 32 Duan First-Author Papers + Volume I (175 items)
 
 ## [1] `aaas_2024_subsfs` (PDF p.7, L747)
 
@@ -1605,7 +1605,35 @@ respectively. Due to the complexity and paper length
 limit, these more general cases will be treated in sepa-
 rate papers.
 
-## [89] `jssc_2022_casestudy` (PDF p.5, L242)
+## [89] `jssc_2022_brockett1` (PDF p.12, L587)
+
+Remark 5.1 The parameter c in the controllers (24) and (25) performs a function of an
+amplifier. When z0 is small, the point (σ 1z0, 0, z0) may be still close to the z0-axis. With a
+larger c, the point (σ cz0, 0, z0) is moved further away from the z0-axis in a more rapid way.
+
+## [90] `jssc_2022_brockett1` (PDF p.12, L615)
+
+Remark 5.3 The advantage of the exponentially sub-stabilizing controller (22) is that it
+provides exponential sub-stability, but the disadvantage is that it has no definition when the
+initial values are chosen from the z0-axis. The above controller (26) overcomes this disadvantage
+of the controller (22) and becomes a globally asymptotically stabilizing one, but the payoff is
+that now the controller has a switch at time t0 and is thus no longer continuous. Hopefully,
+more appropriate finite-time pre-controllers can be found, which makes the combined overall
+globally stabilizing controller a continuous one.
+
+## [91] `jssc_2022_brockett1` (PDF p.12, L622)
+
+Remark 5.4 As a matter of fact, there is another direct and general way of constructing
+a globally asymptotically stabilizing controller for the system (1), that is, to apply an arbitrary
+existing globally asymptotically stabilizing controller for the initial values taken from the z0-
+axis in the initial value space, and to apply our exponential sub-stabilizing controller (22) for
+
+BROCKETT’S FIRST EXAMPLE: AN FAS APPROACH TREATMENT 453
+
+the rest of initial values. Such an idea actually can be applied to stabilization of many systems
+which are related to some sub-FASs (see [37]).
+
+## [92] `jssc_2022_casestudy` (PDF p.5, L242)
 
 Remark 2.2 Obviously, the above singularity set 𝕊 is a line passing through the origin
 in the ( ˙x, x) plane when v = 0. Therefore, the closed-loop system (9) can be by no means
@@ -1614,7 +1642,7 @@ the whole state-space, the system possesses a kind of “weakened” global expo
 since, as easily predicted and technically shown in the next section, that most of the system
 trajectories will go to the origin.
 
-## [90] `jssc_2022_casestudy` (PDF p.5, L248)
+## [93] `jssc_2022_casestudy` (PDF p.5, L248)
 
 Remark 2.3 This system falls into such a scope whose equivalent FAS model is a sub-FAS
 with its singularity set containing the origin. In general, such systems are difficult to handle,
@@ -1622,7 +1650,7 @@ and many typical benchmark systems for feedback stabilization in the literature 
 such a scope. This particular feature makes the system not feedback linearizable, and makes
 the linearized model of the system at the origin an uncontrollable one.
 
-## [91] `jssc_2022_casestudy` (PDF p.7, L369)
+## [94] `jssc_2022_casestudy` (PDF p.7, L369)
 
 Remark 3.3 For this example system (1), it is well-known that it is not feedback lineariz-
 able by a smooth state feedback controller, and equivalently, it is not globally exponentially
@@ -1630,7 +1658,7 @@ stabilizable by a smooth state feedback controller. While in this section, it is
 that from which subset in the initial value space the trajectories of the closed-loop system can
 be made decaying to the origin exponentially by a smooth state feedback controller.
 
-## [92] `jssc_2022_freq` (PDF p.4, L200)
+## [95] `jssc_2022_freq` (PDF p.4, L200)
 
 Remark 2.3 If the state feedback U(s) = K(s)Z(s) is applied on the PMD (4), the
 closed-loop system is (P(s) − Q(s)K(s)) Z(s) = 0, whose characteristic equation is given by
@@ -1654,7 +1682,7 @@ which is exactly in the form of PMD (4) with
 Similarly, by taking the Laplace transformation of the HOFA system model (2) with zero initial
 condition, we have immediately the following interpretation of Proposition 2.1.
 
-## [93] `jssc_2022_freq` (PDF p.11, L542)
+## [96] `jssc_2022_freq` (PDF p.11, L542)
 
 Remark 4.6 Notice that the frequency domain equation (23) can be rewritten in the
 time-domain as
@@ -1671,7 +1699,102 @@ conventional high-order linear state-space system, rather than a descriptor high
 state-space system, namely, the two problems encountered in Section 3 have been solved.
 Let us provide an example to illustrate the obtained results.
 
-## [94] `odfas_2026_part1` (PDF p.6, L624)
+## [97] `jssc_2023_brockett2` (PDF p.4, L176)
+
+Remark 2.1 In the above two-wheel mobile robot system, the variables x1 and x2 can
+be also the velocities of the robot if the control input v denotes the force acting on the robot.
+Meanwhile, θ can be the angular velocity instead of the angle when the input variable w denotes
+the torque acting on the robot.
+Form II:
+⎧ x˙1 = v1 cos θ + v2 cos θ,
+⎪⎪⎨ x˙2 = v1 sin θ + v2 sin θ, (3)
+
+⎪⎪ θ˙ = v1 − v2,
+⎩
+where, again, x1, x2 and θ are scalar state variables, and v1 and v2 are two scalar control
+variables.
+The background of this form is the model for the planar twin-rotor system shown in Figure 2,
+where x1 and x2 are the positions of the rotor, θ is the rotation. The control input v1 is the
+forward velocity of the robot, and the control input v2 is the angular velocity with the rotation.
+
+Figure 2 Planar twin-rotor system
+
+## [98] `jssc_2023_brockett2` (PDF p.4, L194)
+
+Remark 2.2 In the above twin-rotor system, the variables x1 and x2 can also be the
+velocities of the twin-rotor along the coordinate directions if the control inputs v1 and v2
+
+BROCKETT’S SECOND EXAMPLE: A FAS APPROACH TREATMENT 1793
+
+denote the forces acting on the two-wheel mobile robot. In this case, θ becomes the angular
+velocity.
+
+## [99] `jssc_2023_brockett2` (PDF p.5, L203)
+
+Remark 2.3 Parallel to the above models (2) and (3) for the two-wheel mobile robot and
+planar twin-rotor system, simplified models for certain ships and underwater vehicles can also
+be established.
+Form III:
+⎧ q˙1 = −F1 sin γ + F2 cos γ,
+⎪⎪⎨ q˙2 = F1 cos γ + F2 sin γ − g, (4)
+
+⎪⎪ γ˙ = F2,
+⎩
+where q1, q2 and γ are scalar state variables, g is a constant, and F1 and F2 are two scalar
+control variables.
+It is well-known that the model of a simplified PVTOL aircraft is given as follows[47–49]:
+
+⎧ q¨1 = −F1 sin γ + F2 cos γ,
+⎪⎪⎨ q¨2 = F1 cos γ + F2 sin γ − g, (5)
+
+⎪⎪ γ¨ = F2,
+⎩
+where q1 and q2 are the generalized positions of the aircraft, γ is the generalized direction angle,
+and g is the weight acceleration. The control inputs F1 and F2 are the forces applied at two
+located points. The above Form III system (4) is simply obtained by replacing the second-order
+derivatives in (5) with their corresponding first-order ones.
+Form IV:
+⎧ x˙1 = u1,
+⎪⎪⎨ x˙2 = u2, (6)
+
+⎪⎪ θ˙ = u1 cos θ + u2 sin θ,
+⎩
+where x1, x2 and θ are scalar state variables, and u1 and u2 are two scalar control variables.
+Form V:
+⎧ z˙1 = u1,
+⎪⎪⎨ z˙2 = u2, (7)
+
+⎪⎪ z˙3 = z2u1,
+⎩
+where zi, i = 1, 2, 3, are scalar state variables, and u1 and u2 are two scalar control variables.
+This form is also called the Brockett integrator or the nonholonomic integrator[14, 17].
+
+## [100] `jssc_2023_brockett2` (PDF p.5, L241)
+
+Remark 2.4 The above Brockett integrator form (7) has a generalized form which is
+termed as the chained form[45]. It has been shown that a type of general nonholonomic systems
+can be transformed into the chained form. Treatment of the more general chained form with
+FAS approach will be presented in a separate paper.
+
+## [101] `jssc_2023_brockett2` (PDF p.14, L681)
+
+Remark 3.2 For the system (7), it is well-known that it is not feedback linearizable by a
+smooth state feedback controller, and equivalently, it is not globally exponentially stabilizable
+by a smooth state feedback controller. While in this section, it is clearly shown that from which
+subset in the initial value space the trajectories of the closed-loop system can be made decay
+to the origin exponentially by a smooth state feedback controller.
+
+## [102] `jssc_2023_brockett2` (PDF p.14, L686)
+
+Remark 3.3 The above result clearly indicates that the designed controller is also ex-
+ponentially decaying to zero. Hence the controller is generally bounded. However, in many
+applications, the control is constrained within certain physical bounds, and finding a controller
+for the system satisfying the specified physical constrained conditions is in demand. Such a
+problem, especially in the case of nonlinear systems, has remained a very difficult one for the
+state-space approach, and today is becoming naturally a very challenging one for the FAS
+approach.
+
+## [103] `odfas_2026_part1` (PDF p.6, L624)
 
 Remark 2.1. In the case of r = 2, let us choose
 
@@ -1697,7 +1820,7 @@ Applying Proposition 2.1 and Lemma 2.1 to
 the above system (11), immediately produces the
 following result.
 
-## [95] `odfas_2026_part1` (PDF p.14, L1631)
+## [104] `odfas_2026_part1` (PDF p.14, L1631)
 
 Remark 4.1. We mention that this is a typical
 example system extensively examined in the lit-
@@ -1722,7 +1845,7 @@ x1 (t) ≠ 0, t ≥ 0, (94) where
 
 we can introduce the following transformation: z1 = z, z2 = ˙z,
 
-## [96] `odfas_2026_part1` (PDF p.15, L1681)
+## [105] `odfas_2026_part1` (PDF p.15, L1681)
 
 Remark 4.2. By now we can give a reason to 1 e−γt + γet et − e−γt z10
 explain why the example system (93) is so tough. = γ + 1 [ (γet − γe−γt) et + γe−γt ] [ z20 ].
@@ -1791,7 +1914,7 @@ where
 
 a (γ, t) = e−(γ+1)t + γ,
 
-## [97] `odfas_2026_part1` (PDF p.20, L2273)
+## [106] `odfas_2026_part1` (PDF p.20, L2273)
 
 Remark 5.1. The normalized model of the so-
 called disk inertia pendulum is (see [20], [21],
@@ -1825,7 +1948,167 @@ we can get the linear system (124) when x and
 θ(0∼1) are measured. Therefore, the problem can
 be solved exactly in the same way.
 
-## [98] `odfas_2026_part4` (PDF p.11, L722)
+## [107] `odfas_2026_part2` (PDF p.6, L606)
+
+Remark 2.1: Obviously, in the case of η = 1, the
+multi-orderOD-FAS(12)becomesasingle-orderOD-
+FAS treated in Duan (2026b). In general, a single-
+inputsystemcanonlyberepresentedbyasingle-order
+OD-FAS. Simple multi-input systems with only one
+controllabilityindexmaystillberepresentedbysingle-
+order OD-FASs, but more complex multi-input sys-
+temscanonlyberepresentedbymulti-orderOD-FASs.
+
+## [108] `odfas_2026_part2` (PDF p.6, L615)
+
+Remark 2.2: Thenon-singularityofthematrixB(·, t)
+is easily mistaken for an additional constraint to the
+system. While as a matter of fact, this reflects the con-
+trollability nature of the system. Many systems such
+as controllable linear ones, feedback linearisable ones,
+differentially flat ones, and nonlinear strict-feedback
+systems, can all be equivalently converted into FASs
+(see Duan, 2026a and the references therein). As we
+willseeinthesubsequentsections,manypracticalsys-
+tems with only part of the states measured can be
+converted into our OD-FASs.
+
+## [109] `odfas_2026_part2` (PDF p.7, L669)
+
+Remark 2.3: Please note that there are many func-
+tionssatisfyingtheabovecondition(18).Forinstance,
+in the scalar case, we may choose
+
+g(x1, x2, t) = −g0(x1, t) + g1(x2, t),
+
+and
+
+g(x1, x2, t) = −g0(x1, t)g2(x2, t),
+
+where g0(x, t) is a differentiable function satisfying
+∂
+g0(x, t) > 0, ∀ x ∈ ℝ, t ≥ 0,
+∂x
+such functions may be x + x3, ex, 2x + sin x, etc.;
+g1(x, t) is an arbitrary differentiable function, and
+g2(x, t) is any positive differentiable function.
+
+## [110] `odfas_2026_part2` (PDF p.11, L1154)
+
+Remark 3.1: In the case of r = 1, let us choose
+
+La = −1, F0a = 2, F1a = 3.
+
+Following(56),weobtainadynamicaloutputfeedback
+controller as
+{︃
+ua = −5ya − 3za
+(57)
+zȧ = −6ya − 4za,
+
+which assigns the set of closed-loop eigenvalues
+{−1, −1, −2}.
+
+Similarly, for system (54), a dynamical stabilising
+output feedback controller can also be derived.
+
+## [111] `odfas_2026_part2` (PDF p.13, L1424)
+
+Remark 3.2: ThecoreadvantageoftheproposedOD-
+FAS models over state-space models is that they are
+a class of models extremely adequate and convenient
+for dealing with output feedback control of dynami-
+cal systems. For a system in state-space form, one can
+notgenerallytellifitsoutputfeedbackcontrolproblem
+canbesolvedunlessitpossessesveryspecialstructure,
+e.g.thestrict-feedbackstructure.However,onceasys-
+temisconvertedintoanOD-FAS,verylikelyitsoutput
+feedback control problem can be easily solved.
+
+## [112] `odfas_2026_part2` (PDF p.18, L1912)
+
+Remark 4.1: When k3(ξ3) = k3 is constant, the con-
+sideredmass-springsystem(88)isalinearone,whose
+output control can indeed be realised via the well-
+known state-space approach. However, as illustrated
+by the above treatment, we must confess that the pro-
+vided FAS approach is indeed much more simple, and
+can provide an explicit analytical solution for the con-
+troller.
+
+## [113] `odfas_2026_part2` (PDF p.18, L1921)
+
+Remark 4.2: We point out that the problem is also
+solvable when the constant k1 is replaced with a non-
+linear function k1(ξ1) provided that the variable ξ̇1 is
+also a measured variable. In this case, the derivation
+process of the OD-FAS inevitably involves the term
+d2
+dt2 (k1(ξ1)ξ1). Since
+
+d2
+2 (k1(ξ1)ξ1)
+dt
+[︃ (︃ )︃ ]︃
+∂ ∂
+= k1(ξ1)ξ̇1 ξ̇1 ξ̇1
+∂ξ1 ∂ξ1
+(︃ )︃
+∂
++ 2 k1(ξ1)ξ̇1 ξ̇1 + k1(ξ1)ξ¨1
+∂ξ1
+[︃ (︃ )︃ ]︃
+∂ ∂
+= k1(ξ1)ξ̇1 ξ̇1 ξ̇1
+∂ξ1 ∂ξ1
+(︃ )︃
+∂
++ 2 k1(ξ1)ξ̇1 ξ̇1
+∂ξ1
+
++ k1(ξ1)[k2(ξ2 − ξ1) − d1ξ̇1 − k1(ξ1)ξ1],
+
+whichisknownwhenξ̇1isknown,thistermcaninfact
+be incorporated in the known function fyb(y). We also
+pointoutthattheproblemisalsosolvablewiththepro-
+posed FAS approach when the constants di and ki, i =
+1, 2, 3, are extended to three-dimensional matrices.
+
+## [114] `odfas_2026_part2` (PDF p.18, L1957)
+
+Remark 4.3: It is seen from the above sections that
+once a system is converted into an OD-FAS, very
+likely its output feedback control problem can be eas-
+ilysolved.Inthissense,OD-FASrepresentsacriterion
+for output feedback control of a dynamical system.
+
+ThisgivesthecoreadvantageoftheproposedOD-FAS
+models over state-space models. However, for the fol-
+lowing very simple output-dependent time-invariant
+state-space model
+{︃
+ẋ = f (y) + Bu
+y = Cx,
+
+where x ∈ ℝn, u ∈ ℝr, y ∈ ℝm, f (y) is a differentiable
+function, and B and C are constant matrices of appro-
+priate dimensions with
+
+rankB = r < n, rankC = m < n,
+
+the output feedback problem is generally not solvable
+inthestate-spacearchitecture(treatmentwiththeFAS
+approachwillbetackledelsewhere).Asamatteroffact,
+forasysteminstate-spaceform,onecannotgenerally
+tellifitsoutputfeedbackcontrolproblemcanbesolved
+unless it is either a very specific and relatively easy
+problem or possesses some very special structure. It is
+well-known that the state feedback control of a strict-
+feedbacksystemcanbesystematicallysolved,yetthere
+doesnotexistacriterionforitsoutputfeedbackcontrol
+problem unless it possesses a special output equation.
+
+## [115] `odfas_2026_part4` (PDF p.11, L722)
 
 Remark 2.1. By imposing Assumption A0, we assume that system (2.3) is a global OD-FAS,
 
@@ -1833,7 +2116,7 @@ which can be more easily treated. Treatment of OD-subFASs and substabilization c
 
 first three parts of this series of papers, namely, Duan (2026b,0,0).
 
-## [99] `odfas_2026_part4` (PDF p.11, L728)
+## [116] `odfas_2026_part4` (PDF p.11, L728)
 
 Remark 2.2. Assumption A1 assumes M (ϕ) to be nonsingular. In this case we actually can
 
@@ -1862,7 +2145,7 @@ The purpose of the paper is to solve the output feedback stabilization and signa
 
 OD-FAS (2.4), or, equivalently, OD-FAS (2.5), with the output being only the position or the velocity.
 
-## [100] `odfas_2026_part4` (PDF p.16, L982)
+## [117] `odfas_2026_part4` (PDF p.16, L982)
 
 Remark 4.1. Assumption Aϕ1 seems too restrictive. On the one hand, we mention that in certain
 
@@ -1878,7 +2161,7 @@ to the following one:
 
 Assumption Aϕ2 ϕ(0∼1)(t) , t ≥ 0, is available (measurable);
 
-## [101] `odfas_2026_part4` (PDF p.22, L1327)
+## [118] `odfas_2026_part4` (PDF p.22, L1327)
 
 Remark 4.2. It is important to point out the following two facts:
 
@@ -1894,7 +2177,7 @@ of diffeomorphism (4.32), it is easily observed that GUA stabilization of the co
 
 also implies the GUA stabilization of the original system (4.30).
 
-## [102] `odfas_2026_part4` (PDF p.50, L2861)
+## [119] `odfas_2026_part4` (PDF p.50, L2861)
 
 Remark 7.1. Section 4 and this section treat systems with the same state equation, but with
 
@@ -1916,13 +2199,13 @@ error equation, but the case of position feedback needs the observation error to
 
 system whose stability requires an extra assumption, namely, Assumption Ap2.
 
-## [103] `odfas_2026_part4` (PDF p.50, L2881)
+## [120] `odfas_2026_part4` (PDF p.50, L2881)
 
 Remark 7.2. Similar to the treatment in Subsection 5.4, the output feedback tracking control of
 
 system (7.1) with disturbance rejection can be also solved under certain conditions.
 
-## [104] `odfas_2026_part4` (PDF p.56, L3192)
+## [121] `odfas_2026_part4` (PDF p.56, L3192)
 
 Remark 8.1. Let us mention that once x(0∼1)(t) is obtained through the designed control system,
 
@@ -1950,13 +2233,13 @@ The above first relation clearly implies
 lim ζ (t) = lim ζ† (t) − ζ∗(t) = 0. (8.31)
 t→+∞ t→+∞[ ]
 
-## [105] `odfas_2026_part4` (PDF p.60, L3413)
+## [122] `odfas_2026_part4` (PDF p.60, L3413)
 
 Remark 8.2. We mention that this decoupled design can not be generalized to the case that the
 
 disturbance is present because, in general, the disturbance model does not possess a decoupled form.
 
-## [106] `scis_2022_discdelay1` (PDF p.12, L791)
+## [123] `scis_2022_discdelay1` (PDF p.12, L791)
 
 Remark 1. For the more general non-affine time-delay FAS (37), a result similar to Theorem 1 still
 holds. The controller can be obtained using the differential homeomorphism property of the mapping
@@ -1981,7 +2264,7 @@ u (k) = + v (k) ,
 0∼̟η−1 x
 and the same closed-loop system as in (47) is obtained.
 
-## [107] `scis_2022_discdelay1` (PDF p.13, L815)
+## [124] `scis_2022_discdelay1` (PDF p.13, L815)
 
 Remark 2. The design given in Theorem 1 is a decoupled one, and u∗(k) given in the controller (46)
 is in fact a decentralized one. This is adequate to show the advantage of the FAS approach. However, a
@@ -1994,7 +2277,7 @@ where K ∈ ℝr×κ with
 is a feedback gain. For details, one can refer to the coupled design given in [26] for the continuous-time
 case.
 
-## [108] `scis_2022_discdelay1` (PDF p.13, L825)
+## [125] `scis_2022_discdelay1` (PDF p.13, L825)
 
 Remark 3. Another aspect associated with the control design of a discrete-time delay FAS is the
 complete parameterization of the designs. Since constant linear closed-loop systems are obtained, as done
@@ -2002,7 +2285,7 @@ in the continuous-time case, complete parametric expressions for the feedback ga
 well as the closed-loop systems can be established, which provide all the design degrees of freedom to be
 used for further improving the system performance.
 
-## [109] `scis_2022_discdelay1` (PDF p.16, L1047)
+## [126] `scis_2022_discdelay1` (PDF p.16, L1047)
 
 Remark 4. Clearly, the matrix A0∼̟−1, or the series of matrices [Ap]0∼̟p−1 , p = 1, 2, . . . , η, should
 be chosen such that the state-space systems in (51) are asymptotically stable. Noting that
@@ -2015,7 +2298,7 @@ case).
 
 Duan G R Sci China Inf Sci August 2022 Vol. 65 182201:17
 
-## [110] `scis_2023_delay1` (PDF p.7, L491)
+## [127] `scis_2023_delay1` (PDF p.7, L491)
 
 Remark 1. It is clearly seen from the above discussion that, in order to control the FAS (26), it
 suffices only to control the standard FAS (30). However, such a fact fails for a sub-FAS, in which the full
@@ -2025,7 +2308,7 @@ for controller design.
 
 Duan G R Sci China Inf Sci January 2023 Vol. 66 112201:8
 
-## [111] `scis_2023_delay1` (PDF p.17, L1079)
+## [128] `scis_2023_delay1` (PDF p.17, L1079)
 
 Remark 2. Particularly, if we choose in the above controllers (90) and (93)
 
@@ -2048,11 +2331,11 @@ vη
 For a systematic parametric method to solve the controller parameter matrix A such that the closed-loop
 linear system possesses a desired eigenstructure, please refer to [49].
 
-## [112] `scis_2023_delay1` (PDF p.17, L1099)
+## [129] `scis_2023_delay1` (PDF p.17, L1099)
 
 Remark 3. Let
 
-## [113] `scis_2023_delay1` (PDF p.20, L1294)
+## [130] `scis_2023_delay1` (PDF p.20, L1294)
 
 Remark 4. With this definition, the following is obvious:
 (1) all dynamical control systems, not only those in state-space representations, possess the concepts
@@ -2066,7 +2349,7 @@ It is well-known that a stabilizable linear system can always be decomposed into
 system and an uncontrollable subsystem, but with the uncontrollable one stable. Inspired by such a fact,
 we can now introduce the following definition.
 
-## [114] `scis_2023_delay2` (PDF p.7, L432)
+## [131] `scis_2023_delay2` (PDF p.7, L432)
 
 Remark 1. For an FAS with state delays only, that is, the case of h = 0, we can define the new control
 under Assumption A1:
@@ -2086,11 +2369,11 @@ x(n)(t) = f x(0∼n−1)(t − τj (t)) |j=1∼ζ, t + ˜u (t − h) . (27)
 However, we point out that this may be not realizable when h > 0 since future state information may
 have been used in the transformations (25) and (26).
 
-## [115] `scis_2023_delay2` (PDF p.8, L503)
+## [132] `scis_2023_delay2` (PDF p.8, L503)
 
 Remark 2. In the case of h = 0, we can introduce the following new control vector for FAS (28) under
 
-## [116] `scis_2023_delay2` (PDF p.10, L659)
+## [133] `scis_2023_delay2` (PDF p.10, L659)
 
 Remark 3. For the single-order non-affine FAS (23), a result similar to Lemma 1 still holds. As a
 matter of fact, for the FAS (23), the predictor (46) is clearly replaced with the following one:
@@ -2100,7 +2383,7 @@ Z˙(s) = Φ (00∼n−1) Z (s) + Bcf (Z (s − τj (s + t)) |j=1∼ζ, s + t)
 
 with the same initial value condition (49).
 
-## [117] `scis_2023_delay2` (PDF p.10, L666)
+## [134] `scis_2023_delay2` (PDF p.10, L666)
 
 Remark 4. Prediction of future states is a core procedure in the control of a system with input delays.
 The approach provided in this subsection is a general one but may be subject to certain problems:
@@ -2111,7 +2394,7 @@ may reduce the control precision, and on the other side may even cause instabili
 (3) for systems with a very long input delay h, the open-loop stability is also needed in order that the
 designed predictor produces reasonable large prediction values.
 
-## [118] `scis_2023_delay2` (PDF p.11, L732)
+## [135] `scis_2023_delay2` (PDF p.11, L732)
 
 Remark 5. For the single-order non-affine FAS (23), a result similar to Theorem 1 still holds. In this
 case, the controller can be obtained using the predictor (46) and the differential homeomorphism property
@@ -2127,7 +2410,7 @@ Z (θ) = x(0∼n−1)(θ + t), θ ∈ [−τ (t) , 0] ,
 
 and eventually, the same closed-loop linear system as (57) is resulted in.
 
-## [119] `scis_2023_delay2` (PDF p.11, L745)
+## [136] `scis_2023_delay2` (PDF p.11, L745)
 
 Remark 6. Let
 0 I
@@ -2151,7 +2434,7 @@ We point out that specific parametric eigenstructure assignment designs have bee
 give the general expressions of the gain matrix, and provide all the degrees of freedom in the designs.
 The full degrees of freedom can be further utilized to achieve additional system performance.
 
-## [120] `scis_2024_chained1` (PDF p.6, L386)
+## [137] `scis_2024_chained1` (PDF p.6, L386)
 
 Remark 1. An important development in the generalization of the chained form systems was made in
 2000 by Jiang [50], in which the robust stabilization of the following closely related model was considered
@@ -2169,7 +2452,7 @@ satisfying certain conditions. We point out that similar uncertainties can also 
 (6), and the corresponding problem of robust stabilization can be also solved with the proposed FAS
 approach (see [37,39,51]).
 
-## [121] `scis_2024_chained1` (PDF p.9, L607)
+## [138] `scis_2024_chained1` (PDF p.9, L607)
 
 Remark 2. Once a state feedback controller u = u (x0, x1∼n, t) to the above problem is found, a state
 feedback controller for system (6) is obtained, under x0 (0) ≠ 0, as
@@ -2185,7 +2468,7 @@ To conclude this subsection, let us finally point out that the requirement of x0
 restriction. Anyhow, to get rid of such a restriction, the idea of [22] can be adopted, and eventually a
 time-varying continuous state feedback controller can be designed.
 
-## [122] `scis_2024_chained1` (PDF p.11, L693)
+## [139] `scis_2024_chained1` (PDF p.11, L693)
 
 Remark 3. Due to (25), the transformation (32) can be rewritten as
 
@@ -2199,14 +2482,14 @@ a stabilizing controller for system (33) is designed.
 Corresponding to Assumption A2 on the series of functions ψi (x0, xi+1∼n, t) , i = 1, 2, . . . , n − 1, we
 have the following assumption on the functions hi (x0, z1∼i, t) , i = 1, 2, . . ., n − 1.
 
-## [123] `scis_2024_chained1` (PDF p.11, L711)
+## [140] `scis_2024_chained1` (PDF p.11, L711)
 
 Remark 4. When ϕi (·) and ψi (·) , i = 1, 2, . . . , n−1 are absent, the transformed system (39) is a time-
 invariant linear controllable system, based on which the control u can then be easily designed as done
 in [12]. However, when these functions are indeed present, the linear system design approach proposed
 in [12] is no longer valid since the corresponding system (39) is no longer a constant linear one.
 
-## [124] `scis_2024_chained1` (PDF p.14, L907)
+## [141] `scis_2024_chained1` (PDF p.14, L907)
 
 Remark 5. Since the stabilizing controller (59) is designed via the FAS model (51), it technically
 depends on the term z(0∼n−1). This often gives the reader the wrong impression that the controller is
@@ -2221,7 +2504,7 @@ transformation (50). We do not really need to measure these high-order derivativ
 practically, but instead, we use the measured state information z1∼n of the original system (33).
 In Section 5, let us examine an important special case.
 
-## [125] `scis_2024_chained1` (PDF p.16, L999)
+## [142] `scis_2024_chained1` (PDF p.16, L999)
 
 Remark 6. Once z and ˙z are obtained, in view of (69), the variables z1 and z2 can be immediately
 given by
@@ -2235,7 +2518,7 @@ g (x0, z1, t) = [β + ϕ (x0, x2, t)] z1 → 0,
 
 from (73) we clearly have limt→∞ z1∼2 = 0.
 
-## [126] `scis_2024_chained1` (PDF p.20, L1263)
+## [143] `scis_2024_chained1` (PDF p.20, L1263)
 
 Remark 7. In this section, we have given, for the case of n = 2, an explicit solution to the stabilizing
 controller for the original system (6). However, to derive an explicit solution for a larger n is, although
@@ -2243,7 +2526,7 @@ theoretically feasible, practically very difficult. The main point is, for the c
 use the general solution, that is, the implicit solution given by (59), with variables z1(0∼n−1) and z1∼n
 being produced by the transformations (50) and (32), respectively.
 
-## [127] `scis_2024_chained2` (PDF p.4, L274)
+## [144] `scis_2024_chained2` (PDF p.4, L274)
 
 Remark 1. In [1], several extensions of the above model (1) have also been given. These include the
 locally normal systems, sub-normal systems, the multivariable cases, and the time-delay cases. The time-
@@ -2265,7 +2548,7 @@ consideration).
 
 Duan G-R Sci China Inf Sci March 2024, Vol. 67, Iss. 3, 132201:5
 
-## [128] `scis_2024_chained2` (PDF p.5, L328)
+## [145] `scis_2024_chained2` (PDF p.5, L328)
 
 Remark 2. The above treatment also has the ability to decouple any constant disturbances in the first
 subsystem (8). Specifically, when the subsystem (8) is replaced with
@@ -2276,7 +2559,7 @@ where d is a constant disturbance, after differentiating, the same system (10) i
 the above controller (12), any constant disturbance d in the subsystem (14) is automatically decoupled.
 Regarding the response of the above system (13), we have the following result [44].
 
-## [129] `scis_2024_chained2` (PDF p.11, L693)
+## [146] `scis_2024_chained2` (PDF p.11, L693)
 
 Remark 3. As pointed out in [1], the above Problem 2 can be indeed solved by applying the well-
 known backstepping technique. However, as it is well-known, the method of backstepping suffers from the
@@ -2287,7 +2570,7 @@ with the FAS approach given in Section 5, the method of backstepping may have tw
 stabilizability of system (27) requires UGE stabilization of SFS (54);
 (2) It does not always provide a linear closed-loop system like the FAS approach does.
 
-## [130] `scis_2024_chained2` (PDF p.11, L701)
+## [147] `scis_2024_chained2` (PDF p.11, L701)
 
 Remark 4. Please note that, although η0 is an initial value of system (10), relative to the original
 Problem 1, it is only an external design parameter. Hence it can be allowed to be set to any desired
@@ -2298,7 +2581,37 @@ system.
 Owing to the above Remark 4, let us now also give a treatment for the case of η0 ≠ −βζ0, which will
 produce a continuous controller.
 
-## [131] `tcyb_2023_robustdelay` (PDF p.3, L404)
+## [148] `scis_2025_chained3` (PDF p.9, L556)
+
+Remark 1. Note that, when d is a constant disturbance, after differentiating, the first subsystem (30)
+becomes system (32) which is independent on d. Since the controller u0 is designed based on (32) instead
+of (30), all subsequent treatments have nothing to do with the constant disturbance d. Hence, with the
+above controller (34), any constant disturbance d in the subsystem (30) is automatically decoupled.
+Introduce the following assumption.
+
+## [149] `scis_2025_chained3` (PDF p.10, L657)
+
+Remark 2. Once a solution to above Problem 1, that is, a state feedback controller u = u(α, β, ζ0, η0,
+x1∼n, t) for system (41)–(43), is found, a state feedback controller for the original system (9) is obtained
+as
+u0 = −a0 0 tx0 (s) ds − a1 (x0 (t) − x0 (0)) + ˙x0 (0) ,
+{ ∫ (45)
+u = u (α, β, ζ0, η0, x1∼n, t) .
+
+We will soon find that, when the functions Φ˜i (·) and Ψ˜i (·) , i = 1, 2, . . ., n − 1, are not time-varying, the
+control u (α, β, ζ0, η0, x1∼n, t) is also not time-varying. In this case, the above controller (45) turns out
+to be a time-invariant state feedback controller for system (9).
+
+## [150] `scis_2025_chained3` (PDF p.13, L826)
+
+Remark 3. Please note that, although η0 is an initial value of system (32), relative to the original
+Problem 1, it is only an external design parameter. Hence it can be allowed to be set to any desired
+value. From this point of view, choosing η0 = −βζ0 may just sufficiently and perfectly solve the problem
+in the above sense of converting the problem into Problem 3. However, as an initial value of system (32),
+after all, η0 may affect the response of system (32), that is, x0 (t) and u0(t), and hence that of the whole
+system.
+
+## [151] `tcyb_2023_robustdelay` (PDF p.3, L404)
 
 Remark 1: The above FAS model (6) or (7) might be
 easily mistaken to be very special due to the full-actuation
@@ -2367,7 +2680,7 @@ isolated unforced one.
 The stability of the subsystem (10), when it is nonlinear,
 is complicated. Note that a system in the form of (10) can
 
-## [132] `tcyb_2023_robustdelay` (PDF p.6, L769)
+## [152] `tcyb_2023_robustdelay` (PDF p.6, L769)
 
 Remark 2: In the special case that the functions f˜(·) and
 B˜(·) are independent on (zk(0∼γk−1)|k=1∼ξ, ζZ), instead of the
@@ -2385,7 +2698,7 @@ u = α(x(0∼n−1), ζx, ζu, t). (33)
 
 These two cases will be treated in Section VI-A.
 
-## [133] `tcyb_2023_robustdelay` (PDF p.7, L878)
+## [153] `tcyb_2023_robustdelay` (PDF p.7, L878)
 
 Remark 3: It is very important to point out that, in the case
 that the delay term of the control, namely, ζu, is present, the
@@ -2454,7 +2767,7 @@ where
 The closed-loop system (48) can be written in the following
 state-space form:
 
-## [134] `tcyb_2023_robustdelay` (PDF p.8, L980)
+## [154] `tcyb_2023_robustdelay` (PDF p.8, L980)
 
 Remark 4: The above design is called the decoupled design
 since η number of decoupled subsystems (with respect to the
@@ -2465,7 +2778,7 @@ be extended to the coupled design case, in which a whole cou-
 pled closed-loop system with an external input zk(0∼γk−1)|k=1∼ξ
 is derived (see [35], [41]).
 
-## [135] `tcyb_2023_robustdelay` (PDF p.8, L988)
+## [155] `tcyb_2023_robustdelay` (PDF p.8, L988)
 
 Remark 5: In [26] and [30], [31], [32], [33], [34], nonlin-
 ear FASs in nonaffine form are also introduced, and they are
@@ -2478,7 +2791,7 @@ also be substituted by a general nonaffine FAS, and the cor-
 responding robust stabilization problem can be also similarly
 treated.
 
-## [136] `tcyb_2023_robustdelay` (PDF p.8, L1050)
+## [156] `tcyb_2023_robustdelay` (PDF p.8, L1050)
 
 Remark 6: The function Δf(·) in system (50) may be also
 looked upon as a known function satisfying condition (51). In
@@ -2503,7 +2816,7 @@ Assumptions B2 and B3, and the function h(z0∼m−1) satis-
 fies Assumption B4. In addition, ΔB(·) is a perturbed matrix
 satisfying the following two assumptions.
 
-## [137] `tcyb_2023_subfas` (PDF p.6, L678)
+## [157] `tcyb_2023_subfas` (PDF p.6, L678)
 
 Remark 1: In many cases, the matrix B(·, t) involves only a
 few of the elements in the generalized state vector x(0∼n−1)(t−
@@ -2517,7 +2830,7 @@ a single element of x(0∼n−1)(t −σj(t) )|j=1∼γ or xk(0∼μk−1)(t −
 σj(t))|k=1∼η,j=1∼γ , the matrix T becomes only a row vector,
 and now the singular set is a subset in the real axis.
 
-## [138] `tcyb_2023_subfas` (PDF p.9, L1157)
+## [158] `tcyb_2023_subfas` (PDF p.9, L1157)
 
 Remark 2: Let us mention a method for solving the param-
 eters Ψi, i = 1 ∼ l. Without loss of generality, let us only
@@ -2550,7 +2863,7 @@ Substabilization may not be stabilization in the Lyapunov
 sense, but it has a close relation with stabilization in the
 Lyapunov sense.
 
-## [139] `tcyb_2024_overview` (PDF p.4, L433)
+## [159] `tcyb_2024_overview` (PDF p.4, L433)
 
 Remark 1: The original physical FASs in the field of
 mechanical engineering are only a very small category. With
@@ -2608,7 +2921,7 @@ we will soon find out in subsequent sections, do have many
 advantages over the state-space ones, especially in the process
 of realizing controller designs.
 
-## [140] `tcyb_2024_overview` (PDF p.5, L571)
+## [160] `tcyb_2024_overview` (PDF p.5, L571)
 
 Remark 2: Some readers who are not yet familiar with the
 FAS approach might be mistaken that the FAS approach is
@@ -2676,7 +2989,7 @@ which suggests
 
 y = yk(0∼µk−1)|k=1∼η, (20)
 
-## [141] `tcyb_2024_overview` (PDF p.9, L1110)
+## [161] `tcyb_2024_overview` (PDF p.9, L1110)
 
 Remark 3: With the above preparations, it is easily under-
 stood that control of a continuous-time system, whether linear
@@ -2687,7 +3000,7 @@ case of discrete-time systems (see [14]), a similar conclusion
 can be obtained, in which the matrix F needs to be Schur
 instead of Hurwitz.
 
-## [142] `tcyb_2024_overview` (PDF p.9, L1118)
+## [162] `tcyb_2024_overview` (PDF p.9, L1118)
 
 Remark 4: It is often seen that one class of problems is
 converted into another one in science research, but the above
@@ -2756,7 +3069,7 @@ F. Finite-time sub-stabilization
 A great advantage of the FAS approach is that the full-
 actuation property of the FAS model allows us to cancel any
 
-## [143] `tcyb_2024_overview` (PDF p.12, L1452)
+## [163] `tcyb_2024_overview` (PDF p.12, L1452)
 
 Remark 5: For convenience, in this section, we have only
 treated the case that the considered deterministic system (1)
@@ -2766,7 +3079,7 @@ considered deterministic system (1) and the uncertain system
 (71) are sub-FASs. What is more, it is the latter case that really
 reveals the advantage and power of the FAS approach.
 
-## [144] `tcyb_2024_overview` (PDF p.17, L2001)
+## [164] `tcyb_2024_overview` (PDF p.17, L2001)
 
 Remark 6: In addition, there have been numerous researches
 on robust control based on the FAS approach. These involve
@@ -2780,7 +3093,7 @@ stabilization of uncertain high-order FASs with actuator faults
 control [48], [74], [75], [78], and robust control of aircraft and
 quadrotors [127]–[129].
 
-## [145] `tcyb_2024_overview` (PDF p.18, L2198)
+## [165] `tcyb_2024_overview` (PDF p.18, L2198)
 
 Remark 7: Except for the above several main categories, the
 FAS approach has also been applied in many other practical
@@ -2794,7 +3107,7 @@ systems in Rijke tube [49], [71], [168], civil turbofan engines
 [170], cold strip rolling mill systems [171], overhead cranes
 [172], and so on.
 
-## [146] `ucfas_2025_part1` (PDF p.5, L480)
+## [166] `ucfas_2025_part1` (PDF p.5, L480)
 
 Remark 3.1: Paying attention to only introducing the
 basic idea and procedure, in this series of papers, we
@@ -2811,7 +3124,7 @@ these basic FASs, robust and adaptive control as well as
 disturbance rejection control have been investigated in
 Duan (2021b, 2021d, 2021e, 2021g).
 
-## [147] `ucfas_2025_part1` (PDF p.6, L574)
+## [167] `ucfas_2025_part1` (PDF p.6, L574)
 
 Remark 4.1: Let us point out that often a strongly
 UC-FAS can be converted into a weakly UC-FAS by
@@ -2819,7 +3132,7 @@ certain control transformations. Examples support-
 ing this point can be found in the Section 4.3.1 of
 Duan (2025a), and the Section 4.1 of Duan (2025b).
 
-## [148] `ucfas_2025_part1` (PDF p.9, L959)
+## [168] `ucfas_2025_part1` (PDF p.9, L959)
 
 Remark 5.1: Examples 4.1 and 5.1 indicate that there
 indeed exist systems which cannot be converted into
@@ -2835,7 +3148,7 @@ forms the system into a UC-FAS. Unfortunately, the
 process of finding the homeomorphism is often case-
 dependent, as demonstrated by these two examples.
 
-## [149] `ucfas_2025_part1` (PDF p.10, L1094)
+## [169] `ucfas_2025_part1` (PDF p.10, L1094)
 
 Remark 6.1: The commonly required typical condi-
 tions (69) and (70) can be actually broken by the FAS
@@ -2847,7 +3160,7 @@ as defined in Duan (2024a). The conclusions in this
 subsection can be generalised to the case of sub-SFSs
 (Duan, 2024b).
 
-## [150] `ucfas_2025_part1` (PDF p.10, L1104)
+## [170] `ucfas_2025_part1` (PDF p.10, L1104)
 
 Remark 6.2: In Duan (2021a), the SFSs have been
 generalised into second-order SFSs and mixed-order
@@ -2866,7 +3179,7 @@ first-order SFS are doubled. Now, corresponding to
 the UC-SFSs in first-order form, we can also propose
 second-order and mixed-order UC-SFSs.
 
-## [151] `ucfas_2025_part1` (PDF p.11, L1123)
+## [171] `ucfas_2025_part1` (PDF p.11, L1123)
 
 Remark 6.3: In the state-space approach, SFSs are
 coped with the well-known backstepping designs. As
@@ -2884,7 +3197,7 @@ achieved. In other words, within the FAS approach,
 SFSs are actually shown to belong to the category of
 feedback linearisable systems.
 
-## [152] `ucfas_2025_part2` (PDF p.6, L551)
+## [172] `ucfas_2025_part2` (PDF p.6, L551)
 
 Remark 2.1: It is seen that sub-stabilisation requires
 the system initial values to be chosen from the RoEA.
@@ -2912,7 +3225,7 @@ problem in which all trajectories from a neighbor-
 hood of the origin must be transferred to a unique
 point, the origin.
 
-## [153] `ucfas_2025_part2` (PDF p.6, L577)
+## [173] `ucfas_2025_part2` (PDF p.6, L577)
 
 Remark 2.2: The type of closed-loop stability resulted
 in by the above sub-stabilisation is called sub-stability
@@ -2951,7 +3264,7 @@ Duan (2025b), the presented approach can also be gen-
 eralised to time-delay systems (Duan, 2022b, 2022c,
 2023b, 2023c, 2023d).
 
-## [154] `ucfas_2025_part2` (PDF p.15, L1456)
+## [174] `ucfas_2025_part2` (PDF p.15, L1456)
 
 Remark 4.1: Let us point out that all these five models
 with application backgrounds can also be generalised
@@ -2959,7 +3272,7 @@ by adding function ϕ(·) to a certain equation. Fur-
 thermore, it can also be proven that these generalised
 models are also equivalent to system S1.
 
-## [155] `ucfas_2025_part3` (PDF p.11, L1097)
+## [175] `ucfas_2025_part3` (PDF p.11, L1097)
 
 Remark 5.1: It might be mistaken that the RoEA Rinpv
 is a bit small and that may reduce the effect of this

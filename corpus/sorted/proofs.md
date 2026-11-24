@@ -1,4 +1,4 @@
-# Sorted Proof Corpus Across 32 Duan First-Author Papers (117 items)
+# Sorted Proof Corpus Across 32 Duan First-Author Papers (126 items)
 
 ## [1] `aaas_2024_subsfs` (PDF p.4, L462) | Types: `Direct-Algebraic/Citation` | Closer: `证毕。`
 
@@ -2353,7 +2353,144 @@ z (k) = ( ) = ( ) ,
 which is exactly in the form of (38). The proof is thus finished.
 We use an example to illustrate the above theorem.
 
-## [44] `odfas_2026_part1` (PDF p.5, L585) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [44] `jssc_2023_brockett2` (PDF p.6, L256) | Types: `Direct-Substitution, Equivalence/Homeomorphism` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+
+Proof In the following, a proof of the above theorem is given by showing
+
+Form 0
+⇕
+Form I ⇐⇒ Form V ⇐⇒ Form III
+⇕ ⇕
+Form II Form IV
+
+a) Equivalence between Forms I and II
+Forms I and II are easily shown to be equivalent to each other under the following control
+variable transformation
+⎧ v = v1 + v2,
+⎨
+w = v1 − v2.
+⎩
+b) Equivalence between Forms I and V
+This is a well-known fact (e.g., [41]). The equivalence can be established under the following
+state transformation
+⎧ z1 = θ,
+⎪⎪⎨ z2 = x1 cos θ + x2 sin θ, (8)
+
+⎪⎪ z3 = x1 sin θ − x2 cos θ,
+⎩
+and the following control transformation
+
+⎧ u1 = w,
+⎨ (9)
+u2 = v − z3w.
+⎩
+
+c) Equivalence between Forms III and IV
+Clearly, under the following state transformation:
+
+⎧ x1 = q1,
+⎪⎪⎨ x2 = q2 + gt,
+
+⎪⎪ θ = γ,
+⎩
+
+BROCKETT’S SECOND EXAMPLE: A FAS APPROACH TREATMENT 1795
+
+model (4) is equivalent to
+⎧ x˙1 = −F1 sin θ + F2 cos θ,
+⎪⎪⎨ x˙2 = F1 cos θ + F2 sin θ, (10)
+
+⎪⎪ θ˙ = F2.
+⎩
+Further, applying the control transformation
+
+⎧ u1 = −F1 sin θ + F2 cos θ,
+⎨ (11)
+u2 = F1 cos θ + F2 sin θ,
+⎩
+proves the equivalence between (10) and Form IV system (6).
+
+d) Equivalence between Forms III and V
+Define
+⎡ − sin θ cos θ ⎤
+G (θ) = , (12)
+⎣ cos θ sin θ ⎦
+
+then the system (10) can be further equivalently written as
+
+⎧ ⎡ x˙1 ⎤ ⎡ F1 ⎤
+⎪ = G (θ) ,
+⎪⎪⎨ ⎣ x˙2 ⎦ ⎣ F2 ⎦ (13)
+
+⎪⎪⎪ θ˙ = F2.
+⎩
+Regarding the matrix G (θ) defined in (12), the following properties can be easily shown:
+
+det G (θ) = −1,
+G−1(θ) = G (θ) ,
+
+and
+⎡0 −1⎤
+GG˙ = θ. ˙
+⎣1 0⎦
+
+Due to these properties, we can introduce the following one-to-one transformation
+
+⎡y1⎤ ⎡x1⎤
+= G (θ) , (14)
+⎣y2⎦ ⎣x2⎦
+
+which gives
+
+⎡y˙1⎤ ⎡x1⎤ ⎡x˙1⎤
+= ˙G + G
+⎣y˙2⎦ ⎣x2⎦ ⎣x˙2⎦
+
+−1⎡y1⎤ ⎡F1⎤
+= GG˙ + GG
+⎣y2⎦ ⎣F2⎦
+
+## [45] `jssc_2023_brockett2` (PDF p.12, L577) | Types: `Multi-Conclusion` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+
+Proof Proof of Conclusion 1)
+Under given assumptions, the matrix Φ given by (36) also admits the following expression:
+
+⎡−α 0 ⎤ −1
+Φ = V V , (46)
+⎣ 0 −β⎦
+
+with
+⎡ 1 1 ⎤
+V = . (47)
+⎣−α −β⎦
+
+Therefore, the solution (37) to the system (35) can be given by
+
+⎡z1 (t)⎤ ⎡e−αt 0 ⎤ −1⎡x0⎤
+= V V . (48)
+⎣z˙1 (t)⎦ ⎣ 0 e−βt⎦ ⎣y0⎦
+
+Therefore,
+
+⎡e−αt 0 ⎤ −1⎡x0⎤
+z˙1 (t) = [−α −β] −βt V
+⎣ 0 e ⎦ ⎣y0⎦
+
+= 1 αe−αt − βe−βt y0 + e−αt − e−βt αβx0]
+α − β[ ( ) ( )
+
+= e−βt [(αe−(α−β)t − β)y0 +(e−(α−β)t − 1)αβx0], (49)
+α − β
+
+thus the singularity condition is equivalent to
+
+(αe−(α−β)t − β)y0 +(e−(α−β)t − 1)αβx0 = 0, (50)
+
+which can be written in the form of (40). The first conclusion is proven.
+
+BROCKETT’S SECOND EXAMPLE: A FAS APPROACH TREATMENT 1801
+
+## [46] `odfas_2026_part1` (PDF p.5, L585) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. Note that the closed-loop system is given
 by
@@ -2364,7 +2501,7 @@ z˙ z
 
 where
 
-## [45] `odfas_2026_part1` (PDF p.10, L1159) | Types: `Direct-Substitution` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [47] `odfas_2026_part1` (PDF p.10, L1159) | Types: `Direct-Substitution` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. Applying controller (58) to the time-
 varying linear system (57), produces the follow-
@@ -2387,7 +2524,7 @@ AE11( θ˙) = D( θ˙) − L − K1.
 
 Define a constant nonsingular matrix
 
-## [46] `odfas_2026_part1` (PDF p.11, L1300) | Types: `Equivalence/Homeomorphism` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [48] `odfas_2026_part1` (PDF p.11, L1300) | Types: `Equivalence/Homeomorphism` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. Let
 
@@ -2415,7 +2552,7 @@ The conclusion holds.
 Using the above diffeomorphism (68), we can
 derive the OD-FAS of system (65).
 
-## [47] `odfas_2026_part1` (PDF p.12, L1359) | Types: `Direct-Substitution, Equivalence/Homeomorphism` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [49] `odfas_2026_part1` (PDF p.12, L1359) | Types: `Direct-Substitution, Equivalence/Homeomorphism` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. From the last equation in (68), we can
 obtain k
@@ -2490,7 +2627,7 @@ zero uniformly exponentially. This means that
 controller (78) is also a GUE stabilizing con-
 troller for the original system (65).
 
-## [48] `odfas_2026_part1` (PDF p.18, L1953) | Types: `Multi-Conclusion` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [50] `odfas_2026_part1` (PDF p.18, L1953) | Types: `Multi-Conclusion` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. We need only to show the third conclu-
 sion since all the other conclusions have been
@@ -2560,7 +2697,7 @@ b1
 
 Thus the equations in (118) hold.
 
-## [49] `odfas_2026_part1` (PDF p.19, L2056) | Types: `Direct-Substitution` | Closer: `Thus the conclusion follows.`
+## [51] `odfas_2026_part1` (PDF p.19, L2056) | Types: `Direct-Substitution` | Closer: `Thus the conclusion follows.`
 
 Proof. Note that the closed-loop system is given
 by
@@ -2613,7 +2750,7 @@ Thus the conclusion follows.
 Based on the above, we now have the following
 result.
 
-## [50] `odfas_2026_part1` (PDF p.24, L2672) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [52] `odfas_2026_part1` (PDF p.24, L2672) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. It can be easily observed that system
 (141) is equivalent to
@@ -2623,11 +2760,11 @@ x(0∼1) = AE (t) x(0∼1), (144)
 
 where
 
-## [51] `odfas_2026_part1` (PDF p.25, L2752) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [53] `odfas_2026_part1` (PDF p.25, L2752) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 ### 9.1. Proof of Proposition 3.3
 
-## [52] `odfas_2026_part1` (PDF p.25, L2830) | Types: `Observer/Error-Dynamics` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [54] `odfas_2026_part1` (PDF p.25, L2830) | Types: `Observer/Error-Dynamics` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. Let us design a full-state observer for
 system (150) as
@@ -2682,7 +2819,7 @@ L1 1
 
 This gives (157).
 
-## [53] `odfas_2026_part1` (PDF p.26, L2972) | Types: `Direct-Substitution` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [55] `odfas_2026_part1` (PDF p.26, L2972) | Types: `Direct-Substitution` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 ### 9.2. Proof of Lemma 3.1
 
@@ -2733,7 +2870,274 @@ T = 0 Ir 0 .
 
 Then it can be verified that
 
-## [54] `odfas_2026_part4` (PDF p.13, L813) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [56] `odfas_2026_part2` (PDF p.9, L1025) | Types: `Direct-Algebraic/Citation` | Closer: `QED-symbol-only (□/▪)`
+
+Proof: Takingderivativeofthethirdequationin(39),
+and using the first two equations in (36), give
+
+x(4) = A1ξ¨1 + A2ξ¨2 + A3ξ¨3
+
+∑︂
+= A1f1(ξ1∼3) + A2f2(ξ1∼3) + A3 Aiξi
+i=1
+
++ [A1B1(ξ1∼3) + A2B2(ξ1∼3)]u
+
+= f3(ξ1∼3) + B3(ξ1∼3)u
+
+= f3(y) + B3(y)u, (47)
+
+where f3(y) and B3(y) are given by (42) and (43),
+respectively.
+Combining(47)withthefirstequationin(36),gives
+⎧ [︃ ]︃
+⎨ ξ¨1
+(4) = f (y) + B(y)u
+x (48)
+⎩
+y = ξ1∼3,
+
+where f (y) and B(y) are given by (41). Further, using
+the output transformation (44), we then get the OD-
+FAS (46).
+Finally, since
+[︃ ]︃
+B1(y)
+B(y) =
+A1B1(y) + A2B2(y)
+[︃ ]︃ [︃ ]︃
+Ir 0 B1(y)
+= ,
+A1 Ir A2B2(y)
+
+itfollowsfromcondition(37)thatB(y)isnon-singular.
+Therefore, OD-FAS (46) is a global one.
+■
+
+## [57] `odfas_2026_part2` (PDF p.11, L1260) | Types: `Direct-Substitution, Equivalence/Homeomorphism` | Closer: `QED-symbol-only (□/▪)`
+
+Proof: Thesecondequationin(63)isclearlyobtained
+by substituting the output transformation (44).
+Since the closed-loop system of the first subsystem
+is still in coordinate (ξ1, za), and remains unchanged
+under the new controller (63), it is still linear and
+with the set of closed-loop eigenvalues given by
+eig((F0a∼1)) ∪ eig(La).
+For the second subsystem, the closed-loop sys-
+tem in coordinate (x(0∼3), zb) is given by (A4)–(A6),
+which is linear with the set of closed-loop eigenvalues
+
+givenbyeig((F0b∼3)) ∪ eig(Lb).Sincethestatetrans-
+formation (39) is also linear, the closed-loop system
+in coordinate (ξ2(0∼1), ξ3(0∼1), zb) is also linear and is
+equivalent to (A4)–(A6). Hence, it possesses also the
+setofclosed-loopeigenvalueseig((F0b∼3)) ∪ eig(Lb).
+Therefore, the whole set of closed-loop eigenvalues is
+given by . The conclusion is proven.
+■
+
+Please note that the response (ξ(0∼1), ξ(0∼1)) of the
+2 3
+closed-loopsystemof(36)undercontroller(63)canbe
+easilygiventhroughdiffeomorphism(40)whenx(0∼3)
+is derived.
+
+## [58] `odfas_2026_part2` (PDF p.15, L1692) | Types: `Direct-Algebraic/Citation` | Closer: `QED-symbol-only (□/▪)`
+
+Proof: From the first equation in (88), we can obtain
+
+1
+ξ2 = (m1ξ¨1 + d1ξ̇1 + (k1 + k2)ξ1). (104)
+k2
+Using the last equation in (91), and with the help
+of (89) and (104), we have
+(︃ 2 )︃
+(4) 1 d k2
+x = − (k1 + k2) ξ¨1 + ξ¨2
+m1 m1 m1
+
+d1 d1 1 [︃(︃ d1 d2 )︃ d3 ]︃
++ 2(k1 + k2)ξ̇1 − 2k2ξ̇2 + − (k1 + k2) − 2 ẋ
+m m m1 m1 m2 m
+(︃ 2 )︃
+1 d1 k2 k2
+= 2 − (k1 + k2) + h1(ξ1∼3) + h2(ξ1∼2) + u1
+m1 m1 m1m2 m1m2
+
+× [k2ξ2 − (k1 + k2)ξ1 − d1ξ̇1] = −Gb1∼3x(1∼3) + fy b(y) + k2 u1, (105)
+m1m2
+k2d2 d1 d1
+− ξ̇2 + 2(k1 + k2)ξ̇1 − 2k2ξ̇2 where Gb is given by (101)–(103).
+m1m2 m1 m1 1∼3
+Next, combining (105) with the output equation
+k2
++ (h1(ξ1∼3) + u1) (98), gives the OD-FAS
+m1m2 ⎧
+1 (︃ d12 )︃ k2d2 ⎨ x(4) = −Gb1∼3x(1∼3) + fy b(y) + k2 u1
+= 2 − (k1 + k2) (−d1ξ̇1) − ξ̇2 m1m2 (106)
+m1 m1 m1m2 ⎩ yb = Cx(0∼3).
+d1 d1
++ 2(k1 + k2)ξ̇1 − 2k2ξ̇2 Finally, combining the last two equations in sys-
+m1 m1 tem (88) with the above system (106), we obtain
+
++ h2(ξ1∼2) + k2 (h1(ξ1∼3) + u1) ⎧ 1 a
+m1m2 ξ¨3 = − d3ξ̇3 + fy (y) + 1 u2
+[︃ 2 ]︃ ⎪⎪⎪⎪⎪⎨ m3 m3
+= d1 2(k1 + k2) − d1 ξ̇1 x(4) = −Gb1∼3x(1∼3) + fy b(y) + k2 u1 (107)
+m21 m1 m1m2
+(︃ )︃ ⎪⎪⎪⎪⎪⎩ ya = ξ3
+− k2 d1 + d2 ξ̇2 yb = Cx(0∼3),
+m1 m1 m2
+which can be rearranged into the form of (100).
+k2 k2
++ h1(ξ1∼3) + h2(ξ1∼2) + u1. ■
+m1m2 m1m2
+
+## [59] `odfas_2026_part2` (PDF p.22, L2394) | Types: `Multi-Conclusion` | Closer: `QED-symbol-only (□/▪)`
+
+Proof: Fromthethirdequationin(146),wecanobtain
+
+1
+(x¨ − c0 sin θ1) + sin 2θ1 = sin 2θ2.
+c11
+
+This immediately gives, in view of (144), Equation
+(148). Thus we further have (149). Further, due
+to (149), conditions (150) and (151) are obviously
+equivalent. Therefore, the first two conclusions hold.
+Next, from (149), we immediately have
+(︃ )︃
+1 1
+θ2 = arcsin φ(x,x ¨) . (154)
+2 c11
+
+Simultaneously, from the fourth equation in (146), we
+can obtain
+
+...
+x − ω(θ1,θ ̇1) = 2c11θ ̇2 cos 2θ2.
+
+From this, and Equation (149), we can obtain, under
+the condition (150) or (151), the following:
+
+...
+x − ω(θ1,θ ̇1)
+θ̇2 =
+2c11 cos 2θ2
+...
+x − ω(x,x ̇)
+=
+2c11 cos 2θ2
+...
+x − ω(x,x ̇)
+= √︂ . (155)
+2 c112 − φ2(x,x ¨)
+
+Combining (146), (154) and (155), gives the inverse
+(152). Conclusion 3 is proven.
+
+Finally, it is easily seen from the first two equations
+in (152) that
+
+lim θ(0∼1) = 0, (156)
+x(0∼3)→0 1
+
+and it follows from the third equation in (152) that
+
+lim θ2 = 0. (157)
+x(0∼3)→0
+
+Further noting from (144) that
+
+lim φ(x,x ¨) = 0,
+x(0∼3)→0
+
+we have
+
+1 1
+lim √︂ = .
+x(0∼3)→0 2 c2 − φ2x,x) 2c1
+11 ¨
+
+Therefore,inviewofthelastequationin(152),wealso
+have
+
+lim θ̇2 = 0. (158)
+x(0∼3)→0
+
+Combining (156), (157) and (158), gives (153).
+■
+
+Basedontheaboveresult,wecannowgivetheOD-
+FAS of system (143).
+
+## [60] `odfas_2026_part2` (PDF p.23, L2509) | Types: `Direct-Algebraic/Citation` | Closer: `QED-symbol-only (□/▪)`
+
+Proof: Differentiating the last equation in (146), and
+using (148)–(149), give
+
+x(4) = θ¨1(c0 cos θ1 − 2c11 cos 2θ1)
+
+− θ̇12(c0 sin θ1 − 4c11 sin 2θ1)
+
++ 2c11θ¨2 cos 2θ2 − 4c11θ̇22sin 2θ2
+
+= ¨x(c0 cos x − 2c11 cos 2x)
+
+−ẋ2(c0 sin x − 4c11 sin 2x)
+
+− 4c11θ̇22sin 2θ2
+
++ 2c11(ha(θ1∼3) + τ2) cos 2θ2
+
+= ¨x(c0 cos x − 2c11 cos 2x)
+
+−ẋ2(c0 sin x − 4c11 sin 2x)
+
+φ(x,x ¨) ... 2
+− √︂ [x − ω(x,x ̇)]
+c11 c112 − φ2(x,x ¨)
+√︂
++ 2 c112 − φ2(x,x ¨)ha(θ1∼3)
+√︂
++ 2 c112 − φ2(x,x ¨)τ2.
+
+This gives
+
+x(4) = fy(x(0∼3), θ2∼3) + b(x,x ¨)τ2, (163)
+
+where f (x(0∼3), θ2∼3) and b(x,x ¨) are given by (160)
+– (161).
+Combining the above equation with the third
+equation in (143), and adding the output equation
+(147), yield the output-dependent sub-FAS (159).
+It follows from (160) that b(x,x ¨) ≠ 0 is equivalent
+to
+
+φ2(x,x ¨) < c112.
+
+Thus, we can conclude that the set of feasibility of the
+system is given by (162).
+■
+
+## [61] `odfas_2026_part2` (PDF p.30, L3254) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+
+Proof: Inviewofthenotationsin(A7)and(A8),system(110)
+AE(2, 1) = 1 (−F0a + (F1a − d3Ir)L˜a), canbewritteninthefollowingstate-spaceform:
+m3 ⎧ [︃ ]︃
+1 a a 2 ⎨ q̇1∼4 = (G˜b0∼3)q1∼4 + 03r×r ub
+AE(3, 1) = (−F0 + F1L˜a) − ˜La. ⎩ Ir (A10)
+m3 yb = Cq1∼4.
+Let
+⎡ ⎤ Usingthenotationsin(A8),from(A10),wehave
+Ir 0 0
+T = ⎣ 0 Ir 0 ⎦ . q̇13 = q24, (A11)
+−L˜a −Ir Ir [︃ ]︃
+Then,itcanbeeasilyverifiedthat q̇24 = − G˜b − G˜b q24
+
+[︃ ]︃ [︃ ]︃ (︃ [︃ ]︃ )︃
+
+## [62] `odfas_2026_part4` (PDF p.13, L813) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. Since Rs (t) ∈ ℝn×n is uniformly bounded and uniformly positive definite, so is Rs−1(t).
 Then, in view of the uniform asymptotical stability of (3.4), we know that the following system
@@ -2764,7 +3168,7 @@ It again follows from Lemma 3.1 that the LTV system (3.2)-(3.3) is uniformly asy
 
 The above theorem obviously has the following corollary.
 
-## [55] `odfas_2026_part4` (PDF p.14, L902) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [63] `odfas_2026_part4` (PDF p.14, L902) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. to be added
 
@@ -2778,7 +3182,7 @@ where x ∈ ℝn, z ∈ ℝm, A ∈ ℝn×n, and G(x, t) ∈ ℝn×m. For stabil
 
 the following result can be easily shown based on the above Lemmas 3.2 and 3.3.
 
-## [56] `odfas_2026_part4` (PDF p.17, L1032) | Types: `Observer/Error-Dynamics` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [64] `odfas_2026_part4` (PDF p.17, L1032) | Types: `Observer/Error-Dynamics` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. Design a full-order observer for system (4.6) as
 
@@ -2824,7 +3228,7 @@ Particularly, when A1(ϕ(0∼1)) = A1 (ϕ), the above result is reduced to the f
 
 does not require the availability of ϕ¨.
 
-## [57] `odfas_2026_part4` (PDF p.19, L1143) | Types: `Observer/Error-Dynamics` | Closer: `The proof is completed.`
+## [65] `odfas_2026_part4` (PDF p.19, L1143) | Types: `Observer/Error-Dynamics` | Closer: `The proof is completed.`
 
 Proof. Based on Proposition 4.1, we can get the following observer-based controller:
 
@@ -2898,7 +3302,7 @@ Combining (4.25) and (4.26), yields (4.20). The proof is completed.
 
 The above result clearly has the following corollary which does not require the availability of ϕ¨.
 
-## [58] `odfas_2026_part4` (PDF p.26, L1553) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [66] `odfas_2026_part4` (PDF p.26, L1553) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. Take
 (0∼1) [AoI − R (ϕ) A1(ϕ(0∼1))]
@@ -2912,7 +3316,7 @@ AoI(ϕ) = AI (ϕ(0∼1))+ L(ϕ(0∼1))CI
 [R (ϕ) A1(ϕ(0∼1)) R (ϕ)] [AoI − R (ϕ) A1(ϕ(0∼1))
 = + ] ⌊Ir 0⌋
 
-## [59] `odfas_2026_part4` (PDF p.28, L1610) | Types: `Observer/Error-Dynamics` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [67] `odfas_2026_part4` (PDF p.28, L1610) | Types: `Observer/Error-Dynamics` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. Based on system (5.8), and using Lemma 5.1, we can design the following observer:
 
@@ -2977,7 +3381,7 @@ This system is uniformly asymptotically stable following from Lemma 5.1.
 
 extra assumption.
 
-## [60] `odfas_2026_part4` (PDF p.29, L1690) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [68] `odfas_2026_part4` (PDF p.29, L1690) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. Denote
 
@@ -2996,7 +3400,7 @@ Further, introduce the following notation:
 [R (ϕ) 0 ]
 RE (ϕ) = . (5.21)
 
-## [61] `odfas_2026_part4` (PDF p.30, L1728) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [69] `odfas_2026_part4` (PDF p.30, L1728) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. In view of (5.10) and (5.22), we have
 
@@ -3005,7 +3409,7 @@ AI (ϕ(0∼1))+ L(ϕ(0∼1))CI
 ([A1(ϕ(0∼1)) Ir ] [L1M (ϕ) − A1(ϕ(0∼1)) )
 = RE (ϕ) + ] ⌊Ir 0⌋
 
-## [62] `odfas_2026_part4` (PDF p.30, L1751) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [70] `odfas_2026_part4` (PDF p.30, L1751) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. Firstly, recall equation (5.24). Secondly, it follows from Assumption Ap2 and equation
 
@@ -3015,7 +3419,7 @@ simply follows from Theorem 3.1.
 
 Based on the above preliminary results, we now immediately have the following result.
 
-## [63] `odfas_2026_part4` (PDF p.32, L1859) | Types: `Direct-Substitution` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [71] `odfas_2026_part4` (PDF p.32, L1859) | Types: `Direct-Substitution` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. Using (5.33) and (5.13), we obtain
 
@@ -3080,7 +3484,7 @@ To summarize, we now have the following result regarding the output feedback con
 
 nonlinear system (5.1).
 
-## [64] `odfas_2026_part4` (PDF p.39, L2226) | Types: `Observer/Error-Dynamics` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [72] `odfas_2026_part4` (PDF p.39, L2226) | Types: `Observer/Error-Dynamics` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. Clearly, due to Assumption Av1, system (6.7) is observable. Thus we can design a
 full-state observer for system (6.7) as
@@ -3123,7 +3527,7 @@ This gives the error equation (6.11).
 
 For the case that A0(ϕ(0∼1)) = A0 (ϕ) , we immediately have the following corollary.
 
-## [65] `odfas_2026_part4` (PDF p.41, L2330) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [73] `odfas_2026_part4` (PDF p.41, L2330) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. It follows from Proposition 6.1 that a GUA stabilizing output feedback controller for
 system (6.5) is given by
@@ -3224,7 +3628,7 @@ L(ϕ(0∼1)) = L (ϕ) = Ao2A−01(ϕ) M (ϕ) , (6.26)
 
 and the above result clearly has the following corollary.
 
-## [66] `odfas_2026_part4` (PDF p.44, L2543) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [74] `odfas_2026_part4` (PDF p.44, L2543) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. Choose
 AoA−1 ϕ(0∼1)
@@ -3235,7 +3639,7 @@ where Ao0 is Hurwitz. We have
 
 AoII = [0 0 ]+ L] ϕ(0∼1)) ⌊A0(ϕ(0∼1)) Ir⌋.
 
-## [67] `odfas_2026_part4` (PDF p.46, L2610) | Types: `Observer/Error-Dynamics` | Closer: `The proof is completed.`
+## [75] `odfas_2026_part4` (PDF p.46, L2610) | Types: `Observer/Error-Dynamics` | Closer: `The proof is completed.`
 
 Proof. Firstly, it can be easily observed that the above system (7.8) is observable if Assumption
 Av1 and Av2 are met. Based on system (7.8), we can design the following observer:
@@ -3298,7 +3702,7 @@ In the special case of A0(ϕ(0∼1)) = A0 being a constant matrix, the following
 
 from the above theorem.
 
-## [68] `odfas_2026_part4` (PDF p.48, L2736) | Types: `Direct-Substitution` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [76] `odfas_2026_part4` (PDF p.48, L2736) | Types: `Direct-Substitution` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. It follows from Proposition 7.1 that a reasonable output feedback controller for system
 (7.3) is given by
@@ -3371,7 +3775,7 @@ Again, in the special case of A0(ϕ(0∼1)) = A0 being a constant matrix, the fo
 
 follows from the above theorem.
 
-## [69] `odfas_2026_part4` (PDF p.54, L3069) | Types: `Direct-Substitution, Equivalence/Homeomorphism` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [77] `odfas_2026_part4` (PDF p.54, L3069) | Types: `Direct-Substitution, Equivalence/Homeomorphism` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. Taking derivative of the second equation in (8.14), and substituting equation (8.12) into
 the result and simultaneously using (8.16)-(8.17), yield
@@ -3398,7 +3802,7 @@ y = R (φ) v −η ˙∗
 
 Combining this with (8.21), gives the OD-FAS (8.19).
 
-## [70] `odfas_2026_part4` (PDF p.57, L3259) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [78] `odfas_2026_part4` (PDF p.57, L3259) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. Firstly, rewrite R (φ) as
 
@@ -3461,7 +3865,7 @@ Finally, combining (8.38) with (8.41)-(8.42), gives the control transformation (
 
 6.2) is readily applied, and the following result is obtained.
 
-## [71] `odfas_2026_part4` (PDF p.59, L3365) | Types: `Direct-Substitution` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [79] `odfas_2026_part4` (PDF p.59, L3365) | Types: `Direct-Substitution` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. We need to show that the closed-loop system is GUA stable.
 Firstly, it follows from the proof of Proposition 6.2 that the closed-loop system produced by applying
@@ -3473,7 +3877,7 @@ e˙ e
 
 where
 
-## [72] `scis_2023_delay1` (PDF p.5, L307) | Types: `Direct-Substitution` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [80] `scis_2023_delay1` (PDF p.5, L307) | Types: `Direct-Substitution` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. Due to Assumption A, we can obtain (7) from the first equation in (1). Further, taking the
 derivatives of both sides of the first equation in (1), we have
@@ -3545,7 +3949,7 @@ general time-delay strict-feedback system can be still converted into a high-ord
 deduction will be given elsewhere.
 In order to demonstrate the multi-layer case, let us give an example.
 
-## [73] `scis_2023_delay1` (PDF p.23, L1492) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [81] `scis_2023_delay1` (PDF p.23, L1492) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. Note that
 
@@ -3578,7 +3982,7 @@ Now applying Theorem 4 to the system (127), we have the following more general r
 
 Duan G R Sci China Inf Sci January 2023 Vol. 66 112201:24
 
-## [74] `scis_2023_delay1` (PDF p.29, L1911) | Types: `Multi-Conclusion, Lyapunov` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [82] `scis_2023_delay1` (PDF p.29, L1911) | Types: `Multi-Conclusion, Lyapunov` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof of conclusion (1).
 Let T
@@ -3601,7 +4005,7 @@ Duan G R Sci China Inf Sci January 2023 Vol. 66 112201:30
 
 With this the first conclusion is proven.
 
-## [75] `scis_2023_delay1` (PDF p.30, L1933) | Types: `Multi-Conclusion` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [83] `scis_2023_delay1` (PDF p.30, L1933) | Types: `Multi-Conclusion` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof of conclusion (2).
 Let Ac = V ΛV−1,
@@ -3615,7 +4019,7 @@ which gives
 ‖‖‖ ‖‖‖
 With this the second conclusion is also proven.
 
-## [76] `scis_2023_delay1` (PDF p.30, L1944) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [84] `scis_2023_delay1` (PDF p.30, L1944) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof of conclusion (3).
 It follows from (A2) that
@@ -3649,7 +4053,7 @@ eλnt
 where * represents either 2 or F.
 Combining the above relation with (A3) immediately proves this conclusion.
 
-## [77] `scis_2023_delay2` (PDF p.5, L301) | Types: `Direct-Substitution` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [85] `scis_2023_delay2` (PDF p.5, L301) | Types: `Direct-Substitution` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. Due to Condition C1, we can obtain (12) from the first equation in (6). Further, taking the
 derivatives of both sides of the first equation in (6) gives
@@ -3683,7 +4087,7 @@ Due to Conditions C1 and C2, we obviously have
 
 det B (Y, t) ≠ 0 or ∞ for all Y ∈ ℝ2γr and t ⩾ 0. (16)
 
-## [78] `scis_2024_chained1` (PDF p.5, L311) | Types: `Contradiction` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [86] `scis_2024_chained1` (PDF p.5, L311) | Types: `Contradiction` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. For simplicity, let
 
@@ -3759,7 +4163,7 @@ the mapping f (x0∼n, u0, u) : ℝn+1 × ℝ × ℝ ↦ ℝn+1 is not a surject
 Therefore, by the well-known Brockett Theorem [1], under either condition of the proposition, the system
 does not have a time-invariant continuous stabilizing controller.
 
-## [79] `scis_2024_chained1` (PDF p.10, L645) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [87] `scis_2024_chained1` (PDF p.10, L645) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. Firstly, as in [12], let us introduce the following transformation:
 xi
@@ -3808,7 +4212,7 @@ which can be further written in the form of (33) with gi (x0, z1∼i, t) and hi 
 defined as in (34) and (35).
 Finally, combining the transformations (36) and (40) gives the transformation (32).
 
-## [80] `scis_2024_chained1` (PDF p.12, L799) | Types: `Direct-Substitution, Equivalence/Homeomorphism` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [88] `scis_2024_chained1` (PDF p.12, L799) | Types: `Direct-Substitution, Equivalence/Homeomorphism` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. For each z1∼n, Eq. (50) clearly gives a unique z(0∼n−1). Conversely, let z(0∼n−1) be given; then
 we have
@@ -3882,7 +4286,7 @@ Duan G-R Sci China Inf Sci February 2024, Vol. 67, Iss. 2, 122201:14
 
 Figure 1 Solution flow chart.
 
-## [81] `scis_2024_chained1` (PDF p.17, L1041) | Types: `Direct-Substitution` | Closer: `The proof is completed.`
+## [89] `scis_2024_chained1` (PDF p.17, L1041) | Types: `Direct-Substitution` | Closer: `The proof is completed.`
 
 Proof. Firstly, it follows from Corollary 1 that a stabilizing controller for the SFS (65) is given by (71),
 which only depends on x0, z1, and z2.
@@ -3930,7 +4334,7 @@ guaranteed by (25). Since system (72) is stable, z and ˙z converge to zero. The
 either Theorem 3 or Remark 6 that zi, i = 1, 2 also converge to zero. In the end, the convergence of xi,
 i = 1, 2 can then be deduced from that of zi, i = 1, 2, and the relation (64). The proof is completed.
 
-## [82] `scis_2024_chained1` (PDF p.21, L1340) | Types: `Equivalence/Homeomorphism` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [90] `scis_2024_chained1` (PDF p.21, L1340) | Types: `Equivalence/Homeomorphism` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. Following the same line of the proof of Theorem 3, we can show the fact that the transformation
 (50) is one-to-one in view of (98), and limt→∞ z1∼n = 0 if limt→∞ z(0∼n−1) = 0. Again, similar to the
@@ -3942,7 +4346,7 @@ By the FAS theory, the singular set of the sub-FAS (51) is defined to be [41,47,
 
 which, in view of the expression of Bn (x0, z1∼n, t) in (46) and (47), is obviously coincident with 𝕊z (x0) .
 
-## [83] `scis_2024_chained2` (PDF p.7, L434) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [91] `scis_2024_chained2` (PDF p.7, L434) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. Recalling the definition of σ0 (t) in (19), we have
 
@@ -4001,7 +4405,7 @@ Duan G-R Sci China Inf Sci March 2024, Vol. 67, Iss. 3, 132201:8
 Corresponding to Assumptions A and A′ on the series of functions ψi′(ζ0, η0, xi+1∼n, t) , i = 1, 2, . . . , n−
 1, we have the following assumption on the functions h′i(ζ0, η0, z1∼i, t) , i = 1, 2, . . . , n − 1.
 
-## [84] `scis_2024_chained2` (PDF p.8, L535) | Types: `Lyapunov` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [92] `scis_2024_chained2` (PDF p.8, L535) | Types: `Lyapunov` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. Take the continuous function V (x, t) : ℝn× ℝ+ ↦ ℝ as a Lyapunov function for the perturbed
 system (38). Using (39)–(42), we have
@@ -4057,7 +4461,7 @@ c = 1 y (0) eµ11M.
 Therefore, system (38) is UGE stable.
 Taking µ0 = 2 and ϑ = 21 in the above lemma, immediately gives the following corollary.
 
-## [85] `scis_2024_chained2` (PDF p.10, L630) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [93] `scis_2024_chained2` (PDF p.10, L630) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof. Firstly, note that the uniform global exponential stability of system (51) and the first condition
 in the corollary implies (see the Theorem 4.14 of [45]) the existence of a continuous function V (x, t) :
@@ -4066,7 +4470,78 @@ Eq. (50) is valid, the conclusion immediately follows from Corollary 1.
 Secondly, in view of the fact that the second condition on the global Lipschitz property of f(x, t) is
 equivalent to the first condition, the whole proof is completed.
 
-## [86] `tcyb_2023_subfas` (PDF p.3, L338) | Types: `Multi-Conclusion, Lyapunov` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [94] `scis_2025_chained3` (PDF p.5, L311) | Types: `Contradiction, Multi-Conclusion` | Closer: `The proof is completed.`
+
+Proof. Since, for i = 1, 2, . . ., n − 1,
+
+0, 1 ⩽ k < i,
+∂ ρiΨTi(·) , k = i,
+∂x [Φi (·) xi+1 + ρiΨi (·) xi] = { T Φi(·) ∂Ψi(·)
+k Φi (·) + ∂∂xk xi+1 + ρi ∂xk xi, k = i + 1,
+∂∂xΦi(·)xi+1 + ρi∂∂xΨi(·)xi, k > i + 1,
+k k
+
+and
+∂
+[Φi (·) xi+1 + ρiΨi (·) xi] = 0,
+∂u
+∂ ∂ ∂ρi ∂Ψi (·)
+[Φi (·) xi+1 + ρiΨi (·) xi] = Φi (·) xi+1 + Ψi (·) xi + ρi xi,
+∂x0 ∂x0 ∂x0 ∂x0
+∂ ∂ ∂ρi ∂Ψi (·)
+[Φi (·) xi+1 + ρiΨi (·) xi] = Φi (·) xi+1 + Ψi (·) xi + ρi xi,
+∂u0 ∂u0 ∂u0 ∂u0
+the linearized model of (9) at xi = 0, i = 0, 1, 2, . . ., n, and u0 = u = 0, is obviously given by
+
+x˙0 = u0 + d,
+{x˙1 = u, (14)
+x˙i = ΦTi−1(0, 0, 0, t)xi, i = 2, 3, . . . , n,
+
+which is clearly not controllable. Further, it can be easily seen that it is (uniformly) asymptotically
+stabilizable if and only if
+x˙i = ΦTi−1(0, 0, 0, t)xi, i = 2, 3, . . . , n
+are (uniformly) asymptotically stable. Thus the first conclusion is proven.
+Because of conclusion (1) of Proposition 1, the nonlinear system (9)–(11) does not have a smooth
+time-invariant exponentially stabilizing controller.
+To proceed with the proof of the third conclusion, let us define
+
+u0
+u
+f (x0∼n, u0, u) = Φ1 (·) x2 + ρ1 (x0, u0) Ψ1 (·) x1 .
+
+...
+Φn−1 (·) xn + ρn−1 (x0, u0) Ψn−1 (·) xn−1
+
+For a set of arbitrarily small positive scalars εi, i = 1, 2, . . . , n − 1, let us set
+T
+f (x0∼n, u0, u) = 0 0 ε1 · · · εn−1 . (15)
+[ ]
+
+Then, we have u0 = u = 0, and
+
+Φi (·) xi+1 + ρi (x0, u0) Ψi (·) xi = εi, i = 1, 2, . . ., n − 1. (16)
+
+If condition (12) is met for some 1 ⩽ i ⩽ n − 1, we immediately have
+
+[Φi (·) xi+1 + ρi (x0, u0) Ψi (·) xi]u0=0 = 0,
+
+Duan G-R Sci China Inf Sci June 2025, Vol. 68, Iss. 6, 162201:6
+
+which, together with (16), produces
+0 = εi. (17)
+Similarly, when condition (13) is met for 1 ⩽ i ⩽ n − 1, we have
+
+[Φi (·) xi+1 + ρi (x0, u0) Ψi (·) xi]u0=0 = Φi (·) xi+1 + diΓTiu0Ψi(·) xi u0=0 = [Φi (·) xi+1]u0=0 = 0.
+[ ]
+Again, Eq. (17) is produced from (16).
+Recalling that εi is a positive scalar, the above equation (17) gives a contradiction which states that the
+mapping f (x0∼n, u0, u) : ℝ(n+1)r×ℝr×ℝr ↦ ℝ(n+1)r is not a surjection onto an open set containing 0.
+Therefore, by the well-known Brockett Theorem [1], under either of the two conditions of Proposition 1,
+the system does not have a time-invariant continuous stabilizing controller. The proof is completed.
+The purpose of the paper is to design a stabilizing controller for the multi-vector nonholonomic system
+(9) satisfying Assumptions A1 and A2.
+
+## [95] `tcyb_2023_subfas` (PDF p.3, L338) | Types: `Multi-Conclusion, Lyapunov` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof: When the above controller (7) is applied to
 system (1), the following asymptotically stable closed-loop
@@ -4107,7 +4582,7 @@ seriously does this prevent the result from the application?
 
 B. Practical Examples
 
-## [87] `tcyb_2023_subfas` (PDF p.5, L646) | Types: `Sufficiency-Necessity` | Closer: `Combining the above two aspects...`
+## [96] `tcyb_2023_subfas` (PDF p.5, L646) | Types: `Sufficiency-Necessity` | Closer: `Combining the above two aspects...`
 
 Proof: Sufficiency: Once a system is equivalently converted
 into a 0-type sub-FAS in a neighborhood of the origin, denoted
@@ -4126,7 +4601,7 @@ Combining the above two aspects gives the complete proof
 of the result.
 The above result clearly has the following two corollaries.
 
-## [88] `tcyb_2023_subfas` (PDF p.7, L854) | Types: `Multi-Conclusion, Direct-Substitution, State-Space-Conversion` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [97] `tcyb_2023_subfas` (PDF p.7, L854) | Types: `Multi-Conclusion, Direct-Substitution, State-Space-Conversion` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof: The first two conclusions are obvious. To show the
 third condition, we first convert system (32) into the following
@@ -4177,7 +4652,7 @@ x(t) = [x1(t)], xi(t) ∈ ℝri, i = 1, 2
 x2(t)
 and let the following assumption hold.
 
-## [89] `tcyb_2023_subfas` (PDF p.9, L1129) | Types: `Multi-Conclusion, State-Space-Conversion` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [98] `tcyb_2023_subfas` (PDF p.9, L1129) | Types: `Multi-Conclusion, State-Space-Conversion` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof: The first two conclusions can be easily derived. Here,
 we only show the third one.
@@ -4208,7 +4683,7 @@ This condition clearly determines the initial values from which
 the solution of the closed-loop system converges to the origin.
 Hence, R0m forms the whole region of attraction.
 
-## [90] `tcyb_2023_subfas` (PDF p.11, L1400) | Types: `Multi-Conclusion, State-Space-Conversion` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [99] `tcyb_2023_subfas` (PDF p.11, L1400) | Types: `Multi-Conclusion, State-Space-Conversion` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof: The state-space form of system (65) is clearly
 given by
@@ -4314,7 +4789,7 @@ y1(s) = 2, y3(s) = 1, ˙y3(s) = −3, s ≤ 0
 the simulation of the system is carried out and the results are
 shown in Figs. 2 and 3.
 
-## [91] `ucfas_2025_part2` (PDF p.17, L1691) | Types: `Direct-Algebraic/Citation` | Closer: `QED-symbol-only (□/▪)`
+## [100] `ucfas_2025_part2` (PDF p.17, L1691) | Types: `Direct-Algebraic/Citation` | Closer: `QED-symbol-only (□/▪)`
 
 Proof: Under given conditions, we have
 
@@ -4418,7 +4893,7 @@ Sub-stabilisation of UC-FAS (110) can be similarly
 realised, either by using the equivalence relation, or by
 direct deduction.
 
-## [92] `ucfas_2025_part3` (PDF p.6, L491) | Types: `Direct-Substitution, Equivalence/Homeomorphism` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [101] `ucfas_2025_part3` (PDF p.6, L491) | Types: `Direct-Substitution, Equivalence/Homeomorphism` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof: A proof of the above theorem is given by
 showing
@@ -4532,7 +5007,7 @@ F1 u1
 u2 cos θ − u1 sin θ
 = .
 
-## [93] `ucfas_2025_part3` (PDF p.8, L724) | Types: `Direct-Substitution` | Closer: `QED-symbol-only (□/▪)`
+## [102] `ucfas_2025_part3` (PDF p.8, L724) | Types: `Direct-Substitution` | Closer: `QED-symbol-only (□/▪)`
 
 Proof: Taking the differential of the third equation
 in (37) gives
@@ -4596,7 +5071,7 @@ b((x, z)(0∼1), u′1, t)
 
 = u′1 − g((x, z)(0∼1), t). (51)
 
-## [94] `book_2026_volume1` (PDF p.84, L64) | Types: `Direct-Substitution` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [103] `book_2026_volume1` (PDF p.84, L64) | Types: `Direct-Substitution` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof Firstly, according to Proposition 2.1, system (2.66) is controllable if and only
 if the coordinate transformation x = P x̄, with. P given by (2.68) being invertible, and
@@ -4635,7 +5110,7 @@ A ∈ R      , B ∈ Rn×r are the system matrices.
 n×n
 In parallel to Proposition 2.1, we have the following result.
 
-## [95] `book_2026_volume1` (PDF p.87, L67) | Types: `Direct-Substitution` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [104] `book_2026_volume1` (PDF p.87, L67) | Types: `Direct-Substitution` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof Firstly, according to Proposition 2.2, system (2.74) is controllable if and only
 if it can be equivalently the coordinate transformation x = P x̄, with P given by
@@ -4733,7 +5208,7 @@ z1 1        L̂ 1 z k(0∼μk |k=1∼η
 ⎣ . ⎦                       .
 (μ )
 
-## [96] `book_2026_volume1` (PDF p.105, L85) | Types: `Equivalence/Homeomorphism` | Closer: `The proof is completed.`
+## [105] `book_2026_volume1` (PDF p.105, L85) | Types: `Equivalence/Homeomorphism` | Closer: `The proof is completed.`
 
 Proof Suppose that, under x̂ = T −1 (x) and (2.133), system (2.132) can be converted
 into the LTI system (2.134) with (A, B) controllable. Then, by Theorem 2.2, we
@@ -4790,7 +5265,7 @@ Regarding when system (2.141) is locally equivalent to a controllable linear sys
 we introduce the following definition (Van Der Schaft, 1984).
 2.6 Feedback Linearizable Systems                                                                                  87
 
-## [97] `book_2026_volume1` (PDF p.154, L135) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [106] `book_2026_volume1` (PDF p.154, L135) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof Write Eq. (4.30) as
 ( A0∼n−1 ) V = V F.             (4.33)
@@ -4802,7 +5277,7 @@ we can convert equivalently the above Eq. (4.33) into the form of (4.26). Theref
 it follows from Lemma 4.1 that all the matrices V and W are given by (4.27), and
 Eq. (4.31) can then be further solved from (4.34).
 
-## [98] `book_2026_volume1` (PDF p.155, L136) | Types: `Direct-Substitution, Lyapunov, State-Space-Conversion` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [107] `book_2026_volume1` (PDF p.155, L136) | Types: `Direct-Substitution, Lyapunov, State-Space-Conversion` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof When control law (4.19), with. A0∼n−1 chosen as in (4.31), is applied to system
 (4.18), the closed-loop system can be obtained and rewritten in the state-space form
@@ -4879,7 +5354,7 @@ where the matrix S is usually not Hurwitz since otherwise the disturbance w dies
 out itself. Furthermore, the system coefficient matrices are assumed to satisfy the
 following conditions.
 
-## [99] `book_2026_volume1` (PDF p.159, L140) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [108] `book_2026_volume1` (PDF p.159, L140) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof Obviously, the homogeneous equation of the above GSE (4.55) is Eq. (4.26).
 Let (V, W ) be a general solution to the homogeneous GSE (4.26), and ( 0 0 ) be
@@ -4899,7 +5374,7 @@ E =                                 , C E = Cm 0 ,                    (4.59)
 0          (S0∼k−1 )
 then we also need the following assumption:
 
-## [100] `book_2026_volume1` (PDF p.161, L142) | Types: `State-Space-Conversion` | Closer: `Thus the conclusion follows.`
+## [109] `book_2026_volume1` (PDF p.161, L142) | Types: `State-Space-Conversion` | Closer: `Thus the conclusion follows.`
 
 Proof If we take the following control law
 u = −B −1 (ym , ζ, t) ( f (ym , ζ, t) − v) ,
@@ -4958,7 +5433,7 @@ to condition (4.64).
 With the above three facts, we immediately have the conclusion of the
 theorem.
 
-## [101] `book_2026_volume1` (PDF p.162, L143) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [110] `book_2026_volume1` (PDF p.162, L143) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof In view of the expression of Bc given in (4.22), we have
 s Inr+kp − E
@@ -5017,7 +5492,7 @@ i
 i=0
 With the above preparations, the following result can be stated.
 
-## [102] `book_2026_volume1` (PDF p.164, L145) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [111] `book_2026_volume1` (PDF p.164, L145) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof If we take
 D (s)
@@ -5058,7 +5533,7 @@ respectively. Thus it follows from Theorems 2.1 and 4.3 in Duan (2015) that all 
 matrices L x and L d satisfying (4.79) can be given by (4.80), where Z 0 ∈ Rnr ×(nr +kp)
 is a parameter matrix satisfying constraint (4.82). Then the proof is completed.
 
-## [103] `book_2026_volume1` (PDF p.182, L163) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [112] `book_2026_volume1` (PDF p.182, L163) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof It follows from (5.3) that the matrix A + γ2 I is stable, thus there exists a
 positive definite matrix P satisfying
@@ -5067,7 +5542,7 @@ A+     I P + P A + I < 0.
 2            2
 Expanding the above equation gives Eq. (5.4).
 
-## [104] `book_2026_volume1` (PDF p.182, L163) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [113] `book_2026_volume1` (PDF p.182, L163) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof In view of
 n−1
@@ -5089,7 +5564,7 @@ PL ( A0∼n−1 ) = P(A0∼n−1 )                    = Pn (5.8)
 Ir
 To conclude this subsection, let us state the following simple result.
 
-## [105] `book_2026_volume1` (PDF p.187, L168) | Types: `Lyapunov` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [114] `book_2026_volume1` (PDF p.187, L168) | Types: `Lyapunov` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof Since
 d         f 1 (z)
@@ -5170,7 +5645,7 @@ Ir
 Regarding the control of FAS (5.27) with unknown parameters, we have the
 following theorem.
 
-## [106] `book_2026_volume1` (PDF p.197, L178) | Types: `Multi-Conclusion` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [115] `book_2026_volume1` (PDF p.197, L178) | Types: `Multi-Conclusion` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof The first conclusion can be easily verified. In view of Assumption 5.3, we
 have
@@ -5205,7 +5680,7 @@ T
 As done in the previous two sections, we can then define the matrix PL ( A0∼n−1 ),
 which will be often used in the following sections.
 
-## [107] `book_2026_volume1` (PDF p.221, L203) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [116] `book_2026_volume1` (PDF p.221, L203) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof According to (6.5), we have
 L 0 = Ir ,
@@ -5274,7 +5749,7 @@ vector, ζ ∈ Rm is a parameter vector; f i (x1∼i   , ζ, t) ∈ Rr , i = 1, 
 of sufficiently smooth vector functions, G i (x1∼i , ζ, t) ∈ Rr ×r , i = 1, 2, . . . , n, are
 a set of sufficiently smooth matrix functions, and satisfy the following assumption:
 
-## [108] `book_2026_volume1` (PDF p.239, L221) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [117] `book_2026_volume1` (PDF p.239, L221) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof The result can be easily proven by applying Theorem 6.5. With relation (6.83),
 formula (6.48) becomes
@@ -5349,7 +5824,7 @@ where.ω ≥ 1 is an integer,. f kl (x1∼i , ζ, t) ∈ Rr , i = 1, 2., . . . ,
 a group of sufficiently smooth vector functions. Applying Theorem 6.7, immediately
 yields the following corollary.
 
-## [109] `book_2026_volume1` (PDF p.247, L229) | Types: `Induction, Multi-Step, Direct-Substitution` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [118] `book_2026_volume1` (PDF p.247, L229) | Types: `Induction, Multi-Step, Direct-Substitution` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof We prove the theorem via the n-step induction.
 Step 1: For the first subsystem, we already have that
@@ -5447,7 +5922,7 @@ Ḡ 1∼n =                              Q −1
 n−1 Ḡ n (7.27)
 0    Irn −rn−1
 
-## [110] `book_2026_volume1` (PDF p.372, L357) | Types: `State-Space-Conversion, Observer/Error-Dynamics` | Closer: `The proof is finished.`
+## [119] `book_2026_volume1` (PDF p.372, L357) | Types: `State-Space-Conversion, Observer/Error-Dynamics` | Closer: `The proof is finished.`
 
 Proof Since f 0 ≡ 0, Eq. (11.35) reduces to
 x1(n 1 )             F11 − A11 F12                x1(0∼n 1 −1)   −A12 x̂2(0∼n 2 −1)
@@ -5499,7 +5974,7 @@ BE =              (11.46)
 0 B2
 Then, the following result shows the controllability of (                         F , BE ) .
 
-## [111] `book_2026_volume1` (PDF p.374, L359) | Types: `Observer/Error-Dynamics` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [120] `book_2026_volume1` (PDF p.374, L359) | Types: `Observer/Error-Dynamics` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof Observe
 rank s In 1 r1 +n 2 r2 −         F BE
@@ -5550,7 +6025,7 @@ CM
 In 1 r 1 0 .
 Then, regarding solution of the observer gain L , we have the following results.
 
-## [112] `book_2026_volume1` (PDF p.375, L360) | Types: `Observer/Error-Dynamics` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [121] `book_2026_volume1` (PDF p.375, L360) | Types: `Observer/Error-Dynamics` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof Firstly, the detectability of the matrix pair.                                 22   12    obviously follows from
 well-known linear system theories.
@@ -5624,7 +6099,7 @@ matrices that are not of interest. .
 11.3.3 Case of f0 (z1 , z2 ) Dependent on z2
 In the case that f 0 (z 1 , z 2 ) is dependent on z 2 , we impose the following assumption.
 
-## [113] `book_2026_volume1` (PDF p.377, L362) | Types: `State-Space-Conversion, Observer/Error-Dynamics` | Closer: `The proof is finished.`
+## [122] `book_2026_volume1` (PDF p.377, L362) | Types: `State-Space-Conversion, Observer/Error-Dynamics` | Closer: `The proof is finished.`
 
 Proof Write the state-space form of (11.35) as
 ẋ1(0∼n 1 −1)                 x1(0∼n 1 −1)
@@ -5669,7 +6144,7 @@ Then the closed-loop system (11.50) can be rewritten in the compact form:
 ξ̇ = AC ξ + BC           f0 ,          (11.54)
 for which the following simple result can be obtained.
 
-## [114] `book_2026_volume1` (PDF p.378, L363) | Types: `Lyapunov, Observer/Error-Dynamics` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [123] `book_2026_volume1` (PDF p.378, L363) | Types: `Lyapunov, Observer/Error-Dynamics` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof Define a candidate Lyapunov function as
 V (ξ ) = ξ T Pξ,
@@ -5741,7 +6216,7 @@ Case of f0 (z1 , z2 ) Independent on z2
 Letting Ai j = 0, i, j = 1, 2, in the above Theorem 11.2, immediately gives the
 following result.
 
-## [115] `book_2026_volume1` (PDF p.422, L405) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [124] `book_2026_volume1` (PDF p.422, L405) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof It follows from Lemma A.1 that the solution to Problem A.2 is given by (A.11)
 with
@@ -5839,7 +6314,7 @@ I
 Vbn−1
 1
 
-## [116] `book_2026_volume1` (PDF p.428, L405) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [125] `book_2026_volume1` (PDF p.428, L405) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof Simply choosing
 Z 1,k = 1, k = 1 ∼ m 1 ,
@@ -5853,7 +6328,7 @@ According to the number of self-conjugate poles, three specific cases, that is,
 m 2 = 0, 1, 2 in (A.8), are considered in the following. Based on Theorem A.2, the
 following corollary can be immediately derived.
 
-## [117] `book_2026_volume1` (PDF p.434, L422) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
+## [126] `book_2026_volume1` (PDF p.434, L422) | Types: `Direct-Algebraic/Citation` | Closer: `Direct-final-equation/sentence (no verbal closer)`
 
 Proof Noticing the expressions of Q̄ (t) and Q̄ −1 (t) , we have
 Q̄ −1 (t) Q̄(t)

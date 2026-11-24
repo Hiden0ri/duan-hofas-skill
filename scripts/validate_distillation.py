@@ -11,6 +11,7 @@ from pathlib import Path
 REQUIRED = {
     "SKILL.md",
     "references/adversarial-tests.md",
+    "references/backup-fas-library.md",
     "references/canonical-definitions-index.md",
     "references/canonical-theorems.md",
     "references/coauthored-comparison.md",

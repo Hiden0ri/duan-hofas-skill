@@ -1,4 +1,4 @@
-# Sorted Problem Corpus Across 32 Duan First-Author Papers + Volume I (24 items)
+# Sorted Problem Corpus Across 32 Duan First-Author Papers + Volume I (27 items)
 
 ## [1] `aas_2020_part1` (PDF p.8, L859)
 
@@ -419,7 +419,52 @@ Combining the above two aspects, it can be easily recognized that this particula
 with the case treated in [1]. Eventually, the controller derived in [1] for this case should be no longer a
 continuous one due to the restriction of x0 (0) ≠ 0.
 
-## [20] `tcyb_2023_robustdelay` (PDF p.5, L631)
+## [20] `scis_2025_chained3` (PDF p.10, L655)
+
+Problem 1. Find a sub-stabilizing feedback controller for system (41)–(43) under Assumptions B1 and
+B2.
+
+## [21] `scis_2025_chained3` (PDF p.11, L735)
+
+Problem 2. Find a stabilizing controller for system (51) under Assumptions C1 and C2.
+
+Solvability
+
+In this subsection, let us further convert Problem 2 into a stabilization problem of a sub-SFS, which will
+be defined soon.
+
+Duan G-R Sci China Inf Sci June 2025, Vol. 68, Iss. 6, 162201:12
+
+## [22] `scis_2025_chained3` (PDF p.12, L798)
+
+Problem 3. Find a stabilizing controller for sub-SFS (60) under Assumptions C1 and C2.
+To end up this subsection, let us finally point out an important fact.
+Under the condition of η0 = −βζ0, we have (57). Through using the relations in (57), the controller
+(34) is reduced to
+t
+u0 (t) = −a0ζ0∫ e−βsds − a1ζ0e−tβ + (a1 − β) ζ0
+
+Duan G-R Sci China Inf Sci June 2025, Vol. 68, Iss. 6, 162201:13
+
+= a0ζ0 e−βt − 1 − a1ζ0e−tβ + αζ0
+β ( )
+
+= (a01 − a1)ζ0e−tβ
+β
+= −βζ0e−tβ,
+
+that is,
+u0 (t) = −βx0 (t) . (61)
+
+Therefore, this particular case of η0 = −βζ0 is actually a natural generalization of case treated in [10] to
+the multi-vector case.
+It should be noted that, although in this case the partial controller given by (61) is very simple, the
+derived overall controller for the original system in this case should be no longer a continuous one even
+if the global normal condition, that is, 𝕊z (α, β, ζ0, η0) = ∅ or 𝔽z (α, β, ζ0, η0) = ℝnr, is assumed. The
+reason lies in the fact that Assumption A5′ is needed, which restricts the system initial value ζ0 = x0 (0)
+to be not on a series of hyperplanes in ℝr.
+
+## [23] `tcyb_2023_robustdelay` (PDF p.5, L631)
 
 Problem 1: Let Assumptions A1–A4 be met. Find a full-
 state feedback controller in the form of
@@ -439,13 +484,13 @@ u = α(x(0∼n−1), ζx, ζu, z(0∼m−1), ζz, t). (23)
 Moreover, in this circumstance, Assumptions A3 and A4
 become the following assumptions.
 
-## [21] `tcyb_2023_robustdelay` (PDF p.5, L656)
+## [24] `tcyb_2023_robustdelay` (PDF p.5, L656)
 
 Problem 2: Let Assumptions B1–B4 be met. Find a full-
 state feedback controller in the form of (23) such that the
 uncertain type I system (22) is robustly GUA stabilized.
 
-## [22] `tcyb_2023_robustdelay` (PDF p.6, L759)
+## [25] `tcyb_2023_robustdelay` (PDF p.6, L759)
 
 Problem 3: Let Assumptions B1–A4 be met. Find a full-
 state feedback controller in the form of (21) such that the
@@ -454,14 +499,14 @@ input-to-state stabilized.
 Parallelly, we also have the following problem correspond-
 ing to Problem 2.
 
-## [23] `tcyb_2023_robustdelay` (PDF p.6, L765)
+## [26] `tcyb_2023_robustdelay` (PDF p.6, L765)
 
 Problem 4: Let Assumptions B2–B4 be met. Find a full-
 state feedback controller in the form of (23) such that the
 uncertain single-order FAS in (22) is robustly input-to-state
 stabilized.
 
-## [24] `tcyb_2024_overview` (PDF p.9, L1094)
+## [27] `tcyb_2024_overview` (PDF p.9, L1094)
 
 Problem 1: (The elementary problem) For an arbitrarily
 chosen Hurwitz matrix F ∈ ℝnr×nr, find the parameter matrix

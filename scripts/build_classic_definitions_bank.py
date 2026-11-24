@@ -50,7 +50,7 @@ def classify_topic(doc_id: str, lbl: str, flat: str) -> str:
         if lbl.startswith("Definition 2.1"):
             return "T7_odfas_output_feedback"
         return "T5_controllability_observability_types"
-    if doc_id == "odfas_2026_part1":
+    if doc_id in ("odfas_2026_part1", "odfas_2026_part2"):
         return "T7_odfas_output_feedback"
     if doc_id.startswith("ucfas_"):
         return "T6_subsfs_chained_ucfas"
@@ -61,7 +61,7 @@ def classify_topic(doc_id: str, lbl: str, flat: str) -> str:
             return "T1_fas_subfas_models"
     if doc_id in ("ijss_2022_part10", "scis_2022_discdelay1", "scis_2022_discdelay2", "scis_2023_delay1", "scis_2023_delay2"):
         return "T8_discrete_and_delay"
-    if doc_id in ("scis_2024_chained1", "scis_2024_chained2"):
+    if doc_id in ("scis_2024_chained1", "scis_2024_chained2", "scis_2025_chained3"):
         return "T6_subsfs_chained_ucfas"
     if any(k in fl for k in ("function of normal singularity", "function of abnormal singularity", "function of singularity", "0-type", "∞-type", "mixed-type", "rational sub-fas", "critically rational", "critical rational")):
         return "T3_singularity_functions_types"

@@ -1,4 +1,4 @@
-# Sorted Definition Corpus Across 32 Duan First-Author Papers + Volume I (94 items)
+# Sorted Definition Corpus Across 32 Duan First-Author Papers + Volume I (99 items)
 
 ## [1] `aaas_2024_subsfs` (PDF p.3, L273)
 
@@ -648,7 +648,23 @@ Furthermore, system (3) is called a sub-FAS if 𝔽
 is non-empty, and is called a global FAS if 𝔽 =
 ℝmq.
 
-## [36] `odfas_2026_part4` (PDF p.9, L643)
+## [36] `odfas_2026_part2` (PDF p.5, L525)
+
+Definition 2.1: Denote
+
+𝔽 = {Y | det B(Y, t) ≠ 0, Y ∈ ℝmq, t ≥ 0}. (10)
+
+Then 𝔽 is called the feasibility set of FAS (9). Further-
+more,system(9)iscalledasub-FASif𝔽isnon-empty,
+and is called a global FAS if 𝔽 = ℝmq.
+
+## [37] `odfas_2026_part2` (PDF p.6, L602)
+
+Definition 2.2: OD-FAS (12) is said to be solvable if
+its companion system (14) possesses an output feed-
+back stabilising controller.
+
+## [38] `odfas_2026_part4` (PDF p.9, L643)
 
 Definition 2.1. Denote
 
@@ -670,7 +686,7 @@ For a relatively full introduction to OD-FASs and the theory of output feedback 
 
 OD-FASs, please refer to Duan (2026b,0,0).
 
-## [37] `odfas_2026_part4` (PDF p.10, L688)
+## [39] `odfas_2026_part4` (PDF p.10, L688)
 
 Definition 2.2. A matrix M (t) ∈ ℝn×n is called (globally) uniformly bounded if there exists a
 
@@ -678,7 +694,7 @@ positive constant p1 such that
 
 ‖M (t)‖ ≤ p1, t ≥ 0;
 
-## [38] `odfas_2026_part4` (PDF p.10, L694)
+## [40] `odfas_2026_part4` (PDF p.10, L694)
 
 Definition 2.3. A scalar function ρ (s) is called a sublinear function, or a function with sublinear
 
@@ -688,7 +704,7 @@ growth, if it is positive and increasing, and satisfies
 lim = 0.
 s→+∞ s
 
-## [39] `odfas_2026_part4` (PDF p.11, L704)
+## [41] `odfas_2026_part4` (PDF p.11, L704)
 
 Definition 2.4. A function G(x, t) ∈ ℝn×m is called to sublinearly grow with respect to x ∈ ℝn
 
@@ -698,7 +714,7 @@ if
 
 where ρ (⋅) is a sublinear function.
 
-## [40] `odfas_2026_part4` (PDF p.12, L763)
+## [42] `odfas_2026_part4` (PDF p.12, L763)
 
 Definition 3.1. A matrix M (t) ∈ ℝn×n is called
 
@@ -712,7 +728,7 @@ constants p0 and p1 such that
 
 p0In < M (t) < p1In, t ≥ 0.
 
-## [41] `odfas_2026_part4` (PDF p.13, L850)
+## [43] `odfas_2026_part4` (PDF p.13, L850)
 
 Definition 3.2. A time-varying matrix A (t) ∈ ℝn×n is called uniformly asymptotically stable if
 
@@ -722,7 +738,7 @@ x˙ = A (t) x
 
 is uniformly asymptotically stable.
 
-## [42] `scis_2022_discdelay2` (PDF p.9, L542)
+## [44] `scis_2022_discdelay2` (PDF p.9, L542)
 
 Definition 1. A vector X ∈ ℝκ(k) is called a feasible point of system (27) at time k if it satisfies
 
@@ -741,14 +757,14 @@ Further, corresponding to Definition 2.1 in [22] for continuous-time systems, or
 discrete-time systems with constant delays, the following definition for discrete-time sub-fully actuated
 time-delay systems can also be proposed.
 
-## [43] `scis_2022_discdelay2` (PDF p.9, L558)
+## [45] `scis_2022_discdelay2` (PDF p.9, L558)
 
 Definition 2. Let 𝔽k be the set of feasible points of system (27) at time k. Then the system (27)
 is called (globally) fully actuated at time k if 𝔽k = ℝκ(k), and is called sub-fully actuated at time k if
 𝔽k ⊂ ℝκ(k) is not empty. Furthermore, the system (27) is called (globally) fully actuated if 𝔽k = ℝκ(k)
 holds for all k ⩾ h, and is called sub-fully actuated if 𝔽k is not empty for all k ⩾ h.
 
-## [44] `scis_2022_discdelay2` (PDF p.9, L566)
+## [46] `scis_2022_discdelay2` (PDF p.9, L566)
 
 Definition 3. Let 𝔽k ⊂ ℝκ(k) be the largest set such that the following mapping:
 
@@ -759,13 +775,13 @@ feasible points of system (32) at time k, and any X ∈ 𝔽k is called a feasib
 k. Furthermore, the system (32) is called (globally) fully actuated if 𝔽k = ℝκ(k) holds for all k ⩾ h, and
 is called sub-fully actuated if 𝔽k ⊂ ℝκ(k) is not empty for all k ⩾ h.
 
-## [45] `scis_2022_discdelay2` (PDF p.14, L892)
+## [47] `scis_2022_discdelay2` (PDF p.14, L892)
 
 Definition 4. The dynamical system (64) is called completely controllable if it can be equivalently
 converted into a globally FAS in the form of (27) or (32), and is called sub-controllable if it can be
 equivalently converted into a sub-FAS in the form of (27) or (32).
 
-## [46] `scis_2023_delay1` (PDF p.11, L734)
+## [48] `scis_2023_delay1` (PDF p.11, L734)
 
 Definition 1. Let 𝔽 ⊂ ℝm, m ⩽ γnr be the largest set such that the following full-actuation condition
 is met:
@@ -780,7 +796,7 @@ T x(0∼n−1)(t − σj (t)) |j=1∼γ in 𝔽 is called a feasible point of sy
 is called the set of singular points, and any element T x(0∼n−1)(t − σj (t)) |j=1∼γ in 𝕊 is called a singular
 point of system (62).
 
-## [47] `scis_2023_delay1` (PDF p.11, L746)
+## [49] `scis_2023_delay1` (PDF p.11, L746)
 
 Definition 2. Let 𝔽 ⊂ ℝm, m ⩽ γnr be the set of feasible points of the system (62). Then the system
 (62) is called a sub-FAS if 𝔽 is not empty. Particularly, the single-order affine system (62) with time
@@ -791,7 +807,7 @@ delays is called
 
 Duan G R Sci China Inf Sci January 2023 Vol. 66 112201:12
 
-## [48] `scis_2023_delay1` (PDF p.12, L766)
+## [50] `scis_2023_delay1` (PDF p.12, L766)
 
 Definition 3. Let 𝔽 ⊂ ℝm, m ⩽ γnr be the largest set such that the mapping
 
@@ -809,7 +825,7 @@ Similarly, the concepts of sub-FAS, global FAS, almost FAS and basic FAS associa
 system (63) can be defined in accordance with Definition 2.
 To demonstrate the above concepts, let us consider an example.
 
-## [49] `scis_2023_delay1` (PDF p.13, L863)
+## [51] `scis_2023_delay1` (PDF p.13, L863)
 
 Definition 4. Let 𝔽 ⊂ ℝM, with M ⩽ γκ0 be the largest set such that the following full-actuation
 condition is met:
@@ -831,7 +847,7 @@ sub-FAS (62).
 
 Duan G R Sci China Inf Sci January 2023 Vol. 66 112201:14
 
-## [50] `scis_2023_delay1` (PDF p.14, L896)
+## [52] `scis_2023_delay1` (PDF p.14, L896)
 
 Definition 5. Let 𝔽 ⊂ ℝM, with M ⩽ γκ0 be the largest set such that the mapping
 
@@ -848,7 +864,7 @@ singular point of sub-FAS (72).
 Again, the concepts of global FAS, almost FAS and basic FAS associated with non-affine system (71)
 can also be defined similarly to Definition 4.
 
-## [51] `scis_2023_delay1` (PDF p.20, L1284)
+## [53] `scis_2023_delay1` (PDF p.20, L1284)
 
 Definition 6. The dynamical system (106) is said to be
 
@@ -860,7 +876,7 @@ Definition 6. The dynamical system (106) is said to be
 (71) or (72); and
 • sub-controllable if it can be equivalently converted into a sub-FAS in the form of (71) or (72).
 
-## [52] `scis_2023_delay1` (PDF p.20, L1305)
+## [54] `scis_2023_delay1` (PDF p.20, L1305)
 
 Definition 7. Suppose that the dynamical control system (106) can be equivalently converted into a
 system in the form of
@@ -887,7 +903,7 @@ please refer to [47].
 
 Duan G R Sci China Inf Sci January 2023 Vol. 66 112201:21
 
-## [53] `scis_2023_delay1` (PDF p.22, L1395)
+## [55] `scis_2023_delay1` (PDF p.22, L1395)
 
 Definition 8. Let
 Q = q1 q2 · · · qn ∈ ℝm×n,
@@ -909,17 +925,17 @@ kθ = (θ − 1) m + θ = n,
 
 then csel⟨k1∼θ⟩ (Q) is called the basic column selection of the matrix Q, and is simply denoted by bcs (Q) .
 
-## [54] `scis_2024_chained1` (PDF p.6, L432)
+## [56] `scis_2024_chained1` (PDF p.6, L432)
 
 Definition 1. A nonlinear system in the form of (6) is called globally normal if Assumption A1 is
 satisfied.
 
-## [55] `scis_2024_chained1` (PDF p.7, L445)
+## [57] `scis_2024_chained1` (PDF p.7, L445)
 
 Definition 2. The nonlinear system (6) is called locally normal if Assumption B1 is satisfied. Otherwise,
 it is called abnormal.
 
-## [56] `scis_2024_chained1` (PDF p.7, L450)
+## [58] `scis_2024_chained1` (PDF p.7, L450)
 
 Definition 3. Consider the nonlinear system in the form of (6). Let
 
@@ -930,13 +946,13 @@ Definition 3. Consider the nonlinear system in the form of (6). Let
 Then 𝕊ˆx is called the singular set of system (6), and 𝔽ˆx = ℝn+2\𝕊ˆx is called the feasible set of system (6).
 Furthermore, system (6) is called sub-normal if 𝕊ˆx ≠ ∅.
 
-## [57] `scis_2024_chained1` (PDF p.7, L459)
+## [59] `scis_2024_chained1` (PDF p.7, L459)
 
 Definition 4. The sub-normal system (6) is said to be rational if there exists a ball 𝔹ˆ0 centered at
 (x0∼n, u0) = (0, 0), such that 𝔹ˆ0 ⊂ 𝔽ˆx.
 Obviously, a rational sub-normal system is locally normal.
 
-## [58] `scis_2024_chained1` (PDF p.21, L1309)
+## [60] `scis_2024_chained1` (PDF p.21, L1309)
 
 Definition 5. Consider the nonlinear system in the form of (28). Let
 
@@ -947,12 +963,12 @@ Definition 5. Consider the nonlinear system in the form of (28). Let
 Then 𝕊x (x0) is called the singular set of system (28), and 𝔽x (x0) = ℝn\𝕊x (x0) is called the feasible set
 of system (28). Furthermore, system (28) is called sub-normal if 𝕊x (x0) ≠ ∅ or ℝn.
 
-## [59] `scis_2024_chained1` (PDF p.21, L1317)
+## [61] `scis_2024_chained1` (PDF p.21, L1317)
 
 Definition 6. The sub-normal system (28) is said to be rational if there exists a ball 𝔹0 centered at
 x1∼n = 0, such that 𝔹0 ⊂ 𝔽x (x0).
 
-## [60] `scis_2024_chained1` (PDF p.22, L1389)
+## [62] `scis_2024_chained1` (PDF p.22, L1389)
 
 Definition 7. Let Φ (b0∼n−1) be Hurwitz, and Assumption X be satisfied. Then the set ℚ ⊂ ℝn is
 called the ROEA of the system
@@ -967,14 +983,58 @@ z(0∼n−1) = Φ (b0∼n−1) z(0∼n−1),
 
 starting from ℚ converges exponentially to zero within 𝔽z (x0).
 
-## [61] `tcyb_2023_robustdelay` (PDF p.5, L574)
+## [63] `scis_2025_chained3` (PDF p.10, L629)
+
+Definition 1. Consider the nonlinear system in the form of (41)–(43). Define
+
+𝕊x (α, β, ζ0, η0) = ni=1−1𝕊xi (α, β, ζ0, η0) ,
+(44)
+{𝕊xi (α, β, ζ0, η0) = x1∼n det ˜Ψi (α, β, ζ0, η0, xi+1∼n, t) = 0 or ∞, x1∼n ∈ ℝnr, t ⩾ 0 .
+{ ||| }
+Then 𝕊x (α, β, ζ0, η0) is called the singular set of system (41), and 𝔽x (α, β, ζ0, η0) = ℝnr\𝕊x (α, β, ζ0, η0) is
+called the feasible set of system (41). Furthermore, system (41) is called abnormal if 𝕊x (α, β, ζ0, η0) = ℝnr
+or 𝔽x (α, β, ζ0, η0) = ∅, and is called sub-normal if 𝔽x (α, β, ζ0, η0) ≠ ∅. Particularly, it is called
+(1) (globally) normal if 𝕊x (α, β, ζ0, η0) = ∅ or 𝔽x (α, β, ζ0, η0) = ℝnr;
+(2) rationally sub-normal or locally normal if there exists a ball 𝔹0 ⊂ ℝnr centered at x1∼n = 0, such
+that 𝔹0 ⊂ 𝔽 (α, β, ζ0, η0).
+By the above definition, it is clear that system (41) is globally normal if and only if for selected β ∈ ℝ
+and ζ0 ∈ ℝr, there holds
+
+det Ψ˜i (α, β, ζ0, η0, xi+1∼n, t) ≠ 0 or ∞, ∀xi+1∼n ∈ ℝ(n−i)r, and t ⩾ 0, i = 1, 2, . . . , n − 1,
+
+and is sub-normal if and only if for chosen β ∈ ℝ and ζ0 ∈ ℝr, there holds
+
+det Ψ˜i (α, β, ζ0, η0, xi+1∼n, t) ≠ 0 or ∞, ∃xi+1∼n ∈ ℝ(n−i)r, and ∀t ⩾ 0, i = 1, 2, . . . , n − 1.
+
+## [64] `scis_2025_chained3` (PDF p.11, L713)
+
+Definition 2. Consider the nonlinear system in the form of (51) or (53). Define
+
+𝕊z (α, β, ζ0, η0) = ni=1−1𝕊zi (α, β, ζ0, η0) ,
+{ nr (54)
+𝕊zi (α, β, ζ0, η0) = {z1∼n |det Hi (α, β, ζ0, η0, z1∼i, t) = 0 or ∞, z1∼n ∈ ℝ , t ⩾ 0} .
+
+Then 𝕊z (α, β, ζ0, η0) is called the singular set of system (51) or (53), and 𝔽z (α, β, ζ0, η0) = ℝnr\𝕊z(α, β,
+ζ0, η0) is called the feasible set of system (51). Furthermore, system (51) is called abnormal if 𝕊z(α, β, ζ0,
+η0) = ℝnr or 𝔽z (α, β, ζ0, η0) = ∅, and is called sub-normal if 𝔽z (α, β, ζ0, η0) ≠ ∅. Particularly, it is called
+(1) (globally) normal if 𝕊z (α, β, ζ0, η0) = ∅, or 𝔽z (α, β, ζ0, η0) = ℝnr;
+(2) rationally sub-normal or locally normal if there exists a ball 𝔹0 ⊂ ℝnr centered at z1∼n = 0, such
+that 𝔹0 ⊂ 𝔽z (α, β, ζ0, η0).
+
+## [65] `scis_2025_chained3` (PDF p.12, L793)
+
+Definition 3. System (60) is called a sub-SFS if it is sub-normal, that is, 𝔽z (α, β, ζ0, η0) ≠ ∅. Fur-
+thermore, 𝕊z (α, β, ζ0, η0) and 𝔽z (α, β, ζ0, η0) are called the singular set and feasible set of system (60),
+respectively.
+
+## [66] `tcyb_2023_robustdelay` (PDF p.5, L574)
 
 Definition 1: A continuous function α : [0, a) → [0, ∞)
 is said to belong to class K if it is strictly increasing and
 α(0) = 0. It is said to belong to class K∞ if a = ∞ and
 α(r) → ∞ as r → ∞.
 
-## [62] `tcyb_2023_robustdelay` (PDF p.5, L578)
+## [67] `tcyb_2023_robustdelay` (PDF p.5, L578)
 
 Definition 2: A continuous function β : [0, a) × [0, ∞) →
 [0, ∞) is said to belong to class KL if, for each fixed s, the
@@ -982,7 +1042,7 @@ mapping β(r, s) belongs to class K with respect to r and, for
 each fixed r, the mapping β(r, s) is decreasing with respect to
 s and β(r, s) → 0 as s → ∞.
 
-## [63] `tcyb_2023_robustdelay` (PDF p.5, L583)
+## [68] `tcyb_2023_robustdelay` (PDF p.5, L583)
 
 Definition 3: A nonlinear function h(z) : ℝn → ℝm is
 called a K∞-bounded function if there exists a K∞ function
@@ -990,7 +1050,7 @@ called a K∞-bounded function if there exists a K∞ function
 
 ‖h(z)‖ ≤ κh(‖z‖).
 
-## [64] `tcyb_2023_robustdelay` (PDF p.5, L677)
+## [69] `tcyb_2023_robustdelay` (PDF p.5, L677)
 
 Definition 4: The system (24) is said to be input-to-state
 stable if there exist a class KL function β(·) and a class
@@ -1006,7 +1066,7 @@ input u(t), the state x(t) will be bounded. Furthermore, as t
 increases, the state x(t) will be ultimately bounded by a class
 K function of supt≥t0 ‖u(t)‖.
 
-## [65] `tcyb_2023_subfas` (PDF p.4, L466)
+## [70] `tcyb_2023_subfas` (PDF p.4, L466)
 
 Definition 1: Let ℚ ⊂ ℝn be nonempty. If for any initial
 value x0 ∈ ℚ, the solution of system (16), x(t, x0), exponen-
@@ -1027,7 +1087,7 @@ x˙ = f(x, t) + B(x, t)u (17)
 
 where u ∈ ℝr is the control vector.
 
-## [66] `tcyb_2023_subfas` (PDF p.4, L484)
+## [71] `tcyb_2023_subfas` (PDF p.4, L484)
 
 Definition 2: The system (17) is called substabilizable if
 there exist a nonempty set ℚ ⊂ ℝn, and a feedback controller
@@ -1042,14 +1102,14 @@ respectively. As will be seen in the following two sections,
 these concepts can be also generalized into more complicated
 nonlinear systems.
 
-## [67] `tcyb_2023_subfas` (PDF p.5, L630)
+## [72] `tcyb_2023_subfas` (PDF p.5, L630)
 
 Definition 3: The sub-FAS (18) or (25) is called a 0-type
 sub-FAS if 𝕊 = 𝕊0; is called a ∞-type sub-FAS if 𝕊 = 𝕊∞;
 and is called a mixed-type sub-FAS if none of 𝕊0 and 𝕊∞ is
 empty.
 
-## [68] `tcyb_2023_subfas` (PDF p.5, L634)
+## [73] `tcyb_2023_subfas` (PDF p.5, L634)
 
 Definition 4: The sub-FAS (18) or (25) is called:
 1) a rational sub-FAS if 𝕊 does not contain the origin;
@@ -1058,7 +1118,7 @@ boundary point;
 3) an irrational sub-FAS if 𝕊 contains the origin as an inner
 point.
 
-## [69] `tcyb_2023_subfas` (PDF p.6, L692)
+## [74] `tcyb_2023_subfas` (PDF p.6, L692)
 
 Definition 5: A scalar function ϕ0(X, t) is called a function
 of normal singularity for the sub-FAS (18) or (25) if
@@ -1068,7 +1128,7 @@ of normal singularity for the sub-FAS (18) or (25) if
 In this case, (26) is called the normal singularity condition for
 the sub-FAS (18) or (25).
 
-## [70] `tcyb_2023_subfas` (PDF p.6, L704)
+## [75] `tcyb_2023_subfas` (PDF p.6, L704)
 
 Definition 6: A scalar function ϕ∞(X, t) is called a function
 of abnormal singularity for the sub-FAS (18) or (25) if
@@ -1088,7 +1148,7 @@ has the following expression:
 = X | ϕ0(X, t)ϕ∞(X, t) ≠ 0, X ∈ ℝm, t ≥ 0 .
 { }
 
-## [71] `tcyb_2024_overview` (PDF p.3, L368)
+## [76] `tcyb_2024_overview` (PDF p.3, L368)
 
 Definition 1: The multi-order FAS (2) is called
 1) a (global) FAS if 𝕊 = ∅ or equivalently 𝔽 = ℝκ;
@@ -1100,7 +1160,7 @@ converted into a (global) FAS [15]. Therefore, most subtle
 problems in the field of control really come from the treatment
 of sub-FASs.
 
-## [72] `tcyb_2024_overview` (PDF p.3, L389)
+## [77] `tcyb_2024_overview` (PDF p.3, L389)
 
 Definition 2: The sub-FAS (2) is called
 1) a 0-type sub-FAS if 𝕊 = 𝕊0;
@@ -1119,7 +1179,7 @@ the following way:
 
 x⌊i⌋(k) = x (k + i) , x⌈i⌉(k) = x (k − i) . (7)
 
-## [73] `tcyb_2024_overview` (PDF p.6, L649)
+## [78] `tcyb_2024_overview` (PDF p.6, L649)
 
 Definition 3: An output y in the form of (20) is said to be
 a fully flat output of system (13) on 𝕏 ⊂ ℝn if
@@ -1131,7 +1191,7 @@ and (21) hold. It is further called a solid flat output of system
 (13) on 𝕏 ⊂ ℝn if (19) defines a homeomorphism φ between
 x and yk(0∼µk−1)|k=1∼η on 𝕏.
 
-## [74] `tcyb_2024_overview` (PDF p.6, L658)
+## [79] `tcyb_2024_overview` (PDF p.6, L658)
 
 Definition 4: Let y ∈ ℝr possess the form of (20) and be a
 solid flat output on 𝕏 ⊂ ℝn. If further
@@ -1163,7 +1223,7 @@ Then, we obtain, from (23), the following sub-FAS:
 yk(µk)|k=1∼η = f (yk(0∼µk−1)|k=1∼η)+B(yk(0∼µk−1)|k=1∼η)u.
 (27)
 
-## [75] `tcyb_2024_overview` (PDF p.6, L723)
+## [80] `tcyb_2024_overview` (PDF p.6, L723)
 
 Definition 5: Let
 
@@ -1201,7 +1261,7 @@ yk(µk)|k=1∼η = f1∼η (x) + b1∼η (x) u, (32)
 
 respectively.
 
-## [76] `tcyb_2024_overview` (PDF p.6, L760)
+## [81] `tcyb_2024_overview` (PDF p.6, L760)
 
 Definition 6: Let y ∈ ℝr be given by (28) and be an
 output of system (13) with a full set of relative degrees µk,
@@ -1219,7 +1279,7 @@ relative degrees globally.
 Utilizing the above definition, equation (32), and existence
 of φ−1∼1η, we can now easily derive the following result.
 
-## [77] `tcyb_2024_overview` (PDF p.11, L1247)
+## [82] `tcyb_2024_overview` (PDF p.11, L1247)
 
 Definition 7: A function f (x1∼n, t) ∈ ℝr, with x1∼n ∈
 ℝnr, is called a function permitting finite-time stability if it
@@ -1265,7 +1325,7 @@ X0 = x(0∼n−1)(0) ∈ Rf.
 Summing up the above, we now have the following result
 regarding finite-time stabilization.
 
-## [78] `tcyb_2024_overview` (PDF p.13, L1554)
+## [83] `tcyb_2024_overview` (PDF p.13, L1554)
 
 Definition 8: Define for nonlinear system (77) the set
 
@@ -1280,13 +1340,13 @@ any element in the set 𝔽ˆ is a feasible point of system (77).
 Based on this, we further have the following definition for
 the system (77).
 
-## [79] `tcyb_2024_overview` (PDF p.13, L1566)
+## [84] `tcyb_2024_overview` (PDF p.13, L1566)
 
 Definition 9: If the feasible set 𝔽ˆ is not empty, then system
 (77) is called a sub-SFS. In particular, when the feasible set
 𝔽ˆ = ℝnr, the system (77) is called a (global) SFS.
 
-## [80] `tcyb_2024_overview` (PDF p.14, L1711)
+## [85] `tcyb_2024_overview` (PDF p.14, L1711)
 
 Definition 10: The sub-FAS (2) is called
 1) a rational sub-FAS if 𝕊 does not contain the origin;
@@ -1295,7 +1355,7 @@ a boundary point; and
 3) an irrational sub-FAS if 𝕊 contains the origin as an
 interior point.
 
-## [81] `ucfas_2025_part1` (PDF p.6, L551)
+## [86] `ucfas_2025_part1` (PDF p.6, L551)
 
 Definition 4.1: The above system (8)–(11) is gener-
 ally called a UC-FAS. It is also called a strongly (unidi-
@@ -1320,7 +1380,7 @@ Clearly, when Ux=ux , Ux=ux and Uy =
 uy are all not present, the whole UC-FAS (8)–(11)
 actually becomes a FAS instead of a UC-FAS.
 
-## [82] `ucfas_2025_part1` (PDF p.8, L780)
+## [87] `ucfas_2025_part1` (PDF p.8, L780)
 
 Definition 5.1: The above system (31)–(40) is called
 a strongly multi-order UC-FAS. It is called a weakly
@@ -1345,7 +1405,7 @@ Uy = uy are all not present, the whole UC-
 FAS (31)–(40) actually becomes a FAS instead of a
 UC-FAS.
 
-## [83] `ucfas_2025_part2` (PDF p.4, L401)
+## [88] `ucfas_2025_part2` (PDF p.4, L401)
 
 Definition 2.1: Let 𝔽in and 𝔽ex be defined by (5)
 and (10), respectively. Then, the two sets 𝔽in and 𝔽ex
@@ -1361,7 +1421,7 @@ FAS (1) and (2).
 In general, the overall feasibility set 𝔽 is required to
 be nonempty.
 
-## [84] `ucfas_2025_part2` (PDF p.5, L434)
+## [89] `ucfas_2025_part2` (PDF p.5, L434)
 
 Definition 2.2: Let Rin and Rex be defined by (13)
 and (14), respectively. Then, the two sets Rin and Rex
@@ -1378,7 +1438,7 @@ By definition, the RoEA R is determined by sev-
 eral factors, besides the gain matrix A0∼n−1, it has also
 relations with the internal and external constraints.
 
-## [85] `book_2026_volume1` (PDF p.92, L72)
+## [90] `book_2026_volume1` (PDF p.92, L72)
 
 Definition 2.1 PMD (2.97) is said to be fully actuated if q = r and Q(s) = Q 0 is a
 nonsingular constant matrix, and is said to be underactuated if either q > r or q = r
@@ -1409,7 +1469,7 @@ initial condition, we obtain
 which is exactly in the form of PMD (2.98) with
 (P(s), Q 0 ) = (s In − A, B) (2.101)
 
-## [86] `book_2026_volume1` (PDF p.96, L76)
+## [91] `book_2026_volume1` (PDF p.96, L76)
 
 Definition 2.2 The system
 x̄˙ = Ā (t) x̄ + B̄ (t) u,                  (2.110)
@@ -1425,7 +1485,7 @@ For LTV systems, the issue of controllability is much more complicated than that
 LTI systems. Let us first introduce the following Silverman criterion for checking
 controllability of system (2.109) [see Theorem 3 in Silverman and Meadows (1967)].
 
-## [87] `book_2026_volume1` (PDF p.97, L77)
+## [92] `book_2026_volume1` (PDF p.97, L77)
 
 Definition 2.3 (Nguyen, 1986) If controllability indices μi , i = 1, 2, . . . , r, of
 system (2.109) are fixed on the time interval [t0 , ∞) and satisfy
@@ -1438,7 +1498,7 @@ Clearly, for the case of i=1 μi max ≥ n, system (2.109) is called non-
 lexicography-fixedly controllable on [t0 , ∞). To establish the solvability conditions,
 the following assumptions on system (2.109) are made.
 
-## [88] `book_2026_volume1` (PDF p.105, L85)
+## [93] `book_2026_volume1` (PDF p.105, L85)
 
 Definition 2.4 The nonlinear system (2.132) is said to be feedback linearizable if
 there exists a diffeomorphism x̂ = T (x) defined on Rn , and a control transformation
@@ -1448,7 +1508,7 @@ system (2.132) can be converted into the form of
 x̂˙ = A x̂ + Bv,                                 (2.134)
 where A ∈ Rnxn , B ∈ Rn×r , with (A, B) controllable.
 
-## [89] `book_2026_volume1` (PDF p.107, L87)
+## [94] `book_2026_volume1` (PDF p.107, L87)
 
 Definition 2.5 The nonlinear system (2.141) is called (globally) feedback lineariz-
 able via the differentiable feedback
@@ -1468,7 +1528,7 @@ such that system (2.141) is equivalently converted, under the control transforma
 x̂˙ = A x̂ + Bv,                                   (2.145)
 where A ∈ Rnxn and B ∈ Rn×r with (A, B) controllable.
 
-## [90] `book_2026_volume1` (PDF p.115, L95)
+## [95] `book_2026_volume1` (PDF p.115, L95)
 
 Definition 3.1 A function f (x1∼n , t) ∈ Rr , with x1∼n ∈ Rnr , is called a function
 permitting finite-time stability if it makes system (3.16) finite-time stable in certain
@@ -1505,26 +1565,26 @@ where t f and b are as stated above, P(γ ) is the unique positive definite solu
 to the following parametric Lyapunov equation:
 (00∼n−1 )T P(γ ) + P             (00∼n−1 ) − P(γ )Bc BcT P(γ ) = −γ P(γ ).
 
-## [91] `book_2026_volume1` (PDF p.397, L383)
+## [96] `book_2026_volume1` (PDF p.397, L383)
 
 Definition 12.1 A continuous function.α : [0, a) → [0, ∞) is said to belong to class
 K if it is strictly increasing and α (0) = 0. It is said to belong to class K∞ if a = ∞
 and α (r ) → ∞ as r → ∞.
 
-## [92] `book_2026_volume1` (PDF p.397, L383)
+## [97] `book_2026_volume1` (PDF p.397, L383)
 
 Definition 12.2 A continuous function β : [0, a) × [0, ∞) → [0, ∞) is said to
 belong to class KL if, for each fixed s, the mapping β (r, s) belongs to class K with
 respect to r and, for each fixed r , the mapping β (r, s) is decreasing with respect to
 s and β (r, s) → 0 as s → ∞.
 
-## [93] `book_2026_volume1` (PDF p.397, L383)
+## [98] `book_2026_volume1` (PDF p.397, L383)
 
 Definition 12.3 A nonlinear function h (z) : Rn → Rm is called a K∞ -bounded
 function if there exists a K∞ function κh (·) such that
 h (z) ≤ κh ( z ) .
 
-## [94] `book_2026_volume1` (PDF p.399, L385)
+## [99] `book_2026_volume1` (PDF p.399, L385)
 
 Definition 12.4 System (12.23) is said to be input-to-state stable if there exist a class
 KL function β (·) and a class K function γ (·) such that for any initial state x(t0 ) and

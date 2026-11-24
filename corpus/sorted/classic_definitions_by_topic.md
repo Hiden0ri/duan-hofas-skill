@@ -1,4 +1,4 @@
-# Duan 全集经典定义主题原文库（94 条正式 `Definition` + 15 处正文/定理内核心定义 = 109 条）
+# Duan 全集经典定义主题原文库（99 条正式 `Definition` + 15 处正文/定理内核心定义 = 114 条）
 
 - **覆盖范围**：32 篇段广仁一作中英文论文 + 2026 年 Springer 专著 *Volume I* 全部正式 `Definition` 环境 + 正文/定理内无编号核心概念定义。
 - **用途**：核查段广仁逐字原话、区分“正式编号 `Definition` 环境”与“正文直接引入记号”、按概念主题直接调取原文。
@@ -12,10 +12,10 @@
 | 3. 奇异函数（φ₀, φ_∞, φ）与奇异类型分类（0/∞/Mixed & Rational/Critical/Irrational） | 9 | 1 | 10 |
 | 4. 亚稳定性（Substability）、亚镇定与指数吸引域（ROEA / RoEA / REA） | 3 | 4 | 7 |
 | 5. 能控/能观/平坦输出、Type I/II 系统与非线性稳定性预备定义 | 30 | 0 | 30 |
-| 6. 亚严反馈（sub-SFS）、广义链式（Sub-normal）与单向连接全驱系统（UC-FAS） | 15 | 2 | 17 |
-| 7. 输出依赖全驱系统（OD-FAS / sub-OD-FAS）与输出反馈 RoEA | 2 | 2 | 4 |
+| 6. 亚严反馈（sub-SFS）、广义链式（Sub-normal）与单向连接全驱系统（UC-FAS） | 18 | 2 | 20 |
+| 7. 输出依赖全驱系统（OD-FAS / sub-OD-FAS）与输出反馈 RoEA | 4 | 2 | 6 |
 | 8. 离散时间（前进步/后退步、可行轨迹集）与时滞全驱/亚全驱系统 | 20 | 0 | 20 |
-| **合计** | **94** | **15** | **109** |
+| **合计** | **99** | **15** | **114** |
 
 ---
 
@@ -1230,7 +1230,51 @@ z(0∼n−1) = Φ (b0∼n−1) z(0∼n−1),
 
 starting from ℚ converges exponentially to zero within 𝔽z (x0).
 
-### [78] `tcyb_2024_overview` — Definition 8 (Formal | PDF p.13, L1554)
+### [78] `scis_2025_chained3` — Definition 1 (Formal | PDF p.10, L629)
+
+Definition 1. Consider the nonlinear system in the form of (41)–(43). Define
+
+𝕊x (α, β, ζ0, η0) = ni=1−1𝕊xi (α, β, ζ0, η0) ,
+(44)
+{𝕊xi (α, β, ζ0, η0) = x1∼n det ˜Ψi (α, β, ζ0, η0, xi+1∼n, t) = 0 or ∞, x1∼n ∈ ℝnr, t ⩾ 0 .
+{ ||| }
+Then 𝕊x (α, β, ζ0, η0) is called the singular set of system (41), and 𝔽x (α, β, ζ0, η0) = ℝnr\𝕊x (α, β, ζ0, η0) is
+called the feasible set of system (41). Furthermore, system (41) is called abnormal if 𝕊x (α, β, ζ0, η0) = ℝnr
+or 𝔽x (α, β, ζ0, η0) = ∅, and is called sub-normal if 𝔽x (α, β, ζ0, η0) ≠ ∅. Particularly, it is called
+(1) (globally) normal if 𝕊x (α, β, ζ0, η0) = ∅ or 𝔽x (α, β, ζ0, η0) = ℝnr;
+(2) rationally sub-normal or locally normal if there exists a ball 𝔹0 ⊂ ℝnr centered at x1∼n = 0, such
+that 𝔹0 ⊂ 𝔽 (α, β, ζ0, η0).
+By the above definition, it is clear that system (41) is globally normal if and only if for selected β ∈ ℝ
+and ζ0 ∈ ℝr, there holds
+
+det Ψ˜i (α, β, ζ0, η0, xi+1∼n, t) ≠ 0 or ∞, ∀xi+1∼n ∈ ℝ(n−i)r, and t ⩾ 0, i = 1, 2, . . . , n − 1,
+
+and is sub-normal if and only if for chosen β ∈ ℝ and ζ0 ∈ ℝr, there holds
+
+det Ψ˜i (α, β, ζ0, η0, xi+1∼n, t) ≠ 0 or ∞, ∃xi+1∼n ∈ ℝ(n−i)r, and ∀t ⩾ 0, i = 1, 2, . . . , n − 1.
+
+### [79] `scis_2025_chained3` — Definition 2 (Formal | PDF p.11, L713)
+
+Definition 2. Consider the nonlinear system in the form of (51) or (53). Define
+
+𝕊z (α, β, ζ0, η0) = ni=1−1𝕊zi (α, β, ζ0, η0) ,
+{ nr (54)
+𝕊zi (α, β, ζ0, η0) = {z1∼n |det Hi (α, β, ζ0, η0, z1∼i, t) = 0 or ∞, z1∼n ∈ ℝ , t ⩾ 0} .
+
+Then 𝕊z (α, β, ζ0, η0) is called the singular set of system (51) or (53), and 𝔽z (α, β, ζ0, η0) = ℝnr\𝕊z(α, β,
+ζ0, η0) is called the feasible set of system (51). Furthermore, system (51) is called abnormal if 𝕊z(α, β, ζ0,
+η0) = ℝnr or 𝔽z (α, β, ζ0, η0) = ∅, and is called sub-normal if 𝔽z (α, β, ζ0, η0) ≠ ∅. Particularly, it is called
+(1) (globally) normal if 𝕊z (α, β, ζ0, η0) = ∅, or 𝔽z (α, β, ζ0, η0) = ℝnr;
+(2) rationally sub-normal or locally normal if there exists a ball 𝔹0 ⊂ ℝnr centered at z1∼n = 0, such
+that 𝔹0 ⊂ 𝔽z (α, β, ζ0, η0).
+
+### [80] `scis_2025_chained3` — Definition 3 (Formal | PDF p.12, L793)
+
+Definition 3. System (60) is called a sub-SFS if it is sub-normal, that is, 𝔽z (α, β, ζ0, η0) ≠ ∅. Fur-
+thermore, 𝕊z (α, β, ζ0, η0) and 𝔽z (α, β, ζ0, η0) are called the singular set and feasible set of system (60),
+respectively.
+
+### [81] `tcyb_2024_overview` — Definition 8 (Formal | PDF p.13, L1554)
 
 Definition 8: Define for nonlinear system (77) the set
 
@@ -1245,13 +1289,13 @@ any element in the set 𝔽ˆ is a feasible point of system (77).
 Based on this, we further have the following definition for
 the system (77).
 
-### [79] `tcyb_2024_overview` — Definition 9 (Formal | PDF p.13, L1566)
+### [82] `tcyb_2024_overview` — Definition 9 (Formal | PDF p.13, L1566)
 
 Definition 9: If the feasible set 𝔽ˆ is not empty, then system
 (77) is called a sub-SFS. In particular, when the feasible set
 𝔽ˆ = ℝnr, the system (77) is called a (global) SFS.
 
-### [80] `ucfas_2025_part1` — Definition 4.1 (Formal | PDF p.6, L551)
+### [83] `ucfas_2025_part1` — Definition 4.1 (Formal | PDF p.6, L551)
 
 Definition 4.1: The above system (8)–(11) is gener-
 ally called a UC-FAS. It is also called a strongly (unidi-
@@ -1276,7 +1320,7 @@ Clearly, when Ux=ux , Ux=ux and Uy =
 uy are all not present, the whole UC-FAS (8)–(11)
 actually becomes a FAS instead of a UC-FAS.
 
-### [81] `ucfas_2025_part1` — Definition 5.1 (Formal | PDF p.8, L780)
+### [84] `ucfas_2025_part1` — Definition 5.1 (Formal | PDF p.8, L780)
 
 Definition 5.1: The above system (31)–(40) is called
 a strongly multi-order UC-FAS. It is called a weakly
@@ -1301,7 +1345,7 @@ Uy = uy are all not present, the whole UC-
 FAS (31)–(40) actually becomes a FAS instead of a
 UC-FAS.
 
-### [82] `ucfas_2025_part2` — §2.1 Eq. (5) Internal Feasibility Set 𝔽^in & Controller on 𝔽^in (Prose) (Prose/Theorem | PDF p.4, L327)
+### [85] `ucfas_2025_part2` — §2.1 Eq. (5) Internal Feasibility Set 𝔽^in & Controller on 𝔽^in (Prose) (Prose/Theorem | PDF p.4, L327)
 
 Define the feasibility set of the single-order FAS (1) as
 { }
@@ -1322,7 +1366,7 @@ loop system:
 
 x(n) + A0∼n−1x(0∼n−1) = 0. (7)
 
-### [83] `ucfas_2025_part2` — Definition 2.1 (Formal | PDF p.4, L401)
+### [86] `ucfas_2025_part2` — Definition 2.1 (Formal | PDF p.4, L401)
 
 Definition 2.1: Let 𝔽in and 𝔽ex be defined by (5)
 and (10), respectively. Then, the two sets 𝔽in and 𝔽ex
@@ -1338,7 +1382,7 @@ FAS (1) and (2).
 In general, the overall feasibility set 𝔽 is required to
 be nonempty.
 
-### [84] `ucfas_2025_part2` — §2.1 Eq. (13)–(14) Internal and External RoEAs R^in & R^ex (Prose) (Prose/Theorem | PDF p.5, L417)
+### [87] `ucfas_2025_part2` — §2.1 Eq. (13)–(14) Internal and External RoEAs R^in & R^ex (Prose) (Prose/Theorem | PDF p.5, L417)
 
 Denoting X0 ≜ x(0∼n−1)(0), we have the following
 response for the closed-loop system (7) or (8):
@@ -1357,7 +1401,7 @@ t ≥ 0
 
 for which we can give the following definition.
 
-### [85] `ucfas_2025_part2` — Definition 2.2 (Formal | PDF p.5, L434)
+### [88] `ucfas_2025_part2` — Definition 2.2 (Formal | PDF p.5, L434)
 
 Definition 2.2: Let Rin and Rex be defined by (13)
 and (14), respectively. Then, the two sets Rin and Rex
@@ -1378,7 +1422,7 @@ relations with the internal and external constraints.
 
 ## 7. 输出依赖全驱系统（OD-FAS / sub-OD-FAS）与输出反馈 RoEA
 
-### [86] `odfas_2026_part1` — Definition 2.1 (Formal | PDF p.4, L427)
+### [89] `odfas_2026_part1` — Definition 2.1 (Formal | PDF p.4, L427)
 
 Definition 2.1. Denote
 
@@ -1389,7 +1433,7 @@ Furthermore, system (3) is called a sub-FAS if 𝔽
 is non-empty, and is called a global FAS if 𝔽 =
 ℝmq.
 
-### [87] `odfas_2026_part1` — §2.1 Convention C1 Output-Dependent Shorthand f_y(·, t), B(·, t) (Prose) (Prose/Theorem | PDF p.4, L458)
+### [90] `odfas_2026_part1` — §2.1 Convention C1 Output-Dependent Shorthand f_y(·, t), B(·, t) (Prose) (Prose/Theorem | PDF p.4, L458)
 
 Convention C1 For simplicity, in the
 subsequent content of this pa-
@@ -1402,7 +1446,7 @@ tively.
 With the above formulation, the following re-
 sult for global FAS (6) can be immediately given.
 
-### [88] `odfas_2026_part1` — §4.2 Dynamic Output-Feedback Augmented-State RoEA R & Theorem 4.2 (Prose + Theorem) (Prose/Theorem | PDF p.14, L1580)
+### [91] `odfas_2026_part1` — §4.2 Dynamic Output-Feedback Augmented-State RoEA R & Theorem 4.2 (Prose + Theorem) (Prose/Theorem | PDF p.14, L1580)
 
 Further denote
 
@@ -1444,7 +1488,23 @@ for OD-FAS (25) makes sense and drives the
 closed-loop responses z (t) and x(0∼n−1)(t) both
 exponentially to zero.
 
-### [89] `odfas_2026_part4` — Definition 2.1 (Formal | PDF p.9, L643)
+### [92] `odfas_2026_part2` — Definition 2.1 (Formal | PDF p.5, L525)
+
+Definition 2.1: Denote
+
+𝔽 = {Y | det B(Y, t) ≠ 0, Y ∈ ℝmq, t ≥ 0}. (10)
+
+Then 𝔽 is called the feasibility set of FAS (9). Further-
+more,system(9)iscalledasub-FASif𝔽isnon-empty,
+and is called a global FAS if 𝔽 = ℝmq.
+
+### [93] `odfas_2026_part2` — Definition 2.2 (Formal | PDF p.6, L602)
+
+Definition 2.2: OD-FAS (12) is said to be solvable if
+its companion system (14) possesses an output feed-
+back stabilising controller.
+
+### [94] `odfas_2026_part4` — Definition 2.1 (Formal | PDF p.9, L643)
 
 Definition 2.1. Denote
 
@@ -1470,7 +1530,7 @@ OD-FASs, please refer to Duan (2026b,0,0).
 
 ## 8. 离散时间（前进步/后退步、可行轨迹集）与时滞全驱/亚全驱系统
 
-### [90] `ijss_2022_part10` — Definition 3.2 (Formal | PDF p.6, L608)
+### [95] `ijss_2022_part10` — Definition 3.2 (Formal | PDF p.6, L608)
 
 Definition 3.2: Let Ai ∈ ℝr×r, i = 0, 1, . . . , n − 1, be
 a set of matrices, and the matrix B ∈ ℝr×r be nonsin-
@@ -1539,7 +1599,7 @@ n−1
 x (k + 1) = ∑Aix⌈i⌉(k) + Bu (k − (n − 1)) . (14)
 i=0
 
-### [91] `ijss_2022_part10` — Definition 3.3 (Formal | PDF p.7, L687)
+### [96] `ijss_2022_part10` — Definition 3.3 (Formal | PDF p.7, L687)
 
 Definition 3.3: The following systems
 
@@ -1607,7 +1667,7 @@ xp(k + μp)|p=1∼η
 ⌊0∼μp−1⌋
 = L(xp (k) |p=1∼η, k) + Buˆ (k) , (17)
 
-### [92] `ijss_2022_part10` — Definition 4.1 (Formal | PDF p.10, L1083)
+### [97] `ijss_2022_part10` — Definition 4.1 (Formal | PDF p.10, L1083)
 
 Definition 4.1: A vector function X(k) ∈ 𝔹κℕ is called
 a feasible trajectory of system (31) or (32) if it satisfies
@@ -1626,14 +1686,14 @@ Then
 is called the set of singular trajectories of system (31)
 or (32).
 
-### [93] `ijss_2022_part10` — Definition 4.2 (Formal | PDF p.10, L1103)
+### [98] `ijss_2022_part10` — Definition 4.2 (Formal | PDF p.10, L1103)
 
 Definition 4.2: The system (31) or (32) is called (glob-
 ally) fully actuated if it does not have a singular trajec-
 tory, that is, 𝔽 = 𝔹κℕ; and is called sub-fully actuated if
 it has a feasible trajectory, that is, 𝔽 ≠ ∅.
 
-### [94] `ijss_2022_part10` — Definition 4.3 (Formal | PDF p.11, L1197)
+### [99] `ijss_2022_part10` — Definition 4.3 (Formal | PDF p.11, L1197)
 
 Definition 4.3: Let 𝔽 ⊂ 𝔹κℕbe the largest set such that
 the following mapping
@@ -1652,7 +1712,7 @@ is called the set of singular trajectories of system (40)
 or (41), and any X(k) ∈ 𝕊 is called a singular trajectory
 of system (40) or (41).
 
-### [95] `ijss_2022_part10` — Definition 6.1 (Formal | PDF p.14, L1518)
+### [100] `ijss_2022_part10` — Definition 6.1 (Formal | PDF p.14, L1518)
 
 Definition 6.1: The system (57) is called locally feed-
 back linearisable at (x0, u0) via the differentiable feed-
@@ -1682,7 +1742,7 @@ y (k + 1)
 
 with [A, B] controllable.
 
-### [96] `ijss_2022_part10` — Definition 7.1 (Formal | PDF p.16, L1742)
+### [101] `ijss_2022_part10` — Definition 7.1 (Formal | PDF p.16, L1742)
 
 Definition 7.1: If X(k) ∈ 𝔹κℕ and U(k) ∈ 𝔹mrℕ satisfy
 
@@ -1691,7 +1751,7 @@ det B (X, U, k) = 0or∞, ∃ k ≥ 0, (68)
 then (X, U) is called a pair of singular trajectories of
 system (65).
 
-### [97] `ijss_2022_part10` — Definition 7.3 (Formal | PDF p.17, L1854)
+### [102] `ijss_2022_part10` — Definition 7.3 (Formal | PDF p.17, L1854)
 
 Definition 7.3: Let 𝔽 ⊂ 𝔹κℕ+mr be the largest set such
 that the following mapping
@@ -1710,7 +1770,7 @@ is called the set of singular trajectories of system (74),
 and any (X(k), U(k)) ∈ 𝕊 is called a singular trajectory
 of system (74).
 
-### [98] `scis_2022_discdelay2` — Definition 1 (Formal | PDF p.9, L542)
+### [103] `scis_2022_discdelay2` — Definition 1 (Formal | PDF p.9, L542)
 
 Definition 1. A vector X ∈ ℝκ(k) is called a feasible point of system (27) at time k if it satisfies
 
@@ -1729,14 +1789,14 @@ Further, corresponding to Definition 2.1 in [22] for continuous-time systems, or
 discrete-time systems with constant delays, the following definition for discrete-time sub-fully actuated
 time-delay systems can also be proposed.
 
-### [99] `scis_2022_discdelay2` — Definition 2 (Formal | PDF p.9, L558)
+### [104] `scis_2022_discdelay2` — Definition 2 (Formal | PDF p.9, L558)
 
 Definition 2. Let 𝔽k be the set of feasible points of system (27) at time k. Then the system (27)
 is called (globally) fully actuated at time k if 𝔽k = ℝκ(k), and is called sub-fully actuated at time k if
 𝔽k ⊂ ℝκ(k) is not empty. Furthermore, the system (27) is called (globally) fully actuated if 𝔽k = ℝκ(k)
 holds for all k ⩾ h, and is called sub-fully actuated if 𝔽k is not empty for all k ⩾ h.
 
-### [100] `scis_2022_discdelay2` — Definition 3 (Formal | PDF p.9, L566)
+### [105] `scis_2022_discdelay2` — Definition 3 (Formal | PDF p.9, L566)
 
 Definition 3. Let 𝔽k ⊂ ℝκ(k) be the largest set such that the following mapping:
 
@@ -1747,13 +1807,13 @@ feasible points of system (32) at time k, and any X ∈ 𝔽k is called a feasib
 k. Furthermore, the system (32) is called (globally) fully actuated if 𝔽k = ℝκ(k) holds for all k ⩾ h, and
 is called sub-fully actuated if 𝔽k ⊂ ℝκ(k) is not empty for all k ⩾ h.
 
-### [101] `scis_2022_discdelay2` — Definition 4 (Formal | PDF p.14, L892)
+### [106] `scis_2022_discdelay2` — Definition 4 (Formal | PDF p.14, L892)
 
 Definition 4. The dynamical system (64) is called completely controllable if it can be equivalently
 converted into a globally FAS in the form of (27) or (32), and is called sub-controllable if it can be
 equivalently converted into a sub-FAS in the form of (27) or (32).
 
-### [102] `scis_2023_delay1` — Definition 1 (Formal | PDF p.11, L734)
+### [107] `scis_2023_delay1` — Definition 1 (Formal | PDF p.11, L734)
 
 Definition 1. Let 𝔽 ⊂ ℝm, m ⩽ γnr be the largest set such that the following full-actuation condition
 is met:
@@ -1768,7 +1828,7 @@ T x(0∼n−1)(t − σj (t)) |j=1∼γ in 𝔽 is called a feasible point of sy
 is called the set of singular points, and any element T x(0∼n−1)(t − σj (t)) |j=1∼γ in 𝕊 is called a singular
 point of system (62).
 
-### [103] `scis_2023_delay1` — Definition 2 (Formal | PDF p.11, L746)
+### [108] `scis_2023_delay1` — Definition 2 (Formal | PDF p.11, L746)
 
 Definition 2. Let 𝔽 ⊂ ℝm, m ⩽ γnr be the set of feasible points of the system (62). Then the system
 (62) is called a sub-FAS if 𝔽 is not empty. Particularly, the single-order affine system (62) with time
@@ -1779,7 +1839,7 @@ delays is called
 
 Duan G R Sci China Inf Sci January 2023 Vol. 66 112201:12
 
-### [104] `scis_2023_delay1` — Definition 3 (Formal | PDF p.12, L766)
+### [109] `scis_2023_delay1` — Definition 3 (Formal | PDF p.12, L766)
 
 Definition 3. Let 𝔽 ⊂ ℝm, m ⩽ γnr be the largest set such that the mapping
 
@@ -1797,7 +1857,7 @@ Similarly, the concepts of sub-FAS, global FAS, almost FAS and basic FAS associa
 system (63) can be defined in accordance with Definition 2.
 To demonstrate the above concepts, let us consider an example.
 
-### [105] `scis_2023_delay1` — Definition 4 (Formal | PDF p.13, L863)
+### [110] `scis_2023_delay1` — Definition 4 (Formal | PDF p.13, L863)
 
 Definition 4. Let 𝔽 ⊂ ℝM, with M ⩽ γκ0 be the largest set such that the following full-actuation
 condition is met:
@@ -1819,7 +1879,7 @@ sub-FAS (62).
 
 Duan G R Sci China Inf Sci January 2023 Vol. 66 112201:14
 
-### [106] `scis_2023_delay1` — Definition 5 (Formal | PDF p.14, L896)
+### [111] `scis_2023_delay1` — Definition 5 (Formal | PDF p.14, L896)
 
 Definition 5. Let 𝔽 ⊂ ℝM, with M ⩽ γκ0 be the largest set such that the mapping
 
@@ -1836,7 +1896,7 @@ singular point of sub-FAS (72).
 Again, the concepts of global FAS, almost FAS and basic FAS associated with non-affine system (71)
 can also be defined similarly to Definition 4.
 
-### [107] `scis_2023_delay1` — Definition 6 (Formal | PDF p.20, L1284)
+### [112] `scis_2023_delay1` — Definition 6 (Formal | PDF p.20, L1284)
 
 Definition 6. The dynamical system (106) is said to be
 
@@ -1848,7 +1908,7 @@ Definition 6. The dynamical system (106) is said to be
 (71) or (72); and
 • sub-controllable if it can be equivalently converted into a sub-FAS in the form of (71) or (72).
 
-### [108] `scis_2023_delay1` — Definition 7 (Formal | PDF p.20, L1305)
+### [113] `scis_2023_delay1` — Definition 7 (Formal | PDF p.20, L1305)
 
 Definition 7. Suppose that the dynamical control system (106) can be equivalently converted into a
 system in the form of
@@ -1875,7 +1935,7 @@ please refer to [47].
 
 Duan G R Sci China Inf Sci January 2023 Vol. 66 112201:21
 
-### [109] `scis_2023_delay1` — Definition 8 (Formal | PDF p.22, L1395)
+### [114] `scis_2023_delay1` — Definition 8 (Formal | PDF p.22, L1395)
 
 Definition 8. Let
 Q = q1 q2 · · · qn ∈ ℝm×n,

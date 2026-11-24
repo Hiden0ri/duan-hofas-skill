@@ -1,4 +1,4 @@
-# Sorted Proposition Corpus Across 32 Duan First-Author Papers + Volume I (76 items)
+# Sorted Proposition Corpus Across 32 Duan First-Author Papers + Volume I (90 items)
 
 ## [1] `aaas_2024_subsfs` (PDF p.4, L457)
 
@@ -759,7 +759,98 @@ step backward HOFA system (65).
 For a proof of the above proposition, one can refer
 to the appendix.
 
-## [30] `jssc_2022_casestudy` (PDF p.4, L215)
+## [30] `jssc_2022_brockett1` (PDF p.6, L288)
+
+Proposition 3.1 Let y (0) ≠ 0, then a controller for the system (1) can be designed as
+in (8), which results in the following closed-loop system
+
+1
+⎧ x˙ = − (a0z + (a1 − γ) xy) ,
+⎪⎪ y
+⎪⎪⎨ (9)
+y˙ = −γy,
+
+⎪⎪⎪⎪ z˙ = xy.
+⎩
+Furthermore, if, in addition,
+a0 = αβ, a1 = α + β, (10)
+
+with α and β being two real scalars satisfying
+
+α > β > γ > 0, (11)
+
+then all x (t) , y (t) , z (t) and u1 (t) , u2 (t) converge to zero exponentially as t → ∞.
+A proof of the above result is provided in the appendix.
+The above result indicates that, for this well-known example (1), there exists a smooth
+controller (8) which “almost” globally exponentially stabilizes the system since all trajectories
+starting from the initial value space
+
+ℝ30 = {(x0, y0, z0) | x0, y0, z0 ∈ ℝ} (12)
+
+go to the origin except those starting from the x0-z0 plane.
+
+## [31] `jssc_2022_brockett1` (PDF p.7, L359)
+
+Proposition 3.2 Let x (0) ≠ 0, then a controller for the system (1) can be designed as
+in (17), which results in the following closed-loop system
+
+⎧ x˙ = −γx,
+
+⎪⎪⎪⎨ y˙ = −1 (a0z + (a1 − γ) xy) , (18)
+x
+⎪⎪⎪ z˙ = xy.
+⎩
+Furthermore, if, in addition, a0, a1 and γ are taken as in (10)–(11), then all x (t) , y (t) , z (t)
+and u1 (t) , u2 (t) tend to zero exponentially.
+Similar to Case A, the above result indicates that, for this well-known example (1), there
+exists another smooth controller (17) which “almost” globally exponentially stabilizes the sys-
+tem, since all trajectories starting from the initial value space ℝ30, defined in (12), go to the
+origin except those starting from the y0-z0 plane.
+
+## [32] `jssc_2022_brockett1` (PDF p.9, L457)
+
+Proposition 4.1 Let x (0) ≠ 0 or y (0) ≠ 0, and a0, a1 and γ be taken to satisfy (10)–(11).
+Then the above controller (22) gives the closed-loop system (9) when y (0) ≠ 0, and the closed-
+loop system (18) when x (0) ≠ 0, and also guarantees that all x (t) , y (t) , z (t) and u1 (t) , u2 (t)
+tend to zero exponentially as t → ∞.
+The above result indicates that, for this well-known example system (1), there exists a
+controller (22) which is smooth for all t > 0, and “almost” globally exponentially stabilizes the
+system. Since the system initial values are required to satisfy
+
+x (0) ≠ 0 or y (0) ≠ 0,
+
+the region of attraction for the system is
+
+ℚ = (x0, y0, z0) x20 + y02 ≠ 0 , (23)
+{ || }
+which is the whole three-dimensional space taking out only the z0-axis.
+
+## [33] `jssc_2022_brockett1` (PDF p.12, L593)
+
+Proposition 5.2 The following switching controller
+−1
+⎧ ⎡y x⎤ ⎡a0z + a1xy⎤
+⎪⎪− , if x0 ≠ 0,
+⎪⎪⎪ ⎣1 0⎦ ⎣ γx ⎦
+⎪⎪⎪⎪ −1
+⎪⎪⎪⎪ ⎡y x⎤ ⎡a0z + a1xy⎤
+⎪⎪− , if y0 ≠ 0,
+⎡u1⎤ ⎪⎪⎪ ⎣0 1⎦ ⎣ γy ⎦
+= ⎪⎨ (26)
+⎣u2⎦ ⎡σx − z0⎤ if x0 = y0 = 0,
+⎪⎪⎪− ,
+⎪⎪⎪ ⎣ γy ⎦ 0 ≤ t < t0,
+⎪⎪⎪ −1
+⎪⎪⎪⎪ ⎡y x⎤ ⎡a0z + a1xy⎤ if x0 = y0 = 0,
+⎪⎪− ,
+⎪⎪⎪ ⎣1 0⎦ ⎣ γx ⎦ t ≥ t0,
+⎪⎩
+globally stabilizes the system (1), where t0 is a positive number, and all the other variables are
+stated as before.
+Obviously, in the above controller (26), instead of (24), the finite-time pre-controller (25)
+can also be used.
+
+## [34] `jssc_2022_casestudy` (PDF p.4, L215)
 
 Proposition 2.1 The state-space system (1) has an equivalent sub-FAS model (5). Fur-
 thermore,
@@ -786,7 +877,7 @@ controller (7) is equivalently given as
 u = − 12 a0x1 + (1 + a1) x1 + x32 − v . (12)
 3x2 [ ( ) ]
 
-## [31] `jssc_2022_casestudy` (PDF p.6, L309)
+## [35] `jssc_2022_casestudy` (PDF p.6, L309)
 
 Proposition 3.1 Let a0 and a1 be determined by (17)–(18), with α and β, α > β, being a
 pair of distinct positive scalars, and the controller for the system (5) be designed as (7). Then,
@@ -822,7 +913,7 @@ larger than any ball with a limited radius.
 
 Figure 1 Region of evaporation for the sub-FAS
 
-## [32] `jssc_2022_casestudy` (PDF p.7, L352)
+## [36] `jssc_2022_casestudy` (PDF p.7, L352)
 
 Proposition 3.2 Let a0 and a1 be determined by (17)–(18), with α and β, α > β, being
 a pair of distinct positive scalars, and the controller be designed as in (7) for the sub-FAS (5).
@@ -842,7 +933,7 @@ with
 ⎩ ⎭
 For a proof of the above result, please refer to the appendix.
 
-## [33] `jssc_2022_casestudy` (PDF p.10, L471)
+## [37] `jssc_2022_casestudy` (PDF p.10, L471)
 
 Proposition 4.3 Let a0 and a1 be determined by (17)–(18), b > 1 + α, with α and β,
 α > β, being a pair of distinct positive scalars. Then a globally stabilizing controller for the
@@ -875,7 +966,7 @@ An illustration of the above result is given in Figure 3.
 
 Figure 3 Global stabilization using a pre-controller
 
-## [34] `jssc_2022_freq` (PDF p.3, L166)
+## [38] `jssc_2022_freq` (PDF p.3, L166)
 
 Proposition 2.1 The linear system (1) is controllable if and only if it can be converted
 equivalently into a high-order system in the form of
@@ -885,7 +976,7 @@ z(µ1)
 ⎡ L1xp |p=1∼r ⎤
 z(µ2) (0∼µp−1)
 
-## [35] `jssc_2022_freq` (PDF p.6, L288)
+## [39] `jssc_2022_freq` (PDF p.6, L288)
 
 Proposition 3.3 Let (N(s), D(s)) be right coprime and satisfy (11). If the generated
 state vector Z (s) satisfies the fully actuated PMD model
@@ -905,7 +996,7 @@ not be determined uniquely by x(t).
 system, rather than a conventional high-order linear state-space system.
 To illustrate the above two problems, we give an example.
 
-## [36] `odfas_2026_part1` (PDF p.4, L469)
+## [40] `odfas_2026_part1` (PDF p.4, L469)
 
 Proposition 2.1. Let system (6) be a global
 OD-FAS, and the system
@@ -934,7 +1025,7 @@ in the above Proposition 2.1 may be local or
 global asymptotical stability or finite-time sta-
 bility.
 
-## [37] `odfas_2026_part1` (PDF p.7, L797)
+## [41] `odfas_2026_part1` (PDF p.7, L797)
 
 Proposition 3.1. Suppose that system (25) is a
 global OD-FAS, and there exists a controller
@@ -969,7 +1060,7 @@ Please note that controller (28) can be linear
 when system (27) is linear. In most cases, it may
 be a dynamical compensator.
 
-## [38] `odfas_2026_part1` (PDF p.11, L1326)
+## [42] `odfas_2026_part1` (PDF p.11, L1326)
 
 Proposition 3.2. Under diffeomorphism (68),
 system (65) is equivalent to the following OD-
@@ -1003,7 +1094,7 @@ Mgl
 k
 Under the following control transformation:
 
-## [39] `odfas_2026_part1` (PDF p.17, L1886)
+## [43] `odfas_2026_part1` (PDF p.17, L1886)
 
 Proposition 5.1. Let
 
@@ -1070,7 +1161,7 @@ t→+∞ t→+∞
 (118)
 exponentially.
 
-## [40] `odfas_2026_part1` (PDF p.25, L2815)
+## [44] `odfas_2026_part1` (PDF p.25, L2815)
 
 Proposition 9.1. Let L = [ L1 L2 ]T make
 AL Hurwitz. Then an observer producing the es-
@@ -1087,7 +1178,206 @@ qˆ3∼4 obeys the following equation
 
 e˙ = ALe. (157)
 
-## [41] `odfas_2026_part4` (PDF p.6, L450)
+## [45] `odfas_2026_part2` (PDF p.6, L579)
+
+Proposition 2.1: Let system (12) be a global OD-FAS,
+anditscompanionsystem(14)possessesanoutputfeed-
+back stabilising controller
+
+u0 = α(y(t − τi(t))|i=1∼p, t)
+
+in a certain sense. Then the following output feedback
+controller
+
+{︃ u(t) = −B−1(·, t)(fy(·, t) − u0)
+(15)
+u0 = α(y(t − τi(t))|i=1∼p, t)
+
+stabilises the global OD-FAS (12) (in the same sense).
+
+Wepointoutthatthestabilisationmentionedinthe
+above Proposition 2.1 may be local or global asymp-
+totic stability or even finite-time stability.
+Theaboveresultindicatesthatoutputfeedbacksta-
+bilisation of OD-FAS (12) totally depends on that of
+itscompanionsystem.Becauseofthis,letusintroduce
+the following concept.
+
+## [46] `odfas_2026_part2` (PDF p.9, L1012)
+
+Proposition 3.1: Suppose that condition (37) is met.
+Then, under the above diffeomorphism (39), and the
+output transformation (44), system (36) can be equiv-
+alently converted into the following global OD-FAS:
+⎧ [︃ ]︃
+ξ¨1
+(4) = f (y) + B(y)u
+⎪⎪⎪⎪⎨ x ⎡ ⎤
+ξ1 (46)
+y = To⎣ x ⎦ .
+⎪⎪⎪⎪⎩
+x¨
+
+## [47] `odfas_2026_part2` (PDF p.14, L1483)
+
+Proposition 4.1: Suppose that system (82) is a global
+OD-FAS, and there exists a controller
+
+u0(t) = β(y(t − τi(t))|i=1∼p, t) (85)
+
+whichstabilisesinacertainsensethelinearsystem(84).
+Then
+{︄ −1
+u(t) = −B (·, t)[fy(·, t) − u0(t)]
+(86)
+u0(t) = β(y(t − τi(t))|i=1∼p, t),
+
+is a stabilising output feedback controller in the same
+sense for OD-FAS (82).
+
+Theaboveresultconvertsthestabilisationofanon-
+linear OD-FAS into that of a linear one. It holds
+because the closed-loop system resulted in by the out-
+put feedback controller (86) is easily checked to be
+⎧ (µk)
+xk |k=1∼η(t)
+∑︂p
+⎪⎪⎪⎪⎪⎪⎨ = Gi(t)xk(0∼µk−1)(t − τi(t))|k=1∼η
+(87)
+i=1
++β(ξ(t), t)
+⎪⎪⎪⎪⎪⎪⎩ y(t) = C(t)xk(0∼µk−1)|k=1∼η,
+
+with
+
+ξ(t) = [C(t − τi(t))xk(0∼µk−1)|k=1∼η(t − τi(t))]i=1∼p,
+
+which is stable by assumption.
+
+Please note that controller (85) can be often linear
+since system (84) is linear. In most cases, it may be a
+linear dynamical compensator.
+
+## [48] `odfas_2026_part2` (PDF p.15, L1655)
+
+Proposition 4.2: Let fya(·) and fy b(·) be given by (93)
+and (94), respectively, and matrix C be given by (99).
+Then,underdiffeomorphism(91)andtheoutputtrans-
+formation(97),system(88)isequivalenttothefollowing
+OD-FAS:
+⎧ ⎡ ⎤
+[︃ ]︃
+ξ ¨3 ⎣ − 1 d3ξ̇3 ⎦
+x(4) = bm3 (1∼3)
+−G1∼3x
+⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎨ [︃ ]︃
++ fy(y) + B u1 (100)
+u2
+
+ya = ξ3
+⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎩ yb = Cx(0∼3),
+
+where
+[︄ ]︄ ⎡ 1 ⎤
+fya(y) 0 m3
+fy(y) = b , B = ⎢⎣ k2 ⎥⎦ ,
+fy (y) 0
+m1m2
+
+and Gb0 = 0,
+[︃ 3 (︃ )︃ ]︃
+b d1 d1 d2
+G1 = 1 2 − − (k1 + k2) , (101)
+m1 m1 m1 m2
+(︃ )︃
+b 1 d1 d2
+G2 = d + , (102)
+m1 m1 m2
+b 1 d2
+G3 = d + . (103)
+m1 m2
+
+## [49] `odfas_2026_part2` (PDF p.21, L2353)
+
+Proposition 6.1: Let φ(x,x ¨) and ω(x,x ̇) be defined
+by (144) and (145), respectively. Then
+
+(1) transformation (146) implies
+
+1
+sin 2θ2 = φ(x,x ¨), (148)
+c11
+√︂
+cos 2θ2 = 1 c112 − φ2(x,x ¨); (149)
+c11
+
+(2) transformation (146) is invertible if and only if
+
+cos(2θ2) ≠ 0, (150)
+
+or, equivalently,
+
+|φ(x,x ¨)| < c11; (151)
+
+(3) undercondition(150)or(151),theinverseof(146)
+is given by
+⎧
+θ1 = x
+
+θ̇1 =ẋ
+⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎨ (︃ )︃
+1 1
+θ2 = arcsin φ(x,x ¨) (152)
+2 c11
+1 ...
+θ̇2 = √︂ [x − ω(x,x ̇)] ;
+⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎩ 2 c112 − φ2(x,x ¨)
+
+(4) the above diffeomorphism (152) admits
+
+lim θ(0∼1) = lim θ(0∼1) = 0. (153)
+x(0∼3)→0 1 x(0∼3)→0 2
+
+## [50] `odfas_2026_part2` (PDF p.22, L2470)
+
+Proposition 6.2: Under diffeomorphism (146) and
+condition(150)or(151),system(143)canbeconverted
+into the following corresponding output-dependent sub-
+FAS:
+⎧[︃ (4)]︃ [︃ (0∼3) ]︃
+x fy(x , θ2∼3)
+=
+θ¨3 hb(θ2∼3)
+⎪⎪⎪⎪⎪⎪⎪⎪⎪⎨ [︃ ]︃ [︃ ]︃
+b(x,x ¨) 0 τ2
++ (159)
+0 1 τ3
+
+ya = x(0∼3)
+⎪⎪⎪⎪⎪⎪⎪⎪⎪⎩
+yb = θ3,
+
+where
+√︂
+b(x,x ¨) = 2 c112 − φ2(x,x ¨), (160)
+
+fy(x(0∼3), θ2∼3) = ¨x(c0 cos x − 2c11 cos 2x)
+
+−ẋ2(c0 sin x − 4c11 sin 2x)
+
+2φ(x,x ¨) 2
+− [...x − ω(x,x ̇)]
+c11b(x,x ¨)
+
++ b(x,x ¨)ha(θ1∼3). (161)
+
+Furthermore, the feasibility set of the sub-FAS is given
+by
+
+{︂ }︂
+𝔽 = x(0∼3)⃓⃓⃓ |φ(x,x ¨)| < c11 . (162)
+
+## [51] `odfas_2026_part4` (PDF p.6, L450)
 
 Proposition 2.1. Let M ∈ ℝn×n be nonsingular. Then, system (2.1) is controllable. Furthermore,
 
@@ -1119,7 +1409,7 @@ lable and observable may not be stabilized by a smooth static or dynamic output 
 
 as demonstrated by the following simple counter example.
 
-## [42] `odfas_2026_part4` (PDF p.17, L1014)
+## [52] `odfas_2026_part4` (PDF p.17, L1014)
 
 Proposition 4.1. Let Assumptions A1 and Aϕ1 be met, and Ao1 ∈ ℝr×r be an arbitrary Hurwitz
 
@@ -1139,7 +1429,7 @@ Furthermore, the observation error e = q2 −q ˆ2 is governed by the following 
 
 e˙ = Ao1e. (4.10)
 
-## [43] `odfas_2026_part4` (PDF p.27, L1583)
+## [53] `odfas_2026_part4` (PDF p.27, L1583)
 
 Proposition 5.1. Let Assumptions A1-A2, Aϕ1, and AD be met, AoI(ϕ(0∼1)) be given by (5.11),
 
@@ -1166,7 +1456,7 @@ is governed by the following uniformly asymptotically stable system
 
 e˙ = AoI(ϕ(0∼1))e. (5.16)
 
-## [44] `odfas_2026_part4` (PDF p.30, L1759)
+## [54] `odfas_2026_part4` (PDF p.30, L1759)
 
 Proposition 5.2. Let Assumptions A1-A2 and Aϕ1, AD and Ap2 be met, and AL be given by
 
@@ -1183,7 +1473,7 @@ ically stable system (5.25).
 (0∼1) [R (ϕ) A1 (ϕ) R (ϕ)]
 AI (ϕ ) = AI (ϕ) = . (5.26)
 
-## [45] `odfas_2026_part4` (PDF p.39, L2208)
+## [55] `odfas_2026_part4` (PDF p.39, L2208)
 
 Proposition 6.1. Let Assumptions A1 and Av1 be met, Ao2 ∈ ℝr×r be an arbitrary Hurwitz matrix,
 
@@ -1203,7 +1493,7 @@ Furthermore, the observation error e = q1 −q ˆ1 is governed by the following 
 
 e˙ = Ao2e. (6.11)
 
-## [46] `odfas_2026_part4` (PDF p.41, L2312)
+## [56] `odfas_2026_part4` (PDF p.41, L2312)
 
 Proposition 6.2. Let Assumptions A1-A2 and Av1-Av2 be satisfied, and F0∼1 ∈ ℝr×2r be a matrix
 
@@ -1223,7 +1513,7 @@ where Ao2 is an arbitrary Hurwitz matrix, L(ϕ(0∼1)) is given by (6.8), and Θ
 
 (6.9).
 
-## [47] `odfas_2026_part4` (PDF p.45, L2581)
+## [57] `odfas_2026_part4` (PDF p.45, L2581)
 
 Proposition 7.1. Let Assumptions A1, AD, Av1 and Av2 be met, and
 
@@ -1252,7 +1542,7 @@ d dˆ
 
 obeys the uniformly asymptotically stable system (7.9).
 
-## [48] `odfas_2026_part4` (PDF p.47, L2711)
+## [58] `odfas_2026_part4` (PDF p.47, L2711)
 
 Proposition 7.2. Let Assumptions A1-A2, AD, Av1 and Av2 be met, AoII (ϕ(0∼1)) ∈ ℝ2r×2r be
 
@@ -1277,7 +1567,7 @@ K22(ϕ(0∼1)) = AoII (ϕ(0∼1))+ L(ϕ(0∼1))K12(ϕ(0∼1)),
 
 where ΘIIb(ϕ(0∼1)) is given by (7.13).
 
-## [49] `odfas_2026_part4` (PDF p.54, L3053)
+## [59] `odfas_2026_part4` (PDF p.54, L3053)
 
 Proposition 8.1. Let
 
@@ -1295,7 +1585,7 @@ system (8.12) can be equivalently converted into the following OD-FAS:
 ( ) (8.19)
 y = ˙x.
 
-## [50] `odfas_2026_part4` (PDF p.58, L3322)
+## [60] `odfas_2026_part4` (PDF p.58, L3322)
 
 Proposition 8.2. Let Assumption Aφ be satisfied, Ao2 be an arbitrary Hurwitz matrix, and F0∼1 ∈
 
@@ -1327,7 +1617,7 @@ where ai, i = 0, 1, are two positive scalars. The closed-loop system is given by
 
 Combining the above two aspects, yields the following result.
 
-## [51] `odfas_2026_part4` (PDF p.59, L3354)
+## [61] `odfas_2026_part4` (PDF p.59, L3354)
 
 Proposition 8.3. Let Assumption Aφ be satisfied, F0∼1 ∈ ℝ2×4 be a matrix making Φ(F0∼1)
 
@@ -1340,7 +1630,7 @@ u2 = uφ − A22φ − fy2(y , φ, t),
 
 where uζ is given by (8.43)-(8.45), and uφ is given by (8.46).
 
-## [52] `scis_2022_discdelay1` (PDF p.5, L295)
+## [62] `scis_2022_discdelay1` (PDF p.5, L295)
 
 Proposition 1. The linear time-delay system (1) is controllable if and only if it can be converted
 equivalently into a system in the form of
@@ -1389,7 +1679,7 @@ As we will show later, or as demonstrated with the non-delay FAS approaches ([17
 advantage of a FAS lies in the control of the system.
 Based on the above description, we can now further propose more general linear FASs with time delays.
 
-## [53] `scis_2022_discdelay1` (PDF p.8, L504)
+## [63] `scis_2022_discdelay1` (PDF p.8, L504)
 
 Proposition 2. The above system (25), with Assumption 1 satisfied, can be equivalently converted
 into the following form:
@@ -1419,7 +1709,7 @@ important fact that a discrete-time delay system in a state-space representation
 discrete-time FAS with time delays. As we will see in Section 5, this brings about great convenience in
 the control of time-delay dynamical systems.
 
-## [54] `scis_2023_delay1` (PDF p.4, L282)
+## [64] `scis_2023_delay1` (PDF p.4, L282)
 
 Proposition 1. Let Assumptions A and B hold, then the state-space system (1) is equivalent to the
 following second-order system:
@@ -1444,7 +1734,7 @@ x2 (t) = B−1(x1 (t − σj (t))|j=1∼γ, t) [x˙1 (t) − α(x1 (t − τj (t
 
 Duan G R Sci China Inf Sci January 2023 Vol. 66 112201:5
 
-## [55] `scis_2023_delay2` (PDF p.3, L196)
+## [65] `scis_2023_delay2` (PDF p.3, L196)
 
 Proposition 1. The linear time-delay system (1) is controllable if and only if it can be converted
 equivalently into a system in the form of
@@ -1486,7 +1776,7 @@ x(n)(t) = L x(0∼n−1)(t) + Bu (t − h) , (5)
 ( )
 where L (·) is a linear function, and the matrix B ∈ ℝr×r is nonsingular.
 
-## [56] `scis_2023_delay2` (PDF p.4, L275)
+## [66] `scis_2023_delay2` (PDF p.4, L275)
 
 Proposition 2. Let Conditions C1 and C2 be met, then the state-space system (6) is equivalent to the
 following second-order system:
@@ -1512,7 +1802,7 @@ x2 (t − δ (t)) = B−1 x1 (t − σj (t))|j=1∼γ, t x˙1 (t) − α x1 (t �
 
 Duan G R Sci China Inf Sci February 2023 Vol. 66 122201:5
 
-## [57] `scis_2024_chained1` (PDF p.4, L297)
+## [67] `scis_2024_chained1` (PDF p.4, L297)
 
 Proposition 1. The nonlinear system (6)–(8) does not have a smooth exponentially stabilizing con-
 troller. Furthermore, for the special case that both ˆϕi (·) and ψˆi (·) are time-invariant, system (6)–(8)
@@ -1526,7 +1816,7 @@ following conditions holds:
 
 Duan G-R Sci China Inf Sci February 2024, Vol. 67, Iss. 2, 122201:5
 
-## [58] `scis_2024_chained2` (PDF p.4, L260)
+## [68] `scis_2024_chained2` (PDF p.4, L260)
 
 Proposition 1. The nonlinear system (1)–(3) does not have a smooth time-invariant exponentially
 stabilizing controller. Furthermore, for the special case that both ˆϕi (·) and ψˆi (·) are time-invariant,
@@ -1543,7 +1833,7 @@ a continuous controller, the controller must be a time-varying one. In [1], a di
 stabilizing controller for system (1)–(3) is designed. While in this paper, a continuous time-varying
 stabilizing controller is sought.
 
-## [59] `scis_2024_chained2` (PDF p.5, L336)
+## [69] `scis_2024_chained2` (PDF p.5, L336)
 
 Proposition 2. Let a0 and a1 be determined by
 
@@ -1561,7 +1851,7 @@ c1 = (η0 + βζ0) , c2 = (η0 + αζ0) . (18)
 α − β α − β
 Impose the following assumption on the initial values of the first closed-loop subsystem (13).
 
-## [60] `scis_2024_chained2` (PDF p.6, L363)
+## [70] `scis_2024_chained2` (PDF p.6, L363)
 
 Proposition 3. Let Assumption B be met, and α > β > 0 be scalars satisfying (15). Further, let
 
@@ -1588,7 +1878,101 @@ Owing to (16) and (17), we can now write
 
 and Assumption A correspondingly becomes the following.
 
-## [61] `tcyb_2023_robustdelay` (PDF p.6, L738)
+## [71] `scis_2025_chained3` (PDF p.4, L291)
+
+Proposition 1. Let Assumptions A1 and A2 be met. Then the following conclusions hold:
+(1) the linearized model of the nonlinear system (9)–(11) at the origin is uncontrollable, and is (uni-
+formly) asymptotically unstabilizable if there exists an i, satisfying 1 ⩽ i < n, such that the time-varying
+linear system
+x˙ = ΦTi(0, 0, 0, t) x
+
+is not (uniformly) asymptotically stable;
+(2) the nonlinear system (9)–(11) does not have a smooth exponentially stabilizing controller; and
+
+Duan G-R Sci China Inf Sci June 2025, Vol. 68, Iss. 6, 162201:5
+
+(3) for the special case that both Φi (·) and Ψi (·) are time-invariant, system (9)–(11) does not have a
+time-invariant continuous stabilizing controller if, for some integer i, 1 ⩽ i ⩽ n − 1, there holds
+
+Φi (·) |u0=0 = Ψi (·) |u0=0 = 0, (12)
+
+or
+Φi (·) |u0=0 = 0, and ci = 0. (13)
+
+## [72] `scis_2025_chained3` (PDF p.9, L563)
+
+Proposition 2. Let a0, a1, α, and β be scalars satisfying Assumption A3. Further, let ζ0 = x0 (0) and
+η0 = ˙x0 (0) denote the initial values. Then the response of system (35) is given by
+
+x0 (t) = −φ˜0e−tα + φ0e−tβ, (36)
+x˙0 (t) = αφ˜0e−tα − βφ0e−tβ, (37)
+
+where
+1 1
+φ0 = (η0 + αζ0) , ˜φ0 = (η0 + βζ0) . (38)
+α − β α − β
+Define
+
+Pi = {η | η ∈ ℝr, ΓTi(η + αζ0) = 0}, i = 1, 2, . . ., n − 1,
+n−1
+P = Pi = {η | η ∈ ℝr, ΓTi(η + αζ0) = 0, for some 1 ⩽ i ⩽ n − 1}.
+i=1
+Then each Pi is a hyperplane in ℝr, and P is a set of hyperplanes in ℝr. Introduce the following
+assumptions.
+
+## [73] `scis_2025_chained3` (PDF p.9, L600)
+
+Proposition 3. Let Assumptions A2–A5 be met. Then
+
+ρi (x0,x ˙0) = ˜ωie−tα + ωie−tβ, i = 1, 2, . . . , n − 1, (39)
+
+where
+ω˜i = (−ci + αdi) ΓTiφ˜0, ωi = (ci − βdi) ΓTiφ0 ≠ 0. (40)
+Substituting the expressions in (36) and (37), and (39) and (40), turns subsystem (31) into the following
+form:
+x˙1 = u,
+x˙2 = Φ˜1 (·) x2 + ω˜1e−tα + ω1e−tβ Ψ ˜1 (·) x1,
+x˙3 = Φ˜2 (·) x3 +(ω˜2e−tα + ω2e−tβ)Ψ ˜2 (·) x2, (41)
+{ ( )
+...
+x˙n = Φ˜n−1 (·) xn + ω˜n−1e−tα + ωn−1e−tβ Ψ ˜n−1 (·) xn−1,
+( )
+
+Duan G-R Sci China Inf Sci June 2025, Vol. 68, Iss. 6, 162201:10
+
+where
+
+˜Φi (·) ≜ ˜Φi (α, β, ζ0, η0, xi+1∼n, t) = Φi (x0, xi+1∼n, u0, t) , (42)
+˜Ψi (·) ≜ ˜Ψi (α, β, ζ0, η0, xi+1∼n, t) = Ψi (x0, xi+1∼n, u0, t) , i = 1, 2, . . ., n − 1. (43)
+
+Due to Proposition 3, Assumptions A2–A5 can be substituted by the following assumption on system
+(41)–(43).
+
+## [74] `scis_2025_chained3` (PDF p.17, L1045)
+
+Proposition 4. Let Assumptions C1 and C2 be satisfied. Then, with the restriction of z1∼n ∈ 𝔽z(α, β,
+ζ0, η0), the transformation (81) is one-to-one, and keeps the origin unchanged. Furthermore, the inverse
+transformation of (81) is given by
+
+z1∼n = Bˇe−1(α, β, ζ0, η0, z(0∼n−1), t) z(0∼n−1) −fˇe(α, β, ζ0, η0, z(0∼n−1), t) ,
+( )
+where
+
+Bˇe(α, β, ζ0, η0, z(0∼n−1), t)
+
+= diag Ir,Bˇ1 (α, β, ζ0, η0, z, t) ,Bˇ2(α, β, ζ0, η0, z(0∼1), t), . . . ,Bˇn−1(α, β, ζ0, η0, z(0∼n−2), t) ,
+( )
+and
+0
+fˇ1 (α, β, ζ0, η0, z, t)
+fˇe(α, β, ζ0, η0, z(0∼n−1), t) = fˇ2(α, β, ζ0, η0, z(0∼1), t) .
+
+...
+fˇn−1(α, β, ζ0, η0, z(0∼n−2), t)
+
+Finally, regarding the FAS model of SFS (60), we have the following result.
+
+## [75] `tcyb_2023_robustdelay` (PDF p.6, L738)
 
 Proposition 1: Let Assumptions A1–A4 be met. Then,
 there exists a controller in the form of (21) that GUA stabilizes
@@ -1600,7 +1984,7 @@ multiorder FAS in (17).
 The above proposition clearly implies the following corol-
 lary corresponding to the uncertain single-order FAS (22).
 
-## [62] `tcyb_2023_robustdelay` (PDF p.10, L1206)
+## [76] `tcyb_2023_robustdelay` (PDF p.10, L1206)
 
 Proposition 2: For an arbitrarily chosen F ∈ ℝnr×nr, all
 the matrix A0∼n−1 and the nonsingular matrix V ∈ ℝnr×nr
@@ -1632,7 +2016,7 @@ matrix Z, which provides r2n degrees of freedom. All these
 degrees of freedom can be further utilized to achieve the
 additional performance of the system (see [47], [48]).
 
-## [63] `tcyb_2023_subfas` (PDF p.3, L332)
+## [77] `tcyb_2023_subfas` (PDF p.3, L332)
 
 Proposition 1: Let (x0(0), x1(0)) ≠ (0, 0), and a0 and a1
 be two positive scalars. Then, the above controller (7) for
@@ -1641,13 +2025,13 @@ system (1) guarantees the following:
 2) the control signal u(t) also converges to zero
 exponentially.
 
-## [64] `tcyb_2023_subfas` (PDF p.5, L643)
+## [78] `tcyb_2023_subfas` (PDF p.5, L643)
 
 Proposition 2: A nonlinear time-varying system is locally
 feedback linearizable if and only if it can be equivalently
 converted into a 0-type rational sub-FAS.
 
-## [65] `tcyb_2023_subfas` (PDF p.11, L1367)
+## [79] `tcyb_2023_subfas` (PDF p.11, L1367)
 
 Proposition 3: Let b and ci, i = 0, 1, be positive scalars,
 while ai, i = 0, 1, 2, are chosen as
@@ -1683,7 +2067,7 @@ e−s1(t−σ)x0 + e−s2(t−σ)y0 + e−s3(t−σ)z0
 ues of the system are chosen within the ROEA described
 above.
 
-## [66] `tcyb_2024_overview` (PDF p.13, L1594)
+## [80] `tcyb_2024_overview` (PDF p.13, L1594)
 
 Proposition 1: Let the variables Bk (x1∼k, t) and
 hk (x1∼k, t), k = 1, 2, . . . , n, be given by (79)-(81).
@@ -1699,7 +2083,7 @@ B˘k(x(0∼k−1), t) ≜ Bk (x1∼k, t) , k = 1, 2, . . . , n. (83)
 ( )
 Based on the above, the following result is obtained in [42].
 
-## [67] `book_2026_volume1` (PDF p.66, L45)
+## [81] `book_2026_volume1` (PDF p.66, L45)
 
 Proposition 1.1 For an arbitrarily chosen F ∈ Rmn×mn , all the matrix A0∼m−1 and
 the nonsingular matrix V ∈ Rmn×mn satisfying
@@ -1716,7 +2100,7 @@ Z F n−1
 where Z ∈ Rm×mn is an arbitrary parameter matrix satisfying
 detV (Z , F) = 0.
 
-## [68] `book_2026_volume1` (PDF p.67, L46)
+## [82] `book_2026_volume1` (PDF p.67, L46)
 
 Proposition 1.1 are provided. These results present, in a sense, a database for users of
 the FAS approach to derive a specific parameter A0∼m−1 for the designed controller
@@ -1737,7 +2121,7 @@ In addition to the well-known state-space models, another general type, termed F
 models, is newly discovered, which has been proven to be more advantageous for
 controller design in dynamical systems.
 
-## [69] `book_2026_volume1` (PDF p.83, L63)
+## [83] `book_2026_volume1` (PDF p.83, L63)
 
 Proposition 2.1 System (2.66) is controllable if and only if the following controlla-
 bility matrix
@@ -1764,7 +2148,7 @@ Ac = ⎢ .                   ⎥ , bc = ⎢ . ⎥ (2.70)
 Based on the above proposition, we can further obtain the following result which
 reveals the relation between controllability of system (2.66) and its FAS presentation.
 
-## [70] `book_2026_volume1` (PDF p.85, L65)
+## [84] `book_2026_volume1` (PDF p.85, L65)
 
 Proposition 2.2 System (2.74) is controllable if and only if there exists an invert-
 ible state transformation x̂ = P x, which converts system (2.74) into the following
@@ -1805,7 +2189,7 @@ In fact, a procedure for finding such a transformation matrix P can be given as
 follows.
 Algorithm 2.1 Let μi , i = 1, 2, . . . , r , be the controllability indices of system
 
-## [71] `book_2026_volume1` (PDF p.147, L128)
+## [85] `book_2026_volume1` (PDF p.147, L128)
 
 Proposition 4.1 The above SFS (4.2), with G i , i = 1, 2, . . . , n, being nonsingular,
 can be transformed into the form of
@@ -1843,11 +2227,11 @@ added, can be also converted into the form of FAS (4.1).
 Now let us consider the case where f x (0∼n−1) , ζ, t is a deterministic external
 disturbance. In such a case we may assume
 
-## [72] `book_2026_volume1` (PDF p.154, L135)
+## [86] `book_2026_volume1` (PDF p.154, L135)
 
 Proposition 1.1 can be readily used, which can be briefly restated as below.
 
-## [73] `book_2026_volume1` (PDF p.187, L168)
+## [87] `book_2026_volume1` (PDF p.187, L168)
 
 Proposition 5.1 The uncertain term in system (5.22) satisfies
 f z (0∼3)    ≤ ρ z (0∼3) ,
@@ -1855,7 +2239,7 @@ with
 ..
 ρ z (0∼3) = γ1 |ż| + γ2 ż 2 |z̈| + σ2 |z| | z − 2z ż| + γ1 |ż|2 .
 
-## [74] `book_2026_volume1` (PDF p.241, L223)
+## [88] `book_2026_volume1` (PDF p.241, L223)
 
 Proposition 6.1 Let Condition 6.1 be satisfied, then the generalized SFS (6.94) can
 be transformed into the following FAS model
@@ -1895,7 +2279,7 @@ disturbances:
 ⎪                                       {n−3}
 ⎨ ẋ2 = f 2 (x1∼2 , ζ, t) + G 2 x 3 + p
 
-## [75] `book_2026_volume1` (PDF p.242, L224)
+## [89] `book_2026_volume1` (PDF p.242, L224)
 
 Proposition 6.2 Let Condition 6.1 be satisfied, then the generalized SFS (6.99) can
 be transformed into the following FAS model
@@ -1934,7 +2318,7 @@ shown the following:
 and the derivatives of the state vectors, and a recursive solution exists to convert
 the generalized version of SFS equivalently into a FAS model;
 
-## [76] `book_2026_volume1` (PDF p.400, L386)
+## [90] `book_2026_volume1` (PDF p.400, L386)
 
 Proposition 12.1 Let Assumptions 12.3–12.8 be met. Then, there exists a controller
 in the form of (12.20) that GUA stabilizes the uncertain Type I system (12.16) if
